@@ -121,9 +121,9 @@ namespace Content.Server.Preferences.Managers
                 speciesPrototype = _prototypeManager.Index<SpeciesPrototype>(species);
             }
 
-            var voice = profile.Voice ?? speciesPrototype.DefaultSoundsBySex[(int)sex];
+            var voice = profile.Voice ?? speciesPrototype.DefaultSoundsBySex[(int) sex];
             if (!_prototypeManager.HasIndex(voice))
-                voice = speciesPrototype.DefaultSoundsBySex[(int)sex];
+                voice = speciesPrototype.DefaultSoundsBySex[(int) sex];
 
             if (profile.OrganMarkings?.RootElement is { } element)
             {
@@ -183,6 +183,8 @@ namespace Content.Server.Preferences.Managers
                 profile.CharacterName,
                 profile.FlavorText,
                 species,
+                profile.Height,
+                profile.Width,
                 profile.Age,
                 sex,
                 voice,
@@ -202,7 +204,7 @@ namespace Content.Server.Preferences.Managers
                 // <Trauma>
                 profile.BarkVoice ?? HumanoidProfileSystem.DefaultBarkVoice,
                 KnowledgeProfile.Verify(profile.KnowledgeMastery, _prototypeManager)
-                // </Trauma>
+            // </Trauma>
             );
         }
 

@@ -74,6 +74,14 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField]
     public Gender Gender;
 
+    // Nebula start
+    [DataField]
+    public float Width;
+
+    [DataField]
+    public float Height;
+    // Nebula end
+
     [DataField]
     public HumanoidCharacterAppearanceV1 Appearance;
 
@@ -91,7 +99,7 @@ public sealed partial class HumanoidCharacterProfileV1
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
+        return new(Name, FlavorText, Species, Height, Width, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
             BarkVoice, new()); // Trauma
     }
 
@@ -101,7 +109,7 @@ public sealed partial class HumanoidCharacterProfileV1
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         var speciesPrototye = prototypeManager.Index(species);
-        return speciesPrototye.DefaultSoundsBySex[(int)sex];
+        return speciesPrototye.DefaultSoundsBySex[(int) sex];
     }
 }
 

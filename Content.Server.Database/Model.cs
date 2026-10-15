@@ -458,6 +458,8 @@ namespace Content.Server.Database
         public string? Voice { get; set; } = null!; // If null, the voice gets defaulted to the sex associated value
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
+        public float Height { get; set; } = 1f; // Nebula
+        public float Width { get; set; } = 1f; // Nebula
         // <Trauma>
         public string BarkVoice { get; set; } = null!;
         public Dictionary<string, int> KnowledgeMastery { get; set; } = new();

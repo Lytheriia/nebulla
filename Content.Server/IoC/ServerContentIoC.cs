@@ -34,6 +34,7 @@ using Content.Shared.FeedbackSystem;
 using Content.Shared.IoC;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Server._Nebula.ServerProtection.Chat;
 
 namespace Content.Server.IoC;
 
@@ -87,5 +88,6 @@ internal static class ServerContentIoC
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
         deps.Register<WhitelistManager>();
+        deps.Register<ChatProtectionSystem>(); // Orion
     }
 }

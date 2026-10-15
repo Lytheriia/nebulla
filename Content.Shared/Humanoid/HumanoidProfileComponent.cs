@@ -32,6 +32,14 @@ public sealed partial class HumanoidProfileComponent : Component
     [DataField, AutoNetworkedField]
     public int Age = 18;
 
+    // Nebula start
+    [DataField, AutoNetworkedField]
+    public float Height;
+
+    [DataField, AutoNetworkedField]
+    public float Width;
+    // Nebula end
+
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
 }

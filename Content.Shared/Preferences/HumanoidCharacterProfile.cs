@@ -12,6 +12,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.Speech.Components;
 using Content.Shared.Traits;
@@ -100,6 +101,14 @@ namespace Content.Shared.Preferences
         [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
 
+        // Nebula start
+        [DataField]
+        public float Height { get; private set; }
+
+        [DataField]
+        public float Width { get; private set; }
+        //  Nebula end
+
         /// <summary>
         /// Stores markings, eye colors, etc for the profile.
         /// </summary>
@@ -137,6 +146,8 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            float height, // Nebula changes
+            float width, // Nebula changes
             int age,
             Sex sex,
             ProtoId<EmoteSoundsPrototype> voice,
@@ -151,11 +162,13 @@ namespace Content.Shared.Preferences
             // <Trauma>
             ProtoId<BarkPrototype> barkVoice,
             KnowledgeProfile knowledge)
-            // </Trauma>
+        // </Trauma>
         {
             Name = name;
             FlavorText = flavortext;
             Species = species;
+            Height = height; // Nebula changes
+            Width = width; // Nebula changes
             Age = age;
             Sex = sex;
             Voice = voice;
@@ -192,6 +205,8 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
+                other.Height, // Nebula changes
+                other.Width, // Nebula changes
                 other.Age,
                 other.Sex,
                 other.Voice,
@@ -206,7 +221,7 @@ namespace Content.Shared.Preferences
                 // <Trauma>
                 other.BarkVoice,
                 other.Knowledge)
-                // </Trauma>
+        // </Trauma>
         {
         }
 
@@ -285,6 +300,17 @@ namespace Content.Shared.Preferences
                 .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
                 .ToArray();
             var species = random.Pick(pool);
+
+            // Nebula start
+            var height = 1f;
+            var width = 1f;
+            if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
+            {
+                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // Nebula changes
+                width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth); // Nebula changes
+            }
+            // Nebula end
+
             return species;
         }
 
@@ -381,7 +407,7 @@ namespace Content.Shared.Preferences
             var speciesProto = prototypeManager.Index(profile.Species);
 
             profile.Sex = (randomizeCfg & RandomizeCfg.Sex) != 0 ? RandomSex(speciesProto) : baseProfile.Sex;
-            profile.Voice = speciesProto.DefaultSoundsBySex[(int)profile.Sex];
+            profile.Voice = speciesProto.DefaultSoundsBySex[(int) profile.Sex];
             profile.Gender = (randomizeCfg & RandomizeCfg.Gender) != 0 ? RandomGender(profile.Sex) : baseProfile.Gender;
             profile.Name = (randomizeCfg & RandomizeCfg.Name) != 0 ? RandomName(speciesProto, profile.Gender) : baseProfile.Name;
             profile.Age = (randomizeCfg & RandomizeCfg.Age) != 0 ? RandomAge(speciesProto) : baseProfile.Age;
@@ -444,6 +470,17 @@ namespace Content.Shared.Preferences
         {
             return new(this) { Species = species };
         }
+
+        // Nebula start
+        public HumanoidCharacterProfile WithHeight(float height)
+        {
+            return new(this) { Height = height };
+        }
+        public HumanoidCharacterProfile WithWidth(float width)
+        {
+            return new(this) { Width = width };
+        }
+        // Nebula end
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -643,6 +680,8 @@ namespace Content.Shared.Preferences
             if (BarkVoice != other.BarkVoice) return false;
             if (!Knowledge.MemberwiseEquals(other.Knowledge)) return false;
             // </Trauma>
+            if (Height != other.Height) return false; // Nebula changes
+            if (Width != other.Width) return false; // Nebula changes
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -737,6 +776,16 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
             }
 
+            // Nebula start
+            var height = Height;
+            if (speciesPrototype != null)
+                height = Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+
+            var width = Width;
+            if (speciesPrototype != null)
+                width = Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+            // Nebula end
+
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
@@ -786,6 +835,8 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Age = age;
+            Height = height; // Nebula changes
+            Width = width; // Nebula changes
             Sex = sex;
             Voice = voice;
             Gender = gender;
@@ -908,6 +959,8 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
+            hashCode.Add(Height); // Nebula changes
+            hashCode.Add(Width); // Nebula changes
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add(Voice);

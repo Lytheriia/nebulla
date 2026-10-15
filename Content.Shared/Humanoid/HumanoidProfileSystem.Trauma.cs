@@ -88,6 +88,10 @@ public sealed partial class HumanoidProfileSystem
             Name(ent),
             flavortext,
             ent.Comp.Species,
+            // Nebula start
+            ent.Comp.Height,
+            ent.Comp.Width,
+            // Nebula end
             ent.Comp.Age,
             ent.Comp.Sex,
             ent.Comp.Voice,
@@ -135,7 +139,7 @@ public sealed partial class HumanoidProfileSystem
     public void SetEyeColor(EntityUid mob, Color color)
     {
         if (!TryComp<BodyComponent>(mob, out var body) ||
-            _body.GetOrgan(mob, EyesCategory) is not {} eyes ||
+            _body.GetOrgan(mob, EyesCategory) is not { } eyes ||
             !TryComp<VisualOrganComponent>(eyes, out var visual) ||
             visual.Profile.EyeColor == color)
             return;
