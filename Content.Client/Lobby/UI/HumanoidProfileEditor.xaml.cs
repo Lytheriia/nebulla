@@ -3,6 +3,7 @@ using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
+using Content.Shared._Nebula.CCVar;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -22,6 +23,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 
 namespace Content.Client.Lobby.UI
@@ -44,6 +46,7 @@ namespace Content.Client.Lobby.UI
 
         // CCvar.
         private int _maxNameLength;
+        private int _maxCustomSpeciesLength; // Nebula
 
         /// <summary>
         /// If we're attempting to save.
@@ -111,6 +114,7 @@ namespace Content.Client.Lobby.UI
             InitializeTrauma(); // Trauma
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
+            _maxCustomSpeciesLength = _cfgManager.GetCVar(NCCVars.MaxCustomSpeciesLength); // Erida
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
             _cfgManager.OnValueChanged(TraumaCVars.HeightSliders, OnHeightSlidersChanged, true); // Nebula
 
@@ -166,7 +170,7 @@ namespace Content.Client.Lobby.UI
             SexButton.OnItemSelected += args =>
             {
                 SexButton.SelectId(args.Id);
-                SetSex((Sex)args.Id);
+                SetSex((Sex) args.Id);
             };
 
             #endregion Sex
@@ -195,15 +199,15 @@ namespace Content.Client.Lobby.UI
 
             #region Gender
 
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int)Gender.Male);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int)Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int)Gender.Epicene);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int)Gender.Neuter);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
 
             PronounsButton.OnItemSelected += args =>
             {
                 PronounsButton.SelectId(args.Id);
-                SetGender((Gender)args.Id);
+                SetGender((Gender) args.Id);
             };
 
             #endregion Gender
@@ -241,8 +245,25 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Height and Width
-            // Nebula end
 
+            #region Custom species
+            IsCustomSpecies.OnPressed += _ =>
+            {
+                CustomSpeciesContainer.Visible = !CustomSpeciesContainer.Visible;
+                if (!IsCustomSpecies.Pressed)
+                    SetCustomSpecies(string.Empty);
+            };
+
+            CustomSpeciesEdit.IsValid = args => args.Length <= _maxCustomSpeciesLength;
+            CustomSpeciesEdit.OnTextChanged += args =>
+            {
+                string formattedMessage = FormattedMessage.RemoveMarkupPermissive(args.Text);
+                if (!string.IsNullOrEmpty(formattedMessage))
+                    SetCustomSpecies(formattedMessage);
+            };
+
+            #endregion
+            // Nebula end
             #region Skin
 
             Skin.OnValueChanged += _ =>
@@ -270,13 +291,13 @@ namespace Content.Client.Lobby.UI
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
             {
-                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int)value);
+                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int) value);
             }
 
             SpawnPriorityButton.OnItemSelected += args =>
             {
                 SpawnPriorityButton.SelectId(args.Id);
-                SetSpawnPriority((SpawnPriorityPreference)args.Id);
+                SetSpawnPriority((SpawnPriorityPreference) args.Id);
             };
 
             #endregion SpawnPriority
@@ -303,16 +324,16 @@ namespace Content.Client.Lobby.UI
 
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
-                (int)PreferenceUnavailableMode.StayInLobby);
+                (int) PreferenceUnavailableMode.StayInLobby);
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
                               ("overflowJob", Loc.GetString(GameTicker.FallbackOverflowJobName))),
-                (int)PreferenceUnavailableMode.SpawnAsOverflow);
+                (int) PreferenceUnavailableMode.SpawnAsOverflow);
 
             PreferenceUnavailableButton.OnItemSelected += args =>
             {
                 PreferenceUnavailableButton.SelectId(args.Id);
-                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode)args.Id);
+                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode) args.Id);
                 SetDirty();
             };
 
@@ -402,7 +423,7 @@ namespace Content.Client.Lobby.UI
         public void ResetToDefault()
         {
             SetProfile(
-                (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter,
+                (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
                 _preferencesManager.Preferences?.SelectedCharacterIndex);
         }
 
@@ -429,6 +450,7 @@ namespace Content.Client.Lobby.UI
             UpdateMarkings();
             OnSetProfile?.Invoke(profile); // Trauma
             ResetWidthAndHeight(); // Nebula
+            UpdateCustomSpeciesEdit(); // Nebula
 
             RefreshAntags();
             RefreshJobs();
@@ -440,7 +462,7 @@ namespace Content.Client.Lobby.UI
 
             if (Profile != null)
             {
-                PreferenceUnavailableButton.SelectId((int)Profile.PreferenceUnavailable);
+                PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
             }
         }
 
@@ -516,6 +538,14 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
 
+        // Nebula start
+        private void SetCustomSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithCustomSpecies(newSpecies);
+            IsDirty = true;
+        }
+        // Nebula end
+
         private void SetProfileWidth(float width)
         {
             if (Profile == null || MathHelper.CloseTo(Profile.Width, width))
@@ -561,6 +591,21 @@ namespace Content.Client.Lobby.UI
             Width,
             Both
         }
+
+        // Nebula start
+        private void UpdateCustomSpeciesEdit()
+        {
+            IsCustomSpecies.Pressed = false;
+            CustomSpeciesContainer.Visible = false;
+
+            CustomSpeciesEdit.Text = Profile?.CustomSpecies ?? string.Empty;
+            if (!string.IsNullOrEmpty(Profile?.CustomSpecies))
+            {
+                IsCustomSpecies.Pressed = true;
+                CustomSpeciesContainer.Visible = true;
+            }
+        }
+        // Nebula end
 
         private void UpdateDimensions(SliderUpdate updateType)
         {

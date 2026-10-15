@@ -183,8 +183,11 @@ namespace Content.Server.Preferences.Managers
                 profile.CharacterName,
                 profile.FlavorText,
                 species,
+                // Nebula start
                 profile.Height,
                 profile.Width,
+                profile.CustomSpecies,
+                // Nebula end
                 profile.Age,
                 sex,
                 voice,

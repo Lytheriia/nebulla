@@ -38,6 +38,9 @@ public sealed partial class HumanoidProfileComponent : Component
 
     [DataField, AutoNetworkedField]
     public float Width;
+
+    [DataField, AutoNetworkedField]
+    public string CustomSpecies = string.Empty;
     // Nebula end
 
     [DataField, AutoNetworkedField]

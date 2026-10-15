@@ -75,8 +75,20 @@
                                     <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3"
                                                    VerticalAlignment="Center"
                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
+                                <!-- Nebula - Custom Species start -->
+                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" StyleClasses="OpenRight"/>
+                                    <Button Name="IsCustomSpecies"
+                                            Text="{Loc 'humanoid-profile-editor-is-custom-species-button'}"
+                                            StyleClasses="OpenLeft"
+                                            HorizontalAlignment="Center"
+                                            ToggleMode="True"/>
                                 </BoxContainer>
+                                <BoxContainer Name="CustomSpeciesContainer" HorizontalExpand="True" Visible="False">
+                                    <Label Text="{Loc 'humanoid-profile-editor-custom-species-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <LineEdit Name="CustomSpeciesEdit" MinSize="120 0" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Nebula - Custom Species end -->
                                 <!-- Age -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />

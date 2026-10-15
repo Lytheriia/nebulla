@@ -1193,6 +1193,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("char_name");
 
+                    b.Property<string>("CustomSpecies")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_species");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("TEXT")

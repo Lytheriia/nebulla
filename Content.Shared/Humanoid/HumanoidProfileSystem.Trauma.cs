@@ -91,6 +91,7 @@ public sealed partial class HumanoidProfileSystem
             // Nebula start
             ent.Comp.Height,
             ent.Comp.Width,
+            ent.Comp.CustomSpecies,
             // Nebula end
             ent.Comp.Age,
             ent.Comp.Sex,

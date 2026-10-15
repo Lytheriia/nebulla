@@ -65,6 +65,9 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField]
     public ProtoId<SpeciesPrototype> Species;
 
+    [DataField] // Nebula
+    public string CustomSpecies;
+
     [DataField]
     public int Age;
 
@@ -99,7 +102,7 @@ public sealed partial class HumanoidCharacterProfileV1
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Height, Width, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
+        return new(Name, FlavorText, Species, Height, Width, string.Empty, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
             BarkVoice, new()); // Trauma
     }
 

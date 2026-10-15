@@ -28,6 +28,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Robust.Shared;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._Nebula.CCVar;
 
 namespace Content.Shared.Preferences
 {
@@ -89,6 +90,11 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
+        // Erida-start
+        [DataField]
+        public string CustomSpecies { get; set; } = string.Empty;
+        // Erida end
+
         [DataField]
         public int Age { get; set; } = 18;
 
@@ -146,8 +152,11 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
-            float height, // Nebula changes
-            float width, // Nebula changes
+            // Nebula start
+            float height,
+            float width,
+            string customspecies,
+            // Nebula end
             int age,
             Sex sex,
             ProtoId<EmoteSoundsPrototype> voice,
@@ -167,8 +176,11 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
-            Height = height; // Nebula changes
-            Width = width; // Nebula changes
+            // Nebula start
+            Height = height;
+            Width = width;
+            CustomSpecies = customspecies;
+            // Nebula end
             Age = age;
             Sex = sex;
             Voice = voice;
@@ -205,8 +217,11 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
-                other.Height, // Nebula changes
-                other.Width, // Nebula changes
+                // Nebula start
+                other.Height,
+                other.Width,
+                other.CustomSpecies,
+                // Nebula end
                 other.Age,
                 other.Sex,
                 other.Voice,
@@ -446,6 +461,12 @@ namespace Content.Shared.Preferences
             return new(this) { FlavorText = flavorText };
         }
 
+        // Nebula start
+        public HumanoidCharacterProfile WithCustomSpecies(string customspecies)
+        {
+            return new(this) { CustomSpecies = customspecies };
+        }
+        // Nebula end
         public HumanoidCharacterProfile WithAge(int age)
         {
             return new(this) { Age = age };
@@ -680,8 +701,11 @@ namespace Content.Shared.Preferences
             if (BarkVoice != other.BarkVoice) return false;
             if (!Knowledge.MemberwiseEquals(other.Knowledge)) return false;
             // </Trauma>
-            if (Height != other.Height) return false; // Nebula changes
-            if (Width != other.Width) return false; // Nebula changes
+            // Nebula start
+            if (Height != other.Height) return false;
+            if (Width != other.Width) return false;
+            if (CustomSpecies != other.CustomSpecies) return false;
+            // Nebula end
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -713,7 +737,7 @@ namespace Content.Shared.Preferences
 
             var voice = Voice;
             if (!speciesPrototype.Voices.Contains(voice))
-                voice = speciesPrototype.DefaultSoundsBySex[(int)sex];
+                voice = speciesPrototype.DefaultSoundsBySex[(int) sex];
 
             // ensure the species can be that sex and their age fits the founds
             if (!speciesPrototype.Sexes.Contains(sex))
@@ -784,6 +808,13 @@ namespace Content.Shared.Preferences
             var width = Width;
             if (speciesPrototype != null)
                 width = Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+
+            var customSpeciesMaxLength = configManager.GetCVar(NCCVars.MaxCustomSpeciesLength);
+            string customSpecies;
+            if (CustomSpecies.Length > customSpeciesMaxLength)
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies)[..customSpeciesMaxLength];
+            else
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies);
             // Nebula end
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -835,8 +866,11 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Age = age;
-            Height = height; // Nebula changes
-            Width = width; // Nebula changes
+            // Nebula start
+            Height = height;
+            Width = width;
+            CustomSpecies = customSpecies;
+            // Nebula end
             Sex = sex;
             Voice = voice;
             Gender = gender;
@@ -959,19 +993,22 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
-            hashCode.Add(Height); // Nebula changes
-            hashCode.Add(Width); // Nebula changes
+            // Nebula start
+            hashCode.Add(Height);
+            hashCode.Add(Width);
+            hashCode.Add(CustomSpecies);
+            // Nebula end
             hashCode.Add(Age);
-            hashCode.Add((int)Sex);
+            hashCode.Add((int) Sex);
             hashCode.Add(Voice);
-            hashCode.Add((int)Gender);
+            hashCode.Add((int) Gender);
             hashCode.Add(Appearance);
             // <Trauma>
             hashCode.Add(BarkVoice);
             hashCode.Add(Knowledge);
             // </Trauma>
-            hashCode.Add((int)SpawnPriority);
-            hashCode.Add((int)PreferenceUnavailable);
+            hashCode.Add((int) SpawnPriority);
+            hashCode.Add((int) PreferenceUnavailable);
             return hashCode.ToHashCode();
         }
 

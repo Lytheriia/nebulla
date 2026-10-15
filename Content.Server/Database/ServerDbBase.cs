@@ -215,8 +215,11 @@ namespace Content.Server.Database
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;
-            profile.Height = humanoid.Height; // Goobstation: port EE height/width sliders
-            profile.Width = humanoid.Width; // Goobstation: port EE height/width sliders
+            // Nebula start
+            profile.Height = humanoid.Height;
+            profile.Width = humanoid.Width;
+            profile.CustomSpecies = humanoid.CustomSpecies;
+            // Nebula end
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
             profile.Voice = humanoid.Voice.ToString();
@@ -1266,10 +1269,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 {
                     await using var db = await GetDb();
                     return (await (from note in db.DbContext.AdminNotes
-                            where note.PlayerUserId == player &&
-                                  !note.Deleted &&
-                                  (note.ExpirationTime == null || DateTime.UtcNow < note.ExpirationTime)
-                            select note)
+                                   where note.PlayerUserId == player &&
+                                         !note.Deleted &&
+                                         (note.ExpirationTime == null || DateTime.UtcNow < note.ExpirationTime)
+                                   select note)
                         .Include(note => note.Round)
                         .ThenInclude(r => r!.Server)
                         .Include(note => note.CreatedBy)
@@ -1491,8 +1494,8 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return new BanNoteRecord(
                 ban.Id,
                 ban.Type,
-                [..ban.Rounds!.Select(br => MakeRoundRecord(br.Round!))],
-                [..playerRecords],
+                [.. ban.Rounds!.Select(br => MakeRoundRecord(br.Round!))],
+                [.. playerRecords],
                 ban.PlaytimeAtNote,
                 ban.Reason,
                 ban.Severity,
@@ -1508,7 +1511,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                         ban.Unban.UnbanningAdmin.Value,
                         await dbContext.Player.SingleOrDefaultAsync(p => p.UserId == ban.Unban.UnbanningAdmin.Value)),
                 NormalizeDatabaseTime(ban.Unban?.UnbanTime),
-                [..ban.Roles!.Select(br => new BanRoleDef(br.RoleType, br.RoleId))]);
+                [.. ban.Roles!.Select(br => new BanRoleDef(br.RoleType, br.RoleId))]);
         }
 
         // These two are here because they get converted into notes later
@@ -1678,11 +1681,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 State = CustomVoteState.Active,
                 TimeCreated = DateTime.UtcNow,
                 Options = options.Select((o, i) => new CustomVoteLogOption
-                    {
-                        Text = o,
-                        OptionIdx = (short)i,
-                        VoteCount = 0,
-                    })
+                {
+                    Text = o,
+                    OptionIdx = (short) i,
+                    VoteCount = 0,
+                })
                     .ToList(),
             };
 
@@ -1777,7 +1780,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 results.Add(await selector(item));
             }
 
-            return [..results];
+            return [.. results];
         }
 
         private static async Task<List<T>> ParallelCollect<T>(params IEnumerable<Func<Task<IEnumerable<T>>>> tasks)
