@@ -35,16 +35,16 @@ public sealed partial class NebulaWebhooks : IPostInjectInit
 
         // Inject faster, then CCVar. so check is it registered
         // Dont add another if's. 1 should be enough
-        if (!_cfg.IsCVarRegistered(ECCVars.DiscordBanWebhook.Name))
+        if (!_cfg.IsCVarRegistered(NCCVars.DiscordBanWebhook.Name))
             return;
 
-        _cfg.OnValueChanged(ECCVars.DiscordBanWebhook,
+        _cfg.OnValueChanged(NCCVars.DiscordBanWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierBan = wi), true);
 
-        _cfg.OnValueChanged(ECCVars.DiscordPlayTimeWebhook,
+        _cfg.OnValueChanged(NCCVars.DiscordPlayTimeWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierPlayTime = wi), true);
 
-        _cfg.OnValueChanged(ECCVars.DiscordPermissionsWebhook,
+        _cfg.OnValueChanged(NCCVars.DiscordPermissionsWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierPermissions = wi), true);
     }
 

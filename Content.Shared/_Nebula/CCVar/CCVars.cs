@@ -7,6 +7,6 @@ using Robust.Shared.Configuration;
 namespace Content.Shared._Nebula.CCVar;
 
 [CVarDefs]
-public sealed partial class ECCVars
+public sealed partial class NCCVars
 {
 }

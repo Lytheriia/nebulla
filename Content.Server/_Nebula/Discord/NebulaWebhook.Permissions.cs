@@ -144,7 +144,7 @@ public sealed partial class NebulaWebhooks
             ]
         };
 
-        SendMessage(_webhookIdentifierTokens!.Value, payload);
+        SendMessage(_webhookIdentifierPermissions!.Value, payload);
     }
 
     #endregion
