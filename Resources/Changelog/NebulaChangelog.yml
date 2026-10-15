@@ -1,0 +1,12 @@
+Name: Nebula
+Order: -2
+Entries:
+- author: Lytheriia
+  changes:
+    - message: Circuit tiles and faux tiles have been moved to the cutter machine.
+      type: Tweak
+  id: 1
+  time: '2025-09-24T00:12:45.0000000+00:00'
+  url: https://github.com/
+  avatar_url: https://avatars.githubusercontent.com/u/110207359?v=4
+  title: Test

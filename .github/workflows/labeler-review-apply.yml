@@ -1,0 +1,25 @@
+# Nebula edit
+name: "Labels: Review State Apply"
+
+on:
+  workflow_run:
+    workflows: ["Labels: Review State"]
+    types: [completed]
+
+permissions:
+  actions: read
+  checks: read
+  contents: read
+  issues: write
+  pull-requests: write
+  statuses: read
+
+jobs:
+  apply_review_state:
+    if: >
+      github.repository == 'nebula-station/space-station-14' &&
+      github.event.workflow_run.event == 'pull_request_review' &&
+      github.event.workflow_run.conclusion == 'success'
+    uses: ./.github/workflows/_labeler-review-state-apply.yml
+    with:
+      workflow-run-id: ${{ github.event.workflow_run.id }}

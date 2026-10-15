@@ -7,18 +7,11 @@
 honkops-title = ХОНКлеар Оперативники
 honkops-description = Оперативники ХОНКлеар нацелились на станцию. Постарайтесь не дать им вооружиться и взорвать ядерную боеголовку, защищая ядерный диск!
 
-# SIS-Start
+## Nebula
 honkops-role-greeting =
-    Командование [gradient color1="{$hl1}" color2="{$hl2}"]Синдиката[/gradient] доверило красную кнопку тем, кто понимает истинную природу хаоса.
-    Вы - [gradient color1="{$hl1}" color2="{$hl2}"]Хонк-Оперативник[/gradient].
-    Ваша цель: превратить [gradient color1="{$hl1}" color2="{$hl2}"]{ $station }[/gradient] в пыль с помощью нашей [gradient color1="{$hl1}" color2="{$hl2}"]боеГОЛОВКИ)))[/gradient].
-
-    Операция «[gradient color1="{$hl1}" color2="{$hl2}"]{ $name }[/gradient]» началась. Заправьте клоун-кар, проверьте маски и устройте этим занудам грандиозный фильм.
-honkops-role-greeting-desc =
-    План предельно простой: доставить [gradient color1="{$hl1}" color2="{$hl2}"]заряд[/gradient] в сердце станции, запустить таймер и защищать его во имя Хонкоматери до победной [gradient color1="{$hl1}" color2="{$hl2}" ]детонации[/gradient].
-
-    {"["}rainbow speed="0.1"]Смерть NanoTrasen! Да начнётся великий ХОНК![/rainbow]
-# SIS-End
+    Вы [color=crimson]хонклеар-оперативник[/color]. Ваша задача — взорвать {$station} и убедиться, что от неё останется лишь груда обломков. Ваше руководство, [color=crimson]Хонкикат[/color], снабдило вас всем необходимым.
+    Операция «{$name}» началась! Хонк!
+    Ваши задачи просты: доставить заряд и убедиться, что он взорвётся. Начинайте миссию. Хонк!
 
 honkops-opsmajor = [color=crimson]Великая победа Хонкиката![/color]
 honkops-opsminor = [color=crimson]Малая победа Хонкиката![/color]

@@ -2,73 +2,102 @@ name: Diff RSIs
 
 on:
   pull_request_target:
-    types: [ opened, reopened, synchronize, ready_for_review ]
+    types: [opened, reopened, synchronize, ready_for_review]
     paths:
-      - '**.rsi/**.png'
+      - "**/*.rsi/*.png"
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   diff:
     name: Diff
+    if: github.actor != vars.CHANGELOG_BOT && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Get changed files
-        id: files
-        uses: Ana06/get-changed-files@v2.3.0
+      - name: Checkout workflow tools
+        uses: actions/checkout@v7.0.0
         with:
-          format: 'space-delimited'
-          filter: |
-            **.rsi
-            **.png
+          ref: ${{ github.event.pull_request.base.sha }}
+          sparse-checkout: |
+            Tools/Nebula/prepare_rsi_diff_comment.py
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+
+      - name: Get changed RSI files
+        id: files
+        uses: tj-actions/changed-files@v47.0.6
+        with:
+          files: "**/*.rsi/*.png"
+          use_rest_api: true
+          output_renamed_files_as_deleted_and_added: true
+          separator: " "
+          quotepath: false
+          safe_output: false
+
+      - name: Check RSI diff size
+        id: rsi-size
+        shell: bash
+        env:
+          MODIFIED: ${{ steps.files.outputs.modified_files }}
+          REMOVED: ${{ steps.files.outputs.deleted_files }}
+          ADDED: ${{ steps.files.outputs.added_files }}
+        run: |
+          # nebula edit: skip huge diffs that exceed the docker argument limit
+          if [ ${#MODIFIED} -gt 100000 ] || [ ${#REMOVED} -gt 100000 ] || [ ${#ADDED} -gt 100000 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Diff changed RSIs
         id: diff
+        if: steps.rsi-size.outputs.skip != 'true'
         uses: space-wizards/RSIDiffBot@v1.1
         with:
-          modified: ${{ steps.files.outputs.modified }}
-          removed: ${{ steps.files.outputs.removed }}
-          added: ${{ steps.files.outputs.added }}
+          modified: ${{ steps.files.outputs.modified_files }}
+          removed: ${{ steps.files.outputs.deleted_files }}
+          added: ${{ steps.files.outputs.added_files }}
           basename: ${{ github.event.pull_request.base.repo.full_name }}
           basesha: ${{ github.event.pull_request.base.sha }}
           headname: ${{ github.event.pull_request.head.repo.full_name }}
           headsha: ${{ github.event.pull_request.head.sha }}
 
-      - name: Potentially find comment
-        uses: peter-evans/find-comment@v1
-        id: fc
-        with:
-          issue-number: ${{ github.event.number }}
-          comment-author: 'github-actions[bot]'
-          body-includes: RSI Diff Bot
+      - name: Write full RSI diff body
+        if: steps.rsi-size.outputs.skip != 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
 
-      - name: Create comment if it doesn't exist
-        if: steps.fc.outputs.comment-id == ''
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          issue-number: ${{ github.event.number }}
-          body: |
-            ${{ steps.diff.outputs.summary-details }}
+          body = ${{ toJSON(steps.diff.outputs['summary-details']) }}
+          Path("rsi-diff-full.md").write_text(body, encoding="utf-8")
+          PY
 
-      - name: Update comment if it exists
-        if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
-          body: |
-            ${{ steps.diff.outputs.summary-details }}
+      - name: Prepare RSI diff comment
+        if: steps.rsi-size.outputs.skip != 'true'
+        id: rsi-comment
+        run: >
+          python Tools/Nebula/prepare_rsi_diff_comment.py
+          --input rsi-diff-full.md
+          --output rsi-diff-comment.md
+          --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
-      - name: Update comment to read that it has been edited
-        if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v1
+      - name: Upload full RSI diff
+        if: steps.rsi-comment.outputs.oversized == 'true'
+        uses: actions/upload-artifact@v7.0.1
         with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: append
-          body: |
-            Edit: diff updated after ${{ github.event.pull_request.head.sha }}
+          name: rsi-diff-full
+          path: rsi-diff-full.md
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Create or update RSI diff comment
+        if: steps.rsi-size.outputs.skip != 'true'
+        uses: marocchino/sticky-pull-request-comment@v3.0.4
+        with:
+          header: nebula-rsi-diff
+          path: rsi-diff-comment.md
+          skip_unchanged: true

@@ -6,73 +6,171 @@ Sends updates to a Discord webhook for new changelog entries since the last GitH
 Automatically figures out the last run and changelog contents with the GitHub API.
 """
 
-import itertools
 import os
-import sys
-import urllib.parse
+import re
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import parse_qsl, urlencode, urlparse
 
+import json
 import requests
 import yaml
 
-DEBUG = os.environ.get("SS14_CHANGELOG_DEBUG", "").lower() in {"1", "true", "yes"}
+DEBUG = False
 DEBUG_CHANGELOG_FILE_OLD = Path("Resources/Changelog/Old.yml")
-DEBUG_DISCORD_DUMP_FILE = Path("Resources/Changelog/DiscordDebug.md")
 GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 
 # https://discord.com/developers/docs/resources/webhook
-DISCORD_SPLIT_LIMIT = 2000
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
-TRUNCATION_SUFFIX = " [...]"
+DISCORD_EMBED_DESCRIPTION_LIMIT = 3900
+MAX_CHANGE_MESSAGE_LENGTH = 1000
+DISCORD_MESSAGE_DELAY_SECONDS = 0.5
+NEBULA_EMBED_COLOR = 0x6D3286
 
-CHANGELOG_FILE = "Resources/Changelog/TraumaChangelog.yml"
+CHANGELOG_FILE = "Resources/Changelog/Nebula.yml" # Nebula edit
 
 TYPES_TO_EMOJI = {"Fix": "🐛", "Add": "🆕", "Remove": "❌", "Tweak": "⚒️"}
+TYPES_TO_LABELS = {
+    "Fix": "Исправлено",
+    "Add": "Добавлено",
+    "Remove": "Удалено",
+    "Tweak": "Изменено",
+}
 
-EXPERIMENTAL_LABEL = "Intent: Experimental"
-EXPERIMENTAL_EMOJI = "🧪"
+DISCORD_COMPONENTS_V2_FLAG = 1 << 15
+DISCORD_MEDIA_GALLERY_MAX_ITEMS = 10
+
+HTTP_TIMEOUT_SECONDS = 30
+MEDIA_MAX_DOWNLOAD_SIZE = 10 * 1024 * 1024
+MEDIA_READ_CHUNK_SIZE = 64 * 1024
+MEDIA_FILE_EXTENSIONS = frozenset({
+    ".apng", ".avif", ".bmp", ".gif", ".jpeg", ".jpg",
+    ".m4v", ".mkv", ".mov", ".mp4", ".png", ".webm", ".webp",
+})
+_media_counter = 0
 
 ChangelogEntry = dict[str, Any]
 
+class MediaTypeError(RuntimeError):
+    pass
+
+
+def iter_media_urls(entry: ChangelogEntry) -> Iterable[str]:
+    media = entry.get("media") or []
+    if not isinstance(media, list):
+        return
+    seen: set[str] = set()
+    for value in media:
+        url = str(value or "").strip()
+        parsed = urlparse(url)
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            continue
+        if parsed.username or parsed.password or len(url) > 2000:
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        yield url
+
+
+def detect_media_type(data: bytes) -> tuple[str, str]:
+    if data.startswith(b"\xff\xd8\xff"):
+        return "image/jpeg", ".jpg"
+    if data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "image/png", ".png"
+    if data.startswith((b"GIF87a", b"GIF89a")):
+        return "image/gif", ".gif"
+    if data.startswith(b"RIFF") and data[8:12] == b"WEBP":
+        return "image/webp", ".webp"
+    if data.startswith(b"\x1a\x45\xdf\xa3"):
+        return "video/webm", ".webm"
+    if len(data) >= 12 and data[4:8] == b"ftyp":
+        if data[8:12] == b"qt  ":
+            return "video/quicktime", ".mov"
+        return "video/mp4", ".mp4"
+    raise MediaTypeError("unrecognized media content")
+
+
+def download_media(session: requests.Session, url: str):
+    global _media_counter
+    try:
+        response = session.get(url, stream=True, timeout=HTTP_TIMEOUT_SECONDS)
+        response.raise_for_status()
+
+        length = response.headers.get("Content-Length")
+        if length and length.isdigit() and int(length) > MEDIA_MAX_DOWNLOAD_SIZE:
+            print(f"Media too large ({url}): {length} bytes")
+            return None
+
+        data = bytearray()
+        for chunk in response.iter_content(chunk_size=MEDIA_READ_CHUNK_SIZE):
+            data.extend(chunk)
+            if len(data) > MEDIA_MAX_DOWNLOAD_SIZE:
+                print(f"Media exceeded the size cap ({url})")
+                return None
+    except requests.RequestException as exc:
+        print(f"Failed to download media ({url}): {exc}")
+        return None
+
+    try:
+        mime, ext = detect_media_type(bytes(data))
+    except MediaTypeError:
+        ext = Path(urlparse(url).path).suffix.lower()
+        if ext not in MEDIA_FILE_EXTENSIONS:
+            print(f"Unrecognized media type ({url}); falling back to a link")
+            return None
+        mime = "application/octet-stream"
+
+    _media_counter += 1
+    return f"changelog-media-{_media_counter}{ext}", mime, bytes(data), url
 
 def main():
-    if not DEBUG and not DISCORD_WEBHOOK_URL:
-        print("No discord webhook URL found, skipping discord send")
-        return
+    webhook_nebula = os.environ.get("DISCORD_WEBHOOK_URL")
+
+    if not webhook_nebula:
+        raise RuntimeError("DISCORD_WEBHOOK_URL is not set")
 
     if DEBUG:
         # to debug this script locally, you can use
         # a separate local file as the old changelog
-        last_changelog_stream = DEBUG_CHANGELOG_FILE_OLD.read_text(encoding="utf-8-sig")
+        last_changelog_stream = DEBUG_CHANGELOG_FILE_OLD.read_text()
+        publish_context = None
     else:
         # when running this normally in a GitHub actions workflow,
         # it will get the old changelog from the GitHub API
-        last_changelog_stream = get_last_changelog()
+        last_changelog_stream, publish_context = get_last_changelog()
 
     last_changelog = yaml.safe_load(last_changelog_stream)
-    with open(CHANGELOG_FILE, "r", encoding="utf-8-sig") as f:
+    with open(CHANGELOG_FILE, "r") as f:
         cur_changelog = yaml.safe_load(f)
 
-    diff = diff_changelog(last_changelog, cur_changelog)
-    message_lines = changelog_entries_to_message_lines(diff)
+    diff = list(diff_changelog(last_changelog, cur_changelog))
+    entries = list(group_changelog_entries_by_pull_request(diff))
 
-    if DEBUG:
-        dump_debug_markdown(message_lines)
+    if not entries:
+        print("No new changelog entries since the last successful publish")
         return
 
-    send_message_lines(message_lines)
-
+    change_count = sum(len(entry.get("changes") or []) for entry in entries)
+    print(
+        f"Sending {len(entries)} pull request changelog entries "
+        f"with {change_count} changes since the last successful publish"
+    )
+    send_changelog(entries, publish_context)
 
 def get_most_recent_workflow(
-    sess: requests.Session, github_repository: str, github_run: str
+    sess: requests.Session, current_run: dict[str, Any]
 ) -> Any:
-    workflow_run = get_current_run(sess, github_repository, github_run)
-    # <Trauma> - sort it to fix dogshit github api change
-    past_runs = list(get_past_runs(sess, workflow_run))
-    past_runs.sort(key=lambda r: r["created_at"], reverse=True)
-    return past_runs[0]
-    # </Trauma>
+    past_runs = get_past_runs(sess, current_run)
+    for run in past_runs["workflow_runs"]:
+        # First past successful run that isn't our current run.
+        if run["id"] == current_run["id"]:
+            continue
+
+        return run
+
+    raise RuntimeError("No previous successful publish workflow run found")
 
 
 def get_current_run(
@@ -85,37 +183,17 @@ def get_current_run(
     return resp.json()
 
 
-def get_past_runs(sess: requests.Session, current_run: Any) -> Iterable[Any]:
+def get_past_runs(sess: requests.Session, current_run: Any) -> Any:
     """
     Get all successful workflow runs before our current one.
     """
-    # Trauma - replaced serverside filter with clientside because apparently copilot cant figure out basic SQL
-    params = {
-        "per_page": 100,
-    }
-    url = f"{current_run['workflow_url']}/runs"
-    now = current_run["created_at"]
-
-    while url:
-        resp = sess.get(url, params=params)
-        resp.raise_for_status()
-
-        for run in resp.json()["workflow_runs"]:
-            # First past successful run that isn't our current run.
-            if run["id"] == current_run["id"] or run["status"] != "completed" or run["created_at"] >= now:
-                continue
-
-            yield run
-
-        next_url = resp.links.get("next", {}).get("url")
-        if not next_url:
-            break
-
-        url = next_url
-        params = None
+    params = {"status": "success", "created": f"<={current_run['created_at']}"}
+    resp = sess.get(f"{current_run['workflow_url']}/runs", params=params)
+    resp.raise_for_status()
+    return resp.json()
 
 
-def get_last_changelog() -> str:
+def get_last_changelog() -> tuple[str, dict[str, Any]]:
     github_repository = os.environ["GITHUB_REPOSITORY"]
     github_run = os.environ["GITHUB_RUN_ID"]
     github_token = os.environ["GITHUB_TOKEN"]
@@ -125,14 +203,19 @@ def get_last_changelog() -> str:
     session.headers["Accept"] = "application/vnd.github+json"
     session.headers["X-GitHub-Api-Version"] = "2022-11-28"
 
-    most_recent = get_most_recent_workflow(session, github_repository, github_run)
-    last_sha = most_recent["head_commit"]["id"]
+    current_run = get_current_run(session, github_repository, github_run)
+    most_recent = get_most_recent_workflow(session, current_run)
+    last_sha = most_recent["head_sha"]
     print(f"Last successful publish job was {most_recent['id']}: {last_sha}")
     last_changelog_stream = get_last_changelog_by_sha(
         session, last_sha, github_repository
     )
 
-    return last_changelog_stream
+    return last_changelog_stream, {
+        "github_repository": github_repository,
+        "current_run": current_run,
+        "previous_run": most_recent,
+    }
 
 
 def get_last_changelog_by_sha(
@@ -161,150 +244,357 @@ def diff_changelog(
     """
     Find all new entries not present in the previous publish.
     """
-    old_entry_ids = {e["id"] for e in old["Entries"]}
-    return (e for e in cur["Entries"] if e["id"] not in old_entry_ids)
+    old_entry_keys = {get_entry_pull_request_key(e) for e in old.get("Entries", [])}
+    return (
+        e
+        for e in cur.get("Entries", [])
+        if get_entry_pull_request_key(e) not in old_entry_keys
+    )
 
 
-def get_discord_body(content: str):
+def group_changelog_entries_by_pull_request(
+    entries: Iterable[ChangelogEntry],
+) -> Iterable[ChangelogEntry]:
+    """
+    Discord messages are grouped by PR so players can react to every PR separately.
+    """
+    grouped: dict[str, ChangelogEntry] = {}
+
+    for entry in entries:
+        changes = list(entry.get("changes") or [])
+        if not changes:
+            print(f"Skipping changelog entry {entry.get('id')} without changes")
+            continue
+
+        key = get_entry_pull_request_key(entry)
+        existing = grouped.get(key)
+        if existing:
+            existing.setdefault("changes", []).extend(changes)
+            continue
+
+        grouped[key] = dict(entry, changes=changes)
+
+    return grouped.values()
+
+
+def get_entry_pull_request_key(entry: ChangelogEntry) -> str:
+    url = str(entry.get("url") or "").strip()
+    if url:
+        return url
+
+    return f"{entry.get('id')}:{entry.get('title')}"
+
+
+def get_discord_body(embed: dict[str, Any]) -> dict[str, Any]:
     return {
-        "content": content,
-        # Do not allow any mentions.
+        "embeds": [embed],
         "allowed_mentions": {"parse": []},
-        # SUPPRESS_EMBEDS
-        "flags": 1 << 2,
+        "flags": 0,
     }
 
+def entry_to_container(entry, media_files, link_urls):
+    embed = entry_to_embed(entry)
+    components = [
+        {"type": 10, "content": f"**{embed['title']}**" if not embed.get("url")
+            else f"**[{embed['title']}]({embed['url']})**"},
+        {"type": 14, "divider": True, "spacing": 1},
+        {"type": 10, "content": embed["description"]},
+    ]
+    if link_urls:
+        components.append({"type": 10, "content": "\n".join(f"🔗 {u}" for u in link_urls)})
+    if media_files:
+        components.append({"type": 14, "divider": True, "spacing": 1})
+        components.append({"type": 12, "items": [
+            {"media": {"url": f"attachment://{name}"}} for name, _, _, _ in media_files
+        ]})
+    components.append({"type": 14, "divider": True, "spacing": 1})
+    components.append({"type": 10, "content": f"-# {embed['footer']['text']}"})
+    return {"type": 17, "accent_color": NEBULA_EMBED_COLOR, "components": components}
 
-def send_discord_webhook(lines: list[str]):
-    content = "".join(lines)
-    body = get_discord_body(content)
+def cv2_url(webhook_url):
+    p = urlparse(webhook_url)
+    q = dict(parse_qsl(p.query)); q["with_components"] = "true"
+    return p._replace(query=urlencode(q)).geturl()
 
-    response = requests.post(DISCORD_WEBHOOK_URL, json=body)
-    response.raise_for_status()
+def send_with_retry(
+    webhook_url: str,
+    body: dict[str, Any],
+    name: str,
+    files: list | None = None,
+) -> None:
+    retry_attempt = 0
+    max_retries = 30
 
-
-def truncate_to_limit(text: str, limit: int) -> str:
-    if len(text) <= limit:
-        return text
-
-    if limit <= len(TRUNCATION_SUFFIX):
-        return TRUNCATION_SUFFIX[:limit]
-
-    return text[: limit - len(TRUNCATION_SUFFIX)].rstrip() + TRUNCATION_SUFFIX
-
-
-def create_change_line(emoji: str, message: str, url: str | None) -> str:
-    if url is None:
-        prefix = f"{emoji} - "
-        suffix = "\n"
+    kwargs: dict[str, Any] = {"timeout": 60}
+    if files:
+        kwargs["data"] = {"payload_json": json.dumps(body)}
+        kwargs["files"] = files
     else:
-        pr_number = urllib.parse.urlparse(url).path.rstrip("/").split("/")[-1]
-        prefix = f"{emoji} - "
-        suffix = f" ([#{pr_number}]({url}))\n"
+        kwargs["json"] = body
 
-    available_message_length = DISCORD_SPLIT_LIMIT - len(prefix) - len(suffix)
-    if available_message_length < 1:
-        raise ValueError(f"Rendered changelog line has no room for a message: {url}")
+    while True:
+        try:
+            response = requests.post(cv2_url(webhook_url), **kwargs)
+        except requests.exceptions.RequestException as e:
+            retry_attempt += 1
+            if retry_attempt > max_retries:
+                raise RuntimeError(f"[{name}] Failed to send message") from e
+            retry_after = min(30, 2 ** min(retry_attempt, 5))
+            print(f"[{name}] Request failed, retrying after {retry_after} seconds")
+            time.sleep(retry_after)
+            continue
 
-    message = truncate_to_limit(message, available_message_length)
-    return f"{prefix}{message}{suffix}"
+        if response.status_code in (429, 500, 502, 503, 504):
+            retry_attempt += 1
+            if retry_attempt > max_retries:
+                raise RuntimeError(f"[{name}] Too many retries, giving up")
+            retry_after = get_retry_after(response, retry_attempt)
+            print(
+                f"[{name}] Discord returned {response.status_code}, "
+                f"retrying after {retry_after} seconds"
+            )
+            time.sleep(retry_after)
+            continue
 
-
-def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> list[str]:
-    """Process structured changelog entries into a list of lines making up a formatted message."""
-    message_lines = []
-
-    for contributor_name, group in itertools.groupby(entries, lambda x: x["author"]):
-        message_lines.append("\n")
-        message_lines.append(f"**{contributor_name}** updated:\n")
-
-        for entry in group:
-            url = entry.get("url")
-            if url and not url.strip():
-                url = None
-
-            for change in entry["changes"]:
-                emoji = TYPES_TO_EMOJI.get(change["type"], "❓")
-                message = change["message"]
-
-                labels = entry.get("labels") or []
-                if EXPERIMENTAL_LABEL in labels:
-                    emoji = f"{emoji}{EXPERIMENTAL_EMOJI}"
-
-                message_lines.append(create_change_line(emoji, message, url))
-
-    return message_lines
-
-
-def split_message_lines(message_lines: list[str]) -> list[list[str]]:
-    """Join message lines into chunks that are each below Discord's message length limit."""
-    chunks = []
-    chunk_lines = []
-    chunk_length = 0
-
-    for line in message_lines:
-        line_length = len(line)
-        if line_length > DISCORD_SPLIT_LIMIT:
-            raise ValueError(
-                f"Changelog line is too long for Discord after truncation: {line_length}"
+        if not response.ok:
+            raise RuntimeError(
+                f"[{name}] Discord rejected the message "
+                f"({response.status_code}): {response.text}"
             )
 
-        new_chunk_length = chunk_length + line_length
+        print(f"Sent to {name} webhook")
+        break
 
-        if new_chunk_length > DISCORD_SPLIT_LIMIT:
-            if chunk_lines:
-                chunks.append(chunk_lines)
+def get_retry_after(response: requests.Response, retry_attempt: int) -> float:
+    try:
+        retry_after = float(response.json().get("retry_after", 0))
+    except (AttributeError, ValueError, TypeError):
+        retry_after = 0
 
-            new_chunk_length = line_length
-            chunk_lines = []
+    if retry_after <= 0:
+        retry_after_header = response.headers.get("Retry-After")
+        if retry_after_header:
+            try:
+                retry_after = float(retry_after_header)
+            except ValueError:
+                retry_after = 0
 
-        chunk_lines.append(line)
-        chunk_length = new_chunk_length
+    if retry_after <= 0:
+        retry_after = min(30, 2 ** min(retry_attempt, 5))
 
-    if chunk_lines:
-        chunks.append(chunk_lines)
-
-    return chunks
-
-
-def dump_debug_markdown(message_lines: list[str]):
-    chunks = split_message_lines(message_lines)
-
-    with DEBUG_DISCORD_DUMP_FILE.open("w", encoding="utf-8", newline="\n") as f:
-        f.write("# Discord Changelog Debug Dump\n\n")
-        f.write(
-            f"Generated from `{DEBUG_CHANGELOG_FILE_OLD}` to `{CHANGELOG_FILE}`.\n\n"
-        )
-
-        if not chunks:
-            f.write("_No changelog entries to send._\n")
-            return
-
-        for i, chunk_lines in enumerate(chunks, start=1):
-            content = "".join(chunk_lines)
-            f.write(
-                f"<!-- Discord message break: chunk {i}/{len(chunks)}, {len(content)}/{DISCORD_SPLIT_LIMIT} characters -->\n\n"
-            )
-            f.write(f"## Discord Message {i}\n\n")
-            f.write(content.lstrip("\n"))
-            f.write("\n")
-
-    print(f"Wrote Discord changelog debug dump to {DEBUG_DISCORD_DUMP_FILE}")
+    return retry_after + 0.25
 
 
-def send_message_lines(message_lines: list[str]):
-    """Join a list of message lines into chunks that are each below Discord's message length limit, and send them."""
-    chunks = split_message_lines(message_lines)
+def send_entry(session: requests.Session, entry: ChangelogEntry, name: str) -> None:
+    media_files, link_urls = [], []
+    for url in iter_media_urls(entry):
+        downloaded = download_media(session, url)
+        if downloaded:
+            media_files.append(downloaded)
+        else:
+            link_urls.append(url)
 
-    for chunk_lines in chunks[:-1]:
-        print("Split changelog and sending to discord")
-        send_discord_webhook(chunk_lines)
+    link_urls += [f[3] for f in media_files[DISCORD_MEDIA_GALLERY_MAX_ITEMS:]]
+    media_files = media_files[:DISCORD_MEDIA_GALLERY_MAX_ITEMS]
 
-    if chunks:
-        print("Sending final changelog to discord")
-        send_discord_webhook(chunks[-1])
+    body: dict[str, Any] = {
+        "components": [entry_to_container(entry, media_files, link_urls)],
+        "flags": DISCORD_COMPONENTS_V2_FLAG,
+        "allowed_mentions": {"parse": []},
+    }
+    if media_files:
+        body["attachments"] = [
+            {"id": i, "filename": f[0]} for i, f in enumerate(media_files)
+        ]
+    files = [(f"files[{i}]", (f[0], f[2], f[1])) for i, f in enumerate(media_files)]
 
+    send_discord_webhook(body, name, files)
+
+def send_discord_webhook(body: dict[str, Any], message_name: str, files=None) -> None:
+    webhook_urls = [
+        os.environ.get("DISCORD_WEBHOOK_URL"),
+    ]
+
+    if not any(webhook_urls):
+        raise RuntimeError("No Discord webhooks configured!")
+
+    for webhook_url in webhook_urls:
+        if webhook_url:
+            send_with_retry(webhook_url, body, message_name, files)
+
+def changelog_entries_to_embeds(entries: Iterable[ChangelogEntry]) -> list[dict[str, Any]]:
+    """Process structured changelog entries into Discord embeds."""
+    return [entry_to_embed(entry) for entry in entries]
+
+
+def entry_to_embed(entry: ChangelogEntry) -> dict[str, Any]:
+    lines: list[str] = []
+    grouped_changes: dict[str, list[str]] = {}
+
+    for change in entry.get("changes") or []:
+        change_type = str(change.get("type") or "Other")
+        emoji = TYPES_TO_EMOJI.get(change_type, "❓")
+        message = truncate(str(change.get("message") or ""), MAX_CHANGE_MESSAGE_LENGTH)
+        if not message:
+            continue
+
+        grouped_changes.setdefault(change_type, []).append(f"- {emoji} {message}")
+
+    for change_type, changes in grouped_changes.items():
+        if lines:
+            lines.append("")
+        label = TYPES_TO_LABELS.get(change_type, "Прочее")
+        lines.append(f"**{label}**")
+        lines.extend(changes)
+
+    description = truncate(
+        "\n".join(lines) or "Без описанных изменений",
+        DISCORD_EMBED_DESCRIPTION_LIMIT,
+    )
+    title = format_entry_title(entry)
+
+    embed: dict[str, Any] = {
+        "title": title,
+        "description": description,
+        "color": NEBULA_EMBED_COLOR,
+        "footer": {
+            "text": truncate(str(entry.get("author") or "Unknown"), 256),
+        },
+    }
+
+    url = entry.get("url")
+    if url and str(url).strip():
+        embed["url"] = str(url)
+
+    avatar_url = entry.get("avatar_url")
+    if avatar_url and str(avatar_url).strip():
+        embed["footer"]["icon_url"] = str(avatar_url)
+
+    timestamp = entry.get("time")
+    if timestamp:
+        embed["timestamp"] = str(timestamp)
+
+    return embed
+
+
+def format_entry_title(entry: ChangelogEntry) -> str:
+    title = str(entry.get("title") or "Changelog update")
+    pr_number = get_pull_request_number(entry.get("url"))
+    if pr_number:
+        title = f"#{pr_number} - {title}"
+
+    return truncate(title, 256)
+
+
+def get_pull_request_number(url: Any) -> str | None:
+    if not url:
+        return None
+
+    match = re.search(r"/pull/(\d+)", str(url))
+    if not match:
+        return None
+
+    return match.group(1)
+
+
+def create_header_embed(
+    entries: list[ChangelogEntry], publish_context: dict[str, Any] | None
+) -> dict[str, Any]:
+    change_count = sum(len(entry.get("changes") or []) for entry in entries)
+    current_run = (publish_context or {}).get("current_run") or {}
+    previous_run = (publish_context or {}).get("previous_run") or {}
+    github_repository = (publish_context or {}).get("github_repository")
+
+    previous_update = format_discord_date(
+        previous_run.get("updated_at") or previous_run.get("created_at")
+    )
+    version = format_version_link(github_repository, current_run.get("head_sha"))
+
+    description = (
+        f"Предыдущее обновление: {previous_update}\n"
+        f"Изменений: **{format_plural(len(entries), 'PR', 'PR', 'PR')}**, "
+        f"**{format_plural(change_count, 'пункт', 'пункта', 'пунктов')}**\n"
+        f"Версия: {version}"
+    )
+
+    embed: dict[str, Any] = {
+        "title": "Небула - обновление серверов",
+        "description": description,
+        "color": NEBULA_EMBED_COLOR,
+    }
+
+    if github_repository and current_run.get("head_sha"):
+        embed["url"] = get_commit_tree_url(github_repository, current_run["head_sha"])
+
+    current_timestamp = current_run.get("updated_at") or current_run.get("created_at")
+    if current_timestamp:
+        embed["timestamp"] = str(current_timestamp)
+
+    return embed
+
+
+def format_discord_date(value: Any) -> str:
+    if not value:
+        return "неизвестно"
+
+    try:
+        timestamp = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return str(value)
+
+    if timestamp.tzinfo is None:
+        timestamp = timestamp.replace(tzinfo=timezone.utc)
+
+    return f"<t:{int(timestamp.timestamp())}:d>"
+
+
+def format_version_link(github_repository: Any, sha: Any) -> str:
+    if not sha:
+        return "неизвестно"
+
+    short_sha = str(sha)[:7]
+    if not github_repository:
+        return short_sha
+
+    return f"[{short_sha}]({get_commit_tree_url(github_repository, sha)})"
+
+
+def format_plural(value: int, one: str, few: str, many: str) -> str:
+    remainder = value % 100
+    if 11 <= remainder <= 14:
+        word = many
+    else:
+        last_digit = value % 10
+        if last_digit == 1:
+            word = one
+        elif 2 <= last_digit <= 4:
+            word = few
+        else:
+            word = many
+
+    return f"{value} {word}"
+
+
+def get_commit_tree_url(github_repository: Any, sha: Any) -> str:
+    return f"https://github.com/{github_repository}/tree/{sha}"
+
+
+def truncate(value: str, limit: int) -> str:
+    if len(value) <= limit:
+        return value
+
+    return value[: limit - 6].rstrip() + " [...]"
+
+
+def send_changelog(
+    entries: list[ChangelogEntry],
+    publish_context: dict[str, Any] | None,
+) -> None:
+    with requests.Session() as session:
+        for index, entry in enumerate(entries, start=1):
+            send_entry(session, entry, f"Nebula changelog PR {index}/{len(entries)}")
+            if index != len(entries):
+                time.sleep(DISCORD_MESSAGE_DELAY_SECONDS)
 
 if __name__ == "__main__":
-    # Trauma - removed try catch so it can actually be debugged idiots
     main()

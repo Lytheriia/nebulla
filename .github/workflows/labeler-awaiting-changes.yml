@@ -1,0 +1,34 @@
+name: "Labels: Awaiting Changes"
+
+on:
+  pull_request_review:
+    types:
+      - submitted
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  awaiting_changes:
+    if: >
+      github.repository == 'nebula-station/space-station-14' &&
+      github.event.review.state == 'changes_requested' &&
+      github.event.pull_request.user.login != vars.CHANGELOG_BOT &&
+      github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark PR as awaiting changes
+        uses: step-security/action-add-labels@v1.1.1
+        with:
+          number: ${{ github.event.pull_request.number }}
+          labels: "Awaiting Changes"
+
+      - name: Remove stale review state labels
+        uses: step-security/action-remove-labels@v1.3.1
+        with:
+          number: ${{ github.event.pull_request.number }}
+          labels: |
+            Needs Review
+            Approved

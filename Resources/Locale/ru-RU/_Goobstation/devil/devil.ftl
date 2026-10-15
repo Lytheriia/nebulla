@@ -7,18 +7,12 @@ roundend-prepend-devil-contracts-named = [color=white]{ $name }[/color] закл
 devil-component-examined = [color=darkred]{ CAPITALIZE(POSS-ADJ($target)) } глаза светятся тускло-красным светом.[/color]
 condemned-component-examined = [color=chartreuse]Глаза { CAPITALIZE($target) } пусты и бездушны.[/color]
 
-# SIS-Start
+## Nebula
 devil-role-greeting =
-    Вы [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]Дьявол[/gradient], владыка Преисподней, подчинивший себе смертную оболочку [color={$hl1}]{$playerName}[/color]!
-
-    Ваше тайное Истинное Имя: [gradient color1="{$hl1}" color2="{$hl2}" speed="1.2"]«{$trueName}»[/gradient].
-    Держите его в строжайшей тайне, ведь знание этого имени дарует смертным силу изгнать вас!
-
-devil-role-greeting-desc =
-    • [color={$hl1}]Контракты за Души:[/color] искушайте членов экипажа, заключайте адские сделки и забирайте их [gradient color1="{$hl1}" color2="{$hl2}" speed="1.2"]бессмертные Души[/gradient] в обмен на силу, оружие и богатства.
-    • [color={$hl1}]Инфернальная мощь:[/color] чем больше душ вы пожнёте, тем сильнее станет ваша темная магия и способности.
-    • [color={$hl1}]Опасность веры:[/color] Священник станции, Библии и Святая Вода способны сжечь вашу плоть и сорвать ваши планы!
-# SIS-End
+    Вы — дьявол из глубин ада, овладевший телом [color=darkred]{$playerName}[/color].
+    Развращайте смертных и собирайте души с помощью контрактов.
+    Вам не интересно заниматься делами, не связанными со сделками — они ниже вашего достоинства.
+    Ваше истинное имя — [color=crimson][bold]{$trueName}[/bold][/color]. Постарайтесь держать его в секрете, ладно?
 
 devil-true-name-heard = Произнесение { $speaker } истинного имени { $target } заставляет { POSS-ADJ($target) } замолчать.
 devil-true-name-heard-chaplain = Священные слова { $speaker }, произнесённые с истинным именем, жгут душу { $target }.

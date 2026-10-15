@@ -1,26 +1,12 @@
 xenoborgs-title = Xenoborgs
 xenoborgs-description = A Xenoborg Mothership was detected near the station. Stop them from turning every sentient being into a xenoborg.
 
-# SIS-Start
+## Nebula
 mothership-role-greeting =
-    Инициализация завершена.
-    Вы [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]Материнское Ядро[/gradient].
-    Руководите экспансией роя, производите новые единицы и ассимилируйте станцию.
-
-mothership-role-greeting-desc =
-    • Координируйте ксеноборгов для сбора ресурсов и мозгов экипажа.
-    • Создавайте новые корпуса и модули в меню фабрикатора.
-    • [color={$hl1}]Оберегайте Ядро[/color] - его уничтожение приведёт к гибели всех ваших юнитов.
+    Вы [color=deepskyblue]материнское ядро[/color]. Направляйте ксеноборгов: пусть доставляют материалы и разумные мозги, чтобы вы наращивали армию ксеноборгов и превращали всю углеродную жизнь в кремний.
 
 xenoborgs-role-greeting =
-    Вы [color={$hl1}]Ксеноборг[/color]!
-    Ваша цель: защищать [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]Материнское Ядро[/gradient] и обратить всю углеродную жизнь станции в кремний.
-
-xenoborgs-role-greeting-desc =
-    • [color={$hl1}]Сбор ресурсов:[/color] добывайте металл, руду и платы, доставляя их Ядру для постройки новых сородичей.
-    • [color={$hl1}]Жатва органики:[/color] извлекайте мозги поверженных людей и несите их Ядру для ассимиляции.
-    • [color={$hl1}]Защита:[/color] координируйте действия через [color={$hl1}]Коллективный Разум[/color] и не дайте экипажу уничтожить Ядро!
-# SIS-End
+    Вы [color=deepskyblue]ксеноборг[/color]. Защищайте и помогайте материнскому ядру создавать новых ксеноборгов и в конечном счёте превратите всю углеродную жизнь в кремний.
 
 xenoborg-shuttle-call = We have detected that Xenoborgs have overtaken the station. Dispatching an emergency shuttle to collect remaining personnel.
 

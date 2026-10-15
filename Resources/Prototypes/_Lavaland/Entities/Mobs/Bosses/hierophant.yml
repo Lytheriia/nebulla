@@ -87,8 +87,9 @@
       - id: CrusherUpgradeMainMarker
     deleteOnDeath: true
   - type: MegafaunaAi
-    actionDelay: 0.5
-    selector:
+    actionDelay: !type:MegafaunaConstantNumberSelector # Nebula edit (tests)
+      value: 0.5
+    selector: !type:ProtoIdMegafaunaSelector # Nebula edit (tests)
       id: Hierophant
   - type: AngerPlayerScaling
     angerScale: 1.1

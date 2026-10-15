@@ -55,7 +55,7 @@ public sealed partial class DeltaPressureComponent : Component
     /// If this is set to 0, the entity will never take damage.
     /// </summary>
     [DataField]
-    public float RandomDamageChance = 1f;
+    public float RandomDamageChance = 0f; // Nebula edit
 
     /// <summary>
     /// The base damage applied to the entity per atmos tick when it is above the damage threshold.

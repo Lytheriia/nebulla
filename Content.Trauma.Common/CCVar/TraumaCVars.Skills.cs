@@ -11,7 +11,7 @@ public sealed partial class TraumaCVars
     /// When disabled only languages and martial arts will do anything, their levels will be irrelevant.
     /// </summary>
     public static readonly CVarDef<bool> SkillsEnabled =
-        CVarDef.Create("trauma.skills_enabled", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("trauma.skills_enabled", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Enables gaining XP and skills during rounds.

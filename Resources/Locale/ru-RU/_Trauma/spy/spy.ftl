@@ -30,19 +30,13 @@ spy-role-claimed-bounties =
     {CAPITALIZE($name)} has claimed a total of [color=red]{$amount}[/color] bounties.
     {" "}
 
-# SIS-Start
+## Nebula
 spy-role-greeting =
-    Вы - [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]шпион[/gradient].
+    Вы — [color=crimson][bold]шпион[/bold][/color].
     Ваша миссия, если вы решите её принять: проникнуть на космическую станцию 14.
-    Замаскируйтесь под члена их экипажа и [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]украдите жизненно важное оборудование[/gradient].
+    Замаскируйтесь под члена их экипажа и украдите жизненно важное оборудование.
     Если вас поймают или убьют, ваш работодатель откажется от каких-либо знаний о ваших действиях.
     Удачи, агент.
-
-spy-role-greeting-desc =
-    • [color={$hl1}]Прикрытие:[/color] выдавайте себя за члена экипажа и не привлекайте внимания службы безопасности.
-    • [color={$hl1}]Награды:[/color] ваши задания на кражи выдаются через [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]аплинк в КПК[/gradient] — выполняйте их ради награды.
-    • [color={$hl1}]Договор:[/color] если вас раскроют, работодатель от всего откажется. [gradient color1="{$hl1}" color2="{$hl2}" speed="1"]Действуйте тихо и не оставляйте свидетелей[/gradient].
-# SIS-End
 
 spy-role-briefing-short = Вы - шпион, которому поручено красть различное оборудование станции.
 

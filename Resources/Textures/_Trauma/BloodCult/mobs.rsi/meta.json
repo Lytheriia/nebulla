@@ -24,6 +24,14 @@
       "directions": 4
     },
     {
+      "name": "shade_cult",
+      "directions": 4
+    },
+    {
+      "name": "shade_holy",
+      "directions": 4
+    },
+    {
       "name": "glow_artificer_cult",
       "directions": 4
     },

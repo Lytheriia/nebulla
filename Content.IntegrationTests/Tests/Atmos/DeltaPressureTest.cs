@@ -44,6 +44,7 @@ public sealed class DeltaPressureTest : AtmosTest
         density: 1000
   - type: Airtight
   - type: DeltaPressure
+    randomDamageChance: 1 # Nebula edit
     minPressure: 15000
     minPressureDelta: 10000
     scalingType: Threshold
@@ -72,12 +73,14 @@ public sealed class DeltaPressureTest : AtmosTest
   components:
   - type: DeltaPressure
     autoJoinProcessingList: false
+    randomDamageChance: 1 # Nebula edit
 
 - type: entity
   parent: DeltaPressureSolidTest
   id: DeltaPressureSolidTestAbsolute
   components:
   - type: DeltaPressure
+    randomDamageChance: 1 # Nebula edit
     minPressure: 10000
     minPressureDelta: 15000
     scalingType: Threshold
@@ -90,6 +93,7 @@ public sealed class DeltaPressureTest : AtmosTest
   id: DeltaPressureSolidTestDeltaOnly
   components:
   - type: DeltaPressure
+    randomDamageChance: 1 # Nebula edit
     minPressure: 100000
     minPressureDelta: 10000
     scalingType: Threshold

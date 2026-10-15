@@ -1,13 +1,18 @@
 name: "Labels: PR"
 
 on:
-- pull_request_target
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
   labeler:
+    if: github.actor != vars.CHANGELOG_BOT && github.event.pull_request.draft == false
     permissions:
       contents: read
+      issues: write
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v5
+      - uses: actions/labeler@v6.1.0
+        with:
+          sync-labels: false

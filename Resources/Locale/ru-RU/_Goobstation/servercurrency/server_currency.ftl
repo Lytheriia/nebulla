@@ -5,8 +5,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-server-currency-name-singular = СИСИ Коин
-server-currency-name-plural = СИСИ Коины
+server-currency-name-singular = Небула Коин
+server-currency-name-plural = Небула Коины
 
 ## Команды
 

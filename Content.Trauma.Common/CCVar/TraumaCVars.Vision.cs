@@ -15,8 +15,8 @@ public sealed partial class TraumaCVars
     /// <summary>
     /// Whether to disable vision cone overlays.
     /// </summary>
-    public static readonly CVarDef<bool> DisableVisionCones =
-        CVarDef.Create("trauma.disable_vision_cones", false, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<bool> DisableVisionCones = // Nebula edit
+        CVarDef.Create("trauma.disable_vision_cones", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Scale for how strong out-of-vision graininess is, 0 is just pure greyscale.
