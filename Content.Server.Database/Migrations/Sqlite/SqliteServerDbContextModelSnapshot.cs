@@ -1202,6 +1202,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("jsonb")
                         .HasColumnName("detail_examinable");
 
+                    b.Property<string>("ERPStatus")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("erpstatus");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("TEXT")

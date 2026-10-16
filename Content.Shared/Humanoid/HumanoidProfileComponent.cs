@@ -1,4 +1,5 @@
 using Content.Shared._Nebula.DetailExaminable;
+using Content.Shared._Nebula.ERP;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -45,6 +46,9 @@ public sealed partial class HumanoidProfileComponent : Component
 
     [DataField, AutoNetworkedField]
     public DetailExaminableData DetailExaminableData = new();
+
+    [DataField, AutoNetworkedField]
+    public ERPStatus ERPStatus = ERPStatus.Ask;
     // Nebula end
 
     [DataField, AutoNetworkedField]

@@ -32,6 +32,7 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         ent.Comp.Width = profile.Width;
         ent.Comp.CustomSpecies = profile.CustomSpecies;
         ent.Comp.DetailExaminableData = profile.DetailExaminableData;
+        ent.Comp.ERPStatus = profile.ERPStatus;
         // Nebula end
         ent.Comp.Sex = profile.Sex;
         Dirty(ent);

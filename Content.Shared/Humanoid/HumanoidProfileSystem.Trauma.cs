@@ -91,6 +91,7 @@ public sealed partial class HumanoidProfileSystem
             ent.Comp.Width,
             ent.Comp.CustomSpecies,
             ent.Comp.DetailExaminableData,
+            ent.Comp.ERPStatus,
             // Nebula end
             ent.Comp.Age,
             ent.Comp.Sex,

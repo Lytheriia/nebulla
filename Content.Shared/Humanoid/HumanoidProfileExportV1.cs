@@ -103,7 +103,7 @@ public sealed partial class HumanoidCharacterProfileV1
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new HumanoidCharacterProfile(Name, Species, Height, Width, string.Empty, DetailExaminableData, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
+        return new HumanoidCharacterProfile(Name, Species, Height, Width, string.Empty, DetailExaminableData, _Nebula.ERP.ERPStatus.Ask, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
             BarkVoice, new()); // Trauma
     }
 

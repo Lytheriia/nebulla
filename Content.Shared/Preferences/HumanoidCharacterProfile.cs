@@ -30,6 +30,7 @@ using Robust.Shared;
 using YamlDotNet.RepresentationModel;
 using Content.Shared._Nebula.CCVar;
 using Content.Shared._Nebula.DetailExaminable;
+using Content.Shared._Nebula.ERP;
 
 namespace Content.Shared.Preferences
 {
@@ -85,11 +86,6 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
-        // Nebula start
-        [DataField]
-        public string CustomSpecies { get; set; } = string.Empty;
-        // Nebula end
-
         [DataField]
         public int Age { get; set; } = 18;
 
@@ -111,6 +107,12 @@ namespace Content.Shared.Preferences
 
         [DataField]
         public DetailExaminableData DetailExaminableData = new();
+
+        [DataField]
+        public string CustomSpecies { get; set; } = string.Empty;
+
+        [DataField]
+        public ERPStatus ERPStatus { get; set; } = ERPStatus.Ask;
         //  Nebula end
 
         /// <summary>
@@ -154,6 +156,7 @@ namespace Content.Shared.Preferences
             float width,
             string customspecies,
             DetailExaminableData detailExaminable,
+            ERPStatus erpStatus,
             // Nebula end
             int age,
             Sex sex,
@@ -177,7 +180,8 @@ namespace Content.Shared.Preferences
             Height = height;
             Width = width;
             CustomSpecies = customspecies;
-            DetailExaminableData = detailExaminable; // Nebula
+            DetailExaminableData = detailExaminable;
+            ERPStatus = erpStatus;
             // Nebula end
             Age = age;
             Sex = sex;
@@ -219,6 +223,7 @@ namespace Content.Shared.Preferences
                 other.Width,
                 other.CustomSpecies,
                 other.DetailExaminableData,
+                other.ERPStatus,
                 // Nebula end
                 other.Age,
                 other.Sex,
@@ -464,6 +469,11 @@ namespace Content.Shared.Preferences
         {
             return new(this) { DetailExaminableData = data };
         }
+
+        public HumanoidCharacterProfile WithERPStatus(ERPStatus status)
+        {
+            return new(this) { ERPStatus = status };
+        }
         // Nebula end
         public HumanoidCharacterProfile WithAge(int age)
         {
@@ -704,6 +714,7 @@ namespace Content.Shared.Preferences
             if (Width != other.Width) return false;
             if (CustomSpecies != other.CustomSpecies) return false;
             if (!DetailExaminableData.Equals(other.DetailExaminableData)) return false;
+            if (ERPStatus != other.ERPStatus) return false;
             // Nebula end
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
@@ -801,6 +812,14 @@ namespace Content.Shared.Preferences
                 customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies)[..customSpeciesMaxLength];
             else
                 customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies);
+
+            var erpStatus = ERPStatus switch
+            {
+                ERPStatus.Ask => ERPStatus.Ask,
+                ERPStatus.Full => ERPStatus.Full,
+                ERPStatus.Never => ERPStatus.Never,
+                _ => ERPStatus.Ask
+            };
             // Nebula end
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -856,6 +875,7 @@ namespace Content.Shared.Preferences
             Width = width;
             CustomSpecies = customSpecies;
             DetailExaminableData = DetailExaminableData.Sanitized(configManager);
+            ERPStatus = erpStatus;
             // Nebula end
             Sex = sex;
             Voice = voice;
@@ -983,6 +1003,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Width);
             hashCode.Add(CustomSpecies);
             hashCode.Add(DetailExaminableData);
+            hashCode.Add(ERPStatus);
             // Nebula end
             hashCode.Add(Age);
             hashCode.Add((int) Sex);

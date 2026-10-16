@@ -1273,6 +1273,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("jsonb")
                         .HasColumnName("detail_examinable");
 
+                    b.Property<string>("ERPStatus")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("erpstatus");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")

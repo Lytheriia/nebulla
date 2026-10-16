@@ -219,6 +219,7 @@ namespace Content.Server.Database
             profile.Width = humanoid.Width;
             profile.CustomSpecies = humanoid.CustomSpecies;
             profile.DetailExaminable = JsonSerializer.SerializeToDocument(humanoid.DetailExaminableData); // Nebula
+            profile.ERPStatus = humanoid.ERPStatus.ToString();
             // Nebula end
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();

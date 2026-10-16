@@ -101,6 +101,13 @@
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="SexButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+                                <!-- Nebula start -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-erp-status-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="ERPStatusButton" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Nebula end -->
                                 <!-- Voice -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />

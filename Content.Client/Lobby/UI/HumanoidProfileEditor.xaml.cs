@@ -4,6 +4,7 @@ using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Shared._Nebula.CCVar;
+using Content.Shared._Nebula.ERP;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -175,6 +176,18 @@ namespace Content.Client.Lobby.UI
 
             #endregion Sex
 
+            // Nebula start
+            #region ERPStatus
+
+            ERPStatusButton.OnItemSelected += args =>
+            {
+                ERPStatusButton.SelectId(args.Id);
+                SetERPStatus((ERPStatus) args.Id);
+            };
+
+            #endregion
+            // Nebula end
+
             #region Voice
 
             VoiceButton.OnItemSelected += args =>
@@ -301,6 +314,21 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion SpawnPriority
+
+            // Nebula start
+            #region ErpStatus
+
+            foreach (var value in Enum.GetValues<ERPStatus>())
+                ERPStatusButton.AddItem(Loc.GetString("erp-status-lobby-" + value), (int) value);
+
+            ERPStatusButton.OnItemSelected += args =>
+            {
+                ERPStatusButton.SelectId(args.Id);
+                SetERPStatus((ERPStatus) args.Id);
+            };
+
+            #endregion
+            // Nebula end
 
             #region Eyes
 
@@ -449,8 +477,11 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
             OnSetProfile?.Invoke(profile); // Trauma
-            ResetWidthAndHeight(); // Nebula
-            UpdateCustomSpeciesEdit(); // Nebula
+            // Nebula start
+            ResetWidthAndHeight();
+            UpdateCustomSpeciesEdit();
+            UpdateERPStatusControls();
+            // Nebula end
 
             RefreshAntags();
             RefreshJobs();

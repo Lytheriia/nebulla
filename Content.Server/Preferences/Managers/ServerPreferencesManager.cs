@@ -27,6 +27,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Content.Shared._Nebula.DetailExaminable;
+using Content.Shared._Nebula.ERP;
 
 namespace Content.Server.Preferences.Managers
 {
@@ -180,10 +181,15 @@ namespace Content.Server.Preferences.Managers
                 loadouts[role.RoleName] = loadout;
             }
 
-            // Nebula add
+            // Nebula start
             var detailExaminable = profile.DetailExaminable is { } doc
                 ? TryDeserialize<DetailExaminableData>(doc) ?? new DetailExaminableData()
                 : new DetailExaminableData();
+
+            var erpStatus = ERPStatus.Ask;
+            if (Enum.TryParse<ERPStatus>(profile.ERPStatus, true, out var erpStatusVal))
+                erpStatus = erpStatusVal;
+            // Nebula end
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
@@ -193,6 +199,7 @@ namespace Content.Server.Preferences.Managers
                 profile.Width,
                 profile.CustomSpecies,
                 detailExaminable,
+                erpStatus,
                 // Nebula end
                 profile.Age,
                 sex,
