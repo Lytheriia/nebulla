@@ -12,6 +12,7 @@ using Content.Shared.Traits;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared._Nebula.DetailExaminable;
 
 namespace Content.Shared.Humanoid;
 
@@ -60,9 +61,6 @@ public sealed partial class HumanoidCharacterProfileV1
     public string Name;
 
     [DataField]
-    public string FlavorText;
-
-    [DataField]
     public ProtoId<SpeciesPrototype> Species;
 
     [DataField] // Nebula
@@ -83,6 +81,9 @@ public sealed partial class HumanoidCharacterProfileV1
 
     [DataField]
     public float Height;
+
+    [DataField]
+    public DetailExaminableData DetailExaminableData;
     // Nebula end
 
     [DataField]
@@ -102,7 +103,7 @@ public sealed partial class HumanoidCharacterProfileV1
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Height, Width, string.Empty, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
+        return new HumanoidCharacterProfile(Name, Species, Height, Width, string.Empty, DetailExaminableData, Age, Sex, GetDefaultVoice(Species, Sex), Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts,
             BarkVoice, new()); // Trauma
     }
 

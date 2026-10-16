@@ -1269,6 +1269,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("custom_species");
 
+                    b.Property<JsonDocument>("DetailExaminable")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("detail_examinable");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")
@@ -1283,11 +1287,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("facial_hair_name");
-
-                    b.Property<string>("FlavorText")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("flavor_text");
 
                     b.Property<string>("Gender")
                         .IsRequired()

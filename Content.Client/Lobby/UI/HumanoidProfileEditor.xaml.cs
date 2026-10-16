@@ -114,7 +114,7 @@ namespace Content.Client.Lobby.UI
             InitializeTrauma(); // Trauma
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
-            _maxCustomSpeciesLength = _cfgManager.GetCVar(NCCVars.MaxCustomSpeciesLength); // Erida
+            _maxCustomSpeciesLength = _cfgManager.GetCVar(NCCVars.MaxCustomSpeciesLength); // Nebula
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
             _cfgManager.OnValueChanged(TraumaCVars.HeightSliders, OnHeightSlidersChanged, true); // Nebula
 

@@ -213,12 +213,12 @@ namespace Content.Server.Database
             var dataNode = _serialization.WriteValue(appearance.Markings, alwaysWrite: true, notNullableOverride: true);
 
             profile.CharacterName = humanoid.Name;
-            profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;
             // Nebula start
             profile.Height = humanoid.Height;
             profile.Width = humanoid.Width;
             profile.CustomSpecies = humanoid.CustomSpecies;
+            profile.DetailExaminable = JsonSerializer.SerializeToDocument(humanoid.DetailExaminableData); // Nebula
             // Nebula end
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();

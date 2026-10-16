@@ -26,6 +26,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
+using Content.Shared._Nebula.DetailExaminable;
 
 namespace Content.Server.Preferences.Managers
 {
@@ -179,14 +180,19 @@ namespace Content.Server.Preferences.Managers
                 loadouts[role.RoleName] = loadout;
             }
 
+            // Nebula add
+            var detailExaminable = profile.DetailExaminable is { } doc
+                ? TryDeserialize<DetailExaminableData>(doc) ?? new DetailExaminableData()
+                : new DetailExaminableData();
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
-                profile.FlavorText,
                 species,
                 // Nebula start
                 profile.Height,
                 profile.Width,
                 profile.CustomSpecies,
+                detailExaminable,
                 // Nebula end
                 profile.Age,
                 sex,

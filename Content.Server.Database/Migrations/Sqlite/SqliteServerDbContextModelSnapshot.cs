@@ -1198,6 +1198,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("custom_species");
 
+                    b.Property<byte[]>("DetailExaminable")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("detail_examinable");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -1212,11 +1216,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("facial_hair_name");
-
-                    b.Property<string>("FlavorText")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("flavor_text");
 
                     b.Property<string>("Gender")
                         .IsRequired()

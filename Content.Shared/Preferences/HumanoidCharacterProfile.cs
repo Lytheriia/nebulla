@@ -29,6 +29,7 @@ using Robust.Shared.Utility;
 using Robust.Shared;
 using YamlDotNet.RepresentationModel;
 using Content.Shared._Nebula.CCVar;
+using Content.Shared._Nebula.DetailExaminable;
 
 namespace Content.Shared.Preferences
 {
@@ -79,21 +80,15 @@ namespace Content.Shared.Preferences
         public string Name { get; set; } = "John Doe";
 
         /// <summary>
-        /// Detailed text that can appear for the character if <see cref="CCVars.FlavorText"/> is enabled.
-        /// </summary>
-        [DataField]
-        public string FlavorText { get; set; } = string.Empty;
-
-        /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
         /// </summary>
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
-        // Erida-start
+        // Nebula start
         [DataField]
         public string CustomSpecies { get; set; } = string.Empty;
-        // Erida end
+        // Nebula end
 
         [DataField]
         public int Age { get; set; } = 18;
@@ -113,6 +108,9 @@ namespace Content.Shared.Preferences
 
         [DataField]
         public float Width { get; private set; }
+
+        [DataField]
+        public DetailExaminableData DetailExaminableData = new();
         //  Nebula end
 
         /// <summary>
@@ -150,12 +148,12 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode.SpawnAsOverflow;
         public HumanoidCharacterProfile(
             string name,
-            string flavortext,
             string species,
             // Nebula start
             float height,
             float width,
             string customspecies,
+            DetailExaminableData detailExaminable,
             // Nebula end
             int age,
             Sex sex,
@@ -174,12 +172,12 @@ namespace Content.Shared.Preferences
         // </Trauma>
         {
             Name = name;
-            FlavorText = flavortext;
             Species = species;
             // Nebula start
             Height = height;
             Width = width;
             CustomSpecies = customspecies;
+            DetailExaminableData = detailExaminable; // Nebula
             // Nebula end
             Age = age;
             Sex = sex;
@@ -215,12 +213,12 @@ namespace Content.Shared.Preferences
         /// <summary>Copy constructor</summary>
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
-                other.FlavorText,
                 other.Species,
                 // Nebula start
                 other.Height,
                 other.Width,
                 other.CustomSpecies,
+                other.DetailExaminableData,
                 // Nebula end
                 other.Age,
                 other.Sex,
@@ -456,15 +454,15 @@ namespace Content.Shared.Preferences
             return new(this) { Name = name };
         }
 
-        public HumanoidCharacterProfile WithFlavorText(string flavorText)
-        {
-            return new(this) { FlavorText = flavorText };
-        }
-
         // Nebula start
         public HumanoidCharacterProfile WithCustomSpecies(string customspecies)
         {
             return new(this) { CustomSpecies = customspecies };
+        }
+
+        public HumanoidCharacterProfile WithDetailExaminableData(DetailExaminableData data)
+        {
+            return new(this) { DetailExaminableData = data };
         }
         // Nebula end
         public HumanoidCharacterProfile WithAge(int age)
@@ -705,6 +703,7 @@ namespace Content.Shared.Preferences
             if (Height != other.Height) return false;
             if (Width != other.Width) return false;
             if (CustomSpecies != other.CustomSpecies) return false;
+            if (!DetailExaminableData.Equals(other.DetailExaminableData)) return false;
             // Nebula end
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
@@ -712,7 +711,6 @@ namespace Content.Shared.Preferences
             if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
-            if (FlavorText != other.FlavorText) return false;
             return Appearance.Equals(other.Appearance);
         }
 
@@ -788,18 +786,6 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
-
-            string flavortext;
-            var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
-            if (FlavorText.Length > maxFlavorTextLength)
-            {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
-            }
-            else
-            {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
-            }
-
             // Nebula start
             var height = Height;
             if (speciesPrototype != null)
@@ -864,12 +850,12 @@ namespace Content.Shared.Preferences
                          .ToList();
 
             Name = name;
-            FlavorText = flavortext;
             Age = age;
             // Nebula start
             Height = height;
             Width = width;
             CustomSpecies = customSpecies;
+            DetailExaminableData = DetailExaminableData.Sanitized(configManager);
             // Nebula end
             Sex = sex;
             Voice = voice;
@@ -991,12 +977,12 @@ namespace Content.Shared.Preferences
             hashCode.Add(_traitPreferences);
             hashCode.Add(_loadouts);
             hashCode.Add(Name);
-            hashCode.Add(FlavorText);
             hashCode.Add(Species);
             // Nebula start
             hashCode.Add(Height);
             hashCode.Add(Width);
             hashCode.Add(CustomSpecies);
+            hashCode.Add(DetailExaminableData);
             // Nebula end
             hashCode.Add(Age);
             hashCode.Add((int) Sex);
