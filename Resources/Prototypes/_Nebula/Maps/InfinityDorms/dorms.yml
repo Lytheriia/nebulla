@@ -1,0 +1,4 @@
+- type: infinityDormRoom
+  id: Aurora
+  category: Cold
+  gridPath: /Maps/_Nebula/InfinityDorms/aurora.yml
