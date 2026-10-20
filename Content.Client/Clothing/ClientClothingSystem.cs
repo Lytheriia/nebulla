@@ -48,6 +48,13 @@ public sealed partial class ClientClothingSystem : ClothingSystem
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
+        // Lua start
+        {"necklace", "NECKLACE"},
+        {"finger", "FINGER"},
+        {"socks", "SOCKS"},
+        {"underweart", "UNDERWEART"},
+        {"underwearb", "UNDERWEARB"},
+        // Lua end
     };
 
     [Dependency] private IResourceCache _cache = default!;

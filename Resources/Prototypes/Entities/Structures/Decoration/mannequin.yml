@@ -13,7 +13,18 @@
     - map: [ "mannequin" ]
       sprite: Structures/Decoration/mannequin.rsi
       state: mannequin
+    # Lua start
+    - map: [ "underwearb" ]
+    - map: [ "underweart" ]
+    - map: [ "socks" ]
+    # Lua end
     - map: [ "jumpsuit" ]
+    # Lua start
+    - map: [ "finger" ]
+    - map: [ "leftarmband" ]
+    - map: [ "rightarmband" ]
+    - map: [ "necklace" ]
+    # Lua end
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "neck" ]

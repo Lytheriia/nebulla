@@ -22,9 +22,15 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
 
+    # Lua start
+    - map: [ "underwearb" ]
+    - map: [ "underweart" ]
+    # Lua end
+
     # Underwear & clothing
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+    - map: [ "socks" ] # Lua
     - map: ["jumpsuit"]
 
     # Extremities
@@ -54,6 +60,12 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
+    # Lua start
+    - map: [ "finger" ]
+    - map: [ "leftarmband" ]
+    - map: [ "rightarmband" ]
+    - map: [ "necklace" ]
+    # Lua end
     - map: [ "outerClothing" ]
     - map: [ "back" ]
     - map: [ "neck" ]
