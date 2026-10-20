@@ -101,4 +101,8 @@
   id: leftarmband
   flags: ARMBANDLEFT
 
+- type: inventorySlot
+  id: finger
+  flags: FINGER
+
 # Lua end
