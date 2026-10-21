@@ -354,6 +354,7 @@ public sealed partial class ClientClothingSystem : ClothingSystem
                         displacementData = inventory.MaleDisplacements.GetValueOrDefault(slot);
                     break;
                 case Sex.Female:
+                case Sex.Futanari: // Nebula
                     if (inventory.FemaleDisplacements.Count > 0)
                         displacementData = inventory.FemaleDisplacements.GetValueOrDefault(slot);
                     break;
