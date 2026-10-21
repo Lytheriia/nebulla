@@ -1,5 +1,3 @@
-osay-command-description = Заставляет другую сущность попытаться отправить сообщение
-osay-command-help-text = Использование: { $command } <uid> <type> <message>
 osay-command-arg-uid = source uid
 osay-command-arg-type = type
 osay-command-arg-message = message

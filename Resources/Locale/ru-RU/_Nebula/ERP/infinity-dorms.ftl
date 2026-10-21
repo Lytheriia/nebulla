@@ -16,8 +16,6 @@ infinity-dorm-teleporter-ui-button-confirm = Переместиться
 
 infinity-dorm-teleporter-ui-current-room-label = Текущая комната:
 
-infinity-dorm-teleporter-ui-rooms-available-label = Комнат доступно:
-
 infinity-dorm-teleporter-ui-dont-selected = Не выбрана!
 
 infinity-dorm-teleporter-ui-input-number = Номер дорматория
@@ -38,10 +36,6 @@ infinity-dorm-exit-ui-is-closed-answer =
 infinity-dorm-players-ui-title = Игроки в дормах
 infinity-dorm-players-ui-empty = Сейчас никого нет
 infinity-dorm-players-ui-group = Дорматории №{$index} ({$count})
-
-infinity-dorm-name = [ { $category } ] { $name }
-
-infinity-dorm-warning-blocked-items = Вы имеете предметы, полученные в бесконечном дорматории!
 
 infinity-dorm-teleporter-ui-players-list-button = Список посетителей
 

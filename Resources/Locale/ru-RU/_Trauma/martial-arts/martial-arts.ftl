@@ -16,7 +16,6 @@ carp-scroll-advance = Вы стали на один шаг ближе к том�
 carp-scroll-complete = Теперь вы мастер Пути Спящего Карпа.
 
 carp-saying-huah = ХУА!
-carv-vaying-hya = ХЬЯ!
 carp-saying-choo = ЧУУ!
 carp-saying-wuo = ВУО!
 carp-saying-kya = КЬЯ!
@@ -48,9 +47,6 @@ martial-arts-fail-target-down = Вы не можете использовать 
 martial-arts-fail-target-standing = Вы не можете использовать это комбо на стоящих целях!
 capoeira-fail-low-velocity = Вы слишком медлительны, чтобы выполнить это комбо!
 ninjutsu-fail-loss-of-surprise = Ваши намерения раскрыты! Невозможно выполнить этот приём!
-
-alerts-dragon-power-name = Сила Дракона
-alerts-dragon-power-desc = Вы на мгновение задумываетесь о прошлых и грядущих битвах. Это озарение защитит вас от будущего вреда.
 
 alerts-sneak-attack-name = Внезапная атака
 alerts-sneak-attack-desc = Для истинного синоби первый удар и последний удар — это одно и то же.

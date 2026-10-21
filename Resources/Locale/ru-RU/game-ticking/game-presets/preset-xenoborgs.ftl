@@ -2,11 +2,6 @@ xenoborgs-title = Xenoborgs
 xenoborgs-description = A Xenoborg Mothership was detected near the station. Stop them from turning every sentient being into a xenoborg.
 
 ## Nebula
-mothership-role-greeting =
-    Вы [color=deepskyblue]материнское ядро[/color]. Направляйте ксеноборгов: пусть доставляют материалы и разумные мозги, чтобы вы наращивали армию ксеноборгов и превращали всю углеродную жизнь в кремний.
-
-xenoborgs-role-greeting =
-    Вы [color=deepskyblue]ксеноборг[/color]. Защищайте и помогайте материнскому ядру создавать новых ксеноборгов и в конечном счёте превратите всю углеродную жизнь в кремний.
 
 xenoborg-shuttle-call = We have detected that Xenoborgs have overtaken the station. Dispatching an emergency shuttle to collect remaining personnel.
 
