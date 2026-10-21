@@ -19,6 +19,8 @@ public sealed partial class MarkingManager
     private FrozenDictionary<HumanoidVisualLayers, FrozenDictionary<string, MarkingPrototype>> _categorizedMarkings = default!;
     private FrozenDictionary<string, MarkingPrototype> _markings = default!;
 
+    public static readonly ProtoId<MarkingsGroupPrototype> NebulaWhitelistedGroup = "None"; // Nebula edit
+
     public void Initialize()
     {
         _prototype.PrototypesReloaded += OnPrototypeReload;
@@ -119,6 +121,11 @@ public sealed partial class MarkingManager
 
     private bool CanBeApplied(MarkingsGroupPrototype group, Sex sex, MarkingPrototype prototype, bool whitelisted)
     {
+        // Nebula start
+        if (group.ID != NebulaWhitelistedGroup)
+            return prototype.SexRestriction == null || prototype.SexRestriction == sex;
+        // Nebula end
+
         if (prototype.GroupWhitelist == null)
         {
             if (whitelisted)
@@ -229,11 +236,8 @@ public sealed partial class MarkingManager
                     continue;
                 }
 
-                if (!groupProto.Limits.TryGetValue(marking.BodyPart, out var limit))
-                    continue;
-
                 var count = counts.GetValueOrDefault(marking.BodyPart);
-                if (count >= limit.Limit)
+                if (count >= MarkingsLimits.NebulaLimit) // Nebula edit
                 {
                     markings.RemoveAt(i);
                     continue;

@@ -390,7 +390,7 @@ public sealed partial class BodySystem
         var layer = proto.BodyPart;
         if (!force)
         {
-            if (proto.GroupWhitelist?.Contains(markingData.Group) == false)
+            if (markingData.Group == MarkingManager.NebulaWhitelistedGroup && proto.GroupWhitelist?.Contains(markingData.Group) == false) // Nebula edit
                 return false; // marking isn't whitelisted for this species/group
 
             if (!markingData.Layers.Contains(layer))

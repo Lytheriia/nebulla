@@ -282,23 +282,14 @@ public sealed partial class MarkingsViewModel
                      MarkingColoring.GetMarkingLayerColors(markingProto, profileData.SkinColor, profileData.EyeColor, layerMarkings);
         var newMarking = new Marking(markingId, colors) { Forced = AnyEnforcementsLifted };
 
-        var limits = groupPrototype.Limits.GetValueOrDefault(layer);
-        if (limits is null || !EnforceLimits)
+        if (!EnforceLimits) // Nebula edit
         {
             layerMarkings.Add(newMarking);
             MarkingsChanged?.Invoke(organ, layer);
             return true;
         }
 
-        if (limits.Limit == 1 && layerMarkings.Count == 1)
-        {
-            layerMarkings.Clear();
-            layerMarkings.Add(newMarking);
-            MarkingsChanged?.Invoke(organ, layer);
-            return true;
-        }
-
-        if (layerMarkings.Count < limits.Limit)
+        if (layerMarkings.Count < MarkingsLimits.NebulaLimit) // Nebula edit
         {
             layerMarkings.Add(newMarking);
             MarkingsChanged?.Invoke(organ, layer);
@@ -441,11 +432,10 @@ public sealed partial class MarkingsViewModel
         if (!_prototype.TryIndex(organData.Group, out var groupPrototype))
             return;
 
-        if (!groupPrototype.Limits.TryGetValue(layer, out var limits))
-            return;
-
-        isRequired = limits.Required;
-        count = limits.Limit;
+        // Nebula start
+        isRequired = groupPrototype.Limits.GetValueOrDefault(layer)?.Required ?? false;
+        count = MarkingsLimits.NebulaLimit;
+        // Nebula end
 
         if (!_markings.TryGetValue(organ, out var organMarkings))
             return;

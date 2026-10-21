@@ -42,6 +42,8 @@ public sealed partial class MarkingsGroupPrototype : IPrototype, IInheritingProt
 [Serializable, NetSerializable]
 public sealed partial class MarkingsLimits
 {
+    public const int NebulaLimit = 6; // Nebula edit
+
     /// <summary>
     /// How many markings this layer can take
     /// </summary>

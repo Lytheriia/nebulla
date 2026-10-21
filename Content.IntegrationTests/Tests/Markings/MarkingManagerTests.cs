@@ -130,18 +130,22 @@ public sealed class MarkingManagerTests : GameTest
         await server.WaitAssertion(() =>
         {
             var markingManager = server.ResolveDependency<MarkingManager>();
+            // Nebula start
+            var markings = new List<Marking> { new("MenOnlyMarking", 0) };
+            for (var i = 0; i < MarkingsLimits.NebulaLimit; i++)
+            {
+                markings.Add(new("EyesMarking", 0));
+            }
+
             var dict = new Dictionary<HumanoidVisualLayers, List<Marking>>()
             {
-                [HumanoidVisualLayers.Eyes] = new()
-                {
-                    new("EyesMarking", 0),
-                    new("MenOnlyMarking", 0),
-                },
+                [HumanoidVisualLayers.Eyes] = markings,
             };
 
             markingManager.EnsureValidLimits(dict, "TestingOptionalEyes", new() { HumanoidVisualLayers.Eyes }, null, null);
-            Assert.That(dict[HumanoidVisualLayers.Eyes], Has.Count.EqualTo(1));
-            Assert.That(dict[HumanoidVisualLayers.Eyes][0].MarkingId, Is.EqualTo("MenOnlyMarking"));
+            Assert.That(dict[HumanoidVisualLayers.Eyes], Has.Count.EqualTo(MarkingsLimits.NebulaLimit));
+            Assert.That(dict[HumanoidVisualLayers.Eyes], Has.None.Matches<Marking>(m => m.MarkingId == "MenOnlyMarking"));
+            // Nebula end
         });
     }
 
@@ -169,8 +173,12 @@ public sealed class MarkingManagerTests : GameTest
             var menMarkings = dictFactory();
             markingManager.EnsureValidGroupAndSex(menMarkings, "TestingOther", Sex.Male);
 
-            Assert.That(menMarkings[HumanoidVisualLayers.Eyes], Has.Count.EqualTo(1));
+            // Nebula start
+            Assert.That(menMarkings[HumanoidVisualLayers.Eyes], Has.Count.EqualTo(3));
             Assert.That(menMarkings[HumanoidVisualLayers.Eyes][0].MarkingId, Is.EqualTo("MenOnlyMarking"));
+            Assert.That(menMarkings[HumanoidVisualLayers.Eyes][1].MarkingId, Is.EqualTo("TestingOnlyMarking"));
+            Assert.That(menMarkings[HumanoidVisualLayers.Eyes][2].MarkingId, Is.EqualTo("TestingMenOnlyMarking"));
+            // Nebula end
 
             var testingMarkings = dictFactory();
             markingManager.EnsureValidGroupAndSex(testingMarkings, "Testing", Sex.Female);
