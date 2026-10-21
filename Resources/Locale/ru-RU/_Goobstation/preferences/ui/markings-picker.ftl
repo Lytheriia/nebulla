@@ -18,3 +18,5 @@ markings-category-Underwear = Нижнее белье
 # And that sounds like a lot of work to figure out so I guess this works for now.
 markings-category-Arms = Руки
 markings-category-Legs = Ноги
+
+markings-layer-Face = Лицо

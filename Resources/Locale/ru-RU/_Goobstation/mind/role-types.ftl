@@ -11,3 +11,5 @@ role-subtype-slasher = Мясник
 role-type-sentient-animal-name = Разумное животное
 role-type-sentient-animal-color = #ffff00
 role-subtype-contractor = Наёмник Синдиката
+
+role-subtype-arena-participant = Участник арены

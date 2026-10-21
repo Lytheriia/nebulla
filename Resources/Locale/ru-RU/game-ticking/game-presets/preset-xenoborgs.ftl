@@ -26,3 +26,6 @@ xenoborg-max-number = The highest number of xenoborgs was: {$count}
 
 xenoborgs-list-start = The starting xenoborg team were:
 xenoborgs-list = - [color=White]{$name}[/color] ([color=gray]{$user}[/color])
+
+mothership-welcome = Вы — ядро материнского корабля. Направляйте ксеноборгов, чтобы они приносили вам материалы и мозги с сознанием для создания армии ксеноборгов и превратить все углеродные формы жизни в синтетиков.
+xenoborgs-welcome = Вы — ксеноборг. Защищайте ядро материнского корабля и помогайте ему создавать ещё больше ксеноборгов, пока вы не превратите все углеродные формы жизни в синтетиков.

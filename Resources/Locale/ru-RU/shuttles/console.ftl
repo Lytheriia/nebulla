@@ -47,3 +47,8 @@ shuttle-console-dock = Пристыковать
 shuttle-console-docks-label = Стыковочные порты
 shuttle-console-undock-fail = Не удалось отстыковаться
 shuttle-console-dock-fail = Не удалось пристыковаться
+
+shuttle-console-nav-arrivals-dock = Доки прибытия
+shuttle-console-nav-cargo-dock = Грузовые доки
+shuttle-console-nav-legend = Легенда
+shuttle-console-nav-other-dock = Внешние доки

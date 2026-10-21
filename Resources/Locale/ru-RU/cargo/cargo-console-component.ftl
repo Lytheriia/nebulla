@@ -101,3 +101,5 @@ cargo-acquisition-slip-body = [head=3]Детали актива[/head]
     { "[bold]Заказчик:[/bold]" } { $orderer }
     { "[bold]Место доставки:[/bold]" } { $destination }
     { "[bold]Примечание:[/bold]" } { $note }
+
+cargo-console-menu-order-capacity-number = {$count}/{$capacity}

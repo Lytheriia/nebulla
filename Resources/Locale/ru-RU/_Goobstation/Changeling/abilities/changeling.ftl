@@ -85,3 +85,11 @@ changeling-regenerate-limbs = Наше тело издаёт громкий хр
 changeling-chameleon-start = Мы начинаем маскрироваться...
 changeling-chameleon-end = Наше тело теряет свою маскировку.
 changeling-chameleon-fire = Наша маскировка исчезает, когда пламя начинает жечь нас!
+
+changeling-stasis-enter-catastrophic = Мы входим в регенеративный стазис. Наши катастрофические раны будут заживать крайне долго...
+changeling-stasis-enter-fail = Не удаётся войти в стазис!
+changeling-stasis-exit-defib = Через нас проходит разряд. Наш стазис прерван!
+changeling-stasis-exit-fail-dead = Мы чувствуем... пустоту. Всё кончено.
+changeling-stasis-exit-fail-time = Наше тело ещё восстанавливается!
+changeling-stasis-finished = Наша регенерация завершена. Мы готовы пробудиться.
+changeling-transform-fail-generic = Мы не можем превратиться в них!

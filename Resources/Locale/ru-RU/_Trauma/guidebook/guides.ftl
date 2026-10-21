@@ -31,3 +31,5 @@ guide-entry-spies = Шпионы
 guide-entry-skills = Навыки
 
 guide-entry-chaplain-nullrodforms = Формы нуль-жезла
+
+guide-entry-progtot = Задания предателя

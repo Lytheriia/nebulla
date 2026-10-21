@@ -36,3 +36,7 @@ cosmic-examine-glyph-warding = [color=#4cabb3]Преобразует устой�
 cosmic-examine-transmutable = Это можно преобразовать в [color=#4cabb3]{$result}[/color].
 cosmic-examine-transmutable-empowerment = [color=#4cabb3]Преобразовать это могут только усиленные культисты.[/color]
 cosmic-examine-transmutable-verb-text = Возможность преобразования.
+
+cosmic-examine-text-basic = [color=#4cabb3]Эта вещь не должна существовать[/color]
+cosmic-examine-text-sign = [color=#4cabb3]На инструктаже ничего не говорили о таких предупреждающих знаках.[/color]
+cosmic-examine-text-sign-cult = [color=#4cabb3]Он предупреждает о нас. Опасность — это мы.[/color]

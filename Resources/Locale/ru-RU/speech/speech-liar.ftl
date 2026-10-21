@@ -143,3 +143,13 @@ liar-word-27 = здоров
 liar-word-replacement-27 = ранен
 liar-word-28 = здорова
 liar-word-replacement-28 = ранена
+
+liar-word-14-2 = не был
+liar-word-16-2 = нет
+liar-word-18-2 = не будет
+liar-word-20-2 = не могу
+liar-word-22-2 = не должен
+liar-word-37-2 = нет
+liar-word-5-2 = угу
+liar-word-7-2 = да
+liar-word-7-3 = ага

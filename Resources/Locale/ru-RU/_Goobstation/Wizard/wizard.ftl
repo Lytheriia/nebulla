@@ -26,3 +26,6 @@ lich-greeting =
     Вы — лич.
 
 objective-condition-wizard-alive-title = Убедитесь, что маг { $targetName } останется в живых.
+
+admin-verb-make-wizard = Сделать цель магом.
+admin-verb-text-make-wizard = Сделать магом

@@ -75,3 +75,8 @@ judo-wheelthrow = БРОСОК КОЛЕСОМ!
 no-martial-art = Нет боевого искусства
 
 melee-clumsy-self-hit = Вы ударили сами себя!
+
+cqc-leg-sweep = Хия!
+martial-arts-fail-standing = Это комбо нельзя использовать стоя!
+martial-arts-fail-target-headless = У цели нет головы, чтобы её оторвать!
+martial-arts-fail-target-muted = Вы уже его уложили!

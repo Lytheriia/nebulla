@@ -8,3 +8,7 @@ ui-escape-wiki = Wiki
 ui-escape-disconnect = Отключиться
 ui-escape-quit = Выйти
 ui-escape-character = Редактор персонажей
+
+ui-escape-bug-report = Сообщить об ошибке
+ui-escape-remarks = Замечания администрации
+ui-escape-remarks-button-disabled = Эта функция отключена сервером.

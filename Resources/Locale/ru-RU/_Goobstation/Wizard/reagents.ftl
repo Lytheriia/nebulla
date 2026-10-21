@@ -20,3 +20,6 @@ reagent-name-mugwort = полынный чай
 reagent-desc-mugwort = Довольно горькая трава, некогда считавшаяся обладающей защитными магическими свойствами.
 reagent-comp-condition-wizard-or-apprentice = волшебник или ученик
 reagent-physical-desc-magical = магический
+
+entity-condition-not-wizard-or-apprentice = цель — не волшебник и не ученик
+entity-condition-wizard-or-apprentice = цель — волшебник или ученик

@@ -73,3 +73,10 @@ reagent-name-spaceacilin = космоцилин
 reagent-desc-spaceacilin = Широко используемое и эффективное антибактериальное лекарство. Слегка ослабляет ваш иммунитет.
 reagent-name-devirate = девирейт
 reagent-desc-devirate = Противовирусное лекарство. Слегка токсичное.
+
+reagent-desc-lingdrenaline = Запас мощного адреналина в железе, способный мгновенно избавить генокрада от любой усталости.
+reagent-desc-panacea = Множество одноклеточных организмов, занятых исключительно выведением токсичных химикатов из генокрада.
+reagent-name-lingdrenaline = адреналин генокрада
+reagent-name-panacea = панацея генокрада
+reagent-popup-lingdrenaline = Всё наше тело яростно дрожит и трясётся.
+reagent-popup-panacea = Наши клетки перестраиваются.
