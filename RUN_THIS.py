@@ -24,6 +24,69 @@ TEXT = "\033[38;5;189m"
 DIM = "\033[38;5;97m"
 FAIL = "\033[1;38;5;204m"
 
+STRINGS = {
+    "ru": {
+        "not_found": "{} не найден в PATH.",
+        "exit_code": "Команда завершилась с кодом {}.",
+        "pull_failed": "Pull не удался: закоммить/спрячь локальные изменения или сделай rebase вручную.",
+        "with_build": "со сборкой",
+        "no_build": "без сборки",
+        "config": "конфиг",
+        "mode": "режим",
+        "language": "язык",
+        "run": "запуск",
+        "client": "Клиент",
+        "server": "Сервер",
+        "both": "Сервер + клиент",
+        "build_only": "Только сборка",
+        "settings": "настройки",
+        "switch_config": "Сменить конфиг",
+        "toggle_build": "Сборка перед запуском вкл/выкл",
+        "switch_language": "Сменить язык (language)",
+        "update": "обновление",
+        "update_repo": "Обновить репозиторий (git pull + движок)",
+        "update_engine": "Обновить двигатель (закреплённая версия)",
+        "quit": "Выход",
+        "done": "✦ готово",
+        "failed": "✘ ошибка",
+        "press_key": "нажми любую клавишу...",
+    },
+    "en": {
+        "not_found": "{} not found in PATH.",
+        "exit_code": "Command exited with code {}.",
+        "pull_failed": "Pull failed: commit/stash local changes or rebase manually.",
+        "with_build": "with build",
+        "no_build": "no build",
+        "config": "config",
+        "mode": "mode",
+        "language": "language",
+        "run": "run",
+        "client": "Client",
+        "server": "Server",
+        "both": "Server + client",
+        "build_only": "Build only",
+        "settings": "settings",
+        "switch_config": "Switch config",
+        "toggle_build": "Toggle build before run",
+        "switch_language": "Switch language (язык)",
+        "update": "update",
+        "update_repo": "Update repo (git pull + engine)",
+        "update_engine": "Update engine (pinned version)",
+        "quit": "Quit",
+        "done": "✦ done",
+        "failed": "✘ failed",
+        "press_key": "press any key...",
+    },
+}
+LANGUAGES = {"ru": "Русский", "en": "English"}
+lang = "ru"
+
+CYRILLIC_KEYS = dict(zip("йцукенгшщзфывапролдячсмить", "qwertyuiopasdfghjklzxcvbnm"))
+
+
+def t(key) -> str:
+    return STRINGS[lang][key]
+
 
 def getch() -> str:
     if WINDOWS:
@@ -53,10 +116,10 @@ def run(cmd, cwd=ROOT) -> bool:
     except KeyboardInterrupt:
         return False
     except FileNotFoundError:
-        print("{}{} not found in PATH.{}".format(FAIL, cmd[0], RESET))
+        print("{}{}{}".format(FAIL, t("not_found").format(cmd[0]), RESET))
         return False
     if code != 0:
-        print("{}Command exited with code {}.{}".format(FAIL, code, RESET))
+        print("{}{}{}".format(FAIL, t("exit_code").format(code), RESET))
     return code == 0
 
 
@@ -66,7 +129,7 @@ def setup() -> bool:
 
 def update_repo() -> bool:
     if not run(["git", "pull", "--ff-only"]):
-        print("{}Pull failed: commit/stash local changes or rebase manually.{}".format(FAIL, RESET))
+        print("{}{}{}".format(FAIL, t("pull_failed"), RESET))
         return False
     return setup()
 
@@ -101,7 +164,16 @@ def draw(config, rebuild):
     configs = "  ".join(
         "{}[{}]{}".format(ACCENT, c, RESET) if c == config else "{} {} {}".format(DIM, c, RESET)
         for c in CONFIGS)
-    mode = "{}with build{}".format(ACCENT, RESET) if rebuild else "{}no build{}".format(DIM, RESET)
+    mode = "{}{}{}".format(ACCENT, t("with_build"), RESET) if rebuild else "{}{}{}".format(DIM, t("no_build"), RESET)
+    languages = "  ".join(
+        "{}[{}]{}".format(ACCENT, name, RESET) if code == lang else "{} {} {}".format(DIM, name, RESET)
+        for code, name in LANGUAGES.items())
+
+    def header(label):
+        return "{}  ── {} {}{}".format(DIM, label, "─" * (44 - len(label)), RESET)
+
+    def field(label, value):
+        return "  {}{:<9}{} {}".format(TEXT, label, RESET, value)
 
     def item(key, label):
         return "  {}{:>3}{}  {}{}{}".format(ACCENT, key, RESET, TEXT, label, RESET)
@@ -110,30 +182,33 @@ def draw(config, rebuild):
         "\033[2J\033[H",
         "{}  ✦ ─────────────── N E B U L A ─────────────── ✦{}".format(TITLE, RESET),
         "",
-        "  {}config{}   {}".format(TEXT, RESET, configs),
-        "  {}mode{}     {}".format(TEXT, RESET, mode),
+        field(t("config"), configs),
+        field(t("mode"), mode),
+        field(t("language"), languages),
         "",
-        "{}  ── run ─────────────────────────────────────────{}".format(DIM, RESET),
-        item("1", "Client"),
-        item("2", "Server"),
-        item("3", "Server + client"),
-        item("4", "Build only"),
+        header(t("run")),
+        item("1", t("client")),
+        item("2", t("server")),
+        item("3", t("both")),
+        item("4", t("build_only")),
         "",
-        "{}  ── settings ────────────────────────────────────{}".format(DIM, RESET),
-        item("c", "Switch config"),
-        item("b", "Toggle build before run"),
+        header(t("settings")),
+        item("c", t("switch_config")),
+        item("b", t("toggle_build")),
+        item("l", t("switch_language")),
         "",
-        "{}  ── update ──────────────────────────────────────{}".format(DIM, RESET),
-        item("u", "Update repo (git pull + engine)"),
-        item("e", "Update engine (pinned version)"),
+        header(t("update")),
+        item("u", t("update_repo")),
+        item("e", t("update_engine")),
         "",
-        item("q", "Quit"),
+        item("q", t("quit")),
         "",
     ]
     print("\n".join(lines))
 
 
 def tui():
+    global lang
     config = "Debug"
     rebuild = True
     actions = {
@@ -148,6 +223,7 @@ def tui():
     while True:
         draw(config, rebuild)
         key = getch()
+        key = CYRILLIC_KEYS.get(key.lower(), key)
         if key in ("q", "Q", "\x1b", "\x03", "\x04"):
             print("\033[2J\033[H", end="")
             return
@@ -155,11 +231,14 @@ def tui():
             config = CONFIGS[(CONFIGS.index(config) + 1) % len(CONFIGS)]
         elif key == "b":
             rebuild = not rebuild
+        elif key == "l":
+            codes = list(LANGUAGES)
+            lang = codes[(codes.index(lang) + 1) % len(codes)]
         elif key in actions:
             print("\033[2J\033[H", end="")
             ok = actions[key]()
-            status = "{}✦ done{}".format(ACCENT, RESET) if ok else "{}✘ failed{}".format(FAIL, RESET)
-            print("\n{}  {}press any key...{}".format(status, DIM, RESET))
+            status = "{}{}{}".format(ACCENT, t("done"), RESET) if ok else "{}{}{}".format(FAIL, t("failed"), RESET)
+            print("\n{}  {}{}{}".format(status, DIM, t("press_key"), RESET))
             sys.stdout.flush()
             getch()
 
