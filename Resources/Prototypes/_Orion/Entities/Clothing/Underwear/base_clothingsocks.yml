@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: Clothing
+  parent: [SolutionFood, Clothing] # Nebula edit - added SolutionFood
   id: ClothingSocksBase
   name: socks
   description: Socks.
@@ -39,13 +39,12 @@
       Cloth: 100
   - type: Edible
     requiresSpecialDigestion: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
+  - type: Solution # Nebula edit - was SolutionContainerManager
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 10
   - type: Sprite
     state: icon
   - type: TemperatureProtection
