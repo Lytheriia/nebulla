@@ -41,27 +41,17 @@ public static class NebulaScopedStylesheet
         (StyleClass.ButtonSquare, false, false),
     ];
 
-    private static Stylesheet? _cachedBase;
-    private static NebulaPalette? _cachedPalette;
-    private static Stylesheet? _cached;
-
     /// <summary>
-    /// Cached until the base sheet or palette instance changes.
+    /// Builds a new sheet on every call, use <see cref="NebulaThemeManager.GetScopedStylesheet"/> for the cached one.
     /// </summary>
     public static Stylesheet Create(Stylesheet baseSheet, NebulaPalette p)
     {
-        if (_cached != null && ReferenceEquals(baseSheet, _cachedBase) && ReferenceEquals(p, _cachedPalette))
-            return _cached;
-
         var rules = new List<StyleRule>(baseSheet.Rules);
         AddButtonRules(rules, p);
         AddFieldRules(rules, p);
         AddContainerRules(rules, p);
 
-        _cachedBase = baseSheet;
-        _cachedPalette = p;
-        _cached = new Stylesheet(rules);
-        return _cached;
+        return new Stylesheet(rules);
     }
 
     private static void AddButtonRules(List<StyleRule> rules, NebulaPalette p)

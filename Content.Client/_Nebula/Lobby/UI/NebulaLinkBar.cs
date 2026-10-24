@@ -25,6 +25,11 @@ public sealed partial class NebulaLinkBar : GridContainer
     private readonly List<(CVarDef<string> CVar, ShapedButton Button)> _links = [];
     private readonly ShapedButton _linkAccount;
 
+    /// <summary>
+    /// Kept from <see cref="EnteredTree"/>: on disconnect entity systems shut down before the lobby screen is removed.
+    /// </summary>
+    private DiscordLinkingSystem? _linking;
+
     public NebulaLinkBar()
     {
         IoCManager.InjectDependencies(this);
@@ -55,9 +60,11 @@ public sealed partial class NebulaLinkBar : GridContainer
             button.Visible = _cfg.GetCVar(cvar) != string.Empty;
         }
 
-        var linking = _systems.GetEntitySystem<DiscordLinkingSystem>();
-        linking.VerifiedChanged += UpdateLinkAccount;
-        linking.RequestVerificationStatus();
+        if (!_systems.TryGetEntitySystem(out _linking))
+            return;
+
+        _linking.VerifiedChanged += UpdateLinkAccount;
+        _linking.RequestVerificationStatus();
         UpdateLinkAccount();
     }
 
@@ -65,12 +72,15 @@ public sealed partial class NebulaLinkBar : GridContainer
     {
         base.ExitedTree();
 
-        _systems.GetEntitySystem<DiscordLinkingSystem>().VerifiedChanged -= UpdateLinkAccount;
+        if (_linking != null)
+            _linking.VerifiedChanged -= UpdateLinkAccount;
+
+        _linking = null;
     }
 
     private void UpdateLinkAccount()
     {
-        var linked = _systems.GetEntitySystem<DiscordLinkingSystem>().IsVerified;
+        var linked = _linking?.IsVerified ?? false;
 
         _linkAccount.Text = Loc.GetString(linked ? "nebula-lobby-button-discord-linked" : "nebula-lobby-button-link-account");
         _linkAccount.Icon = linked ? NebulaIcons.Get("check_circle") : null;

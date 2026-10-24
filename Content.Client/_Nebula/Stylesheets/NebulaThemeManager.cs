@@ -20,6 +20,10 @@ public sealed partial class NebulaThemeManager
 
     private bool _rebuildQueued;
 
+    private Stylesheet? _scopedBase;
+    private NebulaPalette? _scopedPalette;
+    private Stylesheet? _scoped;
+
     public NebulaPalette Palette { get; private set; } = default!;
 
     /// <summary>
@@ -73,6 +77,21 @@ public sealed partial class NebulaThemeManager
 
         _rebuildQueued = true;
         _ui.DeferAction(Rebuild);
+    }
+
+    /// <summary>
+    /// <see cref="NebulaScopedStylesheet"/> over <paramref name="baseSheet"/>, cached until the base sheet or palette changes.
+    /// Kept per client: integration tests run several clients in one process.
+    /// </summary>
+    public Stylesheet GetScopedStylesheet(Stylesheet baseSheet)
+    {
+        if (_scoped != null && ReferenceEquals(baseSheet, _scopedBase) && ReferenceEquals(Palette, _scopedPalette))
+            return _scoped;
+
+        _scopedBase = baseSheet;
+        _scopedPalette = Palette;
+        _scoped = NebulaScopedStylesheet.Create(baseSheet, Palette);
+        return _scoped;
     }
 
     private void Rebuild()

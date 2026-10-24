@@ -168,7 +168,7 @@ public sealed partial class NebulaCharacterSetup : Control
         if (_baseStylesheet == null)
             return;
 
-        var stylesheet = NebulaScopedStylesheet.Create(_baseStylesheet, palette);
+        var stylesheet = _theme.GetScopedStylesheet(_baseStylesheet);
 
         if (Stylesheet != stylesheet)
             Stylesheet = stylesheet;

@@ -24,6 +24,11 @@ public sealed partial class NebulaSupportButton : Control
 
     private readonly ShapedButton _button;
 
+    /// <summary>
+    /// Kept from <see cref="EnteredTree"/>: on disconnect entity systems shut down before the lobby screen is removed.
+    /// </summary>
+    private SponsorSystem? _sponsors;
+
     public NebulaSupportButton()
     {
         IoCManager.InjectDependencies(this);
@@ -40,9 +45,11 @@ public sealed partial class NebulaSupportButton : Control
 
         Visible = _cfg.GetCVar(NCCVars.InfoLinksBoosty) != string.Empty;
 
-        var sponsors = _systems.GetEntitySystem<SponsorSystem>();
-        sponsors.StatusChanged += Refresh;
-        sponsors.RequestStatus();
+        if (!_systems.TryGetEntitySystem(out _sponsors))
+            return;
+
+        _sponsors.StatusChanged += Refresh;
+        _sponsors.RequestStatus();
         Refresh();
     }
 
@@ -50,12 +57,14 @@ public sealed partial class NebulaSupportButton : Control
     {
         base.ExitedTree();
 
-        _systems.GetEntitySystem<SponsorSystem>().StatusChanged -= Refresh;
+        _sponsors?.StatusChanged -= Refresh;
+
+        _sponsors = null;
     }
 
     private void Refresh()
     {
-        var rank = _systems.GetEntitySystem<SponsorSystem>().Rank;
+        var rank = _sponsors?.Rank;
 
         _button.Icon = NebulaIcons.Get(rank != null ? "workspace_premium" : "favorite");
         _button.Text = rank is { } level
