@@ -241,6 +241,7 @@ namespace Content.Shared.Preferences
                 other.Knowledge)
         // </Trauma>
         {
+            JobAlternateTitles = new(other.JobAlternateTitles); // Nebula edit
         }
 
         /// <summary>
@@ -716,6 +717,7 @@ namespace Content.Shared.Preferences
             if (CustomSpecies != other.CustomSpecies) return false;
             if (!DetailExaminableData.Equals(other.DetailExaminableData)) return false;
             if (ERPStatus != other.ERPStatus) return false;
+            if (!JobAltTitlesEqual(other)) return false;
             // Nebula end
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
@@ -893,6 +895,7 @@ namespace Content.Shared.Preferences
             }
 
             PreferenceUnavailable = prefsUnavailableMode;
+            ValidateJobAltTitles(prototypeManager); // Nebula edit
 
             _antagPreferences.Clear();
             _antagPreferences.UnionWith(antags);

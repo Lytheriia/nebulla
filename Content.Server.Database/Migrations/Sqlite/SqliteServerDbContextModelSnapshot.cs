@@ -1241,6 +1241,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("REAL")
                         .HasColumnName("height");
 
+                    b.Property<string>("JobAlternateTitles")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job_alternate_titles");
+
                     b.Property<string>("KnowledgeMastery")
                         .IsRequired()
                         .HasColumnType("TEXT")

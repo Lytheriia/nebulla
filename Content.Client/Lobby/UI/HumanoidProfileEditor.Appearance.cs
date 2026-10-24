@@ -278,6 +278,7 @@ public sealed partial class HumanoidProfileEditor
             SetVoice(prototype.GetDefaultSounds(newSex));
 
         UpdateGenderControls();
+        UpdateAltTitleGender(); // Nebula edit
         UpdateVoiceControls();
         _markingsModel.SetOrganSexes(newSex);
         ReloadPreview();
@@ -302,6 +303,7 @@ public sealed partial class HumanoidProfileEditor
     private void SetGender(Gender newGender)
     {
         Profile = Profile?.WithGender(newGender);
+        UpdateAltTitleGender(); // Nebula edit
         ReloadPreview();
     }
 

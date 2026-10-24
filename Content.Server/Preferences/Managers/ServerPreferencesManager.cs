@@ -221,7 +221,8 @@ namespace Content.Server.Preferences.Managers
                 profile.BarkVoice ?? HumanoidProfileSystem.DefaultBarkVoice,
                 KnowledgeProfile.Verify(profile.KnowledgeMastery, _prototypeManager)
             // </Trauma>
-            );
+            )
+            { JobAlternateTitles = ParseJobAltTitles(profile) }; // Nebula edit
         }
 
         private async void HandleSelectCharacterMessage(MsgSelectCharacter message)
