@@ -1,0 +1,11 @@
+- type: marking
+  id: OniTwoToedFeet
+  bodyPart: RFoot
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#454545"
+  sprites:
+  - sprite: _EinsteinEngines/Mobs/Customization/oni_feet.rsi
+    state: two_toes

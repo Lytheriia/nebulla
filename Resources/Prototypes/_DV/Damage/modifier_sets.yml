@@ -1,0 +1,16 @@
+- type: damageModifierSet
+  id: Oni
+  coefficients:
+    Blunt: 0.85
+    Slash: 0.85
+    Piercing: 0.85
+    Holy: 1
+  ignoreArmorPierceFlags: All
+
+- type: damageModifierSet
+  id: Harpy
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+  ignoreArmorPierceFlags: All

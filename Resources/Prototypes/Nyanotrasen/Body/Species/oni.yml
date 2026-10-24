@@ -1,0 +1,238 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Oni
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 6
+      required: true
+      default: [ OniHornDoubleCurved ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 6
+      required: true
+      default: [ PointyEarsUpwards ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Face:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Eyes:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.TailOverlay:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Wings:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.WingsBehind:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Overlay:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 6
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceOni
+  categories: [ HideSpawnMenu ]
+  name: oni appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganOniTorso
+      Head: OrganOniHead
+      ArmLeft: OrganOniArmLeft
+      ArmRight: OrganOniArmRight
+      HandRight: OrganOniHandRight
+      HandLeft: OrganOniHandLeft
+      LegLeft: OrganOniLegLeft
+      LegRight: OrganOniLegRight
+      FootLeft: OrganOniFootLeft
+      FootRight: OrganOniFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Oni
+
+- type: entity
+  parent:
+  - AppearanceOni
+  - BaseSpeciesMobOrganic
+  id: MobOni
+  name: Urist McOni
+  components:
+  - type: Speech
+    speechSounds: Baritone
+    speechVerb: Oni
+  - type: TypingIndicator
+    proto: oni
+  - type: Damageable
+    damageModifierSet: Oni
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      155: SoftCrit
+      165: Critical
+      170: Dead
+  - type: BonusMeleeDamage
+    damageModifierSet:
+      coefficients:
+        Blunt: 1.25
+        Slash: 1.25
+        Piercing: 1.25
+        Asphyxiation: 1.25
+        Structural: 1.25
+  - type: BonusStaminaDamage
+    multiplier: 1.25
+  - type: PlayerToolModifier
+    pryTimeMultiplier: 0.6
+  - type: LightweightDrunk
+    boozeStrengthMultiplier: 0.5
+  - type: GunRestriction
+    whitelist:
+      components:
+      - Wieldable
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
+  - type: LanguageSpeaker
+    speaks:
+    - TauCetiBasic
+    - Gruntish
+    understands:
+    - TauCetiBasic
+    - Gruntish
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganOni
+  abstract: true
+  suffix: oni
+
+- type: entity
+  parent: OrganOni
+  id: OrganOniExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Oni
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganOniExternal ]
+  id: OrganOniTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganOniExternal ]
+  id: OrganOniHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganOniExternal ]
+  id: OrganOniArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganOniExternal ]
+  id: OrganOniArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganOniExternal ]
+  id: OrganOniHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganOniExternal ]
+  id: OrganOniHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganOniExternal ]
+  id: OrganOniLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganOniExternal ]
+  id: OrganOniLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganOniExternal ]
+  id: OrganOniFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganOniExternal ]
+  id: OrganOniFootRight

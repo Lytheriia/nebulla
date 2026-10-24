@@ -1,0 +1,278 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Demon
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Face:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Eyes:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 6
+      required: true
+      default: [ DemonTailDefault ]
+    enum.HumanoidVisualLayers.TailOverlay:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Wings:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.WingsBehind:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Overlay:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 6
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceDemon
+  categories: [ HideSpawnMenu ]
+  name: arcana appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganDemonTorso
+      Head: OrganDemonHead
+      Tail: OrganDemonTail
+      Wings: OrganDemonWings
+      ArmLeft: OrganDemonArmLeft
+      ArmRight: OrganDemonArmRight
+      HandRight: OrganDemonHandRight
+      HandLeft: OrganDemonHandLeft
+      LegLeft: OrganDemonLegLeft
+      LegRight: OrganDemonLegRight
+      FootLeft: OrganDemonFootLeft
+      FootRight: OrganDemonFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Demon
+
+- type: entity
+  parent:
+  - AppearanceDemon
+  - BaseSpeciesMobOrganic
+  id: MobDemon
+  name: Urisst' Mzhand Demon
+  components:
+  - type: Speech
+    speechSounds: Lizard
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Piercing: 5
+  - type: BonusMeleeDamage
+    damageModifierSet:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Asphyxiation: 0.85
+  - type: RecoilAbsorber
+    modifier: 0.5
+  - type: WeakToHoly
+  - type: Sprinter
+    staminaDrainRate: 13
+    sprintSpeedMultiplier: 1.63
+  - type: TemperatureDamage
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
+    coldDamage:
+      types:
+        Cold: 0.085
+    heatDamage:
+      types:
+        Heat: 0.8
+  - type: LanguageSpeaker
+    speaks:
+    - TauCetiBasic
+    - Karshan
+    understands:
+    - TauCetiBasic
+    - Karshan
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatDemon
+      amount: 5
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganDemon
+  abstract: true
+  suffix: arcana
+
+- type: entity
+  parent: OrganDemon
+  id: OrganDemonExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Demon
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorsoTailed, OrganDemonExternal ]
+  id: OrganDemonTorso
+  components:
+  - type: BodyPart
+    slots:
+    - Head
+    - Tail
+    - Wings
+    - ArmLeft
+    - ArmRight
+    - LegLeft
+    - LegRight
+    - Appendix
+    - Heart
+    - Lungs
+    - Stomach
+    - Liver
+    - Kidneys
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganDemonExternal ]
+  id: OrganDemonHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+
+- type: entity
+  parent: [ OrganBaseTail, OrganDemonExternal ]
+  id: OrganDemonTail
+  components:
+  - type: Sprite
+    state: tail
+  - type: VisualOrgan
+    data:
+      sprite: _Trauma/empty.rsi
+      state: empty
+  - type: OrganComponents
+    onAdd:
+    - type: Wagging
+      action: ActionToggleWagging
+
+- type: entity
+  parent: [ OrganBaseWings, OrganDemonExternal ]
+  id: OrganDemonWings
+  components:
+  - type: Sprite
+    sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings
+  - type: VisualOrgan
+    data:
+      sprite: _Trauma/empty.rsi
+      state: empty
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganDemonExternal ]
+  id: OrganDemonArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganDemonExternal ]
+  id: OrganDemonArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganDemonExternal ]
+  id: OrganDemonHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganDemonExternal ]
+  id: OrganDemonHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganDemonExternal ]
+  id: OrganDemonLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganDemonExternal ]
+  id: OrganDemonLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganDemonExternal ]
+  id: OrganDemonFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganDemonExternal ]
+  id: OrganDemonFootRight

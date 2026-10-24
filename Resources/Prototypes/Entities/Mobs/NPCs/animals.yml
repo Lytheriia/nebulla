@@ -2094,6 +2094,7 @@
   id: MobMouse
   description: Squeak!
   components:
+  - type: FelinidFood # Nebula
   # <Trauma>
   - type: Penetratable
     penetrateDamage: 3 # 3-5 kills per bullet

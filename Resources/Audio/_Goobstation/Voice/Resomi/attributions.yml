@@ -1,0 +1,14 @@
+- files: ["trill.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Taken from 'FD-NewBay' - Other places link to freesound.org. warble.ogg converted to mono by @deltanedas (github)"
+  source: "https://github.com/RepoStash/FD-NewBay/tree/dev-sierra/mods/_fd/resomi_fd/sound"
+
+- files: ["warble.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Taken from 'FD-NewBay' - Other places link to freesound.org. warble.ogg converted to mono by @deltanedas (github)"
+  source: "https://github.com/RepoStash/FD-NewBay/tree/dev-sierra/mods/_fd/resomi_fd/sound"
+
+- files: ["wurble.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Taken from 'FD-NewBay' - Other places link to freesound.org. warble.ogg converted to mono by @deltanedas (github)"
+  source: "https://github.com/RepoStash/FD-NewBay/tree/dev-sierra/mods/_fd/resomi_fd/sound"
