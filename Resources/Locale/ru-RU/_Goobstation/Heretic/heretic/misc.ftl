@@ -73,3 +73,7 @@ lionhunter-rifle-aim-message = прицеливание...
 
 heretic-clothing-component-wear = Вы чувствуете, как распускаетесь по нитке, нося { $item }!
 heretic-sacraments-can-attack = Теперь вы можете безопасно атаковать { $heretic }!
+
+eldritch-paper-examine-message = На карте нарисован [color=cyan]{ $item }[/color].
+eldritch-paper-name-empty = мистическая карта
+eldritch-paper-name-full = мистическая карта ({ $item })

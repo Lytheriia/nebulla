@@ -66,8 +66,9 @@ construction-graph-tag-stun-baton = электрошоковую дубинку
 
 # Demonology
 construction-graph-tag-bloodvial = полную колбу крови
-construction-graph-tag-demonsoul = фрагмент демонической души
+construction-graph-tag-magic-ink-catalyst = зачарованный катализатор
 construction-graph-tag-bible = любую священную книгу
+construction-graph-tag-bottle = пустую бутылочку
 
 construction-graph-tag-bluespace-core = ядро блюспейс-аномалии
 construction-graph-tag-electric-core = ядро электрической аномалии
