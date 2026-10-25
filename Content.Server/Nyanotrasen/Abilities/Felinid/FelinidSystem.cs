@@ -13,6 +13,7 @@ using Content.Shared.Medical;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Nutrition.Prototypes;
+using Content.Shared.Nyanotrasen.Abilities.Felinid;
 using Content.Shared.Nyanotrasen.Actions.Events;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;

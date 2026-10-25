@@ -4,7 +4,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Nyanotrasen.Abilities.Felinid;
+namespace Content.Shared.Nyanotrasen.Abilities.Felinid;
 
 /// <summary>
 /// Hairball and mouse eating actions of felinids.

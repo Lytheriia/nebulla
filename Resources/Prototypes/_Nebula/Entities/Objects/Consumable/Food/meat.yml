@@ -10,8 +10,10 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: plain-inhand-left
+      - sprite: Objects/Consumable/Food/meat.rsi
+        state: plain-inhand-left
         color: "#ff3333"
       right:
-      - state: plain-inhand-right
+      - sprite: Objects/Consumable/Food/meat.rsi
+        state: plain-inhand-right
         color: "#ff3333"
