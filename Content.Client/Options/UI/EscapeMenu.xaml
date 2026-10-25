@@ -22,6 +22,7 @@
         <Button Access="Public" Name="BugReportButton" Text="{Loc 'ui-escape-bug-report'}" StyleClasses="OpenBoth"/>
         <Button Access="Public" Name="AdminRemarksButton" Text="{Loc 'ui-escape-remarks'}" StyleClasses="OpenRight"/>
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
+        <Button Access="Public" Name="CharacterButton" Text="{Loc 'nebula-escape-character'}" /> <!-- Nebula edit -->
         <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" />
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
         <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" StyleClasses="negative OpenLeft" />

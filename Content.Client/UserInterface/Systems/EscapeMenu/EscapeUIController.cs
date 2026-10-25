@@ -1,3 +1,4 @@
+using Content.Client._Nebula.Lobby; // Nebula edit
 using Content.Client.FeedbackPopup;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
@@ -28,6 +29,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     [Dependency] private GuidebookUIController _guidebook = default!;
     [Dependency] private FeedbackPopupUIController _feedback = null!;
     [Dependency] private ILocalizationManager _loc = default!;
+    [Dependency] private NebulaCharacterWindowUIController _characterWindow = default!; // Nebula edit
 
     private Options.UI.EscapeMenu? _escapeWindow;
 
@@ -96,6 +98,14 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             CloseEscapeWindow();
             _options.OpenWindow();
         };
+
+        // Nebula start
+        _escapeWindow.CharacterButton.OnPressed += _ =>
+        {
+            CloseEscapeWindow();
+            _characterWindow.OpenWindow();
+        };
+        // Nebula end
 
         _escapeWindow.QuitButton.OnPressed += _ =>
         {

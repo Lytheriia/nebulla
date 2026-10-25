@@ -44,6 +44,7 @@ nebula-character-setup-characters = Персонажи
 nebula-character-setup-slots = { $count } / { $max }
 nebula-character-setup-new = Новый персонаж
 nebula-character-setup-no-job = Без приоритетной роли
+nebula-escape-character = Персонализация
 
 nebula-save-panel-text = Сохранить изменения персонажа перед выходом?
 

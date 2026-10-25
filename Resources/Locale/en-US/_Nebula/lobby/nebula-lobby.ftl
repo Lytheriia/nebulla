@@ -40,6 +40,7 @@ nebula-character-setup-characters = Characters
 nebula-character-setup-slots = { $count } / { $max }
 nebula-character-setup-new = New character
 nebula-character-setup-no-job = No preferred role
+nebula-escape-character = Personalization
 
 nebula-save-panel-text = Save your character changes before leaving?
 
