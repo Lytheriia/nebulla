@@ -1365,6 +1365,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("voice");
 
+                    b.Property<string>("Wardrobe")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("wardrobe");
+
                     b.Property<float>("Width")
                         .HasColumnType("real")
                         .HasColumnName("width");

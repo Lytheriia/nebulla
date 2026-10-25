@@ -22,4 +22,12 @@ public abstract partial class ServerDbBase
 
         return JsonSerializer.Serialize(raw);
     }
+
+    /// <summary>
+    /// Stores the wardrobe as a JSON array of entity prototype ids.
+    /// </summary>
+    private static string SerializeWardrobe(HumanoidCharacterProfile humanoid)
+    {
+        return JsonSerializer.Serialize(humanoid.Wardrobe.ConvertAll(item => item.Id));
+    }
 }

@@ -47,4 +47,23 @@ public sealed partial class ServerPreferencesManager
 
         return titles;
     }
+
+    /// <summary>
+    /// Reads the wardrobe stored as a JSON array, broken or empty data gives an empty wardrobe.
+    /// </summary>
+    private static List<EntProtoId> ParseWardrobe(Profile profile)
+    {
+        if (string.IsNullOrEmpty(profile.Wardrobe))
+            return [];
+
+        try
+        {
+            var raw = JsonSerializer.Deserialize<List<string>>(profile.Wardrobe);
+            return raw?.ConvertAll(item => new EntProtoId(item)) ?? [];
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
 }

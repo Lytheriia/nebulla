@@ -7,13 +7,11 @@ namespace Content.Client.Lobby;
 public sealed partial class LobbyUIController
 {
     /// <summary>
-    /// Tab of <see cref="UI.HumanoidProfileEditor"/> that loadouts are opened from.
+    /// Switches the profile editor to the wardrobe tab.
     /// </summary>
-    public const int JobsTab = 1;
-
-    public void SelectProfileEditorTab(int index)
+    public void SelectWardrobeTab()
     {
         var (_, editor) = EnsureGui();
-        editor.TabContainer.CurrentTab = index;
+        editor.SelectWardrobeTab();
     }
 }

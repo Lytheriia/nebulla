@@ -4,6 +4,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Nebula.Roles;
+using Content.Shared._Nebula.Wardrobe;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
@@ -15,7 +16,7 @@ public sealed partial class HumanoidCharacterProfile
     /// Alternate title picked for each job, jobs without an entry use their own name.
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>> JobAlternateTitles { get; set; } = new();
+    public Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>> JobAlternateTitles { get; set; } = [];
 
     public HumanoidCharacterProfile WithJobAltTitle(ProtoId<JobPrototype> job, ProtoId<JobAlternateTitlePrototype>? title)
     {
@@ -61,5 +62,54 @@ public sealed partial class HumanoidCharacterProfile
             if (!TryGetJobAltTitle(job, prototypes, out _))
                 JobAlternateTitles.Remove(job);
         }
+    }
+
+    /// <summary>
+    /// Clothing picked in the wardrobe, given in a bag on spawn. Restrictions are checked when the items are given.
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> Wardrobe { get; set; } = [];
+
+    /// <summary>
+    /// Selects or deselects a wardrobe item, pushing out the oldest item of its category when it is full.
+    /// </summary>
+    public HumanoidCharacterProfile WithWardrobeItem(EntProtoId item, bool selected, IPrototypeManager prototypes)
+    {
+        List<EntProtoId> wardrobe = [.. Wardrobe];
+        wardrobe.Remove(item);
+
+        if (selected && WardrobeHelpers.TryFindItem(prototypes, item, out var category, out _))
+        {
+            var inCategory = wardrobe.FindAll(other => category.TryGetSet(other, out _));
+            for (var i = 0; i <= inCategory.Count - category.MaxLimit; i++)
+            {
+                wardrobe.Remove(inCategory[i]);
+            }
+
+            wardrobe.Add(item);
+        }
+
+        return new(this) { Wardrobe = wardrobe };
+    }
+
+    private void ValidateWardrobe(IPrototypeManager prototypes)
+    {
+        Dictionary<string, int> counts = [];
+        var valid = new List<EntProtoId>(Wardrobe.Count);
+
+        foreach (var item in Wardrobe)
+        {
+            if (valid.Contains(item) || !WardrobeHelpers.TryFindItem(prototypes, item, out var category, out _))
+                continue;
+
+            var count = counts.GetValueOrDefault(category.ID);
+            if (count >= category.MaxLimit)
+                continue;
+
+            counts[category.ID] = count + 1;
+            valid.Add(item);
+        }
+
+        Wardrobe = valid;
     }
 }

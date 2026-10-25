@@ -222,7 +222,7 @@ namespace Content.Server.Preferences.Managers
                 KnowledgeProfile.Verify(profile.KnowledgeMastery, _prototypeManager)
             // </Trauma>
             )
-            { JobAlternateTitles = ParseJobAltTitles(profile) }; // Nebula edit
+            { JobAlternateTitles = ParseJobAltTitles(profile), Wardrobe = ParseWardrobe(profile) }; // Nebula edit
         }
 
         private async void HandleSelectCharacterMessage(MsgSelectCharacter message)

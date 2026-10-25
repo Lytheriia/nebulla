@@ -1,0 +1,51 @@
+- type: nebulaWardrobeCategory
+  id: Gloves
+  name: nebula-wardrobe-category-gloves
+  order: 3
+  sets:
+  - items:
+    - ClothingHandsGlovesColorWhite
+    - ClothingHandsGlovesColorTeal
+    - ClothingHandsGlovesColorBlack
+    - ClothingHandsGlovesColorBlue
+    - ClothingHandsGlovesColorBrown
+    - ClothingHandsGlovesColorYellowBudget
+    - ClothingHandsGlovesFingerless
+    - ClothingHandsGlovesFingerlessInsulated
+    - ClothingHandsGlovesForge
+    - ClothingHandsGlovesColorGreen
+    - ClothingHandsGlovesLatex
+    - ClothingHandsGlovesMercFingerless
+    - ClothingHandsGlovesNitrile
+    - ClothingHandsGlovesHop
+    - ClothingHandsGlovesPowerglove
+    - ClothingHandsGlovesColorPurple
+    - ClothingHandsGlovesColorRed
+    - ClothingHandsGlovesJanitor
+  - tier: 1
+    items:
+    - ClothingHandsGlovesLeather
+    - ClothingHandsTacticalMaidGloves
+  - tier: 1
+    removeComponents: [Insulated]
+    items:
+    - ClothingHandsGlovesCaptain
+    - ClothingHandsGlovesGoldenTrim
+  - tier: 1
+    departments: [Engineering]
+    items:
+    - ClothingHandsGlovesAtmosInsulated
+  - tier: 1
+    departments: [Science]
+    items:
+    - ClothingHandsGlovesRobohands
+  - tier: 2
+    items:
+    - ClothingHandsKnuckleDustersBrass
+  - tier: 2
+    departments: [Security]
+    items:
+    - ClothingHandsMercGlovesCombat
+    - ClothingHandsGlovesSecurityBlue
+    - ClothingHandsGlovesCombat
+    - ClothingHandsGlovesChronoLegioneer

@@ -4,6 +4,7 @@
          xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
          xmlns:profile="clr-namespace:Content.Client.Lobby.UI.ProfileEditorControls"
+         xmlns:wardrobe="clr-namespace:Content.Client._Nebula.Wardrobe"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -120,11 +121,14 @@
                                     <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- Show clothing -->
+                                <!-- Nebula start - preview modes instead of the show clothing toggle -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />
                                     <Control HorizontalExpand="True"/>
-                                    <Button Name="ShowClothes" Pressed="True" ToggleMode="True" Text="{Loc 'humanoid-profile-editor-clothing-show'}" HorizontalAlignment="Right" />
+                                    <OptionButton Name="PreviewSourceButton" HorizontalAlignment="Right" StyleClasses="OpenRight" />
+                                    <OptionButton Name="PreviewClothingButton" HorizontalAlignment="Right" StyleClasses="OpenLeft" />
                                 </BoxContainer>
+                                <!-- Nebula end -->
                                 <!-- Spawn Priority -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-spawn-priority-label'}" />
@@ -196,6 +200,11 @@
                     <!-- Markings -->
                     <humanoid:MarkingPicker Name="Markings" HorizontalExpand="True" VerticalExpand="True" />
                 </BoxContainer>
+                <!-- Nebula start -->
+                <BoxContainer Name="WardrobeTab" Orientation="Vertical" Margin="10">
+                    <wardrobe:WardrobePicker Name="Wardrobe" HorizontalExpand="True" VerticalExpand="True" />
+                </BoxContainer>
+                <!-- Nebula end -->
             </TabContainer>
         </BoxContainer>
         <!-- Right side -->

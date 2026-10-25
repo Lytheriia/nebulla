@@ -1,0 +1,20 @@
+# ClothingBackpackChameleonFill without the chameleon controller implanter, given by the wardrobe.
+- type: entity
+  parent: ClothingBackpackChameleon
+  id: NebulaWardrobeBackpackChameleonFill
+  suffix: Fill, Chameleon, Wardrobe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChameleonPDA
+        - id: ClothingUniformJumpsuitChameleon
+        - id: ClothingOuterChameleon
+        - id: ClothingNeckChameleon
+        - id: ClothingMaskGasChameleon
+        - id: ClothingHeadHatChameleon
+        - id: ClothingHandsChameleon
+        - id: ClothingEyesChameleon
+        - id: ClothingHeadsetChameleon
+        - id: ClothingShoesChameleon

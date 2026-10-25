@@ -41,6 +41,6 @@ public sealed partial class LobbyState
     private void OnWardrobePressed(BaseButton.ButtonEventArgs args)
     {
         OnSetupPressed(args);
-        _userInterfaceManager.GetUIController<LobbyUIController>().SelectProfileEditorTab(LobbyUIController.JobsTab);
+        _userInterfaceManager.GetUIController<LobbyUIController>().SelectWardrobeTab();
     }
 }

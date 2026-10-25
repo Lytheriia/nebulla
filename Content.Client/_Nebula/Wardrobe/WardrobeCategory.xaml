@@ -1,0 +1,28 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              xmlns:nc="clr-namespace:Content.Client._Nebula.UserInterface.Controls"
+              Orientation="Vertical"
+              SeparationOverride="6"
+              Margin="0 6 0 0">
+    <nc:ShapedPanel Name="SearchPanel"
+                    StyleClasses="NebulaChatInput"
+                    Orientation="Horizontal"
+                    MinHeight="30"
+                    SeparationOverride="4">
+        <TextureRect Name="SearchIcon"
+                     StyleClasses="NebulaIcon"
+                     Stretch="KeepAspectCentered"
+                     SetSize="16 16"
+                     VerticalAlignment="Center"
+                     Margin="10 0 0 0" />
+        <LineEdit Name="SearchBar"
+                  StyleClasses="NebulaChatLineEdit"
+                  HorizontalExpand="True"
+                  PlaceHolder="{Loc 'markings-search'}" />
+    </nc:ShapedPanel>
+    <nc:ShapedPanel StyleClasses="NebulaSection" Orientation="Vertical" VerticalExpand="True">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" Margin="6">
+            <GridContainer Name="Items" Columns="2" HSeparationOverride="4" VSeparationOverride="4" />
+        </ScrollContainer>
+    </nc:ShapedPanel>
+    <Label Name="Status" StyleClasses="NebulaTextMuted" Margin="10 0" />
+</BoxContainer>

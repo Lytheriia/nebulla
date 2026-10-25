@@ -55,4 +55,16 @@ public sealed partial class NCCVars
     /// </summary>
     public static readonly CVarDef<string> InfoLinksBoosty =
         CVarDef.Create("infolinks.boosty", "https://boosty.to/ss14.nebula", CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Whether the profile editor preview shows the wardrobe instead of the job clothing.
+    /// </summary>
+    public static readonly CVarDef<bool> PreviewWardrobe =
+        CVarDef.Create("nebula.ui.preview_wardrobe", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    ///     How dressed the profile editor preview is: 0 all clothing, 1 underwear only, 2 naked.
+    /// </summary>
+    public static readonly CVarDef<int> PreviewClothing =
+        CVarDef.Create("nebula.ui.preview_clothing", 0, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

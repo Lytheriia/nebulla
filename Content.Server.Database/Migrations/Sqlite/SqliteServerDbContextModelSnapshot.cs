@@ -1294,6 +1294,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("voice");
 
+                    b.Property<string>("Wardrobe")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("wardrobe");
+
                     b.Property<float>("Width")
                         .HasColumnType("REAL")
                         .HasColumnName("width");
