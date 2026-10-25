@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: JobBlueshieldOfficer
+  groups:
+  - BlueshieldOfficerHead
+  - BlueshieldOfficerJumpsuit
+  - BlueshieldOfficerBackpack
+  - BlueshieldOfficerOuter
+  - BlueshieldOfficerNeck
+  - BlueshieldOfficerMask
+  - BlueshieldOfficerShoes
+  - BlueshieldOfficerGloves
+  - AssistiveItems
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
+  - BlueshieldOfficerEnvirohelm
+  - BlueshieldOfficerEnvirosuit
+  - BlueshieldOfficerEnvirogloves
+  - ExclusiveItems

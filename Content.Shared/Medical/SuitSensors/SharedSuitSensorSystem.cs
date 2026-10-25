@@ -432,6 +432,7 @@ public abstract partial class SharedSuitSensorSystem : EntitySystem
                 }
 
                 status.Coordinates = GetNetCoordinates(coordinates);
+                status.IsCommandTracker = sensor.CommandTracker; // Nebula edit
                 break;
         }
 

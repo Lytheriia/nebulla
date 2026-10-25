@@ -23,6 +23,7 @@
     tags:
     - CentralCommand
     - NanotrasenRepresentative
+    - BlueshieldOfficer # Nebula edit
     - Wizard
     - NuclearOperative
     - SyndicateAgent
@@ -60,6 +61,7 @@
     tags:
     - CentralCommand
     - NanotrasenRepresentative
+    - BlueshieldOfficer # Nebula edit
 
 # NTR
 - type: entity
@@ -79,6 +81,7 @@
     tags:
     - CentralCommand
     - NanotrasenRepresentative
+    - BlueshieldOfficer # Nebula edit
 
 # Executive Access
 - type: entity
@@ -112,6 +115,7 @@
     tags:
     - CentralCommand
     - NanotrasenRepresentative
+    - BlueshieldOfficer # Nebula edit
 
 - type: entity
   parent: ExecutiveIDCard

@@ -1,0 +1,46 @@
+- type: entityTable
+  id: LockerFillBlueshieldOfficer
+  table: !type:AllSelector
+    children:
+    - id: DefibrillatorCompact
+    - id: ParamedHypo
+    - id: MedkitBSOFilled
+    - id: MedkitBSOIPCFilled
+    - id: FlippoLighterBlueshield
+    - id: CigPackBlueshield
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
+    - id: HandheldCrewMonitorBSO
+    - id: BlueshieldUndeterminedWeapon
+    - id: BlueshieldUndeterminedHardsuit
+    - id: FlashlightSeclite
+
+- type: entity
+  id: DresserBlueshieldOfficerFilled
+  parent: Dresser
+  suffix: Filled, Blueshield
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: DresserBlueshieldOfficerFilled
+
+- type: entityTable
+  id: DresserBlueshieldOfficerFilled
+  table: !type:AllSelector
+    children:
+    - id: ClothingUniformJumpskirtBlueshieldOfficer
+    - id: ClothingUniformJumpsuitBlueshieldOfficer
+    - id: ClothingUniformJumpsuitBlueshieldShirt
+    - id: ClothingBlueshieldArmoredJacket
+
+- type: entity
+  id: SuitStorageBlueshield
+  parent: SuitStorageBase
+  suffix: BSO Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+    - id: OxygenTankFilled
+    - id: ClothingMaskBreath
+    - id: NitrogenTankFilled

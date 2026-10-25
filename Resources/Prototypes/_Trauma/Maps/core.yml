@@ -23,6 +23,7 @@
             # Command
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ] # Nebula edit
             # Silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]

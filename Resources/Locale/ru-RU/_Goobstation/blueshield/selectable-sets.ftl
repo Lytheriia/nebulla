@@ -1,0 +1,31 @@
+selectable-set-blueshield-shield-name = Набор "Синий Щит"
+
+selectable-set-blueshield-shield-description =
+    Знаковое снаряжение этих солдат.
+    Содержит: большой щит и кастомизированную дубинку DT-4 "Злодей".
+
+selectable-set-blueshield-revolver-name = Набор револьверный
+
+selectable-set-blueshield-revolver-description =
+    Остаться без патронов — худшее, что может случиться в перестрелке.
+    Содержит: энергетический револьвер EG-4 с заряжаемыми спидлоадерами,
+    как боевыми, так и учебными, и кобуру.
+
+selectable-set-blueshield-chester-name = Набор Честера
+
+selectable-set-blueshield-chester-description =
+    Готовы поохотиться?
+    Содержит: дробовик Честер,
+    запасные патроны,
+    альтернативные патроны,
+    запасные магазины.
+
+selectable-set-blueshield-syringe-name = Медицинский набор
+
+selectable-set-blueshield-syringe-description =
+    Идеально для лечения союзников или отравления врагов.
+    Содержит: взрывозащитный РПС и несколько бутылочек с лекарствами.
+
+selectable-set-blueshield-hardsuit-light-name = Бронированный скафандр
+
+selectable-set-blueshield-hardsuit-light-description = Бронированный боевой костюм, дающий больше скорости за счет меньшей защиты.

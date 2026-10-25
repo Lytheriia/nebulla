@@ -1,0 +1,91 @@
+# BSO
+- type: loadoutGroup
+  id: BlueshieldOfficerHead
+  name: loadout-group-bso-head
+  minLimit: 0
+  loadouts:
+  - BlueshieldOfficerHeadSwatHelmet
+  - BlueshieldOfficerBeret
+  - BlueshieldOfficerHeadCowboy
+  - BlueshieldOfficerGoidaHelmet
+
+- type: loadoutGroup
+  id: BlueshieldOfficerBackpack
+  name: loadout-group-bso-backpack
+  loadouts:
+  - BlueshieldOfficerBackpack
+  - BlueshieldOfficerSatchel
+  - BlueshieldOfficerDuffel
+  - BlueshieldOfficerMessenger
+
+- type: loadoutGroup
+  id: BlueshieldOfficerJumpsuit
+  name: loadout-group-bso-jumpsuit
+  loadouts:
+  - BlueshieldOfficerInnerBlueshieldSuit
+  - BlueshieldOfficerInnerBlueshieldSkirt
+  - BlueshieldOfficerInnerBlueshieldShirt
+
+- type: loadoutGroup
+  id: BlueshieldOfficerOuter
+  name: loadout-group-bso-outer
+  loadouts:
+  - BlueshieldOfficerOuterBlueshieldArmorVest
+  - BlueshieldOfficerOuterBlueshieldArmoredJacket
+  - BlueshieldOfficerOuterBlueshieldCowboyVest
+  - BlueshieldOfficerOuterWinterBlueshield
+
+- type: loadoutGroup
+  id: BlueshieldOfficerNeck
+  name: loadout-group-bso-neck
+  minLimit: 0
+  loadouts:
+  - BlueshieldOfficerOuterBlueshieldMantle
+  - BlueshieldOfficerEnsemble
+
+- type: loadoutGroup
+  id: BlueshieldOfficerMask
+  name: loadout-group-bso-mask
+  minLimit: 0
+  loadouts:
+  - BlueshieldOfficerMaskLollypop
+
+- type: loadoutGroup
+  id: BlueshieldOfficerShoes
+  name: loadout-group-bso-shoes
+  loadouts:
+  - JackBoots
+  - BlackCowboyBoots
+  - SnowjacksBso
+
+- type: loadoutGroup
+  id: BlueshieldOfficerGloves
+  name: loadout-group-bso-gloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CombatGloves
+
+- type: loadoutGroup
+  id: BlueshieldOfficerEnvirohelm
+  name: loadout-group-bso-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BlueshieldOfficerEnvirohelm
+
+- type: loadoutGroup
+  id: BlueshieldOfficerEnvirosuit
+  name: loadout-group-bso-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BlueshieldOfficerEnvirosuit
+
+- type: loadoutGroup
+  id: BlueshieldOfficerEnvirogloves
+  name: loadout-group-bso-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CombatEnvirogloves

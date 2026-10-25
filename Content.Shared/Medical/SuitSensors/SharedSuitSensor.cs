@@ -39,6 +39,7 @@ public partial struct SuitSensorStatus : IEquatable<SuitSensorStatus>
     public int? TotalDamageThreshold;
     public float? DamagePercentage => TotalDamageThreshold == null || TotalDamage == null ? null : TotalDamage / (float) TotalDamageThreshold;
     public NetCoordinates? Coordinates;
+    public bool IsCommandTracker; // Nebula edit
 
     public bool Equals(SuitSensorStatus other)
     {
