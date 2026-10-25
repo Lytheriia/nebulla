@@ -4,4 +4,4 @@
   suffix: BSO
   components:
   - type: Label
-    currentLabel: holopad-command-bso
+    localizedLabel: holopad-command-bso
