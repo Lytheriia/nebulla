@@ -1,0 +1,131 @@
+# Ported from Goob-Station: https://github.com/Goob-Station/Goob-Station
+
+- type: secretPlusAntag
+  id: Traitor
+  chaos: 150
+
+- type: secretPlusAntag
+  id: Thief
+  chaos: 100
+
+- type: secretPlusAntag
+  id: Devil
+  chaos: 150
+
+- type: secretPlusAntag
+  id: Shadowling
+  chaos: 500
+
+- type: secretPlusAntag
+  id: NukeopsCommander
+  chaos: 300
+
+- type: secretPlusAntag
+  id: NukeopsMedic
+  chaos: 300
+
+- type: secretPlusAntag
+  id: NukeopsOperative
+  chaos: 300
+
+- type: secretPlusAntag
+  id: Changeling
+  chaos: 200
+
+- type: secretPlusAntag
+  id: Heretic
+  chaos: 250
+
+- type: secretPlusAntag
+  id: Spy
+  chaos: 150
+
+# roundstart rules
+- type: secretPlusRule
+  id: Revolutionary
+  chaos: 1000
+
+- type: secretPlusRule
+  id: Zombie
+  chaos: 1200
+  loneRun: true
+
+- type: secretPlusRule
+  id: CosmicCult
+  chaos: 1200
+
+- type: secretPlusRule
+  id: BlobGameMode
+  chaos: 1000
+
+- type: secretPlusRule
+  id: XenomorphsInfestationRoundstart
+  chaos: 2500
+
+- type: secretPlusRule
+  id: WraithRoundstart
+  chaos: 1000
+
+- type: secretPlusRule
+  id: Wizard
+  chaos: 900
+
+# picking one of these roundstart rules removes the listed ones from further picks
+- type: incompatibleModes
+  id: Nukeops
+  modes:
+  - Nukeops
+  - Zombie
+  - Revolutionary
+  - BlobGameMode
+  - CosmicCult
+
+- type: incompatibleModes
+  id: Wizard
+  modes:
+  - Wizard
+
+- type: incompatibleModes
+  id: HereticRoundstart
+  modes:
+  - HereticRoundstart
+  - CosmicCult
+
+- type: incompatibleModes
+  id: BlobGameMode
+  modes:
+  - BlobGameMode
+  - Nukeops
+  - CosmicCult
+
+- type: incompatibleModes
+  id: Zombie
+  modes:
+  - Nukeops
+  - CosmicCult
+
+- type: incompatibleModes
+  id: Revolutionary
+  modes:
+  - Nukeops
+  - CosmicCult
+
+- type: incompatibleModes
+  id: CosmicCult
+  modes:
+  - Nukeops
+  - Zombie
+  - Revolutionary
+  - BlobGameMode
+  - CosmicCult
+  - HereticRoundstart
+
+- type: incompatibleModes
+  id: ShadowlingRoundstart
+  modes:
+  - ShadowlingRoundstart
+
+- type: incompatibleModes
+  id: Devil
+  modes:
+  - Devil

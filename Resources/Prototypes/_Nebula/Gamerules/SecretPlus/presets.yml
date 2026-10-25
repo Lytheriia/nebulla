@@ -1,0 +1,43 @@
+# Ported from Goob-Station: https://github.com/Goob-Station/Goob-Station
+
+- type: gamePreset
+  id: SecretPlusLow
+  alias:
+  - secretpluslow
+  - secretpluscalm
+  name: secretplus-low-title
+  description: secretplus-low-description
+  showInVote: false
+  rules:
+  - SecretPlusLow
+  - MeteorSwarmMildScheduler
+  - BasicRoundstartVariation
+  - InsurgencyRuleRandom
+
+- type: gamePreset
+  id: SecretPlusMid
+  alias:
+  - secretplusmid
+  - secretplus
+  name: secretplus-mid-title
+  description: secretplus-mid-description
+  showInVote: false
+  rules:
+  - SecretPlusMid
+  - MeteorSwarmScheduler
+  - BasicRoundstartVariation
+  - InsurgencyRuleRandom
+
+- type: gamePreset
+  id: SecretPlusHigh
+  alias:
+  - secretplushigh
+  - secretpluschaos
+  name: secretplus-high-title
+  description: secretplus-high-description
+  showInVote: false
+  rules:
+  - SecretPlusHigh
+  - MeteorSwarmScheduler
+  - BasicRoundstartVariation
+  - InsurgencyRuleRandom

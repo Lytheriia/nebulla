@@ -1,0 +1,155 @@
+# Ported from Goob-Station: https://github.com/Goob-Station/Goob-Station
+# SecretPlus data lives here so upstream rule prototypes stay untouched.
+# secretPlusRule id = game rule id. Grouped by the event table the rule comes from.
+
+# SpaceTrafficControlTable
+- type: secretPlusRule
+  id: LoneOpsSpawn
+  chaos: 700
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: UnknownShuttleInstigator
+  chaos: 900
+  eventType: HostilesSpawn
+
+# BasicAntagEventsTable
+- type: secretPlusRule
+  id: CarpMigrationRule
+  chaos: 150
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: ClosetSkeleton
+  chaos: 60
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: CoconutCrabSpawn
+  chaos: 60
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: DerelictEngineerCyborgSpawn
+  chaos: 80
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: DerelictGenericCyborgSpawn
+  chaos: 80
+
+- type: secretPlusRule
+  id: DerelictJanitorCyborgSpawn
+  chaos: 80
+
+- type: secretPlusRule
+  id: DerelictMedicalCyborgSpawn
+  chaos: 80
+
+- type: secretPlusRule
+  id: DerelictMiningCyborgSpawn
+  chaos: 80
+
+- type: secretPlusRule
+  id: DerelictSyndicateAssaultCyborgSpawn
+  chaos: 120
+
+- type: secretPlusRule
+  id: LoneAbductorSpawn
+  chaos: 100
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: MimeAssassinMidround
+  chaos: 300
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: MorphMidroundRule
+  chaos: 300
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: ParadoxCloneSpawn
+  chaos: 80
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: SingulothKnightsMidround
+  chaos: 420
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: SlimesSpawnHorde
+  chaos: 200
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: SnakeSpawnHorde
+  chaos: 240
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: SpiderClownSpawnHorde
+  chaos: 240
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: SpiderSpawnHorde
+  chaos: 240
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: TunnelClownMidround
+  chaos: 280
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: VoxRaidersMidround
+  chaos: 800
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: WraithMidround
+  chaos: 600
+  eventType: HostilesSpawn
+
+# ModerateAntagEventsTable
+- type: secretPlusRule
+  id: BingleSpawn
+  chaos: 600
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: BlobMidround
+  chaos: 1100
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: ColossusSpawn
+  chaos: 600
+
+- type: secretPlusRule
+  id: DragonSpawn
+  chaos: 600
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: DuoAbductorSpawn
+  chaos: 150
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: FugitiveSpawn
+  chaos: 150
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: NinjaSpawn
+  chaos: 300
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: XenomorphsInfestation
+  chaos: 400
+  eventType: HostilesSpawn
