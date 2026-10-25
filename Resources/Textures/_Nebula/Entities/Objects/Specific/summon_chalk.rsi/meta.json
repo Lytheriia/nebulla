@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from BlueMoon-Station at https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/master/modular_bluemoon/icons/obj/lewd_items/qareen_chalk.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "chalk"
+    },
+    {
+      "name": "rune"
+    }
+  ]
+}
