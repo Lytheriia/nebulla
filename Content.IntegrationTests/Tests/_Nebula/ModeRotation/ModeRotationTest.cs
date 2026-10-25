@@ -15,7 +15,7 @@ namespace Content.IntegrationTests.Tests._Nebula.ModeRotation;
 [TestOf(typeof(ModeRotationPrototype))]
 public sealed class ModeRotationTest
 {
-    private static readonly ProtoId<ModeRotationPrototype> DefaultRotation = "Default";
+    private const string DefaultRotation = "Default";
 
     private static readonly (int Players, string[] History, string Expected)[] Cases =
     [
