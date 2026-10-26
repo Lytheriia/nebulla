@@ -359,7 +359,7 @@
       - id: Matchbox
       - id: ClothingEyesBlindfold
       - id: ClothingMaskMuzzle
-      - id: ClothingMaskGasSecurity
+      # - id: ClothingMaskGasSecurity # Nebula edit
       - id: ShardGlass
         weight: 2
       - id: Syringe

@@ -55,31 +55,87 @@
     - PetWearable
     - WhitelistChameleon
     - SecurityBreathMask
-  - type: Hailer
-    messages:
-    - sound: /Audio/_Goobstation/Hailer/asshole.ogg
-      message: "Stop breaking the law, asshole!!"
-    - sound: /Audio/_Goobstation/Hailer/bash.ogg
-      message: "Stop or I will bash you!!"
-    - sound: /Audio/_Goobstation/Hailer/bobby.ogg
-      message: "Stop in the name of the law!!"
-    - sound: /Audio/_Goobstation/Hailer/compliance.ogg
-      message: "Compliance is in your best interest!!"
-    - sound: /Audio/_Goobstation/Hailer/dontmove.ogg
-      message: "Don't move, creep!!"
-    - sound: /Audio/_Goobstation/Hailer/dredd.ogg
-      message: "I AM THE LAW!!"
-    - sound: /Audio/_Goobstation/Hailer/floor.ogg
-      message: "Get down on the floor creep!!"
-    - sound: /Audio/_Goobstation/Hailer/freeze.ogg
-      message: "Freeze scumbag!!"
-    - sound: /Audio/_Goobstation/Hailer/halt.ogg
-      message: "HALT! HALT! HALT!!"
+  # Nebula start
+  # - type: Hailer
+  #   messages:
+  #   - sound: /Audio/_Goobstation/Hailer/asshole.ogg
+  #     message: "Stop breaking the law, asshole!!"
+  #   - sound: /Audio/_Goobstation/Hailer/bash.ogg
+  #     message: "Stop or I will bash you!!"
+  #   - sound: /Audio/_Goobstation/Hailer/bobby.ogg
+  #     message: "Stop in the name of the law!!"
+  #   - sound: /Audio/_Goobstation/Hailer/compliance.ogg
+  #     message: "Compliance is in your best interest!!"
+  #   - sound: /Audio/_Goobstation/Hailer/dontmove.ogg
+  #     message: "Don't move, creep!!"
+  #   - sound: /Audio/_Goobstation/Hailer/dredd.ogg
+  #     message: "I AM THE LAW!!"
+  #   - sound: /Audio/_Goobstation/Hailer/floor.ogg
+  #     message: "Get down on the floor creep!!"
+  #   - sound: /Audio/_Goobstation/Hailer/freeze.ogg
+  #     message: "Freeze scumbag!!"
+  #   - sound: /Audio/_Goobstation/Hailer/halt.ogg
+  #     message: "HALT! HALT! HALT!!"
+  # Nebula end
   - type: IngestionBlocker
     blockSmokeIngestion: true
   - type: ViewconeModifier
     angleModifier: 1.0
   # </Trauma>
+  # Nebula start
+  - type: SecDispatch
+    combatSound:
+      path: /Audio/_Nebula/Security/dispatch_hailer.ogg
+    entries:
+    - name: sec-dispatch-help-name
+      message: sec-dispatch-help-message
+      icon:
+        sprite: Structures/Wallmounts/Lighting/emergency_light.rsi
+        state: emergency_light_on
+      combat: true
+    - name: sec-dispatch-enemy-name
+      message: sec-dispatch-enemy-message
+      icon:
+        sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+        state: icon
+      combat: true
+    - name: sec-dispatch-megafauna-name
+      message: sec-dispatch-megafauna-message
+      icon:
+        sprite: _Lavaland/Mobs/legion.rsi
+        state: legion
+      combat: true
+    - name: sec-dispatch-contact-name
+      message: sec-dispatch-contact-message
+      icon:
+        sprite: Interface/Misc/crosshair_pointers.rsi
+        state: gun_sight
+      combat: true
+    - name: sec-dispatch-location-name
+      message: sec-dispatch-location-message
+      icon:
+        sprite: Objects/Devices/station_beacon.rsi
+        state: icon
+    - name: sec-dispatch-wounded-name
+      message: sec-dispatch-wounded-message
+      icon:
+        sprite: Objects/Specific/Medical/firstaidkits.rsi
+        state: firstaid
+    - name: sec-dispatch-complying-name
+      message: sec-dispatch-complying-message
+      icon:
+        sprite: Objects/Misc/clipboard.rsi
+        state: clipboard
+    - name: sec-dispatch-retreat-name
+      message: sec-dispatch-retreat-message
+      icon:
+        sprite: Interface/Alerts/walking.rsi
+        state: walking
+  - type: UserInterface
+    interfaces:
+      enum.SecDispatchUiKey.Key:
+        type: SecDispatchBoundUserInterface
+  # Nebula end
   - type: Item
     size: Tiny
   - type: Sprite

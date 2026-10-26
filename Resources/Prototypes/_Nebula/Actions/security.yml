@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseAction
+  id: ActionSecDispatch
+  name: Dispatch report
+  description: Send a preset report to the security channel through the mask's built-in transmitter.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+  - type: Sprite
+    sprite: Clothing/Mask/gassecurity.rsi
+    layers:
+    - state: icon
+  - type: InstantAction
+    event: !type:SecDispatchActionEvent
