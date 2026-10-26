@@ -1,0 +1,52 @@
+- type: entity
+  parent: ClothingBeltMilitaryWebbingBSO
+  id: ClothingBeltMilitaryWebbingBSOFilled
+  name: blueshield chest rig
+  description: A set of tactical webbing worn by Central Command support units.
+  components:
+  - type: StorageFill
+    contents:
+    - id: TirimolChemistryVial
+      amount: 1
+    - id: OmnizineChemistryVial
+      amount: 1
+    - id: ProcenylLazideChemistryVial
+      amount: 1
+
+- type: entity
+  parent: ClothingBeltHolster
+  id: ClothingBeltHolsterFilledBlueshield
+  suffix: Filled, EG-4
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      item:
+        id: WeaponEnergyRevolver
+      storagebase: !type:AllSelector
+        children:
+        - id: EnergySpeedloaderLethal
+        - id: EnergySpeedloaderLethal
+        - id: EnergySpeedloaderDisabler
+
+- type: entityTable
+  id: BeltAssaultBSOEntityTable
+  table: !type:AllSelector
+    children:
+    - id: Stunbaton
+    - id: HoloprojectorSecurity
+    - id: GrenadeFlashBang
+    - id: GrenadeFlashBang
+    - id: WeaponDisabler
+    - id: Zipties
+    - id: Zipties
+    - id: Zipties
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilled
+  parent: ClothingBeltMilitaryWebbingBSO
+  suffix: Filled, Assault
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: BeltAssaultBSOEntityTable

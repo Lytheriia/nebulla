@@ -7,6 +7,7 @@ using Content.Server.Administration.Logs;
 using Content.Shared._Nebula.CCVar;
 using Content.Shared._Nebula.InfinityDorms;
 using Content.Shared._Nebula.InfinityDorms.Components;
+using Content.Shared._Nebula.Summoning;
 using Content.Shared._Nebula.Teleportation.Events;
 using Content.Shared.Access.Systems;
 using Content.Shared.ActionBlocker;
@@ -94,6 +95,10 @@ public sealed partial class InfinityDormSystem : EntitySystem
         _nextTeleporterAction.Clear();
         _nextExitAction.Clear();
         _mapVisitors.Clear();
+        _currentUserWorlds.Clear();
+        _worldDeleteQueue.Clear();
+        _worldDeleteNodes.Clear();
+        _nextWorldDeleteCheck = TimeSpan.Zero;
     }
 
     [SubscribeLocalEvent]
@@ -164,7 +169,19 @@ public sealed partial class InfinityDormSystem : EntitySystem
                 return false;
         }
 
+        var summonedQuery = EntityQueryEnumerator<SummonedComponent, TransformComponent>();
+        while (summonedQuery.MoveNext(out _, out _, out var xform))
+        {
+            if (xform.GridUid == grid)
+                return false;
+        }
+
         return true;
+    }
+
+    public void QueueDeletionCheck(EntityUid grid)
+    {
+        AddWorldToDeleteTimer(grid);
     }
 
     private void AddWorldToDeleteTimer(EntityUid uid)

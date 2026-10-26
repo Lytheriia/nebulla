@@ -1,0 +1,79 @@
+- type: entity
+  id: CigPackBlueshield
+  parent: [BaseCentcommContraband, CigPackSyndicate]
+  name: blueshield cigarette packet
+  description: High-grade cigarettes for a high-grade bodyguard. Infused with a slow-affecting medication to help soothe you.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Smokeables/Cigarettes/Packs/blueshield.rsi
+  - type: Item
+    sprite: _Goobstation/Objects/Consumable/Smokeables/Cigarettes/Packs/blueshield.rsi
+
+- type: entity
+  name: blue flippo
+  parent: [FlippoLighter, BaseCentcommContraband]
+  id: FlippoLighterBlueshield
+  description: "A specialized blue lighter given only to specific officers. Great for a smoke after a long day."
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tools/lighters.rsi
+    layers:
+    - state: icon
+      map: ["base"]
+    - state: zippo_top
+      map: ["top"]
+      visible: false
+    - state: icon_open
+      map: ["open"]
+      visible: false
+    - state: lighter_flame
+      map: ["flame"]
+      visible: false
+      shader: unshaded
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 20
+        maxVol: 20
+  - type: PointLight
+    enabled: false
+    netsync: false
+    radius: 3
+    color: blue
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopBlueshield
+  name: blueshield lollypop
+  description: A deep blue lollypop, imbuing you with a sense of determination. Get out there soldier!
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+    - ClothMade
+  - type: Sprite
+    sprite: /Textures/_Goobstation/Objects/Consumable/Food/lollypop.rsi
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#040273"
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedBlueshield
+  name: wrapped blueshield lollypop
+  description: A deep blue lollypop. It's still in the wrapper
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopTrashNanotrasen
+    - id: FoodSnackLollypopBlueshield
+    sound:
+      path: /Audio/Effects/unwrap.ogg

@@ -1,0 +1,7 @@
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBSO
+  suffix: BlueshieldOfficer, Locked
+  components:
+  - type: AccessReader
+    access: [["BlueshieldOfficer"]]

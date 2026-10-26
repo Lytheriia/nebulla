@@ -8,3 +8,8 @@
   license: "CC0-1.0"
   copyright: "Created by freesound_community, modified by loltart and @deltanedas (github)."
   source: "https://pixabay.com/sound-effects/sax-jazz-77053/"
+
+- files: ["moth_flap.ogg"]
+  license: "CC0-1.0"
+  copyright: "taken from https://freesound.org/people/Godowan/sounds/240476/ and converted to mono by @deltanedas (github)"
+  source: "https://freesound.org/people/Godowan/sounds/240476/"

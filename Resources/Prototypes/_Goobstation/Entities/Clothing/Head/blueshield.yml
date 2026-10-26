@@ -1,0 +1,99 @@
+- type: entity
+  parent: [ClothingHeadHatArmoredBeret, ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadHatBeretBlueshield
+  name: blueshield's armored beret
+  description: A durable beret woven out of durathread. Provides protection, too.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/blueshield_beret.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/blueshield_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadHatArmoredBeret, ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadHatCowboyBlueshield
+  name: blueshield's armored cowboy hat
+  description: Sheriff's back in town, kids.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/cowboyhatbso.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/cowboyhatbso.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadHatArmoredBeret, ClothingHeadBase, BaseFoldable, BaseCentcommContraband]
+  id: ClothingHeadHatUshankaBlueshield
+  name: blueshield's armored ushanka
+  description: Perfect for saving heads in Siberia, da?
+  components:
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/blueshield_ushanka.rsi
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedEquippedPrefix: up
+    foldedHeldPrefix: up
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/blueshield_ushanka.rsi
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-up
+      map: ["foldedLayer"]
+      visible: false
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterBso
+  categories: [ HideSpawnMenu ]
+  name: blueshield's winter coat hood
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hoods/bso_winter_hood.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hoods/bso_winter_hood.rsi
+
+- type: entity
+  parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase]
+  id: ClothingHeadHelmetHardsuitBlueshield
+  name: blueshield hardsuit helmet
+  description: The helmet of the captain's bodyguard's hardsuit.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hardsuits/bso.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hardsuits/bso.rsi
+  - type: PointLight
+    color: "#4d7ae3"
+    rotation: 30
+    energy: 10
+    radius: 5
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.3
+      OrganDamage: 0.3
+      BoneDamage: 0.3
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.7
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.6
+  - type: FlashImmunity
+  - type: FlashSoundSuppression

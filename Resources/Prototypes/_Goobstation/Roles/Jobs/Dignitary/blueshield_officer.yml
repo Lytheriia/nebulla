@@ -1,0 +1,79 @@
+- type: job
+  id: BlueshieldOfficer
+  name: job-name-bso
+  description: job-description-bso
+  playTimeTracker: JobBlueshieldOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 90000 # 25 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 90000 # 25 hours
+    - !type:AgeRequirement
+      requiredAge: 21
+  guides:
+  - Command
+  startingGear: BlueshieldOfficerGear
+  icon: "JobIconBlueshield"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-ntr-centcom
+  access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Engineering
+  - Medical
+  - Research
+  - Command
+  - CentralCommand
+  - BlueshieldOfficer
+  - Service
+  - Hydroponics
+  - Cargo
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+      - type: Condemned
+        soulOwnedNotDevil: true
+  - !type:AddObjectiveSpecial
+    objectives:
+    - BlueshieldRandomCommandAliveObjective
+
+- type: startingGear
+  id: BlueshieldOfficerGear
+  equipment:
+    eyes: ClothingEyesGlassesBSO
+    id: BlueshieldPDA
+    ears: ClothingHeadsetAltBlueshield
+    belt: ClothingBeltMilitaryWebbingFilled
+    pocket1: UniqueBlueshieldOfficerLockerTeleporter
+  storage:
+    back:
+    - Flash
+    - ClothingBSOMaskGasSwat
+    - CombatKnife
+
+- type: chameleonOutfit
+  id: BlueshieldOfficerChameleonOutfit
+  job: BlueshieldOfficer
+  equipment:
+    head: ClothingHeadHatBeretBlueshield
+    eyes: ClothingEyesGlassesBSO
+    mask: ClothingMaskGasSecurity
+    ears: ClothingHeadsetAltBlueshield
+    outerClothing: ClothingBlueshieldArmourVest
+    neck: ClothingNeckMantleBlueshield
+    gloves: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
+    id: BlueshieldPDA
+    back: ClothingBackpackBlueshield
+    shoes: ClothingShoesBootsJack

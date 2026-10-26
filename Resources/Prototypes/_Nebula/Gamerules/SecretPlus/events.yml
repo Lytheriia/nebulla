@@ -1,0 +1,186 @@
+# Ported from Goob-Station: https://github.com/Goob-Station/Goob-Station
+# SecretPlus data lives here so upstream rule prototypes stay untouched.
+# secretPlusRule id = game rule id. Grouped by the event table the rule comes from.
+
+# BasicGameRulesTable
+- type: secretPlusRule
+  id: AnomalySpawn
+  chaos: 70
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: BluespaceArtifact
+  chaos: 40
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: BluespaceLocker
+  chaos: 40
+
+- type: secretPlusRule
+  id: BreakerFlip
+  chaos: 60
+  eventType: Maintenance
+
+- type: secretPlusRule
+  id: BureaucraticError
+  chaos: 50
+
+- type: secretPlusRule
+  id: ClericalError
+  chaos: 30
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: ClownGoblinMigration
+  chaos: 0
+
+- type: secretPlusRule
+  id: CockroachMigration
+  chaos: 20
+
+- type: secretPlusRule
+  id: DerelictCyborgSyndicateSpawn
+  chaos: 150
+
+- type: secretPlusRule
+  id: FloorGoblinMidRound
+  chaos: 20
+
+- type: secretPlusRule
+  id: GasLeak
+  chaos: 80
+  eventType: Maintenance
+
+- type: secretPlusRule
+  id: GiftsEngineering
+  chaos: -40
+  eventType: FreeStuffUseful
+
+- type: secretPlusRule
+  id: GiftsFireProtection
+  chaos: -35
+  eventType: FreeStuffUseful
+
+- type: secretPlusRule
+  id: GiftsJanitor
+  chaos: -20
+  eventType: FreeStuff
+
+- type: secretPlusRule
+  id: GiftsMedical
+  chaos: -40
+  eventType: FreeStuffUseful
+
+- type: secretPlusRule
+  id: GiftsPizzaPartyLarge
+  chaos: -30
+  eventType: FreeStuff
+
+- type: secretPlusRule
+  id: GiftsPizzaPartySmall
+  chaos: -15
+  eventType: FreeStuff
+
+- type: secretPlusRule
+  id: GiftsSecurityGuns
+  chaos: -90
+  eventType: FreeStuffUseful
+
+- type: secretPlusRule
+  id: GiftsSecurityRiot
+  chaos: -80
+  eventType: FreeStuffUseful
+
+- type: secretPlusRule
+  id: GiftsSpacingSupplies
+  chaos: -40
+  eventType: FreeStuffUseful
+
+- type: secretPlusRule
+  id: GiftsVendingRestock
+  chaos: -20
+  eventType: FreeStuff
+
+- type: secretPlusRule
+  id: GreytideVirus
+  chaos: 160
+  eventType: Maintenance
+
+- type: secretPlusRule
+  id: IonStorm
+  chaos: 150
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: JobDistributionError
+  chaos: 50
+
+- type: secretPlusRule
+  id: KingRatMigration
+  chaos: 25
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: KudzuGrowth
+  chaos: 80
+  eventType: Maintenance
+
+- type: secretPlusRule
+  id: MalignRiftSpawn
+  chaos: -50
+
+- type: secretPlusRule
+  id: MassHallucinations
+  chaos: 30
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: MothmaggotSpawn
+  chaos: 40
+
+- type: secretPlusRule
+  id: MouseMigration
+  chaos: 20
+
+- type: secretPlusRule
+  id: PowerGridCheck
+  chaos: 80
+  eventType: Interference
+
+- type: secretPlusRule
+  id: RadiationStormRule
+  chaos: 80
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: RandomCritterHorde
+  chaos: 150
+  eventType: HostilesSpawn
+
+- type: secretPlusRule
+  id: RandomSentience
+  chaos: 20
+
+- type: secretPlusRule
+  id: SnailMigration
+  chaos: 30
+  eventType: Chaotic
+
+- type: secretPlusRule
+  id: SnailMigrationLowPop
+  chaos: 20
+
+- type: secretPlusRule
+  id: SolarFlare
+  chaos: 60
+  eventType: Interference
+
+- type: secretPlusRule
+  id: TidemindDevelop
+  chaos: 150
+
+- type: secretPlusRule
+  id: VentClog
+  chaos: 70
+  eventType: Interference

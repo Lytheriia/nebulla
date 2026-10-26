@@ -1,0 +1,32 @@
+# Ported from Goob-Station: https://github.com/Goob-Station/Goob-Station
+# Event categories a SecretPlus preset can forbid via disallowedEvents.
+
+# mild version of chaotic
+- type: eventType
+  id: Neutral
+
+# may be good, may be bad
+- type: eventType
+  id: Chaotic
+
+# ;ENGI POWER
+- type: eventType
+  id: Maintenance
+
+# like Maintenance, but goes away by itself
+- type: eventType
+  id: Interference
+
+# spawns something definitely hostile
+- type: eventType
+  id: HostilesSpawn
+
+# spawns something friendly
+- type: eventType
+  id: FriendlySpawn
+
+- type: eventType
+  id: FreeStuff
+
+- type: eventType
+  id: FreeStuffUseful

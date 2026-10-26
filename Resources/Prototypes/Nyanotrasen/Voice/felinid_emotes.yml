@@ -1,0 +1,65 @@
+- type: emote
+  id: Meow
+  name: chat-emote-name-meow
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/meow.png
+  available: false
+  whitelist:
+    components:
+    - FelinidAbilities
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-meow" ]
+  chatTriggers:
+  - meow
+  - meows
+  - meowing
+  - meowed
+  - miau
+  - miaus
+  - nya
+  - nyas
+  - mraow
+  - mraows
+
+- type: emote
+  id: Mew
+  name: chat-emote-name-mew
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/mew.png
+  available: false
+  whitelist:
+    components:
+    - FelinidAbilities
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-mew" ]
+  chatTriggers:
+  - mew
+  - mews
+  - mewing
+  - mewed
+
+- type: emote
+  id: Purr
+  name: chat-emote-name-purr
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/purr.png
+  available: false
+  whitelist:
+    components:
+    - FelinidAbilities
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-purr" ]
+  chatTriggers:
+  - purr
+  - purrs
+  - purring
+  - purred

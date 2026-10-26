@@ -8,6 +8,7 @@
     requiredAge: 21
   access:
   - NanotrasenRepresentative
+  - BlueshieldOfficer # Nebula edit
   special:
   - !type:OrganChipsSpecial
     chips:

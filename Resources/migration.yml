@@ -10,16 +10,18 @@
 
 # <Trauma> - too lazy to port debugoks multi migration thing
 # 2025-10-19
-LockerBlueshieldOfficerFilled: null
-DresserBlueshieldOfficerFilled: null
-HolopadCommandBSO: null
-UniqueLockerBlueshieldOfficerFilled: null
-AirlockBlueshieldOfficerCommandLocked: AirlockCentralCommandLocked
-AirlockBlueshieldOfficerCommandGlassLocked: AirlockCentralCommandGlassLocked
-SpawnMobHumanBSOBase: null
+# Nebula start
+# LockerBlueshieldOfficerFilled: null
+# DresserBlueshieldOfficerFilled: null
+# HolopadCommandBSO: null
+# UniqueLockerBlueshieldOfficerFilled: null
+# AirlockBlueshieldOfficerCommandLocked: AirlockCentralCommandLocked
+# AirlockBlueshieldOfficerCommandGlassLocked: AirlockCentralCommandGlassLocked
+# SpawnMobHumanBSOBase: null
 SpawnMobHumanBSOModSuit: null
-SpawnMobHumanBSOSuit: null
-SpawnPointBlueshieldOfficer: null
+# SpawnMobHumanBSOSuit: null
+# SpawnPointBlueshieldOfficer: null
+# Nebula end
 
 # 2025-10-30
 DVSmartFridgeMedical: SmartFridgeMedical
@@ -33,7 +35,7 @@ MiniatureEnergyCrossbow: WeaponEnergyCrossbow
 # 2025-11-28
 PlushieXeve: null
 # 2025-12-08
-SuitStorageBlueshield: null # it didnt fucking have anything
+# SuitStorageBlueshield: null # it didnt fucking have anything # Nebula edit
 
 # 2025-12-19
 FelinidCube: HumanCube

@@ -1,0 +1,235 @@
+- type: emoteSounds
+  parent: BaseMobEmotes
+  id: SoundsHarpyMale
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyScreams
+    Laugh:
+      collection: HarpyLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Sigh:
+      collection: HarpySigh
+    Crying:
+      collection: HarpyCry
+    Whistle:
+      collection: Whistles
+    Hiss:
+      collection: HarpyHisses
+    Meow:
+      collection: HarpyMeows
+    Mew:
+      collection: HarpyMews
+    Growl:
+      collection: HarpyGrowls
+    Purr:
+      collection: HarpyPurrs
+    Ring:
+      collection: HarpyRings
+    Pew:
+      collection: HarpyPews
+    Bang:
+      collection: HarpyBangs
+    Beep:
+      collection: HarpyBeeps
+    Rev:
+      collection: HarpyRevs
+    Click:
+      collection: HarpyClicks
+    Chitter:
+      collection: HarpyChitter
+    Squeak:
+      collection: HarpySqueak
+    Caw:
+      collection: HarpyCaws
+    Chirp:
+      collection: HarpyChirps
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: VulpkaninBarks
+    Whine:
+      collection: VulpkaninWhines
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Honk:
+      collection: HarpyHonks
+    Weh:
+      collection: Weh
+    CatMeow:
+      collection: CatMeows
+    Coo:
+      collection: HarpyCoos
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Gulp:
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Trill:
+      collection: Trill
+    Yip:
+      collection: Yip
+    Warble:
+      collection: Warble
+    Wurble:
+      collection: Wurble
+    Mars:
+      collection: Mars
+    Surprised:
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    Yawn:
+      collection: HarpyYawn 
+    Bagawk:
+      path: /Audio/_Mono/Voice/bagawk.ogg 
+    Flap: 
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg 
+    Gnash: 
+      collection: FeroxiGnashes 
+    Hoot: 
+      path: /Audio/_Goobstation/Voice/Harpy/owl_hoot.ogg 
+    Chime: 
+      path: /Audio/Machines/chime.ogg 
+    Buzz: 
+      path: /Audio/Machines/buzz-sigh.ogg 
+    Buzz-Two: 
+      path: /Audio/Machines/buzz-two.ogg 
+    Ping: 
+      path: /Audio/Effects/Cargo/ping.ogg 
+    Boop: 
+      path: /Audio/_EinsteinEngines/Voice/IPC/beep_500.ogg 
+    Whirr: 
+      collection: IPCWhirrs 
+    Squish: 
+      collection: Squishes 
+    Bubble: 
+      collection: Bubbles 
+    Pop:
+      collection: Pops
+    Hew:
+      collection: Hew
+
+- type: emoteSounds
+  parent: BaseMobEmotes
+  id: SoundsHarpyFemale
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyScreams
+    Laugh:
+      collection: HarpyLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Sigh:
+      collection: HarpySigh
+    Crying:
+      collection: HarpyCry
+    Whistle:
+      collection: Whistles
+    Hiss:
+      collection: HarpyHisses
+    Meow:
+      collection: HarpyMeows
+    Mew:
+      collection: HarpyMews
+    Growl:
+      collection: HarpyGrowls
+    Purr:
+      collection: HarpyPurrs
+    Ring:
+      collection: HarpyRings
+    Pew:
+      collection: HarpyPews
+    Bang:
+      collection: HarpyBangs
+    Beep:
+      collection: HarpyBeeps
+    Rev:
+      collection: HarpyRevs
+    Click:
+      collection: HarpyClicks
+    Chitter:
+      collection: HarpyChitter
+    Squeak:
+      collection: HarpySqueak
+    Caw:
+      collection: HarpyCaws
+    Chirp:
+      collection: HarpyChirps
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: VulpkaninBarks
+    Whine:
+      collection: VulpkaninWhines
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Honk:
+      collection: HarpyHonks
+    Weh:
+      collection: Weh
+    CatMeow:
+      collection: CatMeows
+    Coo:
+      collection: HarpyCoos
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Gulp:
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Trill:
+      collection: Trill
+    Yip:
+      collection: Yip
+    Warble:
+      collection: Warble
+    Wurble:
+      collection: Wurble
+    Surprised:
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    Mars:
+      collection: Mars 
+    Yawn:
+      collection: HarpyYawn 
+    Bagawk:
+      path: /Audio/_Mono/Voice/bagawk.ogg 
+    Flap: 
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg 
+    Gnash: 
+      collection: FeroxiGnashes 
+    Hoot: 
+      path: /Audio/_Goobstation/Voice/Harpy/owl_hoot.ogg 
+    Chime: 
+      path: /Audio/Machines/chime.ogg 
+    Buzz: 
+      path: /Audio/Machines/buzz-sigh.ogg 
+    Buzz-Two: 
+      path: /Audio/Machines/buzz-two.ogg 
+    Ping: 
+      path: /Audio/Effects/Cargo/ping.ogg 
+    Boop: 
+      path: /Audio/_EinsteinEngines/Voice/IPC/beep_500.ogg 
+    Whirr: 
+      collection: IPCWhirrs 
+    Squish: 
+      collection: Squishes 
+    Bubble: 
+      collection: Bubbles 
+    Pop:
+      collection: Pops
+    Hew:
+      collection: Hew

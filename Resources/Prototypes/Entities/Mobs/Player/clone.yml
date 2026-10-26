@@ -22,6 +22,7 @@
   # - LegsParalyzed (you get healed)
   - PermanentBlindness
   - Snoring
+  - RuneSummonable # Nebula edit
   - Unrevivable
 
 - type: cloningSettings

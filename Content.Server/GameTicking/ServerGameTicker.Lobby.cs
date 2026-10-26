@@ -130,7 +130,7 @@ public sealed partial class ServerGameTicker
         RaiseNetworkEvent(new TickerLateJoinStatusEvent(DisallowLateJoin));
     }
 
-    public bool PauseStart(bool pause = true)
+    public bool PauseStart(bool pause = true, bool announce = true) // Nebula
     {
         if (Paused == pause)
         {
@@ -150,9 +150,10 @@ public sealed partial class ServerGameTicker
 
         RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
 
-        _chatManager.DispatchServerAnnouncement(Loc.GetString(Paused
-            ? "game-ticker-pause-start"
-            : "game-ticker-pause-start-resumed"));
+        if (announce) // Nebula
+            _chatManager.DispatchServerAnnouncement(Loc.GetString(Paused
+                ? "game-ticker-pause-start"
+                : "game-ticker-pause-start-resumed"));
 
         return true;
     }

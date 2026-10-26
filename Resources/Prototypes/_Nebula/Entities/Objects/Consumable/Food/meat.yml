@@ -1,0 +1,19 @@
+- type: entity
+  parent: FoodMeatRawBase
+  id: FoodMeatDemon
+  name: raw arcana meat
+  description: Raw arcana meat. Better cook it first.
+  components:
+  - type: Sprite
+    sprite: _Nebula/Objects/Consumable/Food/species_meat.rsi
+    state: arkana_meat
+  - type: Item
+    inhandVisuals:
+      left:
+      - sprite: Objects/Consumable/Food/meat.rsi
+        state: plain-inhand-left
+        color: "#ff3333"
+      right:
+      - sprite: Objects/Consumable/Food/meat.rsi
+        state: plain-inhand-right
+        color: "#ff3333"

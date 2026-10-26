@@ -1,0 +1,24 @@
+- type: entity
+  parent: [LockerBase, AntiTamperHighPriority]
+  id: LockerBlueshieldOfficer
+  name: blueshield officer locker
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Goobstation/Structures/Storage/closet.rsi
+  - type: AccessReader
+    access: [["BlueshieldOfficer"]]
+  - type: EntityStorageVisuals
+    stateBaseClosed: bso
+    stateDoorOpen: bso_open
+    stateDoorClosed: bso_door
+
+- type: entity
+  parent: LockerBlueshieldOfficer
+  id: LockerBlueshieldOfficerFilled
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillBlueshieldOfficer

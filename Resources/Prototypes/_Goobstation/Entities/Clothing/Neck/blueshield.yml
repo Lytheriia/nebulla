@@ -1,0 +1,62 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckMantleBlueshield
+  name: blueshield officer mantle
+  description: A well-balanced, protective mantle, designed for optimal bodyguarding efficiency.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Neck/Mantle/bsomantle.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Neck/Mantle/bsomantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommCommandContraband]
+  id: ClothingNeckEnsembleBlueshield
+  name: blueshield officer's ensemble
+  description: After fending off countless tiders in defense of command, Nanotrasen has finally granted you the ability to die in style. Now get out there and protect the NTR soldier!
+  suffix: DO NOT MAP
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: cloakblackmantle
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+    equippedPrefix: cloakblackmantle
+    slots:
+    - Neck
+  - type: ItemSwitch
+    state: cloakblackmantle
+    showLabel: true
+    states:
+      cloakblackmantle: !type:ItemSwitchState
+        verb: cloakblack&mantle
+        sprite:
+          sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+          state: icon
+      cloakwhitemantle: !type:ItemSwitchState
+        verb: cloakwhite&mantle
+        sprite:
+          sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+          state: cloakwhitemantle-icon
+      cloakwhite: !type:ItemSwitchState
+        verb: cloakwhite
+        sprite:
+          sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+          state: cloakwhite-icon
+      cloakblack: !type:ItemSwitchState
+        verb: cloakblack
+        sprite:
+          sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+          state: cloakblack-icon
+      mantle: !type:ItemSwitchState
+        verb: mantle
+        sprite:
+          sprite: _Goobstation/Clothing/Neck/Ensembles/bso.rsi
+          state: mantle-icon

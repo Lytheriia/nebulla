@@ -1,0 +1,24 @@
+- type: species
+  id: Ariral
+  name: species-name-ariral
+  roundStart: true
+  prototype: MobAriral
+  dollPrototype: AppearanceAriral
+  defaultSkinTone: "#fff9e2"
+  skinColoration: TintedHues
+  maleFirstNames: names_ariral_male
+  femaleFirstNames: names_ariral_female
+  lastNames: names_ariral_last
+  defaultSoundsBySex:
+  - MaleAriral
+  - FemaleAriral
+  - FemaleAriral
+  voices:
+  - MaleAriral
+  - FemaleAriral
+  minHeight: 0.85
+  defaultHeight: 1
+  maxHeight: 1.15
+  minWidth: 0.85
+  defaultWidth: 1
+  maxWidth: 1.10
