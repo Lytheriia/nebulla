@@ -1,0 +1,66 @@
+- type: nebulaWardrobeCategory
+  id: Eyes
+  name: nebula-wardrobe-category-eyes
+  order: 1
+  sets:
+  - items:
+    - ClothingEyesHudBeer
+    - ClothingEyesGlassesBroken
+    - ClothingEyesGlassesCheapSunglasses
+    - ClothingEyesEyepatch
+    - ClothingEyesHudFriedOnion
+    - ClothingEyesGlassesGar
+    - ClothingEyesGlassesGarGiga
+    - ClothingEyesGlasses
+    - ClothingEyesGlassesJamjar
+    - ClothingEyesGlassesJensen
+    - ClothingEyesGlassesGarOrange
+    - ClothingEyesGlassesOutlawGlasses
+    - ClothingEyesPrescriptionGlasses
+    - ClothingEyesHudOnionBeer
+  - removeComponents: [Blindfold]
+    items:
+    - ClothingEyesBlindfold
+  - tier: 1
+    items:
+    - ClothingEyesGlassesNoir
+    - ClothingEyesGlassesSunglasses
+    - ClothingEyesEyepatchMedical
+    - ClothingEyesEyepatchHudBeer
+    - ClothingEyesGlassesMeson
+  - tier: 1
+    removeComponents: [FlashImmunity, ShowCriminalRecordIcons]
+    items:
+    - ClothingEyesRevolutionaryVisor
+  - tier: 1
+    departments: [Command]
+    items:
+    - ClothingEyesGlassesCommand
+  - tier: 1
+    departments: [Medical]
+    items:
+    - ClothingEyesGlassesMedDiag
+    - ClothingEyesGlassesMed
+  - tier: 1
+    departments: [Science]
+    items:
+    - ClothingEyesGlassesDiag
+  - tier: 1
+    departments: [Security]
+    items:
+    - ClothingEyesGlassesMedSec
+  - tier: 2
+    removeComponents: [ShowCriminalRecordIcons, ShowJobIcons, ShowMindShieldIcons, ShowSyndicateIcons]
+    items:
+    - ClothingEyesHudSyndicate
+    - ClothingEyesHudChrono
+  - tier: 2
+    departments: [Medical]
+    removeComponents: [ShowCriminalRecordIcons, ShowJobIcons, ShowMindShieldIcons, ShowSyndicateIcons]
+    items:
+    - ClothingEyesHudSyndicateAgent
+  - tier: 2
+    departments: [Security]
+    removeComponents: [ThermalVision]
+    items:
+    - ClothingEyesGlassesSecurityAdvanced

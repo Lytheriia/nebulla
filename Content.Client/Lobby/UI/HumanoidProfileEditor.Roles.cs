@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Nebula.Stylesheets;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
 using Content.Shared.Clothing;
@@ -165,7 +166,7 @@ public sealed partial class HumanoidProfileEditor
 
                 category.AddChild(new PanelContainer
                 {
-                    PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                    StyleClasses = { NebulaStyleClass.VanillaHeader }, // Nebula edit
                     Children =
                         {
                             new Label
@@ -209,6 +210,7 @@ public sealed partial class HumanoidProfileEditor
                 var jobIcon = _prototypeManager.Index(job.Icon);
                 icon.Texture = _sprite.Frame0(jobIcon.Icon);
                 selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+                SetupAltTitles(selector, job); // Nebula edit
 
                 if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
                 {

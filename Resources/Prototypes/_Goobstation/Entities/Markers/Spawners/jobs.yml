@@ -9,6 +9,10 @@
   components:
   - type: SpawnPoint
     job_id: NanotrasenRepresentative
+    # Nebula start
+    extraJobs:
+    - BlueshieldOfficer
+    # Nebula end
   - type: Sprite
     layers:
       - state: green

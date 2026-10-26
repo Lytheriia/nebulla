@@ -62,4 +62,10 @@ public sealed partial class NCCVars
     /// </summary>
     public static readonly CVarDef<int> NSFWPreferencesLength =
         CVarDef.Create("ic.nsfw_preferences_length", 2500, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Whether players can pick alternate job titles in the character editor.
+    /// </summary>
+    public static readonly CVarDef<bool> AlternateJobTitlesEnabled =
+        CVarDef.Create("ic.alternate_job_titles_enabled", true, CVar.SERVER | CVar.REPLICATED);
 }

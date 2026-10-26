@@ -1312,6 +1312,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("real")
                         .HasColumnName("height");
 
+                    b.Property<string>("JobAlternateTitles")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("job_alternate_titles");
+
                     b.Property<string>("KnowledgeMastery")
                         .IsRequired()
                         .HasColumnType("text")
@@ -1359,6 +1364,11 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<string>("Voice")
                         .HasColumnType("text")
                         .HasColumnName("voice");
+
+                    b.Property<string>("Wardrobe")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("wardrobe");
 
                     b.Property<float>("Width")
                         .HasColumnType("real")

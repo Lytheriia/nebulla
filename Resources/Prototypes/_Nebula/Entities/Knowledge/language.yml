@@ -1,0 +1,34 @@
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageNekomimetic
+  components:
+  - type: LanguageKnowledge
+    languageId: Nekomimetic
+
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageGruntish
+  components:
+  - type: LanguageKnowledge
+    languageId: Gruntish
+
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageValyrianStandard
+  components:
+  - type: LanguageKnowledge
+    languageId: ValyrianStandard
+
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageKarshan
+  components:
+  - type: LanguageKnowledge
+    languageId: Karshan
+
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageAriral
+  components:
+  - type: LanguageKnowledge
+    languageId: Ariral

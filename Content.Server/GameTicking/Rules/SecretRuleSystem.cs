@@ -43,6 +43,7 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
             return;
         }
 
+        ent.Comp1.SelectedPreset = preset.ID; // Nebula edit
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
 

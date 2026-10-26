@@ -2,12 +2,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._Nebula.Lobby.UI;
+using Content.Client.Lobby.UI.Roles;
+using Content.Shared._Nebula.Roles;
 using Content.Shared.Humanoid;
+using Content.Shared.Roles;
+using Robust.Shared.Enums;
 
 namespace Content.Client.Lobby.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
+    private JobAlternateTitleSystem? _jobAltTitles;
+
     private void ResetMarkings()
     {
         if (Profile == null)
@@ -17,5 +24,51 @@ public sealed partial class HumanoidProfileEditor
         Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(markings));
         UpdateMarkings();
         ReloadPreview();
+    }
+
+    /// <summary>
+    /// Replaces the job name of the selector with a picker of its alternate titles, if the job has any.
+    /// </summary>
+    private void SetupAltTitles(RequirementsSelector selector, JobPrototype job)
+    {
+        _jobAltTitles ??= _entManager.System<JobAlternateTitleSystem>();
+        if (!_jobAltTitles.Enabled)
+            return;
+
+        var titles = _jobAltTitles.GetTitles(job.ID);
+        if (titles.Count == 0)
+            return;
+
+        var picker = new NebulaAltTitlePicker(job.LocalizedName, titles);
+        picker.SetGender(Profile?.Gender ?? Gender.Epicene);
+        if (Profile != null && Profile.JobAlternateTitles.TryGetValue(job.ID, out var selected))
+            picker.Select(selected);
+
+        picker.OnSelected += title =>
+        {
+            Profile = Profile?.WithJobAltTitle(job.ID, title);
+
+            foreach (var (jobId, other) in _jobPriorities)
+            {
+                if (jobId == job.ID && other.AltTitlePicker != picker)
+                    other.AltTitlePicker?.Select(title);
+            }
+
+            SetDirty();
+        };
+
+        selector.SetAltTitlePicker(picker);
+    }
+
+    /// <summary>
+    /// Updates alternate titles to the gendered forms of the current profile.
+    /// </summary>
+    private void UpdateAltTitleGender()
+    {
+        var gender = Profile?.Gender ?? Gender.Epicene;
+        foreach (var (_, selector) in _jobPriorities)
+        {
+            selector.AltTitlePicker?.SetGender(gender);
+        }
     }
 }

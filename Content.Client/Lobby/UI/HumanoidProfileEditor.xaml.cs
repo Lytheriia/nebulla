@@ -186,6 +186,8 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion
+
+            InitializeWardrobe();
             // Nebula end
 
             #region Voice
@@ -409,10 +411,7 @@ namespace Content.Client.Lobby.UI
 
             #endregion Left
 
-            ShowClothes.OnToggled += args =>
-            {
-                ReloadPreview();
-            };
+            // Nebula - ShowClothes is replaced by the preview modes, see InitializeWardrobe
 
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
@@ -444,7 +443,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            SpriteView.LoadPreview(Profile, JobOverride, ShowClothes.Pressed);
+            SpriteView.LoadPreview(Profile, JobOverride, _previewWardrobe, _previewClothing); // Nebula edit
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -486,6 +485,7 @@ namespace Content.Client.Lobby.UI
             ResetWidthAndHeight();
             UpdateCustomSpeciesEdit();
             UpdateERPStatusControls();
+            RefreshWardrobe();
             // Nebula end
 
             RefreshAntags();

@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;
+using Content.Shared._Nebula.Roles;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -32,6 +33,7 @@ namespace Content.Server.GameTicking
         [Dependency] private IAdminManager _adminManager = default!;
         [Dependency] private SharedJobSystem _jobs = default!;
         [Dependency] private AdminSystem _admin = default!;
+        [Dependency] private JobAlternateTitleSystem _jobAltTitles = default!; // Nebula
 
         public static readonly EntProtoId ObserverPrototypeName = "MobObserver";
         public static readonly EntProtoId AdminObserverPrototypeName = "AdminObserver";
@@ -357,7 +359,7 @@ namespace Content.Server.GameTicking
             Mind.TransferTo(newMind, mob);
 
             Role.MindAddJobRole(newMind, silent: silent, jobPrototype: jobId);
-            jobName = _jobs.MindTryGetJobName(newMind);
+            jobName = _jobAltTitles.GetJobName(character, jobId, _jobs.MindTryGetJobName(newMind)); // Nebula edit
             _admin.UpdatePlayerList(player);
         }
 

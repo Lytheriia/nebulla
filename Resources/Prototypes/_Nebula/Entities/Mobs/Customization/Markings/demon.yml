@@ -1,0 +1,523 @@
+- type: marking
+  id: DemonTail1
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: demon_tail
+
+- type: marking
+  id: DemonTailLong
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: long
+
+- type: marking
+  id: DemonTailUp
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: up
+
+- type: marking
+  id: DemonTailBroom
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_broom
+
+- type: marking
+  id: DemonTailBroomAnimated
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_broom_animated
+
+- type: marking
+  id: DemonTailDefault
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+
+- type: marking
+  id: DemonTailFishnet
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_fishnet
+
+- type: marking
+  id: DemonTailFin
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_fin
+
+- type: marking
+  id: DemonTailMermaid
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_mermaid
+
+- type: marking
+  id: DemonTailArrow
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_arrow
+
+- type: marking
+  id: DemonTailArrowAnimated
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_arrow_animated
+
+- type: marking
+  id: DemonTailTrident
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/parts.rsi
+    state: tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tail_trident
+
+- type: marking
+  id: DemonTailTrientBig
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings_big.rsi
+    state: devil_trident_tail
+
+- type: marking
+  id: DemonTailHimera
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings_big.rsi
+    state: himera_tail
+  - sprite: _Nebula/Mobs/Species/Demon/markings_big.rsi
+    state: himera_tail_hair
+
+- type: marking
+  id: DemonTailMermaidAnimatedBase
+  bodyPart: Tail
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings_big.rsi
+    state: mermaid_animated_base
+  - sprite: _Nebula/Mobs/Species/Demon/markings_big.rsi
+    state: mermaid_animated_fluff
+
+- type: marking
+  id: DemonCowEars
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: cow_ears
+
+- type: marking
+  id: DemonEars
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: demon_ears
+
+- type: marking
+  id: EarsArcanaAlt
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: arcana_ears_alt
+
+- type: marking
+  id: EarsArcana
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: arcana_ears
+
+- type: marking
+  id: DemonBiggerCowEars
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: bigger_cow_ears
+
+- type: marking
+  id: DemonFinEars
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: fin_ears
+
+- type: marking
+  id: DemonOxEars
+  bodyPart: HeadSide
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: ox_ears
+
+- type: marking
+  id: DemonCowHorns
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: cow_horns
+
+- type: marking
+  id: DemonHornsDeer
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: deer_antlers_horns
+
+- type: marking
+  id: DemonHornsSmall
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: small_horns
+
+- type: marking
+  id: DemonCurvedHorns
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: curved
+
+- type: marking
+  id: DemonTwistedHorns
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: twisted
+
+- type: marking
+  id: DemonSheepHorns
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: sheep
+
+- type: marking
+  id: DemonBullHorns
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: bull
+
+- type: marking
+  id: DemonHornsDouble
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_double
+
+- type: marking
+  id: DemonHornsDoubleAlt
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_double_alt
+
+- type: marking
+  id: DemonHornsNarrow
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_narrow
+
+- type: marking
+  id: DemonHornsGoatee
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_goatee
+
+- type: marking
+  id: DemonHornsGoateeAlt
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_goatee_alt
+
+- type: marking
+  id: DemonHornsSharp
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_sharp
+
+- type: marking
+  id: DemonHornsGrowths
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_growths
+
+- type: marking
+  id: DemonHornsBrokenOne
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_broken_one
+
+- type: marking
+  id: DemonHornsStout
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_stout
+
+- type: marking
+  id: DemonHornsEnormous
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_enormous
+
+- type: marking
+  id: DemonHornsScythe
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_scythe
+
+- type: marking
+  id: DemonHornsTapering
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_tapering
+
+- type: marking
+  id: DemonHornsDirectional
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_directional
+
+- type: marking
+  id: DemonHornsThick
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_thick
+
+- type: marking
+  id: DemonHornsSickle
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_sickle
+
+- type: marking
+  id: DemonHornsSlim
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: horns_slim
+
+- type: marking
+  id: DemonHornsDiadema
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: diadema
+
+- type: marking
+  id: DemonHornsHeart
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: heart
+
+- type: marking
+  id: DemonHornsPretzel
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: pretzel
+
+- type: marking
+  id: DemonHornsSmallAlt
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: small_horns_alt
+
+- type: marking
+  id: DemonHornsLongOx
+  bodyPart: HeadTop
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: long_ox_horns
+
+- type: marking
+  id: DemonGoatee
+  bodyPart: FacialHair
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: goatee
+
+- type: marking
+  id: DemonBodyCowSpots
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: cow_spots
+
+- type: marking
+  id: DemonBodyGuardStripes
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: guards_stripes
+
+- type: marking
+  id: DemonBodyLinesEmperos
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: lines_emperos
+
+- type: marking
+  id: DemonBodyQueenLines
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: queen_lines
+
+- type: marking
+  id: DemonBodyTreeLines
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: tree_lines
+
+- type: marking
+  id: DemonBodyTrinitySpots
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: trinity_spots
+
+- type: marking
+  id: DemonBodyAratakiPainting
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: arataki_painting
+
+- type: marking
+  id: DemonBodyGradientPaint
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: gradient_paint
+
+- type: marking
+  id: DemonBodySkeleton
+  bodyPart: Overlay
+  sprites:
+  - sprite: _Nebula/Mobs/Species/Demon/markings.rsi
+    state: skeleton
+
+- type: marking
+  id: SuccubusWingsDemon
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings
+
+- type: marking
+  id: SuccubusWingsDemonTwo
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings-2
+
+- type: marking
+  id: SuccubusWingsDemonAnimated
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings_animated
+
+- type: marking
+  id: SuccubusWingsWithTail
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/succubus.rsi
+    state: succubus
+
+- type: marking
+  id: SuccubusWingsNotWithTail
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/succubus.rsi
+    state: succubus_not_tail
+
+- type: marking
+  id: SuccubusWingsWingsBig
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings_big
+
+- type: marking
+  id: SuccubusWingsWingsFin
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings_fin
+
+- type: marking
+  id: SuccubusWingsWingsLower
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings_lower
+
+- type: marking
+  id: SuccubusWingsWingsLowerTwo
+  bodyPart: Wings
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demonwings.rsi
+    state: succubus_wings_lower2
+
+- type: marking
+  id: DrakeSpine
+  bodyPart: Chest
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demondrake.rsi
+    state: drake_spine
+
+- type: marking
+  id: LeftDrakeArm
+  bodyPart: LArm
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demondrake.rsi
+    state: l_drake_arm
+
+- type: marking
+  id: RightDrakeArm
+  bodyPart: RArm
+  sprites:
+  - sprite: _Nebula/Mobs/Customization/Demon/demondrake.rsi
+    state: r_drake_arm

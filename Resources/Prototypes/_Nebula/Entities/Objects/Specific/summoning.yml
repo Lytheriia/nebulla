@@ -1,0 +1,52 @@
+- type: entity
+  parent: BaseItem
+  id: SummonChalk
+  name: cursed chalk
+  description: A weird chalk covered in ectoplasm.
+  components:
+  - type: Sprite
+    sprite: _Nebula/Entities/Objects/Specific/summon_chalk.rsi
+    state: chalk
+  - type: Item
+    size: Tiny
+  - type: SummonChalk
+
+- type: entity
+  id: SummonRune
+  name: summoning rune
+  description: It is believed this rune is capable of summoning creatures from afar.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Nebula/Entities/Objects/Specific/summon_chalk.rsi
+    state: rune
+    drawdepth: FloorObjects
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#ff69d2"
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      rune:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        hard: false
+        mask:
+        - ItemMask
+        layer:
+        - SlipLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: SummonRune
+  - type: Reactive
+    reactions:
+    - reagents: [ Bleach, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:Delete

@@ -1,0 +1,29 @@
+- type: language
+  id: Karshan
+  speech:
+    color: "#e255b3"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 3
+    replacement:
+    - аика
+    - сейна
+    - оикея
+    - уинти
+    - хуи
+    - эи
+    - ои
+    - алла
+    - амма
+    - анна
+    - арра
+    - асса
+    - тсета
+    - микё
+    - тэмэ
+    - минё
+    - тамэ
+    - олэн
+    - килла
+    - тйоло

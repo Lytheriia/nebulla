@@ -1,3 +1,4 @@
+using Content.Client._Nebula.Stylesheets;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -52,6 +53,7 @@ namespace Content.Client.Entry
         [Dependency] private IParallaxManager _parallaxManager = default!;
         [Dependency] private IConfigurationManager _configManager = default!;
         [Dependency] private IStylesheetManager _stylesheetManager = default!;
+        [Dependency] private NebulaThemeManager _nebulaTheme = default!; // Nebula
         [Dependency] private IScreenshotHook _screenshotHook = default!;
         [Dependency] private FullscreenHook _fullscreenHook = default!;
         [Dependency] private ChangelogManager _changelogManager = default!;
@@ -125,6 +127,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
+            _prototypeManager.RegisterIgnore("modeRotation"); // Nebula
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
@@ -150,6 +153,7 @@ namespace Content.Client.Entry
         {
             base.PostInit();
 
+            _nebulaTheme.Initialize(); // Nebula
             _stylesheetManager.Initialize();
 
             // Setup key contexts

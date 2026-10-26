@@ -1,0 +1,7 @@
+- type: language
+  id: Ariral
+  speech:
+    color: "#B0E0FF"
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement: [ "шзо", "зоак", "ша", "сза", "ррх", "аак", "орх", "кзо", "жа", "лхз", "хра", "шрр" ]

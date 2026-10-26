@@ -1241,6 +1241,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("REAL")
                         .HasColumnName("height");
 
+                    b.Property<string>("JobAlternateTitles")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job_alternate_titles");
+
                     b.Property<string>("KnowledgeMastery")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -1288,6 +1293,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<string>("Voice")
                         .HasColumnType("TEXT")
                         .HasColumnName("voice");
+
+                    b.Property<string>("Wardrobe")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("wardrobe");
 
                     b.Property<float>("Width")
                         .HasColumnType("REAL")

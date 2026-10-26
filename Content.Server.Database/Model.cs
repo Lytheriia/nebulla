@@ -463,6 +463,8 @@ namespace Content.Server.Database
         public string CustomSpecies { get; set; } = null!;
         [Column(TypeName = "jsonb")] public JsonDocument? DetailExaminable { get; set; } = null!;
         public string ERPStatus { get; set; } = null!;
+        public string JobAlternateTitles { get; set; } = "{}";
+        public string Wardrobe { get; set; } = "[]";
         // Nebula end
         // <Trauma>
         public string BarkVoice { get; set; } = null!;

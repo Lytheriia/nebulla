@@ -1,0 +1,7 @@
+- type: trait
+  id: RuneSummonable
+  name: trait-summonable-name
+  description: trait-summonable-desc
+  category: Quirks
+  components:
+  - type: RuneSummonable

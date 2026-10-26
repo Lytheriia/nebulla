@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Goobstation.Shared.CrewMonitoring;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Medical.CrewMonitoring;
 using Content.Shared.Pinpointer;
@@ -54,7 +55,8 @@ public sealed partial class CrewMonitoringConsoleSystem : EntitySystem
             EnsureComp<NavMapComponent>(xform.GridUid.Value);
 
         // Update all sensors info
-        var allSensors = component.ConnectedSensors.Values.ToList();
+        var isCommandMonitor = HasComp<CrewMonitorScanningComponent>(uid); // Nebula edit
+        var allSensors = component.ConnectedSensors.Values.Where(s => s.IsCommandTracker == isCommandMonitor).ToList(); // Nebula edit
         _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(allSensors));
     }
 }

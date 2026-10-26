@@ -1,0 +1,91 @@
+- type: emoteSounds
+  parent: BaseMobEmotes
+  id: MaleFelinid
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
+  params:
+    variation: 0.125
+  sounds:
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Honk:
+      collection: BikeHorn
+    Snore:
+      collection: Snores
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Scream:
+      collection: FelinidScreams
+    Hiss:
+      collection: FelinidHisses
+    Meow:
+      collection: FelinidMeows
+    Mew:
+      collection: FelinidMews
+    Growl:
+      collection: FelinidGrowls
+    Purr:
+      collection: FelinidPurrs
+    Surprised:
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+
+- type: emoteSounds
+  parent: BaseMobEmotes
+  id: FemaleFelinid
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
+  params:
+    variation: 0.125
+  sounds:
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Honk:
+      collection: CluwneHorn
+    Snore:
+      collection: Snores
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Scream:
+      collection: FelinidScreams
+    Hiss:
+      collection: FelinidHisses
+    Meow:
+      collection: FelinidMeows
+    Mew:
+      collection: FelinidMews
+    Growl:
+      collection: FelinidGrowls
+    Purr:
+      collection: FelinidPurrs
+    Surprised:
+      path: /Audio/_Goobstation/Voice/surprised.ogg

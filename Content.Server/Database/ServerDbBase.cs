@@ -220,6 +220,8 @@ namespace Content.Server.Database
             profile.CustomSpecies = humanoid.CustomSpecies;
             profile.DetailExaminable = JsonSerializer.SerializeToDocument(humanoid.DetailExaminableData); // Nebula
             profile.ERPStatus = humanoid.ERPStatus.ToString();
+            profile.JobAlternateTitles = SerializeJobAltTitles(humanoid);
+            profile.Wardrobe = SerializeWardrobe(humanoid);
             // Nebula end
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();

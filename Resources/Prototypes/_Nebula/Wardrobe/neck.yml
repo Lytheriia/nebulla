@@ -1,0 +1,70 @@
+- type: nebulaWardrobeCategory
+  id: Neck
+  name: nebula-wardrobe-category-neck
+  order: 7
+  sets:
+  - items:
+    - ClothingNeckScarfStripedZebra
+    - ClothingNeckCloakWeb
+    - ClothingNeckPonchoWeb
+    - ClothingNeckCloakAdmin
+    - ClothingNeckLawyerbadge
+    - CrewCassette
+    - ClothingNeckCloakCOG
+    - ClothingNeckBling
+    - ClothingNeckCloakSanabi
+    - ClothingNeckCloakSalvagerSupreme
+    - ClothingNeckScarfStripedSyndieRed
+    - ClothingNeckScarfStripedBlack
+    - ClothingNeckPonchoLisa
+    - ClothingNeckTieSerious
+    - ClothingNeckTieSci
+    - ClothingNeckTieRed
+    - ClothingNeckOldClothWrap
+    - ClothingNeckCloakNanotrasen
+    - ClothingNeckCloakGay
+    - ClothingNeckCloakMoth
+    - ClothingNeckMantle
+    - ClothingNeckScarfStripedLesbianLong
+    - ClothingNeckPonchoArmstrong
+    - ClothingNeckCloakHerald
+    - ClothingNeckCloakGoliathCloak
+    - ClothingNeckTieDet
+    - ClothingNeckCloakIntersex
+    - ClothingNeckPonchoArctic
+    - ClothingNeckClassicPonchoWeb
+    - ClothingNeckStoleChaplain
+    - ClothingNeckCloakCarpAlt
+    - ClothingNeckPonchoBlack
+    - ClothingNeckPonchoSyndicate
+    - ClothingNeckCloakAroace
+    - PatreonDrOktober
+  - tier: 1
+    items:
+    - PatreonEpsilon
+    - PatreonDaniels
+    - PatreonBias
+    - ClothingNeckCloakHelldiver
+    - ClothingNeckMantleHOS
+    - ClothingNeckCloakCrimson
+    - PatreonCatdere
+    - ClothingNeckCloakResonant
+    - ClothingNeckCloakVoid
+    - ClothingNeckCloakPirateCap
+    - ClothingNeckMantleCap
+    - ClothingNeckMantleCE
+    - ClothingNeckMantleCMO
+    - ClothingNeckMantleHOP
+    - ClothingNeckMantleQM
+    - ClothingNeckMantleRD
+    - ClothingNeckCloakCapFormal
+    - ClothingNeckCloakHos
+    - BloodredCassette
+    - ExecutiveCassette
+  - tier: 2
+    removeComponents: [Armor, ExplosionResistance]
+    items:
+    - ClothingNeckSlayerCoat
+  - tier: 3
+    items:
+    - NebulaWardrobeBackpackChameleonFill

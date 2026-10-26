@@ -1,0 +1,17 @@
+- type: species
+  id: Oni
+  name: species-name-oni
+  roundStart: true
+  prototype: MobOni
+  dollPrototype: AppearanceOni
+  skinColoration: Hues
+  maleFirstNames: NamesOniFirstMale
+  femaleFirstNames: NamesOniFirstFemale
+  lastNames: NamesOniLast
+  naming: FirstLast
+  minHeight: 1.11
+  defaultHeight: 1.2
+  maxHeight: 1.35
+  minWidth: 1.1
+  defaultWidth: 1.2
+  maxWidth: 1.3

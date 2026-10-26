@@ -1,0 +1,69 @@
+- type: nebulaWardrobeCategory
+  id: Shoes
+  name: nebula-wardrobe-category-shoes
+  order: 4
+  sets:
+  - items:
+    - ClothingShoesBootsCowboyBrownRobust
+    - ClothingShoesBootsCowboyBlack
+    - ClothingShoesSandalsBlack
+    - ClothingShoesBootsCowboyBrown
+    - ClothingShoesBootsWinterCargo
+    - ClothingShoesChef
+    - ClothingShoesClothwrap
+    - ClothingShoesCult
+    - ClothingShoeSlippersDuck
+    - ClothingShoesBootsWinterEngi
+    - ClothingShoesBootsCowboyFancy
+    - ClothingShoesFlippers
+    - ClothingShoesColorGreen
+    - ClothingShoesHighheelBoots
+    - ClothingShoesJester
+    - ClothingShoesBootsLaceup
+    - ClothingShoesClownLarge
+    - ClothingShoesLeather
+    - ClothingShoeSlippersLizard
+    - ClothingShoesBootsWinterMed
+    - ClothingShoesColorOrange
+    - ClothingShoesBootsPerformer
+    - ClothingShoesColorPurple
+    - ClothingShoesColorRed
+    - ClothingShoesResonant
+    - ClothingShoesSkates
+    - ClothingShoesBootsRoman
+    - ClothingShoesBootsSalvage
+    - ClothingShoesSandals
+    - ClothingShoesBootsWinterSci
+    - ClothingShoesSlippers
+    - ClothingShoesSwat
+    - ClothingShoesBootsWinterSyndicate
+    - ClothingShoesBootsWinterWeb
+    - ClothingShoesBootsCowboyWhite
+    - ClothingShoesColorWhite
+    - ClothingShoesBootsWinter
+    - ClothingShoesBootsWork
+    - ClothingShoesDameDane
+    - ClothingShoesColorYellow
+    - ClothingShoesFakeJordans
+    - ClothingShoesBootsCombat
+  - removeComponents: [ModifyStandingUpTime]
+    items:
+    - ClothingShoesWinterCombatBoots
+    - ClothingShoesBootsRevSteel
+  - tier: 1
+    items:
+    - ClothingShoesClownBanana
+    - ClothingShoesBling
+  - tier: 1
+    removeComponents: [ModifyStandingUpTime, ScannableForPoints, UnholyItem, Magboots, NoSlip, HereticClothing]
+    items:
+    - ClothingShoesGreavesHeretic
+  - tier: 1
+    departments: [Security]
+    items:
+    - ClothingShoesBootsJackAdvanced
+    - ClothingShoesBootsMerc
+  - tier: 2
+    items:
+    - ClothingShoesBootsJump
+    - ClothingShoesBootsMoon

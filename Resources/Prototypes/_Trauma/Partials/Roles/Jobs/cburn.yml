@@ -4,6 +4,7 @@
   id: CBURN
   access:
   - NanotrasenRepresentative
+  - BlueshieldOfficer # Nebula edit
   special:
   - !type:OrganChipsSpecial
     chips:

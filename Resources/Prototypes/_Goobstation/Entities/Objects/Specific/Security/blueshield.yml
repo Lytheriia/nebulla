@@ -1,0 +1,100 @@
+# Blueshield
+
+- type: entity
+  id: BlueshieldUndeterminedWeapon
+  name: blueshield sets pack
+  description: A small box utilizing bluespace technology to drop in a loadout directly to you. Choose wisely.
+  parent: [ BaseItem, BaseSetSelector, BaseCentcommContraband ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Security/blueshieldundetermined.rsi
+    state: icon
+  - type: SetSelector
+    possibleSets:
+    - BSOBlueshieldSet
+    - BSORevolverSet
+    - BSOChesterSet
+    - BSOSyringeSet
+    maxSelectedSets: 2
+
+- type: entity
+  id: BlueshieldUndeterminedHardsuit
+  name: blueshield hardsuit pack
+  description: A small box utilizing bluespace technology to drop in a loadout directly to you. Choose wisely.
+  parent: [ BaseItem, BaseSetSelector, BaseCentcommContraband ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Security/blueshieldundetermined.rsi
+    state: icon-alt
+  - type: SetSelector
+    possibleSets:
+    - BSOHardsuitLightSet
+    maxSelectedSets: 1
+
+- type: entity
+  parent: [BaseItem, BaseCentcommContraband]
+  id: HandheldCrewMonitorBSO
+  name: handheld command monitor
+  description: A handheld crew monitor modified for blueshield officer's needs. Designed to inject a tracking device into command personnel and alarm you about them being in danger. Works on a built-in microreactor cell.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Security/bso_monitor.rsi
+    state: scanner
+  - type: Item
+    size: Small
+  - type: CrewMonitorScanning
+    whitelist:
+      components:
+      - CommandStaff
+  - type: ActivatableUI
+    key: enum.CrewMonitoringUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+  - type: CrewMonitoringConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - HandheldCrewMonitor
+  - type: Speech
+    speechSounds: Borg
+
+- type: entity
+  id: BlueshieldAmmunitionBox
+  name: blueshield ammunition box
+  description: A box containing various ammunition and magazines for high caliber shotguns.
+  suffix: Unused
+  parent: BaseStorageItem
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Security/blueshieldundetermined.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+  - type: EmitSoundOnLand
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,6,1
+    whitelist:
+      components:
+      - BallisticAmmoProvider
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Appearance

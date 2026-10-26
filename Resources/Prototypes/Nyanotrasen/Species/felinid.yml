@@ -1,0 +1,20 @@
+- type: species
+  id: Felinid
+  name: species-name-felinid
+  roundStart: true
+  prototype: MobFelinid
+  dollPrototype: AppearanceFelinid
+  skinColoration: HumanToned
+  defaultSoundsBySex:
+  - MaleFelinid
+  - FemaleFelinid
+  - MaleFelinid
+  voices:
+  - MaleFelinid
+  - FemaleFelinid
+  minHeight: 0.80
+  defaultHeight: 0.85
+  maxHeight: 1.10
+  minWidth: 0.80
+  defaultWidth: 0.85
+  maxWidth: 1.05

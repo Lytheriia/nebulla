@@ -1,0 +1,35 @@
+# Automatic game mode vote, enabled with nebula.rotation.enabled.
+
+# Rules are checked top to bottom, the first match wins. history lists categories of the latest rounds, most recent first.
+- type: modeRotation
+  id: Default
+  categories:
+    Dynamic: [ SecretPlusLow, SecretPlusMid, SecretPlusHigh ]
+    Greenshift: [ Greenshift ]
+  rules:
+  # lowpop
+  - maxPlayers: 19
+    history: [ Dynamic, Dynamic ]
+    force: Greenshift
+  - maxPlayers: 19
+    options:
+    - preset: SecretPlusLow
+    - preset: Greenshift
+  # highpop
+  - history: [ Dynamic, Dynamic ]
+    options:
+    - preset: Greenshift
+    - preset: SecretPlusLow
+  - history: [ Greenshift, Greenshift ]
+    options:
+    - preset: SecretPlusMid
+    - preset: SecretPlusLow
+  - history: [ Dynamic ]
+    options:
+    - name: mode-rotation-option-dynamic
+      then: [ SecretPlusMid, SecretPlusLow ]
+    - preset: Greenshift
+  - options:
+    - name: mode-rotation-option-dynamic
+      then: [ SecretPlusMid, SecretPlusHigh ]
+    - preset: Greenshift

@@ -1,0 +1,256 @@
+- type: emote
+  id: Awoo
+  name: chat-emote-name-awoo
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/awoo.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+    tags:
+    - VulpEmotes
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-awoo" ]
+  chatTriggers:
+  - awoo
+  - awoos
+  - awooing
+  - awooed
+
+- type: emote
+  id: Bang
+  name: chat-emote-name-bang
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/bang.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-bang" ]
+  chatTriggers:
+  - bangs
+  - bang
+  - banging
+  - banged
+
+- type: emote
+  id: Caw
+  name: chat-emote-name-caw
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-caw" ]
+  chatTriggers:
+  - caws
+  - caw
+  - cawing
+  - cawed
+
+- type: emote
+  id: Gnash
+  name: chat-emote-name-gnash
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-gnash" ]
+  chatTriggers:
+  - gnash
+  - gnashes
+  - gnashing
+  - gnashed
+  - gnash teeth
+  - gnashes teeth
+  - gnashing teeth
+  - gnashed teeth
+  - gnashes their teeth
+  - gnashes her teeth
+  - gnashes his teeth
+  - gnashes its teeth
+  - gnashing their teeth
+  - gnashing her teeth
+  - gnashing his teeth
+  - gnashing its teeth
+  - gnashed their teeth
+  - gnashed her teeth
+  - gnashed his teeth
+  - gnashed its teeth
+
+- type: emote
+  id: Hoot
+  name: chat-emote-name-hoot
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-hoot" ]
+  chatTriggers:
+  - hoots
+  - hoot
+  - hooting
+  - hooted
+
+- type: emote
+  id: Mars
+  name: chat-emote-name-mars
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-mars" ]
+  chatTriggers:
+  - mars
+  - marsing
+  - marsed
+
+- type: emote
+  id: Pew
+  name: chat-emote-name-pew
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/pew.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-pew" ]
+  chatTriggers:
+  - pew
+  - pews
+
+- type: emote
+  id: Rev
+  name: chat-emote-name-rev
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/rev.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-rev" ]
+  chatTriggers:
+  - revs
+  - rev
+  - revving
+  - revved
+
+- type: emote
+  id: Ring
+  name: chat-emote-name-ring
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/ring.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-ring" ]
+  chatTriggers:
+  - ring
+  - rings
+  - ringing
+  - ringed
+
+- type: emote
+  id: Trill
+  name: chat-emote-name-trill
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-trill" ]
+  chatTriggers:
+  - trill
+  - trills
+  - trilling
+  - trilled
+
+- type: emote
+  id: Warble
+  name: chat-emote-name-warble
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-warble" ]
+  chatTriggers:
+  - warble
+  - warbles
+  - warbling
+  - warbled
+
+- type: emote
+  id: Wurble
+  name: chat-emote-name-wurble
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-wurble" ]
+  chatTriggers:
+  - wurble
+  - wurbles
+  - wurbling
+  - wurbled
+
+- type: emote
+  id: Coo
+  name: chat-emote-name-coo
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - HarpySinger
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [ "chat-emote-msg-coo" ]
+  chatTriggers:
+  - coo
+  - coos

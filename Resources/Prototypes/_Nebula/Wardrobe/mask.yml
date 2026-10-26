@@ -1,0 +1,72 @@
+- type: nebulaWardrobeCategory
+  id: Mask
+  name: nebula-wardrobe-category-mask
+  order: 2
+  sets:
+  - items:
+    - ClothingMaskClownBanana
+    - ClothingMaskBat
+    - ClothingMaskBear
+    - ClothingMaskBee
+    - ClothingMaskBandBlack
+    - ClothingMaskBandBlue
+    - ClothingMaskBandBotany
+    - ClothingMaskBandBrown
+    - ClothingMaskClown
+    - ClothingMaskCow
+    - ClothingMaskBandRev
+    - ClothingMaskFox
+    - ClothingMaskFrog
+    - ClothingMaskGas
+    - ClothingMaskBandGold
+    - ClothingMaskBandGreen
+    - ClothingMaskBandGrey
+    - ClothingMaskGasHalf
+    - ClothingMaskHorse
+    - ClothingMaskItalianMoustache
+    - ClothingMaskJackal
+    - ClothingMaskJoy
+    - ClothingMaskBandMerc
+    - ClothingMaskNeckGaiter
+    - ClothingMaskPig
+    - ClothingMaskPlague
+    - ClothingMaskRat
+    - ClothingMaskRaven
+    - ClothingMaskBandRed
+    - ClothingMaskNeckGaiterRed
+    - ClothingMaskSadMime
+    - ClothingMaskScaredMime
+    - ClothingMaskMimeSecurity
+    - ClothingMaskSexyClown
+    - ClothingMaskSexyMime
+    - ClothingMaskBandSkull
+    - ClothingMaskSterile
+  - removeComponents: [EyeProtection]
+    items:
+    - ClothingMaskNinja
+  - removeComponents: [MumbleAccent, EmoteBlocker]
+    items:
+    - ClothingMaskMuzzle
+  - tier: 1
+    items:
+    - ClothingMaskGasAtmos
+  - tier: 1
+    departments: [Command]
+    items:
+    - ClothingMaskGasCentcom
+    - ClothingMaskGasCaptain
+  - tier: 1
+    departments: [Security]
+    items:
+    - ClothingMaskGasRev
+    - ClothingMaskBreathMedicalSecurity
+    - ClothingMaskGasSwat
+  - tier: 2
+    removeComponents: [MadnessMask]
+    items:
+    - ClothingMaskMadHeretic
+  - tier: 2
+    jobs: [HeadOfSecurity]
+    items:
+    - ClothingMaskGasDeathSquad
+    - ClothingMaskGasERT

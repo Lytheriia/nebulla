@@ -25,6 +25,7 @@
           # Command
           Captain: [ 1, 1 ]
           NanotrasenRepresentative: [ 1, 1 ]
+          BlueshieldOfficer: [ 1, 1 ] # Nebula edit
           # Cargo
           CargoTechnician: [ 1, 1 ]
           SalvageSpecialist: [ 1, 2 ]

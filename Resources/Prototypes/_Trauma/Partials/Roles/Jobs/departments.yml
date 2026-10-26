@@ -27,6 +27,7 @@
   id: CentralCommand
   roles:
   - NanotrasenRepresentative
+  - BlueshieldOfficer # Nebula edit
   - GovernmentMan
   - HecuOperative
 
@@ -34,6 +35,7 @@
   id: Command
   roles:
   - NanotrasenRepresentative
+  - BlueshieldOfficer # Nebula edit
   - CommandMaid
   - HecuOperative
 

@@ -1,0 +1,10 @@
+ent-LanguageNekomimetic = Язык
+    .desc = Способность говорить на языке и понимать его.
+ent-LanguageGruntish = Язык
+    .desc = Способность говорить на языке и понимать его.
+ent-LanguageValyrianStandard = Язык
+    .desc = Способность говорить на языке и понимать его.
+ent-LanguageKarshan = Язык
+    .desc = Способность говорить на языке и понимать его.
+ent-LanguageAriral = Язык
+    .desc = Способность говорить на языке и понимать его.
