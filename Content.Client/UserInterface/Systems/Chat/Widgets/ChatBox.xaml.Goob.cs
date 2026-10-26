@@ -19,48 +19,52 @@ public partial class ChatBox
         }
     }
 
-        public void Repopulate()
+    public void Repopulate()
+    {
+        Contents.Clear();
+        _lastLine = null; // Nebula
+        _lastLineRepeatCount = 0; // Nebula
+
+        // Goobstation start
+        foreach (var child in Contents.Children.ToArray())
         {
-            Contents.Clear();
-
-            // Goobstation start
-            foreach (var child in Contents.Children.ToArray())
+            if (child.Name != "_v_scroll")
             {
-                if (child.Name != "_v_scroll")
-                {
-                    Contents.RemoveChild(child);
-                }
-            }
-            // Goobstation end
-
-            foreach (var message in _controller.History)
-            {
-                OnMessageAdded(message.Item2);
+                Contents.RemoveChild(child);
             }
         }
+        // Goobstation end
 
-        private void OnChannelFilter(ChatChannel channel, bool active)
+        foreach (var message in _controller.History)
         {
-            Contents.Clear();
+            OnMessageAdded(message.Item2);
+        }
+    }
 
-            // Goobstation start
-            foreach (var child in Contents.Children.ToArray())
-            {
-                if (child.Name != "_v_scroll")
-                {
-                    Contents.RemoveChild(child);
-                }
-            }
-            // Goobstation end
+    private void OnChannelFilter(ChatChannel channel, bool active)
+    {
+        Contents.Clear();
+        _lastLine = null; // Nebula
+        _lastLineRepeatCount = 0; // Nebula
 
-            foreach (var message in _controller.History)
+        // Goobstation start
+        foreach (var child in Contents.Children.ToArray())
+        {
+            if (child.Name != "_v_scroll")
             {
-                OnMessageAdded(message.Item2);
-            }
-
-            if (active)
-            {
-                _controller.ClearUnfilteredUnreads(channel);
+                Contents.RemoveChild(child);
             }
         }
+        // Goobstation end
+
+        foreach (var message in _controller.History)
+        {
+            OnMessageAdded(message.Item2);
+        }
+
+        if (active)
+        {
+            _controller.ClearUnfilteredUnreads(channel);
+        }
+    }
 }
