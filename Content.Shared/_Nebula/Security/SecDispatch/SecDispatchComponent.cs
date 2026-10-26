@@ -15,30 +15,30 @@ namespace Content.Shared._Nebula.Security.SecDispatch;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SecDispatchComponent : Component
 {
-    [DataField(readOnly: true)]
+    [DataField]
     public EntProtoId Action = "ActionSecDispatch";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;
 
-    [DataField(readOnly: true)]
+    [DataField]
     public ProtoId<RadioChannelPrototype> Channel = "Security";
 
     /// <summary>
     /// Cooldown put on the action after a report is sent.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(10);
 
     /// <summary>
     /// Played to every player whose worn headset received a combat report from this mask.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public SoundSpecifier? CombatSound;
 
     /// <summary>
     /// Reports in menu order: clockwise starting from 9 o'clock, so with eight entries the first four fill the top half.
     /// </summary>
-    [DataField(readOnly: true, required: true)]
+    [DataField(required: true)]
     public List<SecDispatchEntry> Entries = [];
 }

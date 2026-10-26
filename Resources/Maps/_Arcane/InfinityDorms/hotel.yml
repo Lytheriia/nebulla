@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/09/2026 08:12:38
-  entityCount: 955
+  entityCount: 954
 maps: []
 grids:
 - 1
@@ -1669,18 +1669,6 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
-- proto: ActionHailer
-  entities:
-  - uid: 9
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 8
-    - type: Action
-      container: 8
-      originalIconColor: '#FFFFFFFF'
-      attachedEntity: 8
 - proto: ActionToggleMask
   entities:
   - uid: 11
@@ -2822,8 +2810,6 @@ entities:
     - type: Clothing
       inSlot: mask
       inSlotFlag: MASK
-    - type: Hailer
-      hailActionEntity: 9
     - type: Mask
       toggleActionEntity: 11
     - type: Physics
