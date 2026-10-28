@@ -2,3 +2,8 @@
   id: NebulaGaussianBlur
   kind: source
   path: "/Textures/_Nebula/Shaders/gaussian_blur.swsl"
+
+- type: shader
+  id: NebulaDeath
+  kind: source
+  path: "/Textures/_Nebula/Shaders/death.swsl"

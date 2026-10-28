@@ -5,6 +5,7 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
+using Content.Client._Nebula.Death;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Actions.Widgets;
@@ -140,6 +141,7 @@ public sealed class SkewedHudOverlay : Overlay
         _labelFont = cache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 10);
         _valueFont = cache.GetFont("/Fonts/RobotoMono/RobotoMono-Bold.ttf", 13);
         _bannerFont = cache.GetFont("/Fonts/RobotoMono/RobotoMono-Bold.ttf", 15);
+        ZIndex = NebulaDeathOverlay.ZOrder + 1;
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

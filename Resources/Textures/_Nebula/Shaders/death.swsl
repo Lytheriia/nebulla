@@ -1,0 +1,52 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float grey;
+uniform highp float blur;
+uniform highp float vignette;
+uniform highp float darkness;
+uniform highp float glitch;
+uniform highp float time;
+
+highp float rand(highp vec2 co) {
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+highp vec3 sampleBlurred(highp vec2 uv) {
+    highp vec2 offset = SCREEN_PIXEL_SIZE * blur;
+    highp vec3 color = zTextureSpec(SCREEN_TEXTURE, uv).rgb * 0.4;
+    color += zTextureSpec(SCREEN_TEXTURE, uv + vec2(offset.x, 0.0)).rgb * 0.15;
+    color += zTextureSpec(SCREEN_TEXTURE, uv - vec2(offset.x, 0.0)).rgb * 0.15;
+    color += zTextureSpec(SCREEN_TEXTURE, uv + vec2(0.0, offset.y)).rgb * 0.15;
+    color += zTextureSpec(SCREEN_TEXTURE, uv - vec2(0.0, offset.y)).rgb * 0.15;
+    return color;
+}
+
+void fragment() {
+    highp vec2 uv = UV;
+
+    // Glitch: some horizontal bands jump sideways for a few frames.
+    if (glitch > 0.0) {
+        highp float band = floor(uv.y * 48.0);
+        highp float frame = floor(time * 14.0);
+        if (rand(vec2(band, frame)) > 1.0 - 0.14 * glitch) {
+            uv.x += (rand(vec2(frame, band)) - 0.5) * 0.08 * glitch;
+        }
+    }
+
+    highp vec3 color = sampleBlurred(uv);
+
+    if (glitch > 0.0) {
+        highp float shift = 0.005 * glitch;
+        color.r = mix(color.r, zTextureSpec(SCREEN_TEXTURE, uv + vec2(shift, 0.0)).r, 0.8);
+        color.b = mix(color.b, zTextureSpec(SCREEN_TEXTURE, uv - vec2(shift, 0.0)).b, 0.8);
+        color += (rand(uv + vec2(time, -time)) - 0.5) * 0.1 * glitch;
+    }
+
+    color = mix(color, vec3(zGrayscale(color)), grey);
+
+    highp float edge = distance(UV, vec2(0.5));
+    highp float inner = mix(0.7, 0.18, vignette);
+    color *= 1.0 - smoothstep(inner, inner + 0.35, edge) * vignette;
+    color *= 1.0 - darkness;
+
+    COLOR = vec4(color, 1.0);
+}

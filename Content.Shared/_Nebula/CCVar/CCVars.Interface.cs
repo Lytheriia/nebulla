@@ -67,4 +67,10 @@ public sealed partial class NCCVars
     /// </summary>
     public static readonly CVarDef<int> PreviewClothing =
         CVarDef.Create("nebula.ui.preview_clothing", 0, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    ///     Whether the game interface fades out when the player dies, leaving the chat and the top menu.
+    /// </summary>
+    public static readonly CVarDef<bool> HideInterfaceOnDeath =
+        CVarDef.Create("nebula.hud.hide_on_death", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

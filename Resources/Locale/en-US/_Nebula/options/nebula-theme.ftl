@@ -7,3 +7,6 @@ nebula-options-lobby-chat-left = Chat on the left in the lobby
 nebula-options-lobby-background-random = Random lobby background
 nebula-options-lobby-background = Lobby background
 nebula-options-lobby-background-item = { $title } — { $artist }
+
+nebula-options-hud-header = Neural interface
+nebula-options-hud-hide-on-death = Hide the interface on death (the chat and the top menu return after a moment)

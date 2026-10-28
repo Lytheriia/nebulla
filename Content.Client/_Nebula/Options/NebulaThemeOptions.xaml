@@ -36,5 +36,10 @@
                   Text="{Loc 'nebula-options-lobby-background-random'}" />
         <ui:OptionDropDown Name="BackgroundDropDown"
                            Title="{Loc 'nebula-options-lobby-background'}" />
+        <Label Text="{Loc 'nebula-options-hud-header'}"
+               StyleClasses="LabelKeyText"
+               Margin="0 8 0 0" />
+        <CheckBox Name="HideOnDeathCheckBox"
+                  Text="{Loc 'nebula-options-hud-hide-on-death'}" />
     </BoxContainer>
 </Control>
