@@ -4912,7 +4912,6 @@ entities:
     - type: Actions
       actions:
       - 11
-      - 9
 - proto: MannequinWoman
   entities:
   - uid: 204
