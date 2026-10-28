@@ -218,6 +218,11 @@ binds:
 - function: OpenCharacterMenu
   type: State
   key: U
+# Nebula start
+- function: OpenNeuroTasks
+  type: State
+  key: J
+# Nebula end
 - function: OpenEmotesMenu
   type: State
   key: Y

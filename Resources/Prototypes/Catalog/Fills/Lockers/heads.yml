@@ -349,6 +349,7 @@
     - id: BoxHoSCircuitboards
     #- id: WeaponDisabler # Trauma - disablers are in belts
     - id: WantedListCartridge
+    - id: SquadTablet # Nebula edit
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02

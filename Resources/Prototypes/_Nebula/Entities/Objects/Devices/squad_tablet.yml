@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseHandheldCrewMonitor
+  id: SquadTablet
+  name: squad command tablet
+  description: A head of security tablet for forming squads and giving them orders over the suit sensor map.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/syndihandheldcrewmonitor.rsi
+    layers:
+    - state: syndiscanner
+    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      visible: false
+  - type: Item
+    sprite: Objects/Specific/Medical/syndihandheldcrewmonitor.rsi
+  - type: Contraband
+    severity: Restricted
+    allowedDepartments: [ Security, Command ]
+  - type: AccessReader
+    access: [ [ "HeadOfSecurity" ] ]
+  - type: ActivatableUIRequiresAccess
+  - type: ActivatableUI
+    key: enum.SquadTabletUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SquadTabletUiKey.Key:
+        type: SquadTabletBoundUserInterface
+  - type: SquadTablet
+  - type: Tag
+    tags: [ ]

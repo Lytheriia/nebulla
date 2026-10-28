@@ -1,0 +1,29 @@
+neuro-profile-security-header = NT-SEC // NEURAL INTERFACE  { $time }
+skewed-hud-member = UNIT
+skewed-hud-location = LOCATION
+skewed-hud-status = STATUS
+skewed-hud-code = CODE
+skewed-hud-task-mark = MARK
+skewed-hud-task-order = ORDER
+skewed-hud-task-personal = PERSONAL
+skewed-hud-task-wanted = WANTED
+skewed-hud-tasks-more-label = MORE
+skewed-hud-tasks-more = +{ $count }
+skewed-hud-state-alive = NOMINAL
+skewed-hud-state-crit = CRITICAL
+skewed-hud-state-dead = SIGNAL LOST
+skewed-hud-location-none = —
+skewed-hud-task-loss = LOSS
+skewed-hud-squad = SQUAD
+skewed-hud-squad-summary = { $name } { $alive }/{ $total }
+skewed-hud-loss-crit = { $name } ({ $squad }) CRITICAL
+skewed-hud-loss-dead = { $name } ({ $squad }) DOWN
+skewed-hud-task-described = { $title } [+]
+skewed-hud-mark = { $order } · { $location }
+
+skewed-hud-marker-distance = { $meters }m
+skewed-hud-task-timer = TIMER
+skewed-hud-timer-done = { $name } ran out
+
+skewed-hud-signal-lost = SERVER CONNECTION LOST
+skewed-hud-signal-lost-sub = { $tag } // NO CARRIER

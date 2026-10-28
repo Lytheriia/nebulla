@@ -206,6 +206,7 @@
       OrganDamage: 0.13
       BoneDamage: 0.13
       VeinsDamage: 0
+  - type: SkewedHud # Nebula edit
 
 - type: entity
   parent: [ClothingEyesBase, BaseCommandContraband]

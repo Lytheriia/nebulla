@@ -1,0 +1,11 @@
+- type: neuroProfile
+  id: Security
+  header: neuro-profile-security-header
+  tag: NT-SEC
+  accent: "#3fd8ff"
+  accentDim: "#3fd8ffa6"
+  alert: "#ff4040"
+  channel: Security
+  departments:
+  - Security
+  stationOnly: true

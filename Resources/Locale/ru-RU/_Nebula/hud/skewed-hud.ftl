@@ -1,0 +1,29 @@
+neuro-profile-security-header = NT-SEC // НЕЙРОИНТЕРФЕЙС  { $time }
+skewed-hud-member = БОЕЦ
+skewed-hud-location = ЛОКАЦИЯ
+skewed-hud-status = СТАТУС
+skewed-hud-code = КОД
+skewed-hud-task-mark = МЕТКА
+skewed-hud-task-order = ПРИКАЗ
+skewed-hud-task-personal = ЛИЧНОЕ
+skewed-hud-task-wanted = РОЗЫСК
+skewed-hud-tasks-more-label = ЕЩЁ
+skewed-hud-tasks-more = +{ $count }
+skewed-hud-state-alive = ЖИВ
+skewed-hud-state-crit = КРИТИЧЕСКОЕ
+skewed-hud-state-dead = СИГНАЛ ПОТЕРЯН
+skewed-hud-location-none = —
+skewed-hud-task-loss = ПОТЕРИ
+skewed-hud-squad = ОТРЯД
+skewed-hud-squad-summary = { $name } { $alive }/{ $total }
+skewed-hud-loss-crit = { $name } ({ $squad }) КРИТ
+skewed-hud-loss-dead = { $name } ({ $squad }) ПОГИБ
+skewed-hud-task-described = { $title } [+]
+skewed-hud-mark = { $order } · { $location }
+
+skewed-hud-marker-distance = { $meters } м
+skewed-hud-task-timer = ТАЙМЕР
+skewed-hud-timer-done = { $name } — истёк
+
+skewed-hud-signal-lost = СВЯЗЬ С СЕРВЕРАМИ ПОТЕРЯНА
+skewed-hud-signal-lost-sub = { $tag } // NO CARRIER

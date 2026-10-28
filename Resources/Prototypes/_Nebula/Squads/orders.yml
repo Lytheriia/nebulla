@@ -1,0 +1,35 @@
+- type: squadOrder
+  id: Advance
+  name: squad-order-advance
+  icon: /Textures/_Nebula/Interface/Squads/directions_run.svg.192dpi.png
+  order: 0
+
+- type: squadOrder
+  id: Hold
+  name: squad-order-hold
+  icon: /Textures/_Nebula/Interface/Squads/shield.svg.192dpi.png
+  order: 1
+
+- type: squadOrder
+  id: Assault
+  name: squad-order-assault
+  icon: /Textures/_Nebula/Interface/Squads/swords.svg.192dpi.png
+  order: 2
+
+- type: squadOrder
+  id: Retreat
+  name: squad-order-retreat
+  icon: /Textures/_Nebula/Interface/Squads/undo.svg.192dpi.png
+  order: 3
+
+- type: squadOrder
+  id: Assist
+  name: squad-order-assist
+  icon: /Textures/_Nebula/Interface/Squads/sos.svg.192dpi.png
+  order: 4
+
+- type: squadOrder
+  id: Observe
+  name: squad-order-observe
+  icon: /Textures/_Nebula/Interface/Squads/visibility.svg.192dpi.png
+  order: 5

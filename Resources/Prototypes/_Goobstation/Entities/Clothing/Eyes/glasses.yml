@@ -235,3 +235,4 @@
     toggleAction: PulseThermalVision
   - type: IdentityBlocker
     coverage: EYES
+  - type: SkewedHud # Nebula edit
