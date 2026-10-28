@@ -21,61 +21,61 @@ public sealed partial class NeuroProfilePrototype : IPrototype
     /// <summary>
     /// Line over the HUD, gets the shift time as <c>$time</c>.
     /// </summary>
-    [DataField(readOnly: true, required: true)]
+    [DataField(required: true)]
     public LocId Header;
 
     /// <summary>
     /// Short name of the network, shown under the signal loss banner.
     /// </summary>
-    [DataField(readOnly: true, required: true)]
+    [DataField(required: true)]
     public string Tag = string.Empty;
 
-    [DataField(readOnly: true)]
+    [DataField]
     public Color Accent = Color.FromHex("#3fd8ff");
 
-    [DataField(readOnly: true)]
+    [DataField]
     public Color AccentDim = Color.FromHex("#3fd8ff").WithAlpha(0.65f);
 
     /// <summary>
     /// Urgent lines and the glitch ghosts.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public Color Alert = Color.FromHex("#ff4040");
 
     /// <summary>
     /// A radio jammer that does not exclude this channel cuts the interface off its servers.
     /// </summary>
-    [DataField(readOnly: true, required: true)]
+    [DataField(required: true)]
     public ProtoId<RadioChannelPrototype> Channel;
 
     /// <summary>
     /// The servers are on the station: away from every map that holds a station grid, like on the CentComm map
     /// or an expedition, the link is lost as under a jammer. Off for interfaces with their own servers.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public bool StationOnly;
 
     /// <summary>
     /// The nearest beacon of the current grid in the common block of the HUD.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public bool ShowLocation = true;
 
     /// <summary>
     /// The station alert level in the common block of the HUD, useless to those who are not crew.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public bool ShowCode = true;
 
     /// <summary>
     /// Jobs that spawn with the interface. Antagonists get <see cref="NeuroLinkComponent"/> from their prototypes.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public HashSet<ProtoId<JobPrototype>> Jobs = [];
 
     /// <summary>
     /// Every job of these departments spawns with the interface.
     /// </summary>
-    [DataField(readOnly: true)]
+    [DataField]
     public HashSet<ProtoId<DepartmentPrototype>> Departments = [];
 }
