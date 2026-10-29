@@ -158,3 +158,5 @@ ent-ClothingBeltMilitaryWebbingBSO = РПС офицера "Синий Щит"
 ent-ClothingShoesBootsWinterSnowjackBsoFilled = { ent-ClothingShoesBootsWinterSnowjackBso }
     .suffix = Заполненный
     .desc = { ent-ClothingShoesBootsWinterSnowjackBso.desc }
+ent-CombatInjector = боевой инжектор
+    .desc = Впрыскивает загруженные химикаты при ударе. Обладает низкой ёмкостью из-за прочной конструкции.
