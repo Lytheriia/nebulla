@@ -35,6 +35,7 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 2
+    cameraRecoilScalar: 2 # Nebula edit
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -89,13 +90,14 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
+    cameraRecoilScalar: 3 # Nebula edit
     selectedMode: FullAuto
     availableModes:
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+      collection: AutoShotgunShot # Nebula edit
     soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/empty.ogg
+      path: /Audio/_Orion/Weapons/Guns/Shotguns/v51_empty.ogg # Nebula edit
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -160,6 +162,7 @@
   components: # intend for Enforcer to have wider choke for semi-auto function
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    scale: 1.2, 1.2 # Nebula edit
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Item
@@ -170,6 +173,10 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 1 # Trauma, was 2
+    # Nebula start
+    soundGunshot:
+      path: /Audio/_Orion/Weapons/Guns/Shotguns/t35.ogg
+    # Nebula end
 - type: entity
   parent: WeaponShotgunEnforcer
   id: WeaponShotgunEnforcerRubber
@@ -188,10 +195,15 @@
     sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+    scale: 1.2, 1.2 # Nebula edit
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
+    # Nebula start
+    soundGunshot:
+      path: /Audio/_Orion/Weapons/Guns/Shotguns/t35.ogg
+    # Nebula end
     # fireRate: 1 # goob
   - type: GunSpreadModifier
     spread: 0.6
@@ -200,6 +212,10 @@
     - WeaponShotgunKammerer
   - type: BallisticAmmoProvider # Goobstation
     autoCycle: false
+    # Nebula start
+    soundRack:
+      path: /Audio/_Orion/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
+    # Nebula end
 
 - type: entity
   name: sawn-off shotgun

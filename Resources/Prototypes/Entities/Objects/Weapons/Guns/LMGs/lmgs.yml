@@ -76,6 +76,7 @@
     price: 500
   - type: UseDelay
     delay: 1
+  - type: UseDelayBlockShoot # Nebula edit
 
 - type: entity
   name: L6 SAW
@@ -97,6 +98,12 @@
   - type: Appearance
   - type: StaticPrice
     price: 10000
+# Nebula start
+  - type: Gun
+    soundGunshot: /Audio/_Orion/Weapons/Guns/Rifles/ak47.ogg
+  - type: UseDelay
+    delay: 0.5
+# Nebula end
 
 - type: entity
   name: L6C ROW
@@ -114,7 +121,7 @@
       availableModes:
         - FullAuto
       soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+        path: /Audio/_Orion/Weapons/Guns/Rifles/ak47.ogg # Nebula edit
       soundEmpty:
         path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
     - type: Sprite

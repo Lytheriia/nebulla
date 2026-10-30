@@ -47,4 +47,4 @@
     angleDecay: 4 # was 9
     fireRate: 3 # was 4
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+      path: /Audio/_Orion/Weapons/Guns/Rifles/som_rifle.ogg # Nebula edit

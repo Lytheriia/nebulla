@@ -33,7 +33,11 @@
       - SemiAuto
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+    # Nebula start
+      path: /Audio/_Orion/Weapons/Guns/Pistols/colt.ogg
+    soundEmpty:
+      path: /Audio/_Orion/Weapons/Guns/Pistols/beretta_empty.ogg
+    # Nebula end
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
@@ -225,7 +229,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      path: /Audio/_Orion/Weapons/Guns/Pistols/vp70_shot.ogg # Nebula edit
   - type: StealTarget
     stealGroup: OfficerHandgun
 

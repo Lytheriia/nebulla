@@ -149,7 +149,7 @@
     freeTime: 3
     sprintSpeed: 0.6
     walkSpeed: 0.6
-    staminaDamage: 10
+    staminaDamage: 30 # Nebula edit
 
 - type: entity
   id: BulletSlugEMP

@@ -33,7 +33,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+      collection: AutoShotgunShot # Nebula edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: ItemSlots
@@ -83,6 +83,7 @@
   - type: GunRequiresWield # remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 1
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/batrifle.ogg # Nebula edit
   - type: Tag
     tags:
     - WeaponShotgunKammerer

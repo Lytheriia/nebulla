@@ -57,7 +57,7 @@
   name: Kardashev-Mosin
   parent: [BaseWeaponSniper, BaseGunWieldable, SolutionDart, BaseMajorContraband]
   id: WeaponSniperMosin
-  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 rifle.
+  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of 7.62mm rifle. # Nebula edit
   components:
   # <Trauma>
   - type: Item  # Goob edit
@@ -108,6 +108,12 @@
   - type: GunRequiresWield
   - type: StaticPrice
     price: 500
+  # Nebula start
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeRifle762
+  # Nebula end
 
 - type: entity
   name: Hristov
