@@ -18,7 +18,7 @@
   - type: Clothing
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/burner.rsi
   - type: Gun
-    fireRate: 1.5
+    fireRate: 2 # Nebula
     cameraRecoilScalar: 6 # Nebula edit
     soundGunshot:
       collection: 50bmgShot # Nebula edit
@@ -101,7 +101,7 @@
     zeroVisible: true
   - type: Appearance
   - type: Gun
-    fireRate: 6
+    fireRate: 6.5 # Nebula
 
 - type: entity
   name: Annie
@@ -129,10 +129,14 @@
     burstFireRate: 12
     burstCooldown: 0.8
     shotsPerBurst: 4
-    fireRate: 6.5
+    fireRate: 6 # Nebula
     soundGunshot:
   # Nebula start
       path: /Audio/_Orion/Weapons/Guns/Rifles/ak47.ogg
+    angleDecay: 20 # Nebula
+    angleIncrease: 3 # Nebula
+    maxAngle: 58 # Nebula
+    minAngle: 15 # Nebula
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -164,3 +168,8 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  # Nebula start
+  - type: GunWieldBonus
+    maxAngle: -44
+    minAngle: -22
+  # Nebula end

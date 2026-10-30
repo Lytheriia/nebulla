@@ -148,6 +148,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Orion/Weapons/Guns/EG-P/shot.ogg
+    projectileSpeed: 26
   - type: Sprite
     sprite: _Orion/Objects/Weapons/Guns/Battery/EG-P.rsi
     layers:

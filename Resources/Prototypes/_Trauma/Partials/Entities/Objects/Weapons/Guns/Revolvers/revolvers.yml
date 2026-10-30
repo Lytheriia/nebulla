@@ -29,7 +29,6 @@
   id: WeaponRevolverMateba
   components:
   - type: Gun
-    fireRate: 4
   - type: RevolverAmmoProvider
     whitelist:
       tags:
@@ -48,4 +47,3 @@
   id: WeaponRevolverPython
   components:
   - type: Gun
-    fireRate: 2

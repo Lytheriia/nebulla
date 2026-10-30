@@ -33,13 +33,13 @@
     unwieldOnUse: false
   - type: GunWieldBonus
     minAngle: -20
-    maxAngle: -20
+    maxAngle: -25 # Nebula
   - type: Gun
     minAngle: 24
-    maxAngle: 45
-    angleIncrease: 4
+    maxAngle: 50 # Nebula
+    angleIncrease: 2.5 # Nebula
     angleDecay: 16
-    fireRate: 8
+    fireRate: 7.5 # Nebula
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -114,9 +114,9 @@
     - type: Gun
       minAngle: 4
       maxAngle: 25
-      angleIncrease: 4
+      angleIncrease: 2 # Nebula
       angleDecay: 16
-      fireRate: 8
+      fireRate: 7.5 # Nebula
       selectedMode: FullAuto
       availableModes:
         - FullAuto

@@ -21,9 +21,6 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/_Orion/Weapons/Guns/Launchers/underbarrel_grenadelauncher.ogg
-    minAngle: 1 # Nebula edit
-    maxAngle: 2 # Nebula edit
-    projectileSpeed: 40 # Nebula edit
   - type: ContainerContainer
     containers:
       revolver-ammo: !type:Container
@@ -102,9 +99,6 @@
     cameraRecoilScalar: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-    minAngle: 1 # Nebula edit
-    maxAngle: 2 # Nebula edit
-    projectileSpeed: 40 # Nebula edit
   - type: BallisticAmmoProvider
     whitelist:
       tags:

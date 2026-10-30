@@ -16,7 +16,7 @@
     damage:
       types:
         Heat: 8
-        Shock: 7
+        # Shock: 7 # Nebula edit
         Piercing: 4
     soundHit:
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
@@ -53,7 +53,7 @@
     damage:
       types:
         Heat: 4
-        Shock: 2
+        # Shock: 2 # Nebula edit
         Piercing: 2
   - type: ProjectileSpread
     proto: PulseBulletSpreadShotgun
@@ -70,5 +70,5 @@
     damage:
       types:
         Heat: 4
-        Shock: 2
+        # Shock: 2 # Nebula edit
         Piercing: 2

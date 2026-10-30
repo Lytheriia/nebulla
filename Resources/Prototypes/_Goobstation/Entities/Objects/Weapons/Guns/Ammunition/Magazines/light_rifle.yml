@@ -15,6 +15,7 @@
   components:
   - type: BallisticAmmoProvider
     capacity: 96
+    proto: CartridgeLightRifle # Nebula
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/maxim.rsi
 
@@ -28,6 +29,7 @@
     - MagazineLightRifleBox
   - type: BallisticAmmoProvider
     capacity: 80
+    proto: CartridgeLightRifle # Nebula
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/pk_box.rsi
   - type: MagazineVisuals

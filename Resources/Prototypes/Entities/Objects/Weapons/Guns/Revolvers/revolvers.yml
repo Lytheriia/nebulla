@@ -112,7 +112,7 @@
     sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi # Orion edit
     storedOffset: 0,-3
   - type: Gun
-    fireRate: 3
+    fireRate: 3 # Nebula
     soundGunshot:
       path: /Audio/_Orion/Weapons/Guns/Revolvers/mateba.ogg # Orion edit
 
@@ -138,7 +138,7 @@
     storedOffset: 0,-2
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 3
+    fireRate: 2.5 # Nebula
     availableModes:
     - SemiAuto
     soundGunshot:

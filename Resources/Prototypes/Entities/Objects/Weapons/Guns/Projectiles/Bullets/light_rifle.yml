@@ -5,9 +5,12 @@
   name: bullet (5.45mm rifle) # Nebula edit
   components:
   - type: Projectile
+    # Nebula start
     damage:
       types:
-        Ballistic: 15 # Trauma, was 19
+        Piercing: 19
+      armorPenetration: 0.1
+    # Nebula end
 
 - type: entity
   parent: BaseBulletPractice
@@ -16,9 +19,12 @@
   name: bullet (5.45mm practice) # Nebula edit
   components:
   - type: Projectile
+    # Nebula start
     damage:
       types:
-        Blunt: 2
+        Blunt: 5
+      armorPenetration: -0.5
+    # Nebula end
 
 - type: entity
   parent: [BaseBulletIncendiary, BaseBulletKinetic] # Trauma
@@ -27,9 +33,13 @@
   name: bullet (5.45mm incendiary) # Nebula edit
   components:
   - type: Projectile
+    # Nebula start
     damage:
       types:
-        Ballistic: 11 # Trauma, was 14
+        Blunt: 4
+        Heat: 7
+      armorPenetration: 0.10
+    # Nebula end
         # Heat: 5 # Trauma
 
 - type: entity
@@ -39,8 +49,10 @@
   name: bullet (5.45mm uranium) # Nebula edit
   components:
   - type: Projectile
+    # Nebula start
     damage:
       types:
-        # Radiation: 10 # Trauma
-        Ballistic: 11
-      armorPenetration: 0.5 # Trauma
+        Radiation: 3
+        Piercing: 11
+      armorPenetration: 0.1
+    # Nebula end

@@ -11,8 +11,8 @@
     whitelist:
       tags:
       - CartridgeRifle762 # Orion edit
-    capacity: 5
-    proto: CartridgeLightRifle
+    capacity: 10 # Nebula
+    proto: CartridgeRifle762 # Nebula
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/LightRifle/light_rifle_speed_loader.rsi
     layers:
