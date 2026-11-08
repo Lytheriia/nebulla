@@ -5,9 +5,13 @@
   name: resin window
   description: Transparent and hardened, yet slightly sticky to the touch.
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/xeno_resin.rsi
+    sprite: Structures/Windows/exo-resin.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/xeno_resin.rsi
+    sprite: Structures/Windows/exo-resin.rsi
+  # Nebula end
   - type: IconSmooth
     base: xwindow

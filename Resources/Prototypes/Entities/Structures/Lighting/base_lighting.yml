@@ -21,7 +21,9 @@
   - type: Pullable
   - type: Clickable
   - type: InteractionOutline
+  # Nebula start
   - type: Sprite
+    offset: 0, 1
     drawdepth: WallMountedItems
     layers:
     - map: ["enum.PoweredLightLayers.Base"]
@@ -29,12 +31,13 @@
     - map: ["enum.PoweredLightLayers.Glow"]
       state: glow
       shader: unshaded
+  # Nebula end
   - type: PointLight
     color: "#FFE4CE" # 5000K color temp
     energy: 0.8
     radius: 10
     softness: 1
-    offset: "0, 0.495"
+    # offset: "0, 0.495" # Nebula edit
   - type: Damageable
     damageModifierSet: Metallic
   - type: Injurable
@@ -320,9 +323,10 @@
     state: empty
   - type: AmbientSound
     enabled: false
+  # Nebula start
   - type: PointLight
     enabled: false
-    offset: "0, 0.495"
+  # Nebula end
   - type: ContainerContainer
     containers:
       light_bulb: !type:ContainerSlot
@@ -466,6 +470,9 @@
       color: "#7CFC00"
       shader: "unshaded"
       visible: false
+  # Nebula start
+  - type: Appearance
+  # Nebula end
   - type: Construction
     graph: LightFixture
     node: emergencyLight

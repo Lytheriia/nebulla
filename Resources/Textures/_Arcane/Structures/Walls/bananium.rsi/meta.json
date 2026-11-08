@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub). Recolored by UmbiMax.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "bananium0",
+            "directions": 4
+        },
+        {
+            "name": "bananium1",
+            "directions": 4
+        },
+        {
+            "name": "bananium2",
+            "directions": 4
+        },
+        {
+            "name": "bananium3",
+            "directions": 4
+        },
+        {
+            "name": "bananium4",
+            "directions": 4
+        },
+        {
+            "name": "bananium5",
+            "directions": 4
+        },
+        {
+            "name": "bananium6",
+            "directions": 4
+        },
+        {
+            "name": "bananium7",
+            "directions": 4
+        }
+    ]
+}

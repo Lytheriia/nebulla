@@ -3,11 +3,15 @@
   name: plasma window
   parent: [BaseDeltaPressurePlasma, BaseWindowStructure, BaseRCDResistant]
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: Structures/Windows/window-plasma.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: Structures/Windows/window-plasma.rsi
     state: full
+  # Nebula end
   - type: Damageable
     damageModifierSet: Glass
   - type: Injurable
@@ -109,21 +113,27 @@
     snap:
     - Window
   components:
+  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plasma_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-plasma.rsi
     state: state0
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
+  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/plasma_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-plasma.rsi
     state: state0
+  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:
@@ -142,9 +152,11 @@
     airBlockedDirection:
     - South
     - East
+  # Nebula start
   - type: DamageVisuals
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Structures/Windows/cracks-diagonal.rsi
+  # Nebula end
   - type: Construction
     graph: WindowDiagonal
     node: plasmaWindowDiagonal

@@ -1,0 +1,25 @@
+- type: entity
+  abstract: true
+  parent: BaseStructureDynamic
+  id: BaseGirder
+  components:
+  - type: Penetratable
+    penetrateDamage: 5
+    damagePenalty: 0.5
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer # Trauma, bullets shoot through these now
+  - type: InteractionOutline

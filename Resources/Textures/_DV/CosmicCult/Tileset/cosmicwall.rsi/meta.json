@@ -1,42 +1,45 @@
 {
     "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub).",
     "size": {
         "x": 32,
         "y": 32
     },
-    "license": "CC-BY-SA-3.0",
-    "copyright": "A custom item by AftrLite (Github).",
     "states": [
         {
-            "name": "cult0",
+            "name": "full"
+        },
+        {
+            "name": "malign0",
             "directions": 4
         },
         {
-            "name": "cult1",
+            "name": "malign1",
             "directions": 4
         },
         {
-            "name": "cult2",
+            "name": "malign2",
             "directions": 4
         },
         {
-            "name": "cult3",
+            "name": "malign3",
             "directions": 4
         },
         {
-            "name": "cult4",
+            "name": "malign4",
             "directions": 4
         },
         {
-            "name": "cult5",
+            "name": "malign5",
             "directions": 4
         },
         {
-            "name": "cult6",
+            "name": "malign6",
             "directions": 4
         },
         {
-            "name": "cult7",
+            "name": "malign7",
             "directions": 4
         },
         {
@@ -50,9 +53,6 @@
         },
         {
             "name": "trim_west"
-        },
-        {
-            "name": "full"
         }
     ]
 }

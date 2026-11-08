@@ -1,0 +1,215 @@
+- type: entity
+  parent: [ BaseWall, StructureHealthWallWeak ]
+  id: WallBrass
+  name: brass wall
+  components:
+  - type: CosmicCorruptible
+    convertTo: WallCosmicCult
+  - type: Sprite
+    sprite: Structures/Walls/brass.rsi
+  - type: Icon
+    sprite: Structures/Walls/brass.rsi
+  - type: Construction
+    graph: Girder
+    node: brassWall
+  - type: Damageable
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger: &DamageWallWeak
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - &SoundMetalSlam !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+          params:
+            volume: -4
+      - &ChangeNodeGirder !type:ChangeConstructionNodeBehavior
+        node: girder
+  - type: IconSmooth
+    key: walls
+    base: brass
+
+- type: entity
+  parent: [ BaseWall, StructureHealthWallStrong ]
+  id: WallMarble
+  name: marble wall
+  components:
+  - type: RustRequiresPathStage
+    pathStage: 7 # Toxic blade
+  - type: Penetratable
+    penetrateDamage: 200
+    damagePenalty: 0.5
+  - type: Sprite
+    sprite: Structures/Walls/marble.rsi
+  - type: Icon
+    sprite: Structures/Walls/marble.rsi
+  - type: Damageable
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger: &DamageWallStrong
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - *SoundMetalSlam
+      - &SpawnGirder !type:SpawnEntitiesBehavior
+      - &SpawnPlasteel !type:SpawnEntitiesBehavior
+  - type: IconSmooth
+    key: walls
+    base: wall
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  parent: BaseWall
+  id: WallMarbleIndestructible
+  name: marble wall
+  suffix: indestructible
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/marble.rsi
+  - type: Icon
+    sprite: Structures/Walls/marble.rsi
+  - type: IconSmooth
+    key: walls
+    base: wall
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 4000
+  - type: RadiationBlocker
+    resistance: 5
+
+- type: entity
+  parent: [ BaseWall, StructureHealthWall ]
+  id: WallSolidChitin
+  name: exodermis wall
+  components:
+  - type: CosmicCorruptible
+    convertTo: WallCosmicCult
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Iron
+        Quantity: 28
+      - ReagentId: Carbon
+        Quantity: 2
+  - type: Damageable
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger: &DamageWallNormal
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - *ChangeNodeGirder
+      - *SoundMetalSlam
+      - &SpawnSteel !type:SpawnEntitiesBehavior
+  - type: Sprite
+    sprite: Structures/Walls/exo.rsi
+  - type: Icon
+    sprite: Structures/Walls/exo.rsi
+  - type: IconSmooth
+    key: walls
+    base: solid
+  - type: Construction
+    graph: Girder
+    node: wallChitin
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
+
+- type: entity
+  parent: [ BaseWall, StructureHealthWallStrong ]
+  id: WallReinforcedChitin
+  name: reinforced exodermis
+  components:
+  - type: CosmicCorruptible
+    convertTo: WallCosmicCult
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 40
+      reagents:
+      - ReagentId: Iron
+        Quantity: 37
+      - ReagentId: Carbon
+        Quantity: 3
+  - type: Sprite
+    sprite: Structures/Walls/exo.rsi
+  - type: Icon
+    sprite: Structures/Walls/exo.rsi
+    state: rgeneric
+  - type: Damageable
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger: *DamageWallStrong
+      behaviors:
+      - &ChangeNodeReinforcedGirder !type:ChangeConstructionNodeBehavior
+      - *SoundMetalSlam
+      - *SpawnPlasteel
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ReinforcedWallVisuals.DeconstructionStage:
+        ReinforcedWallVisualLayers.Deconstruction:
+          -1: { visible: false }
+          0: { state: reinf_construct-0, visible: true}
+          1: { state: reinf_construct-1, visible: true}
+          2: { state: reinf_construct-2, visible: true}
+          3: { state: reinf_construct-3, visible: true}
+          4: { state: reinf_construct-4, visible: true}
+          5: { state: reinf_construct-5, visible: true}
+  - type: StaticPrice
+    price: 250
+  - type: RadiationBlocker
+    resistance: 5
+  - type: IconSmooth
+    key: walls
+    base: reinf_over
+  - type: Construction
+    graph: Girder
+    node: reinforcedWallChitin
+
+- type: entity
+  parent: [ BaseWall, StructureHealthBarrierStrong ]
+  id: WallConcrete
+  name: concrete wall
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/concrete.rsi
+  - type: Icon
+    sprite: Structures/Walls/concrete.rsi
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
+  - type: Damageable
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger: &DamageBarrierStrong
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - &SoundBreakStone !type:PlaySoundBehavior
+  - type: IconSmooth
+    key: walls
+    base: concrete
+  - type: CosmicCorruptible # DeltaV - Cosmic Cult
+    convertTo: WallCosmicCult
+
+# Cardboard

@@ -1,6 +1,6 @@
 - type: entity
   id: StatueVenusRed
-  parent: BaseStructure
+  parent: BaseStatue # Nebula edit
   name: statue of a pure maiden
   suffix: Red
   description: An ancient marble statue. The subject is depicted with a floor-length braid and is wielding a red toolbox.
@@ -14,7 +14,7 @@
 
 - type: entity
   id: StatueVenusBlue
-  parent: BaseStructure
+  parent: BaseStatue # Nebula edit
   name: statue of a pure maiden
   suffix: Blue
   description: An ancient marble statue. The subject is depicted with a floor-length braid and is wielding a blue toolbox.

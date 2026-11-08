@@ -4,18 +4,22 @@
   id: AirlockAssemblyAtmospherics
   suffix: Atmospherics
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/atmospherics.rsi
+    sprite: Structures/Doors/Airlocks/Standard/engineering-atmos.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyAtmosphericsGlass
   suffix: Atmospherics, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/atmospherics.rsi
+    sprite: Structures/Doors/Airlocks/Glass/engineering-atmos.rsi
     state: "assembly"
+  # Nebula end
 
 #Cargo
 - type: entity
@@ -23,18 +27,22 @@
   id: AirlockAssemblyCargo
   suffix: Cargo
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/cargo.rsi
+    sprite: Structures/Doors/Airlocks/Standard/cargo-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCargoGlass
   suffix: Cargo, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/cargo.rsi
+    sprite: Structures/Doors/Airlocks/Glass/cargo-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Clockwork
 - type: entity
@@ -43,9 +51,16 @@
   suffix: Pinion, Clockwork
   parent: AirlockAssembly
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/clockwork_pinion.rsi
+    sprite: _Arcane/Structures/Doors/Airlocks/Standard/brass-base.rsi
     state: "assembly"
+  # Nebula end
+  # Nebula start
+  - type: Transform
+    anchored: true
+    noRot: true
+  # Nebula end
   - type: Construction
     graph: PinionAirlock
     node: assembly
@@ -67,18 +82,22 @@
   id: AirlockAssemblyCommand
   suffix: Command
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+    sprite: Structures/Doors/Airlocks/Standard/command-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCommandGlass
   suffix: Command, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+    sprite: Structures/Doors/Airlocks/Glass/command-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Engineering
 - type: entity
@@ -86,18 +105,22 @@
   id: AirlockAssemblyEngineering
   suffix: Engineering
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
+    sprite: Structures/Doors/Airlocks/Standard/engineering-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyEngineeringGlass
   suffix: Engineering, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/engineering.rsi
+    sprite: Structures/Doors/Airlocks/Glass/engineering-base.rsi
     state: "assembly"
+  # Nebula end
 
 #External
 - type: entity
@@ -105,18 +128,22 @@
   id: AirlockAssemblyExternal
   suffix: External
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/external.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-external.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyExternalGlass
   suffix: External, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/external.rsi
+    sprite: Structures/Doors/Airlocks/Glass/airlock-external.rsi
     state: "assembly"
+  # Nebula end
 
 #Public (Glass Airlock)
 - type: entity
@@ -124,9 +151,11 @@
   id: AirlockAssemblyGlass
   suffix: Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    sprite: Structures/Doors/Airlocks/Glass/airlock-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Freezer
 - type: entity
@@ -134,9 +163,11 @@
   id: AirlockAssemblyFreezer
   suffix: Freezer
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/freezer.rsi
+    sprite: Structures/Doors/Airlocks/Standard/service-freezer.rsi
     state: "assembly"
+  # Nebula end
 
 #Hydroponics
 - type: entity
@@ -144,18 +175,22 @@
   id: AirlockAssemblyHydroponics
   suffix: Hydroponics
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/hydroponics.rsi
+    sprite: Structures/Doors/Airlocks/Standard/service-botany.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyHydroponicsGlass
   suffix: Hydroponics, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/hydroponics.rsi
+    sprite: Structures/Doors/Airlocks/Glass/service-botany.rsi
     state: "assembly"
+  # Nebula end
 
 #Maintenance
 - type: entity
@@ -163,18 +198,22 @@
   id: AirlockAssemblyMaintenance
   suffix: Maintenance
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyMaintenanceGlass
   suffix: Maintenance, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/maint.rsi
+    sprite: Structures/Doors/Airlocks/Glass/airlock-maints.rsi
     state: "assembly"
+  # Nebula end
 
 #Medical
 - type: entity
@@ -182,18 +221,22 @@
   id: AirlockAssemblyMedical
   suffix: Medical
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/medical.rsi
+    sprite: Structures/Doors/Airlocks/Standard/medical-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyMedicalGlass
   suffix: Medical, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/medical.rsi
+    sprite: Structures/Doors/Airlocks/Glass/medical-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Salvage
 - type: entity
@@ -201,18 +244,22 @@
   id: AirlockAssemblySalvage
   suffix: Salvage
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/salvage.rsi
+    sprite: Structures/Doors/Airlocks/Standard/cargo-salvage.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblySalvageGlass
   suffix: Salvage, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/salvage.rsi
+    sprite: Structures/Doors/Airlocks/Glass/cargo-salvage.rsi
     state: "assembly"
+  # Nebula end
 
 #Science
 - type: entity
@@ -220,18 +267,22 @@
   id: AirlockAssemblyScience
   suffix: Science
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/science.rsi
+    sprite: Structures/Doors/Airlocks/Standard/science-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyScienceGlass
   suffix: Science, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/science.rsi
+    sprite: Structures/Doors/Airlocks/Glass/science-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Security
 - type: entity
@@ -239,18 +290,22 @@
   id: AirlockAssemblySecurity
   suffix: Security
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/security.rsi
+    sprite: Structures/Doors/Airlocks/Standard/security-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblySecurityGlass
   suffix: Security, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/security.rsi
+    sprite: Structures/Doors/Airlocks/Glass/security-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Shuttle
 - type: entity
@@ -258,18 +313,25 @@
   id: AirlockAssemblyShuttle
   suffix: Shuttle
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/shuttle.rsi
-    state: "assembly"
+    sprite: Structures/Doors/Airlocks/Standard/shuttle-base.rsi
+    layers:
+    - state: docking-clamp
+      offset: 0, -1
+    - state: assembly
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyShuttleGlass
   suffix: Shuttle, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
+    sprite: Structures/Doors/Airlocks/Glass/shuttle-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Virology
 - type: entity
@@ -277,18 +339,22 @@
   id: AirlockAssemblyVirology
   suffix: Virology
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/virology.rsi
+    sprite: Structures/Doors/Airlocks/Standard/medical-viro.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyVirologyGlass
   suffix: Virology, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/virology.rsi
+    sprite: Structures/Doors/Airlocks/Glass/medical-viro.rsi
     state: "assembly"
+  # Nebula end
 
 #CentralCommand
 - type: entity
@@ -296,18 +362,22 @@
   id: AirlockAssemblyCentralCommand
   suffix: CentralCommand
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/centcomm.rsi
+    sprite: Structures/Doors/Airlocks/Standard/centcomm-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCentralCommandGlass
   suffix: CentralCommand, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/centcomm.rsi
+    sprite: Structures/Doors/Airlocks/Glass/centcomm-base.rsi
     state: "assembly"
+  # Nebula end
 
 #Mining
 - type: entity
@@ -334,18 +404,22 @@
   id: AirlockAssemblySyndicate
   suffix: Syndicate
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Standard/syndicate-base.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblySyndicateGlass
   suffix: Syndicate, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Glass/syndicate-base.rsi
     state: "assembly"
+  # Nebula end
 
 #ShuttleSyndicate
 - type: entity
@@ -353,18 +427,22 @@
   id: AirlockAssemblyShuttleSyndicate
   suffix: ShuttleSyndicate
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Standard/shuttle-syndicate.rsi
     state: "assembly"
+  # Nebula end
 
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyShuttleSyndicateGlass
   suffix: ShuttleSyndicate, Glass
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Glass/shuttle-syndicate.rsi
     state: "assembly"
+  # Nebula end
 
 #High Security
 - type: entity

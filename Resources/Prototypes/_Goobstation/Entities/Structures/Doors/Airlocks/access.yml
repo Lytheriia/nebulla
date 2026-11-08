@@ -106,5 +106,7 @@
   parent: AirlockJournalismLocked
   id: AirlockMaintJournalismLocked
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
+  # Nebula end

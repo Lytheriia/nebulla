@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseWindowStructure
+  parent: Window # Nebula edit
   id: ClockworkWindow
   name: clockwork window
   description: Don't smudge up the brass down there.
@@ -8,11 +8,15 @@
   - type: CosmicCorruptible
     convertTo: WindowCosmicCult
   # </Trauma>
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/clockwork_window.rsi
+    sprite: _Arcane/Structures/Windows/window-brass.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/clockwork_window.rsi
+    sprite: _Arcane/Structures/Windows/window-brass.rsi
     state: full
+  # Nebula end
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -36,16 +40,20 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Nebula start
   - type: IconSmooth
-    base: cwindow
+    base: bwindow
+  # Nebula end
   - type: Construction
     graph: Window
     node: clockworkWindow
-  - type: DamageVisuals
-    damageDivisor: 3
+  # Nebula start
+  # - type: DamageVisuals
+  #   damageDivisor: 3
+  # Nebula end
 
 - type: entity
-  parent: BaseWindowStructureDirectional
+  parent: WindowDirectional # Nebula edit
   id: WindowClockworkDirectional
   name: directional clockwork window
   description: Don't smudge up the brass down there.
@@ -59,8 +67,10 @@
   - type: Construction
     graph: WindowDirectional
     node: windowClockworkDirectional
-  - type: DamageVisuals
-    damageDivisor: 1.5
+  # Nebula start
+  # - type: DamageVisuals
+  #   damageDivisor: 1.5
+  # Nebula end
   - type: Injurable
     damageContainer: StructuralInorganic
   - type: Damageable
@@ -85,7 +95,7 @@
     price: 22.5
 
 - type: entity
-  parent: ClockworkWindow
+  parent: WindowDiagonal # Nebula edit
   id: ClockworkWindowDiagonal
   suffix: diagonal
   placement:
@@ -93,21 +103,25 @@
     snap:
     - Window
   components:
+  # Nebula start
   - type: Sprite
-    drawdepth: WallTops
-    sprite: Structures/Windows/clockwork_diagonal.rsi
-    state: state0
+    sprite: _Arcane/Structures/Windows/window-diagonal-brass.rsi
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
-  - type: IconSmooth
-    mode: Diagonal
-    key: windows
-    base: state
+  # Nebula start
+  # - type: IconSmooth
+  #   mode: Diagonal
+  #   key: windows
+  #   base: state
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/clockwork_diagonal.rsi
+    sprite: _Arcane/Structures/Windows/window-diagonal-brass.rsi
     state: state0
+  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:
@@ -126,9 +140,11 @@
     airBlockedDirection:
     - South
     - East
-  - type: DamageVisuals
-    damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+  # Nebula start
+  # - type: DamageVisuals
+  #   damageOverlay:
+  #     sprite: Structures/Windows/cracks_diagonal.rsi
+  # Nebula end
   - type: Construction
     graph: WindowDiagonal
     node: clockworkWindowDiagonal

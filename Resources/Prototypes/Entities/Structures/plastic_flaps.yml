@@ -1,6 +1,6 @@
 - type: entity
   id: PlasticFlapsBase
-  parent: BaseStructure
+  parent: BaseStructureDynamic # Nebula edit
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -9,10 +9,12 @@
     flags:
     - Anchorable
   - type: Rotatable
+  # Nebula start
   - type: Sprite
-    sprite: Structures/plastic_flaps.rsi
+    sprite: Structures/Specific/plastic-flaps.rsi
     state: plasticflaps
     drawdepth: Mobs
+  # Nebula end
   - type: Physics
     bodyType: Static
   - type: Transform
@@ -42,6 +44,15 @@
         acts: ["Destruction"]
   - type: StaticPrice
     price: 100
+  # Nebula start
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: PlacementReplacement
+    key: walls
+  - type: StructureAligner
+  - type: StructureAlignerPylon
+  # Nebula end
 
 - type: entity
   id: PlasticFlapsClear

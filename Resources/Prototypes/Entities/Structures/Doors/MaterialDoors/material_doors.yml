@@ -10,11 +10,13 @@
     - Anchorable
   - type: Rotatable
   - type: InteractionOutline
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/metal_door.rsi
+    sprite: Structures/Doors/MaterialDoors/silver-door.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
+  # Nebula end
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -55,6 +57,15 @@
   - type: Occluder
   - type: BlockWeather
   - type: SoundBlocker # Trauma
+  # Nebula start
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: PlacementReplacement
+    key: walls
+  - type: StructureAligner
+  - type: StructureAlignerPylon
+  # Nebula end
 
 - type: entity
   abstract: true
@@ -95,8 +106,10 @@
   id: PlasmaDoor
   name: plasma door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/plasma_door.rsi
+    sprite: Structures/Doors/MaterialDoors/plasma-door.rsi
+  # Nebula end
   - type: Construction
     graph: DoorGraph
     node: plasmaDoor
@@ -120,8 +133,10 @@
   id: GoldDoor
   name: gold door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/gold_door.rsi
+    sprite: Structures/Doors/MaterialDoors/gold-door.rsi
+  # Nebula end
   - type: Construction
     graph: DoorGraph
     node: goldDoor
@@ -145,8 +160,10 @@
   id: SilverDoor
   name: silver door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/silver_door.rsi
+    sprite: Structures/Doors/MaterialDoors/silver-door.rsi
+  # Nebula end
   - type: Construction
     graph: DoorGraph
     node: silverDoor
@@ -170,8 +187,10 @@
   id: BananiumDoor
   name: bananium door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/bananium_door.rsi
+    sprite: _Arcane/Structures/Doors/MaterialDoors/bananium-door.rsi
+  # Nebula end
   - type: Door
     openSound: &BikeHornSound
       collection: BikeHorn
@@ -203,8 +222,10 @@
   id: WoodDoor
   name: wooden door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/wood_door.rsi
+    sprite: Structures/Doors/MaterialDoors/wood-door.rsi
+  # Nebula end
   - type: Door
     openSound:
       path: /Audio/Effects/door_open.ogg
@@ -237,8 +258,10 @@
   id: PaperDoor
   name: paper door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/paper_door.rsi
+    sprite: Structures/Doors/MaterialDoors/paper-door.rsi
+  # Nebula end
   - type: Door
     openSound:
       path: /Audio/Effects/paperdoor_openclose.ogg
@@ -272,8 +295,10 @@
   name: web door
   description: A door, leading to the lands of the spiders... or a spaced room.
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/web_door.rsi
+    sprite: Structures/Doors/MaterialDoors/web-door.rsi
+  # Nebula end
   - type: Door
     closeSound:
       path: /Audio/Effects/rustle1.ogg
@@ -306,8 +331,10 @@
   id: CardDoor
   name: cardboard door
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/card_door.rsi
+    sprite: Structures/Doors/MaterialDoors/card-door.rsi
+  # Nebula end
   - type: Door
     openSound:
       path: /Audio/Effects/card_drag.ogg
@@ -339,3 +366,8 @@
           MaterialCardboard:
             min: 3
             max: 5
+  # Nebula start
+  - type: IconSmooth
+    key: cards
+    mode: NoSprite
+  # Nebula end

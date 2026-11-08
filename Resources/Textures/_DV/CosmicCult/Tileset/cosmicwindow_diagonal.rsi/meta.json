@@ -1,17 +1,19 @@
 {
     "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub). Recolored by UmbiMax.",
     "size": {
         "x": 32,
         "y": 32
     },
-    "license": "CC-BY-SA-3.0",
-    "copyright": "A custom item by AftrLite (Github).",
     "states": [
         {
-            "name": "coswindow0"
+            "name": "state0",
+            "directions": 4
         },
         {
-            "name": "coswindow1"
+            "name": "state1",
+            "directions": 4
         }
     ]
 }

@@ -20,9 +20,11 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Nebula start
   - type: IconSmooth
     key: cultwalls
-    base: cult
+    base: malign
+  # Nebula end
 
 - type: entity
   parent: WallCosmicCult
@@ -45,9 +47,11 @@
         state: trim_north
       - map: [ "enum.EdgeLayer.West" ]
         state: trim_west
+  # Nebula start
   - type: IconSmooth
     key: cultwalls
-    base: cult
+    base: malign
+  # Nebula end
   - type: SmoothEdge
 
 - type: entity
@@ -83,8 +87,10 @@
           collection: WindowShatter
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Nebula start
   - type: IconSmooth
-    base: coswindow
+    base: malign
+  # Nebula end
   - type: Appearance
   - type: DamageVisuals
     thresholds: [5, 10, 20]
@@ -123,17 +129,23 @@
   components:
   - type: CosmicCultExamine
     cultistText: cosmic-examine-text-forthecult
+  # Nebula start
   - type: Sprite
     drawdepth: WallTops
     sprite: _DV/CosmicCult/Tileset/cosmicwindow_diagonal.rsi
-    state: coswindow0
+    state: state0
+  # Nebula end
+  # Nebula start
   - type: IconSmooth
     mode: Diagonal
     key: cultwindows
-    base: coswindow
+    base: state
+  # Nebula end
+  # Nebula start
   - type: Icon
     sprite: _DV/CosmicCult/Tileset/cosmicwindow_diagonal.rsi
-    state: coswindow0
+    state: state0
+  # Nebula end
   - type: Destructible
     thresholds:
     - trigger:

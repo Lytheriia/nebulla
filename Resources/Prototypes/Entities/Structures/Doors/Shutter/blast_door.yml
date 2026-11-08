@@ -6,13 +6,16 @@
   components:
   - type: AccessReader
     containerAccessProvider: board
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Shutters/blastdoor.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-blastdoor.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.WeldableLayers.BaseWelded"]
+  # Nebula end
   - type: Door
     closeTimeOne: 0.4
     closeTimeTwo: 0.4
@@ -56,6 +59,13 @@
     damagePenalty: 0.4
   - type: SoundBlocker # Trauma
     soundBlockPercent: 0.8
+  # Nebula start
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: PlacementReplacement
+    key: blastdoors
+  # Nebula end
 
 - type: entity
   id: BlastDoorOpen
@@ -79,9 +89,11 @@
   name: blast door frame
   description: This one says 'BLAST DONGER'.
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Shutters/blastdoor.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-blastdoor.rsi
     state: assembly
+  # Nebula end
   - type: InteractionOutline
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong
@@ -123,11 +135,17 @@
   name: xenoborg blast door
   description: Don't lose a head!
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Shutters/xenoborg_blastdoor.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-blastdoor.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
+    - state: welded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      map: ["enum.WeldableLayers.BaseWelded"]
+      visible: true
+  # Nebula end
   - type: Door
     closeTimeOne: 0.4
     closeTimeTwo: 0.7

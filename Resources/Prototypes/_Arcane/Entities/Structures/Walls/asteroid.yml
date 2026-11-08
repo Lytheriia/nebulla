@@ -1,0 +1,224 @@
+- type: entity
+  abstract: true
+  parent: StructureHealthBarrierWeak
+  id: BaseAsteroidDestructible
+  components:
+  - type: Damageable
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - &SoundStoneBreak !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+#region BaseVein
+
+- type: entity
+  abstract: true
+  id: BaseVeinCoal
+  suffix: Coal
+  description: An ore vein rich with coal.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreCoal
+  - type: Sprite
+    layers:
+    - state: rock_coal
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinGold
+  suffix: Gold
+  description: An ore vein rich with gold.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreGold
+  - type: Sprite
+    layers:
+    - state: rock_gold
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinDiamond
+  suffix: Diamond
+  description: An ore vein rich with diamonds.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreDiamond
+  - type: Sprite
+    layers:
+    - state: rock_diamond
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinPlasma
+  suffix: Plasma
+  description: An ore vein rich with plasma.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OrePlasma
+  - type: Sprite
+    layers:
+    - state: rock_phoron
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinQuartz
+  suffix: Quartz
+  description: An ore vein rich with quartz.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSpaceQuartz
+  - type: Sprite
+    layers:
+    - state: rock_quartz
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinSilver
+  suffix: Silver
+  description: An ore vein rich with silver.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSilver
+  - type: Sprite
+    layers:
+    - state: rock_silver
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinSteel
+  suffix: Steel
+  description: An ore vein rich with iron.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSteel
+  - type: Sprite
+    layers:
+    - state: rock_tin
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinUranium
+  suffix: Uranium
+  description: An ore vein rich with uranium.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreUranium
+  - type: Sprite
+    layers:
+    - state: rock_uranium
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinSalt
+  suffix: Salt
+  description: An ore vein rich with salt.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSalt
+  - type: Sprite
+    layers:
+    - state: rock_salt
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinArtifactFragment
+  suffix: Artifact Fragment
+  description: A vein rich with strange artifacts.
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreArtifactFragment
+  - type: Sprite
+    layers:
+    - state: rock_artifact_fragment
+      sprite: Structures/Walls/stone-ore.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  abstract: true
+  id: BaseVeinRandom
+  suffix: 33% Random Ores
+  description: A vein rich with strange artifacts.
+  components:
+  - type: OreVein
+    oreChance: 0.33
+    oreRarityPrototypeId: RandomOreDistributionStandard
+
+#endregion
+#region Asteroid Rock
+
+# Visuals separated from the base rock to fix destruction conflicts with gibtonite
+
+- type: entity
+  abstract: true
+  id: BaseAsteroidRockVisuals
+  name: asteroid rock
+  description: A rocky asteroid.
+  components:
+  - type: Icon
+    sprite: Structures/Walls/stone.rsi
+    state: full
+  - type: Sprite
+    sprite: Structures/Walls/stone.rsi
+
+- type: entity
+  abstract: true
+  id: BaseIronRockVisuals
+  name: ironrock
+  description: A rocky asteroid.
+  components:
+  - type: Icon
+    sprite: Structures/Walls/stone-ironrock.rsi
+    state: full
+  - type: Sprite
+    sprite: Structures/Walls/stone-ironrock.rsi
+
+- type: entity
+  abstract: true
+  id: BaseVeinBananium
+  suffix: Bananium
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreBananium
+  - type: Sprite
+    layers:
+    - state: rock_bananium
+      sprite: _Arcane/Structures/Walls/stone-ore-old.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+      visible: false

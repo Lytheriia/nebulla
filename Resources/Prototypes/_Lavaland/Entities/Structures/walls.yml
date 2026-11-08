@@ -48,10 +48,14 @@
   name: stone wall
   suffix: Indestructible
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Walls/necropolis.rsi
+    sprite: _Arcane/Structures/Walls/necropolis.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Walls/necropolis.rsi
+    sprite: _Arcane/Structures/Walls/necropolis.rsi
+  # Nebula end
   - type: IconSmooth
     key: walls
     base: necropolis

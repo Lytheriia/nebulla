@@ -8,8 +8,10 @@
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 10
   # </Trauma>
-  - type: Transform # required
-    noRot: true
+  # Nebula start
+  # - type: Transform # required
+  #   noRot: true
+  # Nebula end
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -20,19 +22,30 @@
     delay: 4
     fx: EffectRCDDeconstruct4
   - type: CanBuildWindowOnTop
+  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: _Trauma/Structures/Walls/grille.rsi # Trauma
+    sprite: Structures/Walls/grille.rsi
     layers:
-    - state: grille
     - state: electrified
       sprite: Effects/electricity.rsi
       map: ["enum.ElectrifiedLayers.Sparks"]
       shader: unshaded
       visible: false
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: _Trauma/Structures/Walls/grille.rsi # Trauma
-    state: grille
+    sprite: Structures/Walls/grille.rsi
+    state: full
+  # Nebula end
+  # Nebula start
+  - type: IconSmooth
+    index: 0
+    key: walls
+    base: grille
+  - type: PlacementReplacement
+    key: grilles
+  # Nebula end
   - type: Construction
     graph: Grille
     node: grille
@@ -101,15 +114,15 @@
   name: clockwork grille
   description: A flimsy framework of iron rods assembled in traditional Ratvarian fashion.
   components:
+  # Nebula start
   - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/clockwork_grille.rsi
-    state: ratvargrille
-    layers:
-      - state: ratvargrille
+    sprite: _Arcane/Structures/Walls/brass-grille.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Walls/clockwork_grille.rsi
-    state: ratvargrille
+    sprite: _Arcane/Structures/Walls/brass-grille.rsi
+    state: full
+  # Nebula end
   - type: Construction
     graph: ClockGrille
     node: clockGrille
@@ -121,13 +134,17 @@
   name: grille
   description: A flimsy framework of iron rods. It has seen better days.
   components:
+  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: _Trauma/Structures/Walls/grille.rsi # Trauma
-    state: grille_broken
+    sprite: Structures/Walls/grille.rsi
+    state: broken
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: _Trauma/Structures/Walls/grille.rsi # Trauma
-    state: grille_broken
+    sprite: Structures/Walls/grille.rsi
+    state: broken
+  # Nebula end
   - type: RCDDeconstructable
     cost: 6
     delay: 4
@@ -174,13 +191,16 @@
   name: clockwork grille
   description: A flimsy framework of iron rods assembled in traditional Ratvarian fashion. It has seen better days.
   components:
+  # Nebula start
   - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/clockwork_grille.rsi
-    state: brokenratvargrille
+    sprite: _Arcane/Structures/Walls/brass-grille.rsi
+    state: broken
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Walls/clockwork_grille.rsi
-    state: brokenratvargrille
+    sprite: _Arcane/Structures/Walls/brass-grille.rsi
+    state: broken
+  # Nebula end
   - type: Construction
     graph: ClockGrille
     node: clockGrilleBroken
@@ -190,21 +210,33 @@
   parent: Grille
   name: diagonal grille
   components:
-  - type: Transform
-    noRot: false
+  # Nebula start
+  # - type: Transform
+  #   noRot: false
+  # Nebula end
+  # Nebula start
   - type: Sprite
-    drawdepth: Walls
-    sprite:  _Trauma/Structures/Walls/grille.rsi # Trauma
+    sprite: Structures/Walls/grille-diagonal.rsi
     layers:
-    - state: grille_diagonal
+    - state: state0
     - state: electrified_diagonal
       sprite: Effects/electricity.rsi
       map: ["enum.ElectrifiedLayers.Sparks"]
       shader: unshaded
       visible: false
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite:  _Trauma/Structures/Walls/grille.rsi # Trauma
-    state: grille_diagonal
+    sprite: Structures/Walls/grille-diagonal.rsi
+    state: state0
+  # Nebula end
+  # Nebula start
+  - type: IconSmooth
+    index: 0
+    mode: Diagonal
+    key: grilles
+    base: state
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal
@@ -227,24 +259,22 @@
 
 - type: entity
   id: ClockworkGrilleDiagonal
-  parent: ClockworkGrille
+  parent: GrilleDiagonal # Nebula edit
   name: diagonal clockwork grille
   components:
-  - type: Transform
-    noRot: false
+  # Nebula start
+  # - type: Transform
+  #   noRot: false
+  # Nebula end
+  # Nebula start
   - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/clockwork_grille.rsi
-    layers:
-    - state: ratvargrille_diagonal
-    - state: electrified_diagonal
-      sprite: Effects/electricity.rsi
-      map: ["enum.ElectrifiedLayers.Sparks"]
-      shader: unshaded
-      visible: false
+    sprite: _Arcane/Structures/Walls/brass-grille-diagonal.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Walls/clockwork_grille.rsi
-    state: ratvargrille_diagonal
+    sprite: _Arcane/Structures/Walls/brass-grille-diagonal.rsi
+    state: state0
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal

@@ -48,6 +48,14 @@
         layer:
         - WallLayer
         density: 4000
+  # Nebula start
+  - type: PlacementReplacement
+    key: walls
+  - type: StructureAlignerPylon
+    pylons:
+    - Door
+    - Firelock
+  # Nebula end
 
 - type: entity
   id: PlastitaniumWindowSquareBase
@@ -55,15 +63,21 @@
   name: plastitanium window
   parent: PlastitaniumWindowBase
   components:
+  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plastitanium_window.rsi
+    sprite: Structures/Windows/window-plastitanium.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/plastitanium_window.rsi
+    sprite: Structures/Windows/window-plastitanium.rsi
     state: full
+  # Nebula end
+  # Nebula start
   - type: IconSmooth
-    key: windows
+    key: walls
     base: ptwindow
+  # Nebula end
   - type: Airtight
   - type: Fixtures
     fixtures:
@@ -134,21 +148,27 @@
   parent: PlastitaniumWindowBase
   suffix: diagonal
   components:
+  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plastitanium_window_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-plastitanium.rsi
     state: state0
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/plastitanium_window_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-plastitanium.rsi
     state: state0
+  # Nebula end
+  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
+  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:
@@ -208,12 +228,14 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Nebula start
   - type: DamageVisuals
     thresholds: [5, 10, 20]
     damageDivisor: 20
     trackAllDamage: true
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Structures/Windows/cracks-diagonal.rsi
+  # Nebula end
   - type: Repairable
     fuelCost: 15
     doAfterDelay: 3

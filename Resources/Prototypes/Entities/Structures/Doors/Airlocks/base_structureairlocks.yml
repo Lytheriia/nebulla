@@ -29,25 +29,30 @@
         path:
           "/Audio/Weapons/smash.ogg"
   - type: InteractionOutline
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
-    snapCardinals: true
+    sprite: Structures/Doors/Airlocks/Standard/airlock-base.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
       shader: unshaded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseUnlit"]
-      visible: false
+      visible: true
     - state: welded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
       shader: unshaded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseBolted"]
     - state: emergency_unlit
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
     - state: panel_open
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
@@ -60,9 +65,11 @@
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
     - state: sparks
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseEmagging"]
       shader: unshaded
       visible: false
+  # Nebula end
   - type: IconSmooth
     key: walls
     mode: NoSprite
@@ -100,7 +107,10 @@
   - type: Weldable
     fuel: 5
     time: 3
+  # Nebula start
   - type: Airlock
+    openUnlitVisible: true
+  # Nebula end
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance
@@ -161,6 +171,10 @@
     - WirePanels
   - type: StaticPrice
     price: 150
+  # Nebula start
+  - type: StructureAligner
+  - type: StructureAlignerPylon
+  # Nebula end
   # <Trauma> - despritening
   #- type: StructureAligner
   #- type: StructureAlignerPylon
@@ -240,8 +254,10 @@
     node: airlock
     containers:
     - board
-  - type: PlacementReplacement
-    key: walls
+  # Nebula start
+  # - type: PlacementReplacement
+  #   key: walls
+  # Nebula end
   - type: Paintable
     group: AirlockStandard
   - type: PryUnpowered
@@ -276,8 +292,10 @@
     occludes: false
   - type: Occluder
     enabled: false
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/glass.rsi # Trauma - despritening
+    sprite: Structures/Doors/Airlocks/Glass/airlock-base.rsi
+  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:

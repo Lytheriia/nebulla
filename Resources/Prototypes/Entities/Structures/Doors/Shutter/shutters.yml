@@ -52,17 +52,18 @@
   - type: Tag
     tags:
     - ForceNoFixRotations # Don't want the fixrotations command to target these
+  # Nebula start
   - type: Door
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
     bumpOpen: false
     clickOpen: false
     closeTimeOne: 0.2
-    closeTimeTwo: 1.2
-    openTimeOne: 1.2
-    openTimeTwo: 0.2
-    openingAnimationTime: 1.4
-    closingAnimationTime: 1.4
+    closeTimeTwo: 0.8
+    openTimeOne: 0.2
+    openTimeTwo: 0.8
+    openingAnimationTime: 1
+    closingAnimationTime: 1
     crushDamage:
       types:
         Blunt: 5 # getting shutters closed on you probably doesn't hurt that much
@@ -70,6 +71,7 @@
       path: /Audio/Machines/shutter.ogg
     closeSound:
       path: /Audio/Machines/shutter.ogg
+  # Nebula end
   - type: Weldable
     time: 3
   - type: Appearance
@@ -129,6 +131,15 @@
     interactSuccessSound:
       collection: FenceRattle
   - type: BlockWeather
+  # Nebula start
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: PlacementReplacement
+    key: shutters
+  - type: StructureAligner
+  - type: StructureAlignerPylon
+  # Nebula end
 
 - type: entity
   id: ShuttersNormal
@@ -159,17 +170,19 @@
 
 - type: entity
   id: ShuttersRadiation
-  parent: [BaseDeltaPressureGlass, BaseShutter]
+  parent: ShuttersNormal # Nebula edit
   name: radiation shutters
   description: Why did they make these shutters radioactive?
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+    sprite: Structures/Doors/Shutters/shutters-radiation.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
+  # Nebula end
   - type: Occluder
   - type: Construction
     graph: Shutters
@@ -201,13 +214,15 @@
   name: window shutters
   description: The Best (TM) place to see your friends explode!
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Shutters/shutters_window.rsi
+    sprite: Structures/Doors/Shutters/shutters-window.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
+  # Nebula end
   - type: Construction
     graph: Shutters
     node: ShuttersWindow
@@ -237,9 +252,11 @@
   name: shutter frame
   description: A frame for constructing a shutter.
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters.rsi
-    state: frame
+    state: assembly
+  # Nebula end
   - type: Construction
     graph: Shutters
     node: frame1

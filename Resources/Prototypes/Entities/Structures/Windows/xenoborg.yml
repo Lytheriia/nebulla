@@ -3,12 +3,18 @@
   parent: PlastitaniumWindow
   name: xenoborg window
   components:
+  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/xenoborg.rsi
+    sprite: Structures/Windows/exo-resin-borg.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/xenoborg.rsi
+    sprite: Structures/Windows/exo-resin-borg.rsi
     state: full
+  # Nebula end
+  # Nebula start
   - type: IconSmooth
-    key: windows
+    key: walls
     base: xenoborg
+  # Nebula end

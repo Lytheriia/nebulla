@@ -75,6 +75,20 @@
             - tool: Welding
               doAfter: 20
 
+        # Nebula start
+        - to: brassWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Brass
+              amount: 2
+            - tool: Welding
+              doAfter: 20
+        # Nebula end
+
         - to: plasticWall
           completed:
             - !type:SnapToGrid
@@ -239,6 +253,34 @@
           steps:
             - tool: Prying
               doAfter: 5
+
+    # Nebula start
+    - node: wallChitin
+      entity: WallSolidChitin
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 10
+
+    - node: brassWall
+      entity: WallBrass
+      edges:
+      - to: girder
+        completed:
+        - !type:GivePrototype
+          prototype: SheetBrass1
+          amount: 2
+        steps:
+          - tool: Welding
+            doAfter: 20
+          - tool: Prying
+            doAfter: 10
+    # Nebula end
 
     - node: reinforcedGirder
       entity: ReinforcedGirder
@@ -462,3 +504,57 @@
           steps:
             - tool: Brushing
               doAfter: 12
+
+    # Nebula start
+    - node: reinforcedWallChitin
+      entity: WallReinforcedChitin
+      edges:
+        - to: reinforcedGirder
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 2
+          steps:
+            - tool: Cutting
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 5
+            - tool: Screwing
+              doAfter: 1
+            - tool: Welding
+              doAfter: 5
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 4
+            - tool: Prying
+              doAfter: 1
+            - tool: Anchoring
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 3
+            - tool: Welding
+              doAfter: 10
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 2
+            - tool: Prying
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 1
+            - tool: Screwing
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 0
+            - tool: Cutting
+              doAfter: 1
+    # Nebula end

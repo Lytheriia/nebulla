@@ -1,0 +1,18 @@
+- type: entity
+  abstract: true
+  id: BaseVeinBSCrystal
+  suffix: bluespace crystal
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreBSCrystal
+  - type: Sprite
+    layers:
+    - state: rock_bluespace_crystal
+      sprite: _Arcane/Structures/Walls/stone-ore-old.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+      visible: false
+
+- type: entity
+  parent: [BaseVeinBSCrystal, AsteroidRock]
+  id: AsteroidRockBSCrystal

@@ -13,8 +13,10 @@
   - type: SoundBlocker
     soundBlockPercent: 0.5
   - type: ReflectiveSurface
+  # Nebula start
   - type: PlacementReplacement
-    key: windows
+    key: walls
+  # Nebula end
   # </Trauma>
   - type: Anchorable
     flags:
@@ -30,8 +32,15 @@
     tags:
     - ForceFixRotations
     - Window
+  # Nebula start
   - type: Sprite
-    drawdepth: WallTops
+    sprite: Structures/Windows/window-base.rsi
+  # Nebula end
+  # Nebula start
+  - type: Icon
+    sprite: Structures/Windows/window-base.rsi
+    state: full
+  # Nebula end
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -72,16 +81,26 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
+  # Nebula start
+  - type: StructureAlignerPylon
+    pylons:
+    - Door
+    - Firelock
+  # Nebula end
 
 - type: entity
   parent: BaseWindowStructure
   id: Window
   components:
+  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/window.rsi
+    sprite: Structures/Windows/window-base.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: Structures/Windows/window-base.rsi
     state: full
+  # Nebula end
   - type: Damageable
     damageModifierSet: Glass
   - type: Injurable
@@ -109,11 +128,14 @@
   name: tinted window
   description: Smart tinted window with state switching option.
   components:
+  # Nebula start
   - type: Sprite
-    drawdepth: WallTops
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: Structures/Windows/window-tinted.rsi
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: Structures/Windows/window-tinted.rsi
+  # Nebula end
   - type: IconSmooth
     base: twindow
   - type: Construction
@@ -281,21 +303,26 @@
     snap:
     - Window
   components:
+  # Nebula start
   - type: Sprite
-    drawdepth: WallTops
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: Structures/Windows/window-base-diagonal.rsi
     state: state0
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
+  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
+  # Nebula end
+  # Nebula start
   - type: Icon
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: Structures/Windows/window-base-diagonal.rsi
     state: state0
+  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:
@@ -314,9 +341,11 @@
     airBlockedDirection:
     - South
     - East
+  # Nebula start
   - type: DamageVisuals
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Structures/Windows/cracks-diagonal.rsi
+  # Nebula end
   - type: Construction
     graph: WindowDiagonal
     node: windowDiagonal

@@ -1,6 +1,6 @@
 - type: entity
   id: Girder
-  parent: BaseStructureDynamic
+  parent: BaseGirder # Nebula edit
   name: girder
   description: A large structural assembly made out of metal; It requires a layer of metal before it can be considered a wall.
   components:
@@ -9,9 +9,11 @@
     penetrateDamage: 5
     damagePenalty: 0.5
   # </Trauma>
-  - type: Transform
-    anchored: true
-    noRot: false
+  # Nebula start
+  # - type: Transform
+  #   anchored: true
+  #   noRot: false
+  # Nebula end
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -56,7 +58,7 @@
     price: 30
 
 - type: entity
-  parent: Girder
+  parent: BaseGirder # Nebula edit
   id: ReinforcedGirder
   name: reinforced girder
   description: A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.

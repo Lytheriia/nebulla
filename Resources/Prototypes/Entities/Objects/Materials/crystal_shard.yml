@@ -13,11 +13,13 @@
     - Slicing
   - type: Execution
     doAfterDuration: 4.0
+  # Nebula start
   - type: Sprite
     layers:
-      - sprite: _Trauma/Objects/Materials/Shards/crystal.rsi # Trauma
+      - sprite: Objects/Materials/Shards/crystal-shard.rsi
         state: shard1
         map: [ "enum.DamageStateVisualLayers.Base" ]
+  # Nebula end
   - type: RandomSprite
     available:
       - enum.DamageStateVisualLayers.Base:

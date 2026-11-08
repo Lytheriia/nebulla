@@ -103,7 +103,7 @@ public sealed partial class AirlockSystem : SharedAirlockSystem
 
             if (!showBolted && !showEmergency)
             {
-                if (state == DoorState.Closing || state == DoorState.Opening || state == DoorState.Denying) // Trauma - removed Closed check for our sprites
+                if (state == DoorState.Closing || state == DoorState.Opening || state == DoorState.Denying || state == DoorState.Closed) // Nebula edit
                     showBaseUnlit = true;
 
                 if (state == DoorState.Open && comp.OpenUnlitVisible)
