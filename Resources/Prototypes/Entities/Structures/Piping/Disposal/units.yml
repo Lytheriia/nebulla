@@ -29,8 +29,10 @@
       visible: false
     - map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]
       state: dispover-ready
+      shader: unshaded # Nebula edit
     - map: [ "enum.DisposalUnitVisualLayers.OverlayFull" ]
       state: dispover-full
+      shader: unshaded # Nebula edit
       visible: false
     - map: [ "enum.DisposalUnitVisualLayers.OverlayEngaged" ]
       state: dispover-handle
@@ -42,6 +44,11 @@
           True: { state: disposal }
           False: { state: disposal-charging }
       enum.DisposalUnitVisuals.IsFlushing:
+        # Nebula start
+        enum.DisposalUnitVisualLayers.Base:
+          True: { visible: false }
+          False: { visible: true }
+        # Nebula end
         enum.DisposalUnitVisualLayers.OverlayFlushing:
           True: { visible: true }
           False: { visible: false }
