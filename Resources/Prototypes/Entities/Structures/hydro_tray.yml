@@ -24,22 +24,27 @@
         state: hydrotray3
       - sprite: Structures/Hydroponics/overlays.rsi
         state: lowhealth3
+        shader: unshaded # Nebula edit
         map: [ "health_alert" ]
         visible: false
       - sprite: Structures/Hydroponics/overlays.rsi
         state: lowwater3
+        shader: unshaded # Nebula edit
         map: [ "water_alert" ]
         visible: false
       - sprite: Structures/Hydroponics/overlays.rsi
         state: lownutri3
+        shader: unshaded # Nebula edit
         map: [ "nutri_alert" ]
         visible: false
       - sprite: Structures/Hydroponics/overlays.rsi
         state: alert3
+        shader: unshaded # Nebula edit
         map: [ "undefined_alert" ]
         visible: false
       - sprite: Structures/Hydroponics/overlays.rsi
         state: harvest3
+        shader: unshaded # Nebula edit
         map: [ "harvest_alert" ]
         visible: false
   - type: Appearance
