@@ -1320,6 +1320,8 @@ HeadIPC: null
 ItemFlagMiniInteQ: SyndieHandyFlag
 LockerShaftMinerFilled: LockerSalvageSpecialistFilled
 MicroServoStockPart: MicroManipulatorStockPart
+MiningWindow: ReinforcedWindow
+MiningWindowDiagonal: ReinforcedWindowDiagonal
 OperatingTableFilled: OperatingTable
 OrganSpaceAnimalHeart: OrganAnimalHeart
 Paintbrush: null
@@ -1352,5 +1354,19 @@ SpawnPointShaftMiner: SpawnPointSalvageSpecialist
 StrangeBerrySeeds: null
 TaskVial: null
 VendingMachineInteQDrobeNerf: VendingMachineSyndieDrobe
+WallAndesiteCobblebrick: WallRockAndesite
+WallAsteroidCobblebrick: WallConcrete
+WallBasaltCobblebrick: WallConcrete
+WallChromiteCobblebrick: WallRockChromite
+WallClock: WallBrass
+WallCobblebrick: WallConcrete
+WallIce: WallRockSnow
+WallRiveted: WallMarble
+WallSandCobblebrick: WallRockSand
+WallSandstone: WallSolid
+WallSnowCobblebrick: WallRockSnow
+WallVaultAlien: WallSolid
+WallVaultRock: WallSolid
+WallVaultSandstone: WallSolid
 WeaponWaterPistolFilledFire: null
 # Nebula end

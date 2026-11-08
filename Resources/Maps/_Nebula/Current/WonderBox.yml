@@ -221512,31 +221512,26 @@ entities:
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
       pos: 47.5,-52.5
   - uid: 29879
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
       pos: 47.5,-53.5
   - uid: 29880
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
       pos: 47.5,-56.5
   - uid: 29881
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
       pos: 47.5,-55.5
   - uid: 29882
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
       pos: 47.5,-57.5
 - proto: WallSolid
   entities:

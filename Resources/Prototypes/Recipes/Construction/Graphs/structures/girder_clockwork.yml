@@ -44,7 +44,7 @@
               doAfter: 1
 
     - node: clockworkWall
-      entity: WallClock
+      entity: WallBrass # Nebula edit
       edges:
         - to: clockGirder
           completed:

@@ -60,7 +60,7 @@ public sealed partial class AristocratSystem : EntitySystem
     [Dependency] private EntityQuery<AirlockComponent> _airlockQuery = default!;
 
     private static readonly EntProtoId IceTilePrototype = "IceCrust";
-    private static readonly EntProtoId IceWallPrototype = "WallIce";
+    private static readonly EntProtoId IceWallPrototype = "WallRockSnow"; // Nebula edit
     private static readonly EntProtoId PressureImmunity = "StatusEffectPressureImmunity";
     private static readonly EntProtoId SnowfallMagic = "WeatherSnowfallMagic";
     private static readonly ProtoId<ContentTileDefinition> SnowTilePrototype = "FloorAstroSnow";
