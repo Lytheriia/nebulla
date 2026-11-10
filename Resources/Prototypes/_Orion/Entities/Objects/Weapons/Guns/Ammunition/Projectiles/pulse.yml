@@ -4,11 +4,13 @@
   name: pulse bullet
   categories: [ HideSpawnMenu ]
   components:
+  # Nebula start
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Effects/muzzle/pulse.rsi
+    sprite: _Arcane/Objects/Weapons/Guns/Effects/muzzle/pulse.rsi
     layers:
     - state: pulse
       shader: unshaded
+  # Nebula end
   - type: Ammo
     muzzleFlash: MuzzlePulseEffect
   - type: Projectile

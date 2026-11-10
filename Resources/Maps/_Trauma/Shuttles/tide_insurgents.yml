@@ -287,6 +287,7 @@ entities:
     - type: Transform
       pos: -0.5,7.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 5
     components:
     - type: Transform
@@ -298,6 +299,7 @@ entities:
     - type: Transform
       pos: 3.5,4.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 135
     components:
     - type: Transform
@@ -760,6 +762,7 @@ entities:
     - type: Transform
       pos: 3.5,4.5
       parent: 2
+      rot: 1.5707963267948966 rad
 - proto: GasPassiveVent
   entities:
   - uid: 85
@@ -1231,11 +1234,13 @@ entities:
     - type: Transform
       pos: 6.5,4.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 161
     components:
     - type: Transform
       pos: 6.5,5.5
       parent: 2
+      rot: 1.5707963267948966 rad
 - proto: ShuttleWindow
   entities:
   - uid: 162

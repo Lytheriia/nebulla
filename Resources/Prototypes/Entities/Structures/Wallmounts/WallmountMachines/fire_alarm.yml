@@ -76,6 +76,7 @@
   - type: Wires
     boardName: wires-board-name-firealarm
     layoutId: FireAlarm
+  # Nebula start
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors.rsi
     layers:
@@ -85,6 +86,7 @@
       map: ["fireAlarmState"]
     - state: fire_b2
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: Transform
     anchored: true
   - type: Construction
@@ -118,18 +120,22 @@
   name: fire alarm assembly
   description: A fire alarm assembly. Very mild.
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors.rsi
     layers:
     - state: fire_b1
       map: [ "enum.ConstructionVisuals.Layer" ]
+  # Nebula end
   - type: Appearance
+  # Nebula start
   - type: GenericVisualizer
     visuals:
       enum.ConstructionVisuals.Key:
         enum.ConstructionVisuals.Layer:
           assembly: { state: fire_b1 }
           electronics: { state: fire_b2 }
+  # Nebula end
   - type: Construction
     graph: FireAlarm
     node: assembly

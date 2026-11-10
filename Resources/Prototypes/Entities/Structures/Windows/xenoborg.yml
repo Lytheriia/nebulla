@@ -5,10 +5,12 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/xenoborg.rsi
+    sprite: Structures/Windows/exo-resin-borg.rsi # Nebula edit
   - type: Icon
-    sprite: Structures/Windows/xenoborg.rsi
+    sprite: Structures/Windows/exo-resin-borg.rsi # Nebula edit
     state: full
+  # Nebula start
   - type: IconSmooth
-    key: windows
+    key: walls
     base: xenoborg
+  # Nebula end

@@ -302,6 +302,7 @@ entities:
     - type: Transform
       pos: 2.5,-3.5
       parent: 2
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -314,6 +315,7 @@ entities:
     - type: Transform
       pos: 4.5,-3.5
       parent: 2
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -328,6 +330,7 @@ entities:
     - type: Transform
       pos: -0.5,-5.5
       parent: 2
+      rot: 1.5707963267948966 rad
 - proto: AirlockSyndicateLocked
   entities:
   - uid: 8
@@ -345,11 +348,13 @@ entities:
     - type: Transform
       pos: 3.5,-11.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 11
     components:
     - type: Transform
       pos: -2.5,-11.5
       parent: 2
+      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 13
@@ -603,37 +608,38 @@ entities:
     - type: Transform
       pos: 3.5,-0.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 61
     components:
     - type: Transform
       pos: 3.5,-1.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 62
     components:
     - type: Transform
       pos: -2.5,-0.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 63
     components:
     - type: Transform
       pos: -2.5,-1.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 64
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,2.5
       parent: 2
   - uid: 65
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 2
   - uid: 66
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 2
 - proto: BorgCharger
@@ -1637,11 +1643,13 @@ entities:
     - type: Transform
       pos: 3.5,-11.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 247
     components:
     - type: Transform
       pos: -2.5,-11.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 248
     components:
     - type: Transform
@@ -1652,6 +1660,7 @@ entities:
     - type: Transform
       pos: -0.5,-5.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 250
     components:
     - type: Transform

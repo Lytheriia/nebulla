@@ -167,6 +167,7 @@ entities:
     - type: Transform
       pos: -6.5,0.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 58
     components:
     - type: Transform
@@ -177,6 +178,7 @@ entities:
     - type: Transform
       pos: 7.5,0.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: RandomSpawner100
   entities:
   - uid: 69

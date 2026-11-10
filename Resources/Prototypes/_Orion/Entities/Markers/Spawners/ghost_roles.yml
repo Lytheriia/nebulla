@@ -15,11 +15,13 @@
     - MindRoleGhostRoleFreeAgent
   - type: GhostRoleMobSpawner
     prototype: MobSkeletonBartender
+  # Nebula start
   - type: Sprite
     layers:
     - sprite: _Orion/Structures/cryostasis_sleeper.rsi
       state: sleeper_1
       map: [ "base" ]
+  # Nebula end
 
 - type: entity
   parent: BaseStructure
@@ -38,8 +40,10 @@
     - MindRoleGhostRoleFreeAgent
   - type: GhostRoleMobSpawner
     prototype: MobSkeletonPirateBitrun
+  # Nebula start
   - type: Sprite
     layers:
     - sprite: _Orion/Structures/cryostasis_sleeper.rsi
       state: sleeper_1
       map: [ "base" ]
+  # Nebula end

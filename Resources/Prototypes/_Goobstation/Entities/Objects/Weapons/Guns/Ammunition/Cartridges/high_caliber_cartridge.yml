@@ -12,7 +12,7 @@
   - type: CartridgeAmmo
     proto: BulletHighCaliber
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/50BMG_casing.rsi # Orion edit
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi # Nebula edit
     layers:
     - state: base # Orion edit
       map: ["enum.AmmoVisualLayers.Base"]
@@ -30,9 +30,16 @@
   - type: CartridgeAmmo
     proto: BulletHighCaliberExplosive
   - type: Sprite
+    # Nebula start
+    # layers:
+    # - state: incendiary # Orion edit
+    #   map: ["enum.AmmoVisualLayers.Base"]
     layers:
-    - state: incendiary # Orion edit
-      map: ["enum.AmmoVisualLayers.Base"]
+    - state: base
+      map:
+      - enum.AmmoVisualLayers.Base
+    # Nebula end
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi # Nebula edit
   - type: SpentAmmoVisuals
   # Orion start
     state: incendiary

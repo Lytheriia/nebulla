@@ -25,11 +25,13 @@
         Brute:
           collection: GlassSmash
     # </Trauma>
+    # Nebula start
     - type: Sprite
       sprite: _Trauma/Structures/Wallmounts/signs.rsi # Trauma
       snapCardinals: false
       # The way that Directonal Guide Signs are mapped are unaligned on the wall, making them anchored makes them all be placed in the middle of the wall
       # TODO: Combine all the directional guide signs in to some modular prototype so it's easier to map and remove the overlap when rotating the camera
+    # Nebula end
     - type: Transform
       anchored: false
 
@@ -39,10 +41,12 @@
   name: atmos sign
   description: A direction sign, pointing out which way the Atmospherics department is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_atmos
       shader: unshaded # Trauma
+  # Nebula end
 
 - type: entity
   parent: BaseSignDirectional
@@ -50,10 +54,12 @@
   name: bar sign
   description: A direction sign, pointing out which way the bar is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_bar
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27ff44"
 
@@ -63,10 +69,12 @@
   name: bridge sign
   description: A direction sign, pointing out which way the Bridge is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_bridge
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#273dff"
 
@@ -76,10 +84,12 @@
   name: brig sign
   description: A direction sign, pointing out which way the Brig is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_brig
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff2727"
 
@@ -89,10 +99,12 @@
   name: chapel sign
   description: A direction sign, pointing out which way the Chapel is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_chapel
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ffa127"
 
@@ -102,10 +114,12 @@
   name: chemistry sign
   description: A direction sign, pointing out which way the chemistry lab is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_chemistry
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ffa927"
 
@@ -115,10 +129,12 @@
   name: cryo sign
   description: A direction sign, pointing out the way to cryogenics.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: cryo
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#1ddb36"
 
@@ -128,10 +144,12 @@
   name: dorms sign
   description: A direction sign, pointing out which way the Dorms are.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_dorms
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#1ddb36"
 
@@ -141,10 +159,12 @@
   name: engineering sign
   description: A direction sign, pointing out which way the Engineering department is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_eng
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff8227"
 
@@ -154,10 +174,12 @@
   name: evac sign
   description: A direction sign, pointing out which way evac is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_evac
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27ffd0"
 
@@ -167,10 +189,12 @@
   name: exam sign
   description: A direction sign, pointing out which way the examination room(s) are.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_exam
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27f8ff"
 
@@ -180,10 +204,12 @@
   name: food sign
   description: A direction sign, pointing out which way the kitchen is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_food
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27ff44"
 
@@ -193,10 +219,12 @@
   name: gravity sign
   description: A direction sign, pointing out which way the gravity generator is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_gravity
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff8227"
 
@@ -206,10 +234,12 @@
   name: hop sign
   description: A direction sign, pointing out which way Head of Personnel's office is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_hop
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#273dff"
 
@@ -219,10 +249,12 @@
   name: hydro sign
   description: A direction sign, pointing out which way hydroponics is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_hydro
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27ff44"
 
@@ -232,10 +264,12 @@
   name: icu sign
   description: A direction sign, pointing out which way the ICU is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_icu
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27f8ff"
 
@@ -245,10 +279,12 @@
   name: janitor sign
   description: A direction sign, pointing out which way the janitor's closet is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_janitor
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#bb27ff"
 
@@ -258,10 +294,12 @@
   name: library sign
   description: A direction sign, pointing out which way the library is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_library
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#bb27ff"
 
@@ -271,10 +309,12 @@
   name: medical sign
   description: A direction sign, pointing out which way the Medical department is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_med
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27f8ff"
 
@@ -284,10 +324,12 @@
   name: salvage sign
   description: A direction sign, pointing out which way the Salvage department is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_salvage
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff7627"
 
@@ -297,10 +339,12 @@
   name: science sign
   description: A direction sign, pointing out which way the Science department is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_sci
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#bb27ff"
 
@@ -310,10 +354,12 @@
   name: sec sign
   description: A direction sign, pointing out which way Security is.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_sec
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff2727"
 
@@ -323,10 +369,12 @@
   name: solars sign
   description: A direction sign, pointing out which way solars are.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_solar
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff8227"
 
@@ -336,10 +384,12 @@
   name: supply sign
   description: A direction sign, pointing to some supplies.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_supply
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#ff7627"
 
@@ -349,10 +399,12 @@
   name: washroom sign
   description: A direction sign, pointing to the way to a washroom.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_wash
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27f8ff"
 
@@ -362,10 +414,12 @@
   name: escape pods sign
   description: A direction sign, pointing out the way to an escape pod dock.
   components:
+  # Nebula start
   - type: Sprite
     layers:
     - state: direction_pods
       shader: unshaded # Trauma
+  # Nebula end
   - type: PointLight # Trauma
     color: "#27ffd0"
 

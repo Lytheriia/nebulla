@@ -28,7 +28,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Boxes/rifle545.rsi # Orion edit
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/light_rifle.rsi # Nebula edit
   - type: MagazineVisuals
     magState: mag
     steps: 4

@@ -554,7 +554,7 @@ entities:
   - uid: 239
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: -4.5,-3.5
       parent: 1
     - type: WiresPanelSecurity
@@ -575,7 +575,7 @@ entities:
   - uid: 241
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 5.5,-3.5
       parent: 1
     - type: WiresPanelSecurity
@@ -613,6 +613,7 @@ entities:
     - type: Transform
       pos: -6.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: AccessReader
       access:
       - - CentralCommand
@@ -627,6 +628,7 @@ entities:
     - type: Transform
       pos: -6.5,4.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: AccessReader
       access:
       - - CentralCommand
@@ -907,7 +909,7 @@ entities:
   - uid: 279
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: -1.5707963267948966 rad
       pos: -6.5,-2.5
       parent: 1
 - proto: BlueshieldMace
@@ -5605,6 +5607,7 @@ entities:
     - type: Transform
       pos: 4.5,3.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -5622,6 +5625,7 @@ entities:
     - type: Transform
       pos: -3.5,3.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -5639,6 +5643,7 @@ entities:
     - type: Transform
       pos: -3.5,-2.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -5656,6 +5661,7 @@ entities:
     - type: Transform
       pos: 4.5,-2.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -5707,6 +5713,7 @@ entities:
     - type: Transform
       pos: -6.5,-2.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: HolopadUnlimitedRange
   entities:
   - uid: 869

@@ -409,6 +409,7 @@ entities:
     components:
     - type: Transform
       parent: 1
+      rot: 1.5707963267948966 rad
       pos: -3.5,-9.5
     - type: AccessReader
       access:
@@ -417,6 +418,7 @@ entities:
     components:
     - type: Transform
       parent: 1
+      rot: 1.5707963267948966 rad
       pos: -3.5,-11.5
     - type: AccessReader
       access:
@@ -425,6 +427,7 @@ entities:
     components:
     - type: Transform
       parent: 1
+      rot: 1.5707963267948966 rad
       pos: -3.5,-10.5
     - type: AccessReader
       access:
@@ -1121,6 +1124,7 @@ entities:
     components:
     - type: Transform
       parent: 1
+      rot: 1.5707963267948966 rad
       pos: 1.5,-5.5
     - type: AccessReader
       access:
@@ -1129,6 +1133,7 @@ entities:
     components:
     - type: Transform
       parent: 1
+      rot: 1.5707963267948966 rad
       pos: -0.5,-5.5
     - type: AccessReader
       access:

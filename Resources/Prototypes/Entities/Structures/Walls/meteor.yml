@@ -29,17 +29,24 @@
       oreChance: 1.0
       currentOre: OreCoal
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_coal
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_coal
+      - state: rock_coal
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockGold
@@ -50,17 +57,24 @@
       oreChance: 1.0
       currentOre: OreGold
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_gold
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_gold
+      - state: rock_gold
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockDiamond
@@ -71,17 +85,24 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_diamond
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_diamond
+      - state: rock_diamond
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockPlasma
@@ -92,17 +113,24 @@
       oreChance: 1.0
       currentOre: OrePlasma
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_phoron
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_phoron
+      - state: rock_phoron
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockQuartz
@@ -113,17 +141,24 @@
       oreChance: 1.0
       currentOre: OreSpaceQuartz
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_quartz
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_quartz
+      - state: rock_quartz
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockSilver
@@ -134,17 +169,24 @@
       oreChance: 1.0
       currentOre: OreSilver
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_silver
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_silver
+      - state: rock_silver
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 # Tin name is a holdover from the asteroid.yml prototype.
 - type: entity
   id: MeteorRockTin
@@ -155,17 +197,24 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_tin
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_tin
+      - state: rock_tin
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockUranium
@@ -176,17 +225,24 @@
       oreChance: 1.0
       currentOre: OreUranium
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_uranium
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_uranium
+      - state: rock_uranium
+        sprite: Structures/Walls/stone-ore.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end
 
 - type: entity
   id: MeteorRockBananium
@@ -197,14 +253,21 @@
       oreChance: 1.0
       currentOre: OreBananium
     - type: Sprite
+      # Nebula start
+      # layers:
+      #   - state: rock_asteroid
+      #   - map: [ "enum.EdgeLayer.South" ]
+      #     state: rock_asteroid_south
+      #   - map: [ "enum.EdgeLayer.East" ]
+      #     state: rock_asteroid_east
+      #   - map: [ "enum.EdgeLayer.North" ]
+      #     state: rock_asteroid_north
+      #   - map: [ "enum.EdgeLayer.West" ]
+      #     state: rock_asteroid_west
+      #   - state: rock_bananium
       layers:
-        - state: rock_asteroid
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_asteroid_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_asteroid_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_asteroid_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_asteroid_west
-        - state: rock_bananium
+      - state: rock_bananium
+        sprite: Structures/Walls/rock.rsi
+        map:
+        - enum.MiningScannerVisualLayers.Overlay
+      # Nebula end

@@ -216,13 +216,13 @@ entities:
   - uid: 336
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 8.5,8.5
       parent: 2
   - uid: 337
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 9.5,8.5
       parent: 2
   - uid: 338
@@ -238,6 +238,7 @@ entities:
     - type: Transform
       pos: 17.5,-1.5
       parent: 2
+      rot: 1.5707963267948966 rad
   - uid: 580
     components:
     - type: Transform
@@ -278,7 +279,7 @@ entities:
   - uid: 365
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 8.5,2.5
       parent: 2
 - proto: AirlockQuartermasterLocked

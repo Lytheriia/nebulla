@@ -133,6 +133,7 @@ entities:
     - type: Transform
       pos: 11.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -148,6 +149,7 @@ entities:
     - type: Transform
       pos: 11.5,-2.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -163,6 +165,7 @@ entities:
     - type: Transform
       pos: 9.5,-2.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -178,6 +181,7 @@ entities:
     - type: Transform
       pos: 9.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource

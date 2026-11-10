@@ -10,10 +10,16 @@
   - type: CartridgeAmmo
     proto: BulletAntiMateriel
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/60_casing.rsi # Orion edit
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi # Nebula edit
+    # Nebula start
+    # layers:
+    # - state: combat # Orion edit
+    #   map: ["enum.AmmoVisualLayers.Base"]
     layers:
-    - state: combat # Orion edit
-      map: ["enum.AmmoVisualLayers.Base"]
+    - state: base
+      map:
+      - enum.AmmoVisualLayers.Base
+    # Nebula end
   - type: Appearance
   - type: SpentAmmoVisuals
     state: combat # Orion edit

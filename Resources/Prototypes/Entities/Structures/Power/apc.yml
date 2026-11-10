@@ -22,6 +22,7 @@
     netsync: false
   - type: AccessReader
     access: [["Engineering"]]
+  # Nebula start
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: Structures/Power/apc.rsi
@@ -53,6 +54,7 @@
       shader: unshaded
       map: ["enum.ApcVisualLayers.Environment"]
       visible: false
+  # Nebula end
   - type: Appearance
   - type: ApcVisuals
   - type: Battery
@@ -168,9 +170,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Power/apc.rsi
     state: frame
+  # Nebula end
   - type: Construction
     graph: APC
     node: apcFrame

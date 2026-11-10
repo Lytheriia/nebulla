@@ -8,8 +8,10 @@
   components:
   #<Trauma>
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
-    state: rock
+    # sprite: Structures/Walls/rock.rsi # Nebula edit
+    # state: rock # Nebula edit
+    sprite: Structures/Walls/stone-dirt.rsi # Nebula edit
+    state: full # Nebula edit
   #</Trauma>
   - type: EntityRemap
     mask:
@@ -19,20 +21,28 @@
       WallRockSand: WallRockSandGibtonite
       WallRockSnow: WallRockSnowGibtonite
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi # Trauma
+    # Nebula start
+    # sprite: Structures/Walls/rock.rsi # Trauma
+    # layers:
+    # - state: rock
+    # - map: [ "enum.EdgeLayer.South" ]
+    #   state: rock_south
+    # - map: [ "enum.EdgeLayer.East" ]
+    #   state: rock_east
+    # - map: [ "enum.EdgeLayer.North" ]
+    #   state: rock_north
+    # - map: [ "enum.EdgeLayer.West" ]
+    #   state: rock_west
+    # - state: gibtonite_inactive
+    #   visible: false
+    #   map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    sprite: Structures/Walls/stone-dirt.rsi
     layers:
-    - state: rock
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_west
     - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
       visible: false
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    # Nebula end
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -45,24 +55,18 @@
   components:
   #<Trauma>
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
-    state: rock_wall
+    sprite: _Arcane/Structures/Walls/basalt.rsi # Nebula edit
+    state: full # Nebula edit
   #</Trauma>
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi # Trauma
+    sprite: _Arcane/Structures/Walls/basalt.rsi # Nebula edit
     layers:
-    - state: rock_wall
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_wall_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_wall_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_wall_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_wall_west
+    # Nebula start
     - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
       visible: false
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    # Nebula end
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -75,24 +79,34 @@
   components:
   #<Trauma>
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
-    state: rock_snow
+    # sprite: Structures/Walls/rock.rsi # Nebula edit
+    # state: rock_snow # Nebula edit
+    sprite: Structures/Walls/stone-snow.rsi # Nebula edit
+    state: full # Nebula edit
   #</Trauma>
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi # Trauma
+    # Nebula start
+    # sprite: Structures/Walls/rock.rsi # Trauma
+    # layers:
+    # - state: rock_snow
+    # - map: [ "enum.EdgeLayer.South" ]
+    #   state: rock_snow_south
+    # - map: [ "enum.EdgeLayer.East" ]
+    #   state: rock_snow_east
+    # - map: [ "enum.EdgeLayer.North" ]
+    #   state: rock_snow_north
+    # - map: [ "enum.EdgeLayer.West" ]
+    #   state: rock_snow_west
+    # - state: gibtonite_inactive
+    #   visible: false
+    #   map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    sprite: Structures/Walls/stone-snow.rsi
     layers:
-    - state: rock_snow
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_snow_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_snow_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_snow_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_snow_west
     - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
       visible: false
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    # Nebula end
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -105,24 +119,34 @@
   components:
   #<Trauma>
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
-    state: rock_sand
+    # sprite: Structures/Walls/rock.rsi # Nebula edit
+    # state: rock_sand # Nebula edit
+    sprite: Structures/Walls/stone-sand.rsi # Nebula edit
+    state: full # Nebula edit
   #</Trauma>
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi # Trauma
+    # Nebula start
+    # sprite: Structures/Walls/rock.rsi # Trauma
+    # layers:
+    # - state: rock_sand
+    # - map: [ "enum.EdgeLayer.South" ]
+    #   state: rock_sand_south
+    # - map: [ "enum.EdgeLayer.East" ]
+    #   state: rock_sand_east
+    # - map: [ "enum.EdgeLayer.North" ]
+    #   state: rock_sand_north
+    # - map: [ "enum.EdgeLayer.West" ]
+    #   state: rock_sand_west
+    # - state: gibtonite_inactive
+    #   visible: false
+    #   map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    sprite: Structures/Walls/stone-sand.rsi
     layers:
-    - state: rock_sand
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_sand_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_sand_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_sand_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_sand_west
     - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
       visible: false
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    # Nebula end
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -135,24 +159,34 @@
   components:
   #<Trauma>
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
-    state: rock_chromite
+    # sprite: Structures/Walls/rock.rsi # Nebula edit
+    # state: rock_chromite # Nebula edit
+    sprite: Structures/Walls/stone-chromite.rsi # Nebula edit
+    state: full # Nebula edit
   #</Trauma>
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi # Trauma
+    # Nebula start
+    # sprite: Structures/Walls/rock.rsi # Trauma
+    # layers:
+    # - state: rock_chromite
+    # - map: [ "enum.EdgeLayer.South" ]
+    #   state: rock_chromite_south
+    # - map: [ "enum.EdgeLayer.East" ]
+    #   state: rock_chromite_east
+    # - map: [ "enum.EdgeLayer.North" ]
+    #   state: rock_chromite_north
+    # - map: [ "enum.EdgeLayer.West" ]
+    #   state: rock_chromite_west
+    # - state: gibtonite_inactive
+    #   visible: false
+    #   map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    sprite: Structures/Walls/stone-chromite.rsi
     layers:
-    - state: rock_chromite
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_chromite_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_chromite_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_chromite_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_chromite_west
     - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
       visible: false
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    # Nebula end
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -165,24 +199,18 @@
   components:
   #<Trauma>
   - type: Icon
-    sprite: Structures/Walls/rock.rsi
-    state: rock_andesite
+    sprite: _Arcane/Structures/Walls/andesite.rsi # Nebula edit
+    state: full # Nebula edit
   #</Trauma>
   - type: Sprite
-    sprite: Structures/Walls/rock.rsi # Trauma
+    sprite: _Arcane/Structures/Walls/andesite.rsi # Nebula edit
     layers:
-    - state: rock_andesite
-    - map: [ "enum.EdgeLayer.South" ]
-      state: rock_andesite_south
-    - map: [ "enum.EdgeLayer.East" ]
-      state: rock_andesite_east
-    - map: [ "enum.EdgeLayer.North" ]
-      state: rock_andesite_north
-    - map: [ "enum.EdgeLayer.West" ]
-      state: rock_andesite_west
+    # Nebula start
     - state: gibtonite_inactive
+      sprite: Structures/Walls/stone-ore.rsi
       visible: false
       map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
+    # Nebula end
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock

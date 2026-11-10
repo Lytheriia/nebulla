@@ -4,6 +4,11 @@
   name: Double Glass Airlock
   description: It opens, it closes, and maybe crushes you, but it's bigger than normal door.
   components:
+  # Nebula start
+  - type: Airlock
+    openingPanelSpriteState: opening-panel
+    closingPanelSpriteState: closing-panel
+  # Nebula end
   - type: MultiTileAirlockAirtight
   - type: Door
     closeTimeOne: 0.4
@@ -13,10 +18,43 @@
     occludes: false
   - type: Occluder
     enabled: false
+  # Nebula start
   - type: Sprite
-    sprite: _Orion/Structures/Doors/Airlocks/Double/double_glass_airlock.rsi
+    sprite: _Arcane/Structures/Doors/Airlocks/double_glass_airlock.rsi
     snapCardinals: false
     offset: 0.5,0
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      visible: true
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+    - state: panel_open
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified_ai
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.HUD"]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Sparks"]
+    - state: sparks
+      map: ["enum.DoorVisualLayers.BaseEmagging"]
+      shader: unshaded
+      visible: false
+  # Nebula end
   - type: AnimationPlayer
   - type: Fixtures
     fixtures:

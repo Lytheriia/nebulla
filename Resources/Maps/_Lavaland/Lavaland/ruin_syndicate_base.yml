@@ -1891,7 +1891,6 @@ entities:
   - uid: 29
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 3.5,-15.5
       parent: 1
     - type: DeviceLinkSink
@@ -1907,7 +1906,6 @@ entities:
   - uid: 30
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 4.5,-15.5
       parent: 1
     - type: DeviceLinkSink
@@ -1923,7 +1921,6 @@ entities:
   - uid: 31
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 3.5,-17.5
       parent: 1
     - type: DeviceLinkSink
@@ -1939,7 +1936,6 @@ entities:
   - uid: 32
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 4.5,-17.5
       parent: 1
     - type: DeviceLinkSink
@@ -2027,6 +2023,7 @@ entities:
     - type: Transform
       pos: 10.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -2039,6 +2036,7 @@ entities:
     - type: Transform
       pos: 7.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -2068,11 +2066,13 @@ entities:
     - type: Transform
       pos: 25.5,-0.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 45
     components:
     - type: Transform
       pos: 25.5,0.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: Door
       secondsUntilStateChange: -103462.15
       state: Opening
@@ -2089,6 +2089,7 @@ entities:
     - type: Transform
       pos: 26.5,5.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 48
     components:
     - type: Transform
@@ -2120,11 +2121,13 @@ entities:
     - type: Transform
       pos: 19.5,-19.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 53
     components:
     - type: Transform
       pos: 19.5,-18.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 54
     components:
     - type: Transform
@@ -2142,11 +2145,13 @@ entities:
     - type: Transform
       pos: 14.5,-15.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 57
     components:
     - type: Transform
       pos: 2.5,-19.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 58
     components:
     - type: Transform
@@ -2188,6 +2193,7 @@ entities:
     - type: Transform
       pos: 21.5,-10.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 65
     components:
     - type: Transform
@@ -2203,6 +2209,7 @@ entities:
     - type: Transform
       pos: 26.5,-8.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 68
     components:
     - type: Transform
@@ -2213,6 +2220,7 @@ entities:
     - type: Transform
       pos: 25.5,-4.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: AirSensor
   entities:
   - uid: 70
@@ -7235,6 +7243,7 @@ entities:
     - type: Transform
       pos: 7.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 13
@@ -7243,6 +7252,7 @@ entities:
     - type: Transform
       pos: 10.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 23
@@ -7288,6 +7298,7 @@ entities:
     - type: Transform
       pos: 14.5,-4.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 23
@@ -7297,6 +7308,7 @@ entities:
     - type: Transform
       pos: 14.5,-5.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 23
@@ -7353,6 +7365,7 @@ entities:
     - type: Transform
       pos: 21.5,-10.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 24
@@ -7379,6 +7392,7 @@ entities:
     - type: Transform
       pos: 19.5,-18.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 21
@@ -7388,6 +7402,7 @@ entities:
     - type: Transform
       pos: 19.5,-19.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 21
@@ -7406,6 +7421,7 @@ entities:
     - type: Transform
       pos: 2.5,-19.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 20
@@ -7415,6 +7431,7 @@ entities:
     - type: Transform
       pos: -2.5,-18.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 20
@@ -7423,6 +7440,7 @@ entities:
     - type: Transform
       pos: 26.5,-8.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 17
@@ -7439,6 +7457,7 @@ entities:
     - type: Transform
       pos: 25.5,-4.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 24
@@ -7447,6 +7466,7 @@ entities:
     - type: Transform
       pos: 25.5,-0.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 24
@@ -7456,6 +7476,7 @@ entities:
     - type: Transform
       pos: 25.5,0.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 24
@@ -7465,6 +7486,7 @@ entities:
     - type: Transform
       pos: 26.5,5.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 16
@@ -7511,6 +7533,7 @@ entities:
     - type: Transform
       pos: 14.5,-15.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 19
@@ -7519,6 +7542,7 @@ entities:
     - type: Transform
       pos: 14.5,-14.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 19
@@ -7567,6 +7591,7 @@ entities:
     - type: Transform
       pos: 20.5,0.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 24
@@ -7576,6 +7601,7 @@ entities:
     - type: Transform
       pos: 20.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 24
@@ -17492,6 +17518,7 @@ entities:
     - type: Transform
       pos: -2.5,-18.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: AccessReader
       access:
       - - SyndicateAgent

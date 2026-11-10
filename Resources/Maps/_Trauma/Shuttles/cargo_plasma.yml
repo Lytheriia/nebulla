@@ -343,11 +343,13 @@ entities:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 147
     components:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: ButtonFrameCaution
   entities:
   - uid: 150
@@ -1072,11 +1074,13 @@ entities:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 145
     components:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: Poweredlight
   entities:
   - uid: 14

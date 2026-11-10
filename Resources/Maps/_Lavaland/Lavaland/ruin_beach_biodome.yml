@@ -585,6 +585,7 @@ entities:
     - type: Transform
       pos: 9.5,19.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 3
     components:
     - type: Transform
@@ -600,6 +601,7 @@ entities:
     - type: Transform
       pos: 10.5,25.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: AirlockGlass
   entities:
   - uid: 6
@@ -607,21 +609,25 @@ entities:
     - type: Transform
       pos: 20.5,14.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 7
     components:
     - type: Transform
       pos: -2.5,12.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 8
     components:
     - type: Transform
       pos: -2.5,14.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 9
     components:
     - type: Transform
       pos: 20.5,12.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: AirlockHatch
   entities:
   - uid: 10
@@ -629,21 +635,25 @@ entities:
     - type: Transform
       pos: 23.5,12.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 11
     components:
     - type: Transform
       pos: 23.5,14.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 12
     components:
     - type: Transform
       pos: -5.5,14.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 13
     components:
     - type: Transform
       pos: -5.5,12.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: AlwaysPoweredLightExterior
   entities:
   - uid: 14

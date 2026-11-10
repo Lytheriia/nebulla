@@ -5,11 +5,13 @@
   description: A virtual map of the surrounding station.
   suffix: Wall broken
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/station_map.rsi
     drawdepth: WallMountedItems
     layers:
     - state: station_map_broken
+  # Nebula end
   - type: Destructible
     thresholds:
     - trigger:
@@ -33,6 +35,7 @@
     arc: 360
   - type: Appearance
   - type: StationMap
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/station_map.rsi
     layers:
@@ -40,9 +43,12 @@
     - state: unshaded
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  # Nebula end
+  # Nebula start
   - type: Icon
     sprite: Structures/Machines/station_map.rsi
     state: station_map0
+  # Nebula end
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
@@ -107,12 +113,15 @@
   components:
   - type: WallMount
     arc: 360
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/station_map.rsi
     layers:
     - state: station_map_frame1
       map: [ "enum.ConstructionVisuals.Layer" ]
+  # Nebula end
   - type: Appearance
+  # Nebula start
   - type: GenericVisualizer
     visuals:
       enum.ConstructionVisuals.Key:
@@ -120,6 +129,7 @@
           assembly: { state: station_map_frame0 }
           wired: { state: station_map_frame1 }
           electronics: { state: station_map_frame2 }
+  # Nebula end
   - type: Construction
     graph: StationMap
     node: assembly

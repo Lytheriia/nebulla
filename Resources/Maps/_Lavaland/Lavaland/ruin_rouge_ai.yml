@@ -361,6 +361,7 @@ entities:
     - type: Transform
       pos: 9.5,5.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: AirlockCargo
   entities:
   - uid: 3
@@ -445,6 +446,7 @@ entities:
     - type: Transform
       pos: 1.5,5.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 16
     components:
     - type: Transform
@@ -599,22 +601,22 @@ entities:
     - type: Transform
       pos: 3.5,5.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 40
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 5.5,7.5
       parent: 1
   - uid: 41
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: -1.5707963267948966 rad
       pos: 7.5,5.5
       parent: 1
   - uid: 42
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 5.5,3.5
       parent: 1
   - uid: 43

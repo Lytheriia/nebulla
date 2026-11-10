@@ -4,14 +4,16 @@
   components:
   - type: TimedDespawn
     lifetime: 0.4
+  # Nebula start
   - type: Sprite
     netsync: false
     drawdepth: Effects
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: _Orion/Objects/Weapons/Guns/Effects/muzzle/pulse.rsi
+      sprite: _Arcane/Objects/Weapons/Guns/Effects/muzzle/pulse.rsi
       state: muzzle_pulse
+  # Nebula end
   - type: EffectVisuals
   - type: Tag
     tags:
@@ -24,14 +26,16 @@
   components:
   - type: TimedDespawn
     lifetime: 0.25
+  # Nebula start
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Effects/muzzle/pulse.rsi
+    sprite: _Arcane/Objects/Weapons/Guns/Effects/muzzle/pulse.rsi
     netsync: false
     drawdepth: Effects
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
       state: impact_pulse
+  # Nebula end
   - type: EffectVisuals
   - type: Tag
     tags:

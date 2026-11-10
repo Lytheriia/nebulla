@@ -74,6 +74,7 @@
       board: !type:Container
   - type: Appearance
   - type: WiresVisuals
+  # Nebula start
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors.rsi
     layers:
@@ -81,8 +82,10 @@
       map: ["airAlarmBase"]
     - state: alarm0
       map: ["airAlarmState"] # TODO: fire alarm enum
+      shader: unshaded
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: Construction
     graph: AirAlarm
     node: air_alarm
@@ -114,18 +117,22 @@
   name: air alarm assembly
   description: An air alarm. Doesn't look like it'll be alarming air any time soon.
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors.rsi
     layers:
     - state: alarm_b1
       map: [ "enum.ConstructionVisuals.Layer" ]
+  # Nebula end
   - type: Appearance
+  # Nebula start
   - type: GenericVisualizer
     visuals:
       enum.ConstructionVisuals.Key:
         enum.ConstructionVisuals.Layer:
           assembly: { state: alarm_b1 }
           electronics: { state: alarm_b1 }
+  # Nebula end
   - type: Construction
     graph: AirAlarm
     node: assembly

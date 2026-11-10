@@ -43,7 +43,7 @@
   - type: EdgeConnection
     connectionKey: computer-console
     allowedDirections: East, West
-    sprite: _Orion/Structures/Machines/computers.rsi
+    sprite: _Arcane/Structures/Machines/computers.rsi # Nebula edit
     states:
       East: computer_l
       West: computer_r

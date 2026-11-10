@@ -4,8 +4,12 @@
   id: BaseClockworkWindoor
   name: clockwork windoor
   components:
+  # Nebula start
+  - type: Airlock
+    openingPanelSpriteState: panel_open
+    closingPanelSpriteState: panel_open
   - type: Sprite
-    sprite: Structures/Doors/Windoors/clockwork_windoor.rsi
+    sprite: _Arcane/Structures/Doors/Windoors/clockwork_windoor.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -33,6 +37,7 @@
       shader: unshaded
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
+  # Nebula end
   - type: Destructible
     thresholds:
     - trigger:

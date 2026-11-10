@@ -7,17 +7,17 @@
   suffix: Rifle
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/inteq_akm.rsi
-    scale: 0.9, 0.9
+    sprite: _Arcane/Objects/Weapons/Guns/Rifles/inteq_akm.rsi # Nebula edit
+    # scale: 0.9, 0.9 # Nebula edit
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/inteq_akm.rsi
+    sprite: _Arcane/Objects/Weapons/Guns/Rifles/inteq_akm.rsi # Nebula edit
   - type: Item
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/inteq_akm.rsi
+    # sprite: _Orion/Objects/Weapons/Guns/Rifles/inteq_akm.rsi # Nebula edit
   - type: Gun
     soundGunshot:
       path: /Audio/_Orion/Weapons/Guns/Rifles/ak47.ogg

@@ -1,0 +1,3 @@
+cmd-nebula_mapfix_report-desc = Loads every map file under a folder pre-init, runs the structure aligner and writes the needed door rotations by yaml uid to a JSON file in user data. Used by Tools/_Nebula/fix_maps.py.
+cmd-nebula_mapfix_report-help = Usage: nebula_mapfix_report <output.json> <map file or folder>...
+cmd-nebula_mapfix_report-done = Report written to {$path}: {$entities} entities in {$files} files, {$failed} files failed to load.

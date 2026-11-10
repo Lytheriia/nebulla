@@ -9,5 +9,6 @@
     layers:
     - state: fast
       map: ["enum.AmmoVisualLayers.Base"]
+    sprite: _Arcane/Objects/Weapons/Guns/Ammunition/Casings/50BMG_casing.rsi # Nebula edit
   - type: SpentAmmoVisuals
     state: fast

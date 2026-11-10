@@ -215,6 +215,7 @@ entities:
     - type: Transform
       pos: 7.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 2
   - uid: 3
@@ -222,6 +223,7 @@ entities:
     - type: Transform
       pos: 7.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 2
 - proto: AirlockHatch
@@ -231,11 +233,13 @@ entities:
     - type: Transform
       pos: 10.5,1.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 5
     components:
     - type: Transform
       pos: 10.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: AirlockHydroGlassLocked
   entities:
   - uid: 6

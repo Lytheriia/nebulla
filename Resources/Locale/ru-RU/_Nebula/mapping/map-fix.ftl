@@ -1,0 +1,3 @@
+cmd-nebula_mapfix_report-desc = Загружает все файлы карт из папки без инициализации, прогоняет выравнивание структур и пишет нужные повороты дверей по yaml uid в JSON в пользовательских данных. Используется Tools/_Nebula/fix_maps.py.
+cmd-nebula_mapfix_report-help = Использование: nebula_mapfix_report <output.json> <файл карты или папка>...
+cmd-nebula_mapfix_report-done = Отчёт записан в {$path}: {$entities} сущностей в {$files} файлах, не загрузилось файлов: {$failed}.

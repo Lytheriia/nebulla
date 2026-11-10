@@ -561,6 +561,7 @@
   id: VendingMachineColaBlack
   suffix: Black
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/soda2.rsi
     layers:
@@ -571,6 +572,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -582,6 +584,7 @@
   name: Space Cola Vendor
   description: It vends cola, in space.
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/cola.rsi
     layers:
@@ -592,6 +595,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -933,6 +937,7 @@
     dataset: NanoMedAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/medivend.rsi # Goob - EE sprites
     layers:
@@ -943,6 +948,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -988,6 +994,7 @@
     dataset: NutriMaxAds
   - type: SpeakOnUIClosed
     pack: NutriMaxGoodbyes
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/nutri_green.rsi
     layers:
@@ -998,6 +1005,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: AccessReader
     access: [["Hydroponics"]]
   - type: PointLight
@@ -1020,6 +1028,7 @@
     dataset: SecTechAds
   - type: SpeakOnUIClosed
     pack: SecTechGoodbyes
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/security.rsi
     layers:
@@ -1030,6 +1039,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: AccessReader
     access: [["Security"]]
   - type: PointLight
@@ -1057,6 +1067,7 @@
     dataset: MegaSeedAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/seeds_green.rsi
     layers:
@@ -1067,6 +1078,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -1234,6 +1246,7 @@
     dataset: BodaAds
   - type: SpeakOnUIClosed
     pack: BodaGoodbyes
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/sodasoviet.rsi
     layers:
@@ -1244,6 +1257,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -1425,6 +1439,7 @@
     dataset: ChangAds
   - type: SpeakOnUIClosed
     pack: ChangGoodbyes
+  # Nebula start
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/snix.rsi
     layers:
@@ -1435,6 +1450,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Nebula end
   - type: PointLight
     radius: 2
     energy: 1.6

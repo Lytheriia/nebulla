@@ -9,6 +9,10 @@
       board: [ DoorElectronicsService ]
   - type: Wires
     layoutId: AirlockService
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -18,6 +22,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsLawyer ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -27,6 +35,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsTheatre ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -36,6 +48,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsServiceTheatre ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -45,6 +61,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChapel ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockJanitor # Goobstation - Sweet new jani door
@@ -54,6 +74,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsJanitor ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -63,6 +87,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsKitchen ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -72,6 +100,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBar ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockServiceLocked
@@ -81,6 +113,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBarKitchen ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockHydroponics
@@ -588,6 +624,10 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsJanitor ]
+  # Nebula start
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/airlock-base.rsi
+  # Nebula end
 
 - type: entity
   parent: AirlockHydroponicsGlass
@@ -883,217 +923,248 @@
   id: AirlockMaintSalvageLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockCargoLocked
   id: AirlockMaintCargoLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockCommandLocked
   id: AirlockMaintCommandLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockEngineeringLocked
   id: AirlockMaintEngiLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockAtmosphericsLocked
   id: AirlockMaintAtmoLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockBarLocked
   id: AirlockMaintBarLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockBarKitchenLocked
   id: AirlockMaintBarKitchenLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockChapelLocked
   id: AirlockMaintChapelLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockHydroponicsLocked
   id: AirlockMaintHydroLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockJanitorLocked
   id: AirlockMaintJanitorLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockLawyerLocked
   id: AirlockMaintLawyerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockServiceLocked
   id: AirlockMaintServiceLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockTheatreLocked
   id: AirlockMaintTheatreLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockServiceTheatreLocked
   id: AirlockMaintServiceTheatreLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockKitchenLocked
   id: AirlockMaintKitchenLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockFreezerKitchenHydroLocked
   id: AirlockMaintKitchenHydroLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockMedicalLocked
   id: AirlockMaintMedLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockMedicalMorgueLocked
   id: AirlockMedicalMorgueMaintLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockChemistryLocked
   id: AirlockMaintChemLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockScienceLocked
   id: AirlockMaintRnDLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockMedicalScienceLocked
   id: AirlockMaintRnDMedLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockSecurityLocked
   id: AirlockMaintSecLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockDetectiveLocked
   id: AirlockMaintDetectiveLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockHeadOfPersonnelLocked
   id: AirlockMaintHOPLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockCaptainLocked
   id: AirlockMaintCaptainLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockChiefEngineerLocked
   id: AirlockMaintChiefEngineerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockChiefMedicalOfficerLocked
   id: AirlockMaintChiefMedicalOfficerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockHeadOfSecurityLocked
   id: AirlockMaintHeadOfSecurityLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockResearchDirectorLocked
   id: AirlockMaintResearchDirectorLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockQuartermasterLocked
   id: AirlockMaintQuartermasterLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockArmoryLocked
   id: AirlockMaintArmoryLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    # sprite: Structures/Doors/Airlocks/Standard/maint.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi # Nebula edit
 
 - type: entity
   parent: AirlockSyndicate

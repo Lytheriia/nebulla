@@ -61,9 +61,11 @@
   name: reinforced girder
   description: A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
   components:
+  # Nebula start
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
     state: reinforced_wall_girder
+  # Nebula end
   - type: Construction
     graph: Girder
     node: reinforcedGirder

@@ -1816,6 +1816,7 @@ entities:
     - type: Transform
       pos: 9.5,13.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: WoodenSupport
   entities:
   - uid: 222

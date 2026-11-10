@@ -4,9 +4,9 @@
   name: reinforced uranium window
   components:
   - type: Sprite
-    sprite: Structures/Windows/reinforced_uranium_window.rsi
+    sprite: Structures/Windows/window-uranium-reinf.rsi # Nebula edit
   - type: Icon
-    sprite: Structures/Windows/reinforced_uranium_window.rsi
+    sprite: Structures/Windows/window-uranium-reinf.rsi # Nebula edit
     state: full
   - type: Damageable
     damageModifierSet: RGlass
@@ -31,8 +31,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Nebula start
   - type: IconSmooth
     base: ruwindow
+  # Nebula end
   - type: Construction
     graph: Window
     node: reinforcedUraniumWindow
@@ -108,20 +110,24 @@
     snap:
     - Window
   components:
+  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-uranium-reinf.rsi
     state: state0
+  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
+  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
+  # Nebula end
   - type: Icon
-    sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-uranium-reinf.rsi # Nebula edit
     state: state0
   - type: Fixtures
     fixtures:

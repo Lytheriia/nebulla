@@ -192,7 +192,7 @@ entities:
   - uid: 107
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 0.5,3.5
       parent: 1
 - proto: AirlockGlassShuttleSyndicate
@@ -298,19 +298,16 @@ entities:
   - uid: 71
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,7.5
       parent: 1
   - uid: 72
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 0.5,7.5
       parent: 1
   - uid: 73
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,7.5
       parent: 1
   - uid: 74
@@ -340,13 +337,13 @@ entities:
   - uid: 125
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: -1.5707963267948966 rad
       pos: -2.5,-1.5
       parent: 1
   - uid: 126
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: -1.5707963267948966 rad
       pos: -2.5,2.5
       parent: 1
   - uid: 127
@@ -354,11 +351,13 @@ entities:
     - type: Transform
       pos: 3.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 128
     components:
     - type: Transform
       pos: 3.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: ButtonFrameCaution
   entities:
   - uid: 155
@@ -976,21 +975,25 @@ entities:
     - type: Transform
       pos: -2.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 58
     components:
     - type: Transform
       pos: 3.5,-1.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 59
     components:
     - type: Transform
       pos: -2.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 60
     components:
     - type: Transform
       pos: 3.5,2.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: PlastitaniumWindow
   entities:
   - uid: 34

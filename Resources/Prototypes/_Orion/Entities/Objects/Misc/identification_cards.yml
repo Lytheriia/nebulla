@@ -4,10 +4,16 @@
   name: bitrun avatar ID card
   components:
   - type: Sprite
+    # Nebula start
+    # layers:
+    # - state: default
+    # - sprite: _Orion/Objects/Misc/id_cards.rsi
+    #   state: bitrun-avatar
     layers:
     - state: default
-    - sprite: _Orion/Objects/Misc/id_cards.rsi
+    - sprite: _Arcane/Objects/Misc/id_cards.rsi
       state: bitrun-avatar
+    # Nebula end
   - type: PresetIdCard
     job: BitrunAvatar
 

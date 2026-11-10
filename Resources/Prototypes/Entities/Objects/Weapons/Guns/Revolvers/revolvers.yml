@@ -105,11 +105,11 @@
   description: A modern revolver used by Nanotrasen’s elite, near mythical ‘Death Squad’ task force. Its unique trigger action and barrel placement enable a high fire rate with minimal muzzle flip. Many have looked down this barrel, but few have lived to tell of it. Loads 7 rounds of .45 magnum. # Orion edit
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/big.rsi # Orion edit
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi # Nebula edit
   - type: Clothing
-    sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi # Orion edit
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi # Nebula edit
   - type: Item
-    sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi # Orion edit
+    # sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi # Orion edit # Nebula edit
     storedOffset: 0,-3
   - type: Gun
     fireRate: 3 # Nebula

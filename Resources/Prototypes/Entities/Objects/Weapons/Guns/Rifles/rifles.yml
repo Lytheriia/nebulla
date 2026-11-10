@@ -94,19 +94,12 @@
   description: A somewhat battered combat rifle of a design originating from old Earth. Favored by criminals, militias, and terrorists due to its famed reliability and easy-to-manufacture design. Feeds from 5.45mm rifle magazines. # Nebula edit
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/akms/big.rsi # Nebula edit
+    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
-  # Nebula start
-    scale: 0.9, 0.9
-  - type: Clothing
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/akms/tiny.rsi
-  - type: Item
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/akms/tiny.rsi
-  # Nebula end
   - type: GunWieldBonus
   - type: Gun
     soundGunshot:
@@ -149,19 +142,14 @@
   description: "Popular gas-operated combat rifle used heavily by Nanotrasen and SolGov. Operating in semi or fully automatic, its accuracy, stopping power, and reliability make it excel in all manner of environments.\nFeeds from 5.56mm rifle magazines." # Nebula edit
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/lecter/big.rsi # Nebula edit
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
-  # Nebula start
-    scale: 0.9, 0.9
-  - type: Item
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/lecter/tiny.rsi
-  # Nebula end
   - type: Clothing
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/lecter/tiny.rsi # Nebula edit
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
   - type: GunWieldBonus
   - type: Gun
     soundGunshot:

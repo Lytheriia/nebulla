@@ -66,10 +66,14 @@
   description: Stains your teeth.
   components:
   - type: Sprite
-    layers:
-    - state: plain
-    - state: alpha-filling
-      color: blue
+    # Nebula start
+    # layers:
+    # - state: plain
+    # - state: alpha-filling
+    #   color: blue
+    # Nebula end
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    state: blueberry # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeBlueberrySlice
@@ -79,15 +83,22 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #   - state: alpha-filling-inhand-left
+    #     color: blue
+    #   right:
+    #   - state: plain-inhand-right
+    #   - state: alpha-filling-inhand-right
+    #     color: blue
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-      - state: alpha-filling-inhand-left
-        color: blue
+      - state: blueberry-inhand-left
       right:
-      - state: plain-inhand-right
-      - state: alpha-filling-inhand-right
-        color: blue
+      - state: blueberry-inhand-right
+    # Nebula end
 
 - type: entity
   name: blueberry slice
@@ -154,6 +165,7 @@
   components:
   - type: Sprite
     state: carrot
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeCarrotSlice
@@ -176,17 +188,24 @@
     - Cake
     - Vegetable
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #     color: "#f8e0af"
+    #   - state: alpha-filling-inhand-left
+    #     color: "#ffbd2f"
+    #   right:
+    #   - state: plain-inhand-right
+    #     color: "#f8e0af"
+    #   - state: alpha-filling-inhand-right
+    #     color: "#ffbd2f"
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-        color: "#f8e0af"
-      - state: alpha-filling-inhand-left
-        color: "#ffbd2f"
+      - state: carrot-inhand-left
       right:
-      - state: plain-inhand-right
-        color: "#f8e0af"
-      - state: alpha-filling-inhand-right
-        color: "#ffbd2f"
+      - state: carrot-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of carrot cake
@@ -335,10 +354,14 @@
   description: A cake with added orange.
   components:
   - type: Sprite
-    layers:
-    - state: plain
-    - state: alpha-filling
-      color: "#ff9900"
+    # Nebula start
+    # layers:
+    # - state: plain
+    # - state: alpha-filling
+    #   color: "#ff9900"
+    # Nebula end
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    state: orange # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeOrangeSlice
@@ -348,15 +371,22 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #   - state: alpha-filling-inhand-left
+    #     color: "#ff9900"
+    #   right:
+    #   - state: plain-inhand-right
+    #   - state: alpha-filling-inhand-right
+    #     color: "#ff9900"
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-      - state: alpha-filling-inhand-left
-        color: "#ff9900"
+      - state: orange-inhand-left
       right:
-      - state: plain-inhand-right
-      - state: alpha-filling-inhand-right
-        color: "#ff9900"
+      - state: orange-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of orange cake
@@ -392,10 +422,14 @@
   description: A cake with added lime.
   components:
   - type: Sprite
-    layers:
-    - state: plain
-    - state: alpha-filling
-      color: "#00ff00"
+    # Nebula start
+    # layers:
+    # - state: plain
+    # - state: alpha-filling
+    #   color: "#00ff00"
+    # Nebula end
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    state: lime # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeLimeSlice
@@ -405,15 +439,22 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #   - state: alpha-filling-inhand-left
+    #     color: "#00ff00"
+    #   right:
+    #   - state: plain-inhand-right
+    #   - state: alpha-filling-inhand-right
+    #     color: "#00ff00"
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-      - state: alpha-filling-inhand-left
-        color: "#00ff00"
+      - state: lime-inhand-left
       right:
-      - state: plain-inhand-right
-      - state: alpha-filling-inhand-right
-        color: "#00ff00"
+      - state: lime-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of lime cake
@@ -449,10 +490,14 @@
   description: A cake with added lemon.
   components:
   - type: Sprite
-    layers:
-    - state: plain
-    - state: alpha-filling
-      color: "#ffff00"
+    # Nebula start
+    # layers:
+    # - state: plain
+    # - state: alpha-filling
+    #   color: "#ffff00"
+    # Nebula end
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    state: lemon # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeLemonSlice
@@ -462,15 +507,22 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #   - state: alpha-filling-inhand-left
+    #     color: "#ffff00"
+    #   right:
+    #   - state: plain-inhand-right
+    #   - state: alpha-filling-inhand-right
+    #     color: "#ffff00"
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-      - state: alpha-filling-inhand-left
-        color: "#ffff00"
+      - state: lemon-inhand-left
       right:
-      - state: plain-inhand-right
-      - state: alpha-filling-inhand-right
-        color: "#ffff00"
+      - state: lemon-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of lemon cake
@@ -585,9 +637,13 @@
   description: A cake with added chocolate.
   components:
   - type: Sprite
-    layers:
-    - state: alpha
-      color: "#ba672e"
+    # Nebula start
+    # layers:
+    # - state: alpha
+    #   color: "#ba672e"
+    # Nebula end
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    state: chocolate # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeChocolateSlice
@@ -606,13 +662,20 @@
       - ReagentId: Theobromine
         Quantity: 8
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: alpha-inhand-left
+    #     color: "#ba672e"
+    #   right:
+    #   - state: alpha-inhand-right
+    #     color: "#ba672e"
     inhandVisuals:
       left:
-      - state: alpha-inhand-left
-        color: "#ba672e"
+      - state: chocolate-inhand-left
       right:
-      - state: alpha-inhand-right
-        color: "#ba672e"
+      - state: chocolate-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of chocolate cake
@@ -653,10 +716,14 @@
   description: A cake centred with apple.
   components:
   - type: Sprite
-    layers:
-    - state: plain
-    - state: alpha-filling
-      color: "#ff4300"
+    # Nebula start
+    # layers:
+    # - state: plain
+    # - state: alpha-filling
+    #   color: "#ff4300"
+    # Nebula end
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    state: apple # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeAppleSlice
@@ -666,15 +733,22 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #   - state: alpha-filling-inhand-left
+    #     color: "#ff4300"
+    #   right:
+    #   - state: plain-inhand-right
+    #   - state: alpha-filling-inhand-right
+    #     color: "#ff4300"
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-      - state: alpha-filling-inhand-left
-        color: "#ff4300"
+      - state: apple-inhand-left
       right:
-      - state: plain-inhand-right
-      - state: alpha-filling-inhand-right
-        color: "#ff4300"
+      - state: apple-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of apple cake
@@ -713,6 +787,7 @@
   components:
   - type: Sprite
     state: slime
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeSlimeSlice
@@ -722,17 +797,24 @@
     - Cake
     - Meat
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: alpha-inhand-left
+    #     color: "#00ffff"
+    #   - state: alpha-filling-inhand-left
+    #     color: "#00ffff"
+    #   right:
+    #   - state: alpha-inhand-right
+    #     color: "#00ffff"
+    #   - state: alpha-filling-inhand-right
+    #     color: "#00ffff"
     inhandVisuals:
       left:
-      - state: alpha-inhand-left
-        color: "#00ffff"
-      - state: alpha-filling-inhand-left
-        color: "#00ffff"
+      - state: slime-inhand-left
       right:
-      - state: alpha-inhand-right
-        color: "#00ffff"
-      - state: alpha-filling-inhand-right
-        color: "#00ffff"
+      - state: slime-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of slime cake
@@ -768,7 +850,8 @@
   description: A hollow cake with real pumpkin.
   components:
   - type: Sprite
-    state: pumpkinspice
+    state: pumpkin # Nebula edit
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakePumpkinSlice
@@ -787,15 +870,22 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: plain-inhand-left
+    #   - state: alpha-filling-inhand-left
+    #     color: "#ffffff"
+    #   right:
+    #   - state: plain-inhand-right
+    #   - state: alpha-filling-inhand-right
+    #     color: "#ffffff"
     inhandVisuals:
       left:
-      - state: plain-inhand-left
-      - state: alpha-filling-inhand-left
-        color: "#ffffff"
+      - state: pumpkin-inhand-left
       right:
-      - state: plain-inhand-right
-      - state: alpha-filling-inhand-right
-        color: "#ffffff"
+      - state: pumpkin-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of pumpkin-spice cake
@@ -839,6 +929,7 @@
   components:
   - type: Sprite
     state: christmas
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeChristmasSlice
@@ -848,13 +939,20 @@
     - Cake
     - Fruit
   - type: Item
+    # Nebula start
+    # inhandVisuals:
+    #   left:
+    #   - state: alpha-inhand-left
+    #     color: "#ab5012"
+    #   right:
+    #   - state: alpha-inhand-right
+    #     color: "#ab5012"
     inhandVisuals:
       left:
-      - state: alpha-inhand-left
-        color: "#ab5012"
+      - state: christmas-inhand-left
       right:
-      - state: alpha-inhand-right
-        color: "#ab5012"
+      - state: christmas-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of christmas cake
@@ -885,13 +983,37 @@
   description: Happy Birthday little clown...
   components:
   - type: Sprite
-    state: birthday
+    # state: birthday # Nebula edit
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
+    # Nebula start
+    layers:
+    - state: birthday
+    - state: birthday-light
+      shader: unshaded
+      map:
+      - flame
+    # Nebula end
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeBirthdaySlice
       amount: 8
   - type: Item
-    heldPrefix: birthday
+    # heldPrefix: birthday # Nebula edit
+    # Nebula start
+    inhandVisuals:
+      left:
+      - state: birthday-inhand-left
+      - state: birthday-light-inhand-left
+        shader: unshaded
+        map:
+        - flame
+      right:
+      - state: birthday-inhand-right
+      - state: birthday-light-inhand-right
+        shader: unshaded
+        map:
+        - flame
+    # Nebula end
 
 - type: entity
   name: slice of birthday cake
@@ -946,12 +1068,20 @@
   components:
   - type: Sprite
     state: clown
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeClownSlice
       amount: 8
   - type: Item
-    heldPrefix: clown
+    # heldPrefix: clown # Nebula edit
+    # Nebula start
+    inhandVisuals:
+      left:
+      - state: clown-inhand-left
+      right:
+      - state: clown-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of clown cake
@@ -972,7 +1102,8 @@
   description: A spaceman's trumpet frosted cake.
   components:
   - type: Sprite
-    state: trumpet
+    state: spaceman # Nebula edit
+    sprite: _Arcane/Objects/Consumable/Food/cake.rsi # Nebula edit
   - type: ToolRefinable
     refineResult:
     - id: FoodCakeSpacemanSlice
@@ -989,7 +1120,14 @@
       - ReagentId: PolypyryliumOligomers
         Quantity: 12
   - type: Item
-    heldPrefix: trumpet
+    # heldPrefix: trumpet # Nebula edit
+    # Nebula start
+    inhandVisuals:
+      left:
+      - state: spaceman-inhand-left
+      right:
+      - state: spaceman-inhand-right
+    # Nebula end
 
 - type: entity
   name: slice of spaceman's cake

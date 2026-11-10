@@ -10,8 +10,8 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
     layers:
-    - state: base
-    - state: screen
+    - state: scanner # Nebula edit
+    - state: scanner-light # Nebula edit
       shader: unshaded
       visible: false
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]

@@ -321,6 +321,7 @@ entities:
     - type: Transform
       pos: 24.5,16.5
       parent: 1
+      rot: 1.5707963267948966 rad
   - uid: 1082
     components:
     - type: Transform
@@ -331,6 +332,7 @@ entities:
     - type: Transform
       pos: 15.5,11.5
       parent: 1
+      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 1197
