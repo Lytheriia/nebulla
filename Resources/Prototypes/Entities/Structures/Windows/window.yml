@@ -30,10 +30,8 @@
     tags:
     - ForceFixRotations
     - Window
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/window-base.rsi
-  # Nebula end
+    drawdepth: WallTops
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -74,26 +72,15 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
-  # Nebula start
-  - type: Icon
-    sprite: Structures/Windows/window-base.rsi
-    state: full
-  # Nebula end
-  # Nebula start
-  - type: StructureAlignerPylon
-    pylons:
-    - Door
-    - Firelock
-  # Nebula end
 
 - type: entity
   parent: BaseWindowStructure
   id: Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/window-base.rsi # Nebula edit
+    sprite: Structures/Windows/window.rsi
   - type: Icon
-    sprite: Structures/Windows/window-base.rsi # Nebula edit
+    sprite: Structures/Windows/window.rsi
     state: full
   - type: Damageable
     damageModifierSet: Glass
@@ -122,16 +109,13 @@
   name: tinted window
   description: Smart tinted window with state switching option.
   components:
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/window-tinted.rsi
-  # Nebula end
+    drawdepth: WallTops
+    sprite: Structures/Windows/tinted_window.rsi
   - type: Icon
-    sprite: Structures/Windows/window-tinted.rsi # Nebula edit
-  # Nebula start
+    sprite: Structures/Windows/tinted_window.rsi
   - type: IconSmooth
     base: twindow
-  # Nebula end
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -297,23 +281,20 @@
     snap:
     - Window
   components:
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Windows/window-base-diagonal.rsi
+    drawdepth: WallTops
+    sprite: Structures/Windows/window_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
-  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+    key: windows
     base: state
-  # Nebula end
   - type: Icon
-    sprite: Structures/Windows/window-base-diagonal.rsi # Nebula edit
+    sprite: Structures/Windows/window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

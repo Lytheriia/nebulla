@@ -48,12 +48,6 @@
         layer:
         - WallLayer
         density: 4000
-  # Nebula start
-  - type: StructureAlignerPylon
-    pylons:
-    - Door
-    - Firelock
-  # Nebula end
 
 - type: entity
   id: PlastitaniumWindowSquareBase
@@ -63,15 +57,13 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window-plastitanium.rsi # Nebula edit
+    sprite: Structures/Windows/plastitanium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/window-plastitanium.rsi # Nebula edit
+    sprite: Structures/Windows/plastitanium_window.rsi
     state: full
-  # Nebula start
   - type: IconSmooth
-    key: walls
+    key: windows
     base: ptwindow
-  # Nebula end
   - type: Airtight
   - type: Fixtures
     fixtures:
@@ -142,25 +134,21 @@
   parent: PlastitaniumWindowBase
   suffix: diagonal
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window-diagonal-plastitanium.rsi
+    sprite: Structures/Windows/plastitanium_window_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: Icon
-    sprite: Structures/Windows/window-diagonal-plastitanium.rsi # Nebula edit
+    sprite: Structures/Windows/plastitanium_window_diagonal.rsi
     state: state0
-  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+    key: windows
     base: state
-  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:

@@ -954,7 +954,6 @@ entities:
     - type: Transform
       pos: 6.5,-10.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - RCDDeconstructable
@@ -965,7 +964,6 @@ entities:
     - type: Transform
       pos: -7.5,-17.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - RCDDeconstructable
@@ -976,7 +974,6 @@ entities:
     - type: Transform
       pos: -7.5,-10.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - RCDDeconstructable
@@ -987,7 +984,6 @@ entities:
     - type: Transform
       pos: 6.5,-17.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - RCDDeconstructable
@@ -1134,7 +1130,6 @@ entities:
     - type: Transform
       pos: 4.5,8.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - RCDDeconstructable
@@ -5435,7 +5430,6 @@ entities:
     - type: Transform
       pos: 5.5,0.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - Construction
@@ -5466,7 +5460,6 @@ entities:
     - type: Transform
       pos: -6.5,0.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - Construction
@@ -5477,7 +5470,6 @@ entities:
     - type: Transform
       pos: 5.5,-1.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - Construction
@@ -5488,7 +5480,6 @@ entities:
     - type: Transform
       pos: 5.5,-0.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - Construction
@@ -5499,7 +5490,6 @@ entities:
     - type: Transform
       pos: -6.5,-1.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - Construction
@@ -5510,7 +5500,6 @@ entities:
     - type: Transform
       pos: -6.5,-0.5
       parent: 818
-      rot: 1.5707963267948966 rad
     - type: Godmode
     missingComponents:
     - Construction

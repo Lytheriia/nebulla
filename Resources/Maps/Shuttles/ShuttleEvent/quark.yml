@@ -263,7 +263,6 @@ entities:
     - type: Transform
       pos: -2.5,4.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DoorBolt
       boltsDown: True
     - type: DeviceLinkSink

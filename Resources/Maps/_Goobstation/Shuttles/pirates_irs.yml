@@ -557,13 +557,11 @@ entities:
     - type: Transform
       pos: 3.5,-3.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 278
     components:
     - type: Transform
       pos: 3.5,-9.5
       parent: 2
-      rot: 1.5707963267948966 rad
 - proto: AirlockSyndicateNukeopGlassLocked
   entities:
   - uid: 274
@@ -588,19 +586,16 @@ entities:
     - type: Transform
       pos: 6.5,-4.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 273
     components:
     - type: Transform
       pos: 6.5,-9.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 279
     components:
     - type: Transform
       pos: -0.5,-14.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 336
     components:
     - type: Transform

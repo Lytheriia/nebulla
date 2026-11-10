@@ -148,7 +148,6 @@ entities:
     - type: Transform
       pos: 4.5,10.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 149

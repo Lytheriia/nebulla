@@ -1,47 +1,12 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub). coswindow0-7: A custom item by AftrLite (Github).",
     "size": {
         "x": 32,
         "y": 32
     },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "A custom item by AftrLite (Github).",
     "states": [
-        {
-            "name": "full"
-        },
-        {
-            "name": "malign0",
-            "directions": 4
-        },
-        {
-            "name": "malign1",
-            "directions": 4
-        },
-        {
-            "name": "malign2",
-            "directions": 4
-        },
-        {
-            "name": "malign3",
-            "directions": 4
-        },
-        {
-            "name": "malign4",
-            "directions": 4
-        },
-        {
-            "name": "malign5",
-            "directions": 4
-        },
-        {
-            "name": "malign6",
-            "directions": 4
-        },
-        {
-            "name": "malign7",
-            "directions": 4
-        },
         {
             "name": "coswindow0",
             "directions": 4
@@ -73,6 +38,9 @@
         {
             "name": "coswindow7",
             "directions": 4
+        },
+        {
+            "name": "full"
         }
     ]
 }

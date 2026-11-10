@@ -292,19 +292,16 @@ entities:
     - type: Transform
       pos: 12.5,5.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 180
     components:
     - type: Transform
       pos: 12.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 181
     components:
     - type: Transform
       pos: 12.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AnomalyCoreFleshInert
   entities:
   - uid: 199

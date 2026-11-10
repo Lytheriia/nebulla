@@ -827,7 +827,6 @@ entities:
     - type: Transform
       pos: -2.5,-17.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockCommandLocked
   entities:
   - uid: 944
@@ -849,7 +848,6 @@ entities:
     - type: Transform
       pos: 1.5,-17.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 801
     components:
     - type: Transform
@@ -862,37 +860,31 @@ entities:
     - type: Transform
       pos: -6.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 621
     components:
     - type: Transform
       pos: -6.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 750
     components:
     - type: Transform
       pos: 5.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 757
     components:
     - type: Transform
       pos: 5.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 758
     components:
     - type: Transform
       pos: 5.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 918
     components:
     - type: Transform
       pos: -6.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockExternalGlassShuttleLocked
   entities:
   - uid: 412
@@ -950,7 +942,6 @@ entities:
     - type: Transform
       pos: 0.5,-9.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockSecurityLocked
   entities:
   - uid: 252
@@ -958,7 +949,6 @@ entities:
     - type: Transform
       pos: 0.5,-13.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 517
@@ -1089,19 +1079,16 @@ entities:
     - type: Transform
       pos: -5.5,-9.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 807
     components:
     - type: Transform
       pos: -5.5,-14.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 816
     components:
     - type: Transform
       pos: -5.5,-8.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 817
     components:
     - type: Transform
@@ -1117,13 +1104,11 @@ entities:
     - type: Transform
       pos: 4.5,-14.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 820
     components:
     - type: Transform
       pos: 4.5,-8.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 821
     components:
     - type: Transform
@@ -1134,19 +1119,16 @@ entities:
     - type: Transform
       pos: 4.5,-9.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 825
     components:
     - type: Transform
       pos: 4.5,-13.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 826
     components:
     - type: Transform
       pos: -5.5,-13.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: BoozeDispenser
   entities:
   - uid: 444
@@ -3026,37 +3008,31 @@ entities:
     - type: Transform
       pos: -2.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 898
     components:
     - type: Transform
       pos: -2.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 899
     components:
     - type: Transform
       pos: -2.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 900
     components:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 901
     components:
     - type: Transform
       pos: 1.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 902
     components:
     - type: Transform
       pos: 1.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: FirelockEdge
   entities:
   - uid: 134
@@ -3127,13 +3103,11 @@ entities:
     - type: Transform
       pos: -2.5,-17.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 800
     components:
     - type: Transform
       pos: 1.5,-17.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: Fireplace
   entities:
   - uid: 994

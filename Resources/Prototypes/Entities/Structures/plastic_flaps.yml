@@ -10,7 +10,7 @@
     - Anchorable
   - type: Rotatable
   - type: Sprite
-    sprite: Structures/Specific/plastic-flaps.rsi # Nebula edit
+    sprite: Structures/plastic_flaps.rsi
     state: plasticflaps
     drawdepth: Mobs
   - type: Physics
@@ -42,15 +42,6 @@
         acts: ["Destruction"]
   - type: StaticPrice
     price: 100
-  # Nebula start
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  # Nebula end
-  # Nebula start
-  - type: StructureAligner
-  - type: StructureAlignerPylon
-  # Nebula end
 
 - type: entity
   id: PlasticFlapsClear

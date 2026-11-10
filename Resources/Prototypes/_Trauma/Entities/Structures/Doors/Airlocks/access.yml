@@ -25,10 +25,8 @@
   parent: AirlockGeneticsLocked
   id: AirlockMaintGeneticsLocked
   components:
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
-  # Nebula end
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 # Robotics
 
@@ -54,10 +52,8 @@
   parent: AirlockRoboticsLocked
   id: AirlockMaintRoboticsLocked
   components:
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
-  # Nebula end
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 # Library
 
@@ -83,10 +79,8 @@
   parent: AirlockLibraryLocked
   id: AirlockMaintLibraryLocked
   components:
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
-  # Nebula end
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 # Hunter
 

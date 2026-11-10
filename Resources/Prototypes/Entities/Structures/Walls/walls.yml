@@ -72,12 +72,6 @@
   - type: BulletHole
     # </Trauma>
   - type: Occluder # Breaks on diagonal walls
-  # Nebula start
-  - type: StructureAlignerPylon
-    pylons:
-    - Door
-    - Firelock
-  # Nebula end
 
 - type: entity
   abstract: true
@@ -194,14 +188,10 @@
   - type: CosmicCorruptible
     convertTo: WallCosmicCult
   # </Trauma>
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Walls/bananium.rsi
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/clown.rsi
   - type: Icon
-    sprite: _Arcane/Structures/Walls/bananium.rsi
-  # Nebula end
+    sprite: Structures/Walls/clown.rsi
   - type: Construction
     graph: Girder
     node: bananiumWall
@@ -222,11 +212,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
     key: walls
-    base: bananium
-  # Nebula end
+    base: clown
   - type: Fixtures
     fixtures:
       fix1:
@@ -268,11 +256,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
-    key: meatwalls
+    key: walls
     base: meat
-  # Nebula end
 
 - type: entity
   parent: BaseWall
@@ -342,14 +328,10 @@
   - type: CosmicCorruptible
     convertTo: WallCosmicCult
   # </Trauma>
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Walls/diamond.rsi
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/diamond.rsi
   - type: Icon
-    sprite: _Arcane/Structures/Walls/diamond.rsi
-  # Nebula end
+    sprite: Structures/Walls/diamond.rsi
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -500,14 +482,10 @@
   - type: CosmicCorruptible
     convertTo: WallCosmicCult
   # </Trauma>
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Walls/plastic.rsi
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/plastic.rsi
   - type: Icon
-    sprite: _Arcane/Structures/Walls/plastic.rsi
-  # Nebula end
+    sprite: Structures/Walls/plastic.rsi
   - type: Construction
     graph: Girder
     node: plasticWall
@@ -549,11 +527,9 @@
     sprite: Structures/Walls/plastitanium.rsi
   - type: Icon
     sprite: Structures/Walls/plastitanium.rsi
-  # Nebula start
   - type: IconSmooth
     key: walls
     base: plastitanium
-  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:
@@ -608,14 +584,12 @@
   name: plastitanium wall
   suffix: diagonal, indestructible
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/plastitanium-diagonal.rsi
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Icon
-    sprite: Structures/Walls/plastitanium-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong
@@ -636,10 +610,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/plastitanium-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: Structures/Walls/plastitanium-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Destructible
     thresholds:
@@ -680,15 +654,11 @@
   - type: CosmicCorruptible
     convertTo: WallCosmicCult
   # </Trauma>
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
-  # Nebula end
-  # Nebula start
+    sprite: _Trauma/Structures/Walls/solid.rsi # Trauma
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Trauma/Structures/Walls/solid.rsi # Trauma
     state: rgeneric
-  # Nebula end
   - type: Construction
     graph: Girder
     node: reinforcedWall
@@ -709,11 +679,9 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  # Nebula start
   - type: IconSmooth
     key: walls
     base: reinf_over
-  # Nebula end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -753,23 +721,17 @@
   - type: CosmicCorruptible
     convertTo: WallCosmicCult
   # </Trauma>
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Walls/solid-rust.rsi
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: Structures/Walls/solid-rust.rsi
+    sprite: Structures/Walls/solid_rust.rsi
     state: rgeneric
-  # Nebula end
   - type: Construction
     graph: Girder
     node: reinforcedWallRust
-  # Nebula start
   - type: IconSmooth
     key: walls
     base: reinf_over
-  # Nebula end
   - type: Damageable
 
 - type: entity
@@ -784,14 +746,12 @@
     tags:
     - Diagonal
   # </Trauma>
-  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced-diagonal.rsi
+    sprite: Structures/Walls/reinforced_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Icon
-    sprite: Structures/Walls/reinforced-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/reinforced_diagonal.rsi
     state: state0
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong
@@ -931,14 +891,12 @@
     penetrateDamage: 90
     damagePenalty: 0.3
   # </Trauma>
-  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/shuttle-diagonal.rsi
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Icon
-    sprite: Structures/Walls/shuttle-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   #- type: Reflect # Trauma - annoying, serves no purpose
   #  reflectProb: 1
@@ -1030,11 +988,9 @@
   - type: Construction
     graph: Girder
     node: shuttleWall
-  # Nebula start
   - type: IconSmooth
     key: walls
     base: state
-  # Nebula end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -1080,13 +1036,13 @@
         Quantity: 2
   # </Trauma>
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi # Nebula edit
+    sprite: _Trauma/Structures/Walls/solid.rsi # Trauma
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: Structures/Walls/solid.rsi # Nebula edit
+    sprite: _Trauma/Structures/Walls/solid.rsi # Trauma
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -1104,25 +1060,21 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  # Nebula start
   - type: IconSmooth
     key: walls
     base: solid
-  # Nebula end
 
 - type: entity
   parent: WallDiagonalBase
   id: WallSolidDiagonal
   name: solid wall
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/solid-diagonal.rsi
+    sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Icon
-    sprite: Structures/Walls/solid-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
   - type: Destructible
     thresholds:
@@ -1149,18 +1101,16 @@
     convertTo: WallCosmicCult
   # </Trauma>
   - type: Sprite
-    sprite: Structures/Walls/solid-rust.rsi # Nebula edit
+    sprite: Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: Structures/Walls/solid-rust.rsi # Nebula edit
+    sprite: Structures/Walls/solid_rust.rsi
     state: full
   - type: Construction
     graph: Girder
     node: wallrust
-  # Nebula start
   - type: IconSmooth
     key: walls
     base: solid
-  # Nebula end
   - type: Damageable
 
 - type: entity
@@ -1169,14 +1119,12 @@
   name: xenoborg wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/exo-borg.rsi # Nebula edit
+    sprite: Structures/Walls/xenoborg.rsi
   - type: Icon
-    sprite: Structures/Walls/exo-borg.rsi # Nebula edit
-  # Nebula start
+    sprite: Structures/Walls/xenoborg.rsi
   - type: IconSmooth
     key: walls
     base: xenoborg
-  # Nebula end
 
 - type: entity
   parent: WallPlastitaniumDiagonal
@@ -1186,10 +1134,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/exo-borg-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/xenoborg_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: Structures/Walls/exo-borg-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/xenoborg_diagonal.rsi
     state: state0
 
 - type: entity
@@ -1262,11 +1210,9 @@
         node: Barricade
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  # Nebula start
   - type: IconSmooth
-    key: walls
+    key: woods
     base: wood
-  # Nebula end
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: WallCosmicCult
 
@@ -1318,14 +1264,10 @@
   id: WallNecropolis
   name: stone wall
   components:
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Walls/necropolis.rsi
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/necropolis.rsi
   - type: Icon
-    sprite: _Arcane/Structures/Walls/necropolis.rsi
-  # Nebula end
+    sprite: Structures/Walls/necropolis.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -1362,12 +1304,10 @@
   - type: IconSmooth
     key: walls
     base: mining
-  # Nebula start
-  # - type: RandomIconSmooth
-  #   randomStates:
-  #   - mining
-  #   - miningB
-  # Nebula end
+  - type: RandomIconSmooth
+    randomStates:
+    - mining
+    - miningB
   - type: Appearance
   - type: RustRequiresPathStage # Goobstation
     pathStage: 7 # Toxic blade
@@ -1379,14 +1319,12 @@
   id: WallMiningDiagonal
   name: mining wall
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/mining-diagonal.rsi
+    sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Icon
-    sprite: Structures/Walls/mining-diagonal.rsi # Nebula edit
+    sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong

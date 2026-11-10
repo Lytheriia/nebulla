@@ -446,7 +446,7 @@ entities:
   - uid: 361
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: -3.5,0.5
       parent: 1
 - proto: AirlockGlass
@@ -1656,7 +1656,6 @@ entities:
     - type: Transform
       pos: -3.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 10

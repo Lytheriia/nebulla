@@ -2341,11 +2341,10 @@ entities:
     - type: Transform
       pos: -0.5,-13.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 177
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: -3.5,2.5
       parent: 1
 - proto: WoodenBuckler

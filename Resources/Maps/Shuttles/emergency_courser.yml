@@ -550,25 +550,25 @@ entities:
   - uid: 664
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -4.5,3.5
       parent: 656
   - uid: 665
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 4.5,3.5
       parent: 656
   - uid: 666
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 4.5,-4.5
       parent: 656
   - uid: 667
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -4.5,-4.5
       parent: 656
 - proto: AirlockGlassShuttle
@@ -628,13 +628,11 @@ entities:
     - type: Transform
       pos: 2.5,-5.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 596
     components:
     - type: Transform
       pos: -2.5,-5.5
       parent: 656
-      rot: 1.5707963267948966 rad
 - proto: AirlockSecurityGlassLocked
   entities:
   - uid: 599
@@ -642,13 +640,11 @@ entities:
     - type: Transform
       pos: -2.5,5.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 600
     components:
     - type: Transform
       pos: 2.5,5.5
       parent: 656
-      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 288
@@ -2140,37 +2136,31 @@ entities:
     - type: Transform
       pos: 2.5,5.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 153
     components:
     - type: Transform
       pos: -2.5,-9.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 155
     components:
     - type: Transform
       pos: -2.5,5.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 197
     components:
     - type: Transform
       pos: -2.5,-8.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 201
     components:
     - type: Transform
       pos: 2.5,-9.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 222
     components:
     - type: Transform
       pos: 2.5,-5.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 263
     components:
     - type: Transform
@@ -2196,25 +2186,21 @@ entities:
     - type: Transform
       pos: 2.5,-8.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 631
     components:
     - type: Transform
       pos: -2.5,-5.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 654
     components:
     - type: Transform
       pos: -2.5,9.5
       parent: 656
-      rot: 1.5707963267948966 rad
   - uid: 655
     components:
     - type: Transform
       pos: 2.5,9.5
       parent: 656
-      rot: 1.5707963267948966 rad
 - proto: Flash
   entities:
   - uid: 593

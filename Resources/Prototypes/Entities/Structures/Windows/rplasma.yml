@@ -4,9 +4,9 @@
   name: reinforced plasma window
   components:
   - type: Sprite
-    sprite: Structures/Windows/window-plasma-reinf.rsi # Nebula edit
+    sprite: Structures/Windows/reinforced_plasma_window.rsi
   - type: Icon
-    sprite: Structures/Windows/window-plasma-reinf.rsi # Nebula edit
+    sprite: Structures/Windows/reinforced_plasma_window.rsi
     state: full
   - type: Damageable
     damageModifierSet: RGlass
@@ -33,10 +33,8 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
     base: rpwindow
-  # Nebula end
   - type: Construction
     graph: Window
     node: reinforcedPlasmaWindow
@@ -110,24 +108,20 @@
     snap:
     - Window
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window-diagonal-plasma-reinf.rsi
+    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
-  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+    key: windows
     base: state
-  # Nebula end
   - type: Icon
-    sprite: Structures/Windows/window-diagonal-plasma-reinf.rsi # Nebula edit
+    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

@@ -32,13 +32,13 @@
 - type: latheRecipe
   parent: [ BaseCheapElectronicsRecipe, BaseCircuitryRecipeCategory ]
   id: FirelockElectronics
-  icon: { sprite: Structures/Doors/Airlocks/Standard/firelock-base.rsi, state: closed } # Goobstation # Nebula edit
+  icon: { sprite: Structures/Doors/Airlocks/Standard/firelock.rsi, state: closed } # Goobstation
   result: FirelockElectronics
 
 - type: latheRecipe
   parent: [ BaseCheapElectronicsRecipe, BaseCircuitryRecipeCategory ]
   id: DoorElectronics
-  icon: { sprite: Structures/Doors/Airlocks/Glass/airlock-base.rsi, state: closed } # Goobstation # Nebula edit
+  icon: { sprite: Structures/Doors/Airlocks/Glass/basic.rsi, state: closed } # Goobstation
   result: DoorElectronics
 
 # Power

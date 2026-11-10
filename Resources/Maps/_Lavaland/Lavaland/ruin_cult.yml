@@ -334,19 +334,16 @@ entities:
     - type: Transform
       pos: 6.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 27
     components:
     - type: Transform
       pos: 6.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 28
     components:
     - type: Transform
       pos: 6.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 29
     components:
     - type: Transform
@@ -367,19 +364,16 @@ entities:
     - type: Transform
       pos: -5.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 33
     components:
     - type: Transform
       pos: -5.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 34
     components:
     - type: Transform
       pos: -5.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 35
     components:
     - type: Transform

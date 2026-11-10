@@ -170,7 +170,6 @@ entities:
     - type: Transform
       pos: 19.5,-7.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockGlass
   entities:
   - uid: 52
@@ -178,7 +177,6 @@ entities:
     - type: Transform
       pos: 11.5,-7.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockMedicalLocked
   entities:
   - uid: 46

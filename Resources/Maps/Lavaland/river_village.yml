@@ -553,7 +553,7 @@ entities:
   - uid: 1348
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 31.5,20.5
       parent: 1
 - proto: AirlockExternal
@@ -591,6 +591,7 @@ entities:
   - uid: 1315
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 38.5,17.5
       parent: 1
   - uid: 1316
@@ -602,16 +603,19 @@ entities:
   - uid: 1317
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 56.5,9.5
       parent: 1
   - uid: 1318
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 64.5,7.5
       parent: 1
   - uid: 1326
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 7.5,7.5
       parent: 1
 - proto: APCBasic

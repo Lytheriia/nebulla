@@ -109,7 +109,6 @@ entities:
     - type: Transform
       pos: 4.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: AccessReader
       access:
       - - Atmospherics

@@ -9,7 +9,7 @@
   - type: InteractionOutline
   - type: Occluder
   - type: Sprite
-    sprite: Structures/Doors/MaterialDoors/wood-door.rsi
+    sprite: Structures/Doors/MineralDoors/wood_door.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]

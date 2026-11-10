@@ -1547,5 +1547,4 @@ entities:
     - type: Transform
       pos: 9.5,9.5
       parent: 1
-      rot: 1.5707963267948966 rad
 ...

@@ -512,7 +512,6 @@ entities:
     - type: Transform
       pos: 1.5,-5.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -525,7 +524,6 @@ entities:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -538,7 +536,6 @@ entities:
     - type: Transform
       pos: -2.5,-5.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -551,7 +548,6 @@ entities:
     - type: Transform
       pos: -2.5,-4.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -564,7 +560,6 @@ entities:
     - type: Transform
       pos: 3.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -577,7 +572,6 @@ entities:
     - type: Transform
       pos: -1.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -626,7 +620,6 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: ContainerContainer
       containers:
         board: !type:Container

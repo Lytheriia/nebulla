@@ -604,7 +604,6 @@ entities:
     - type: Transform
       pos: 5.5,7.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 846
     components:
     - type: Transform
@@ -674,7 +673,7 @@ entities:
   - uid: 855
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -25.5,-1.5
       parent: 1
 - proto: AirlockExternalGlass
@@ -684,7 +683,6 @@ entities:
     - type: Transform
       pos: 0.5,9.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -697,7 +695,6 @@ entities:
     - type: Transform
       pos: -1.5,9.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -712,7 +709,6 @@ entities:
     - type: Transform
       pos: 10.5,10.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -725,7 +721,6 @@ entities:
     - type: Transform
       pos: 13.5,10.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -738,6 +733,7 @@ entities:
   - uid: 851
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -13.5,-1.5
       parent: 1
 - proto: AirlockMaintLocked
@@ -745,11 +741,13 @@ entities:
   - uid: 845
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -14.5,2.5
       parent: 1
   - uid: 852
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -25.5,2.5
       parent: 1
 - proto: AirlockVirologyGlass
@@ -757,6 +755,7 @@ entities:
   - uid: 853
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -19.5,2.5
       parent: 1
 - proto: AirSensor
@@ -2042,7 +2041,6 @@ entities:
     - type: Transform
       pos: -8.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 790
@@ -2052,7 +2050,6 @@ entities:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 801
@@ -2062,7 +2059,6 @@ entities:
     - type: Transform
       pos: 6.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 802
@@ -2074,7 +2070,6 @@ entities:
     - type: Transform
       pos: 6.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 802
@@ -2105,7 +2100,6 @@ entities:
     - type: Transform
       pos: -16.5,-8.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 790
@@ -2115,7 +2109,6 @@ entities:
     - type: Transform
       pos: -19.5,-8.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 790
@@ -2126,7 +2119,6 @@ entities:
     - type: Transform
       pos: -19.5,-5.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 790
@@ -2137,7 +2129,6 @@ entities:
     - type: Transform
       pos: -19.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 790
@@ -2178,7 +2169,6 @@ entities:
     - type: Transform
       pos: 5.5,10.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 793
@@ -4424,7 +4414,6 @@ entities:
     - type: Transform
       pos: 9.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: Poweredlight
   entities:
   - uid: 817

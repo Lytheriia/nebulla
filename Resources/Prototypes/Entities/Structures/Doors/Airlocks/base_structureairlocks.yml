@@ -29,30 +29,25 @@
         path:
           "/Audio/Weapons/smash.ogg"
   - type: InteractionOutline
-  # Nebula start
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-base.rsi
+    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    snapCardinals: true
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
       shader: unshaded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseUnlit"]
-      visible: true
+      visible: false
     - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
       shader: unshaded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseBolted"]
     - state: emergency_unlit
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
     - state: panel_open
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
@@ -65,11 +60,9 @@
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
     - state: sparks
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
       map: ["enum.DoorVisualLayers.BaseEmagging"]
       shader: unshaded
       visible: false
-  # Nebula end
   - type: IconSmooth
     key: walls
     mode: NoSprite
@@ -107,10 +100,8 @@
   - type: Weldable
     fuel: 5
     time: 3
-  # Nebula start
   - type: Airlock
-    openUnlitVisible: true
-  # Nebula end
+    openUnlitVisible: true # Nebula edit
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance
@@ -175,10 +166,6 @@
   #- type: StructureAligner
   #- type: StructureAlignerPylon
   # </Trauma>
-  # Nebula start
-  - type: StructureAligner
-  - type: StructureAlignerPylon
-  # Nebula end
 
 - type: entity
   parent: [ BaseAirlockIndestructible, StructureHealthDoor ]
@@ -291,7 +278,7 @@
   - type: Occluder
     enabled: false
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/airlock-base.rsi # Nebula edit
+    sprite: Structures/Doors/Airlocks/Glass/glass.rsi # Trauma - despritening
   - type: Fixtures
     fixtures:
       fix1:

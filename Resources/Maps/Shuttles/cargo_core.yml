@@ -238,13 +238,11 @@ entities:
     - type: Transform
       pos: -0.5,-5.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 136
     components:
     - type: Transform
       pos: -0.5,-1.5
       parent: 2
-      rot: 1.5707963267948966 rad
 - proto: CableApcExtension
   entities:
   - uid: 104

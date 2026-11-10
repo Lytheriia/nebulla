@@ -202,7 +202,6 @@ entities:
     - type: Transform
       pos: -1.5,4.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockExternalGlassShuttleHunterLocked
   entities:
   - uid: 5
@@ -945,7 +944,6 @@ entities:
     - type: Transform
       pos: -1.5,10.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 123
     components:
     - type: Transform
@@ -966,13 +964,11 @@ entities:
     - type: Transform
       pos: 2.5,10.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 127
     components:
     - type: Transform
       pos: 5.5,4.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: ShuttleWindow
   entities:
   - uid: 128

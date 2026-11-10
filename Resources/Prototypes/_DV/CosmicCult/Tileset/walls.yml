@@ -83,10 +83,8 @@
           collection: WindowShatter
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
-    base: malign
-  # Nebula end
+    base: coswindow
   - type: Appearance
   - type: DamageVisuals
     thresholds: [5, 10, 20]

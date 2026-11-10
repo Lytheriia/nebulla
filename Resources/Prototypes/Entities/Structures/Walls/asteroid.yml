@@ -11,29 +11,23 @@
     noRot: true
   - type: IconSmooth
     key: walls
-    mode: Corners # Nebula edit
-    base: stone # Nebula edit
-    index: 0 # Nebula edit
-  # - type: SmoothEdge # Nebula edit
+    mode: NoSprite
+  - type: SmoothEdge
   - type: Icon
-    # sprite: Structures/Walls/rock.rsi # Nebula edit
-    sprite: Structures/Walls/stone.rsi # Nebula edit
-    state: full # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock_asteroid
   - type: Sprite
-    # sprite: Structures/Walls/rock.rsi # Nebula edit
-    sprite: Structures/Walls/stone.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: rock_asteroid
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_asteroid_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_asteroid_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_asteroid_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_asteroid_west
-    # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_asteroid
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_asteroid_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_asteroid_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_asteroid_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_asteroid_west
   - type: MiningScannerViewable
   - type: Damageable
     damageModifierSet: Rock
@@ -80,14 +74,6 @@
   - type: Damageable
     damageModifierSet: Rock
   # Nebula end
-  # Nebula start
-  - type: Sprite
-    sprite: Structures/Walls/stone.rsi
-  # Nebula end
-  # Nebula start
-  - type: Icon
-    sprite: Structures/Walls/stone.rsi
-  # Nebula end
 
 - type: entity
   abstract: true
@@ -104,11 +90,9 @@
     damageContainer: StructuralInorganic
   - type: IconSmooth
     key: walls
-    mode: Corners # Nebula edit
-    base: stone # Nebula edit
-    index: 0 # Nebula edit
+    mode: NoSprite
   - type: MiningScannerViewable
-  # - type: SmoothEdge # Nebula edit
+  - type: SmoothEdge
   # </Trauma>
   - type: Appearance
   - type: GenericVisualizer
@@ -159,16 +143,6 @@
         keyOut: timer # explode immediately
 
 # Ore veins
-  # Nebula start
-  - type: Sprite
-    layers:
-    - state: gibtonite_inactive
-      sprite: Structures/Walls/stone-ore.rsi
-      visible: false
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-      - gib
-  # Nebula end
 - type: entity
   id: AsteroidRockCoal
   parent: AsteroidRock
@@ -178,29 +152,19 @@
       oreChance: 1.0
       currentOre: OreCoal
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_coal
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_coal
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_coal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockCoalCrab
@@ -219,29 +183,19 @@
       oreChance: 1.0
       currentOre: OreGold
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_gold
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockGoldCrab
@@ -260,29 +214,19 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_diamond
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockPlasma
@@ -293,29 +237,19 @@
       oreChance: 1.0
       currentOre: OrePlasma
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_phoron
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockQuartz
@@ -326,29 +260,19 @@
       oreChance: 1.0
       currentOre: OreSpaceQuartz
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_quartz
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockQuartzCrab
@@ -359,29 +283,19 @@
       oreChance: 1.0
       currentOre: OreQuartzCrab
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_quartz
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockSilver
@@ -392,29 +306,19 @@
       oreChance: 1.0
       currentOre: OreSilver
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_silver
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockSilverCrab
@@ -434,29 +338,19 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_tin
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockTinCrab
@@ -475,29 +369,19 @@
       oreChance: 1.0
       currentOre: OreUranium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_uranium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockUraniumCrab
@@ -516,26 +400,19 @@
       oreChance: 1.0
       currentOre: OreBananium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockBananiumCrab
@@ -554,29 +431,19 @@
       oreChance: 1.0
       currentOre: OreSalt
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_salt
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: AsteroidRockArtifactFragment
@@ -588,29 +455,19 @@
       oreChance: 1.0
       currentOre: OreArtifactFragment
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_asteroid
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_asteroid_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_asteroid_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_asteroid_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_asteroid_west
-      #   - state: rock_artifact_fragment
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_artifact_fragment
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_artifact_fragment
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   parent: [ BaseRockGibtonite ] # Trauma, small refractor
@@ -619,28 +476,24 @@
   components:
   #<Trauma>
   - type: Icon
-    # sprite: Structures/Walls/rock.rsi # Nebula edit
-    # state: rock_asteroid # Nebula edit
-    sprite: Structures/Walls/stone.rsi # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock_asteroid
   #</Trauma>
   - type: Sprite
-    # sprite: Structures/Walls/rock.rsi # Trauma # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: rock_asteroid
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_asteroid_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_asteroid_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_asteroid_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_asteroid_west
-    # - state: gibtonite_inactive
-    #   visible: false
-    #   map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
-    # Nebula end
-    sprite: Structures/Walls/stone.rsi # Nebula edit
+    sprite: Structures/Walls/rock.rsi # Trauma
+    layers:
+    - state: rock_asteroid
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_asteroid_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_asteroid_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_asteroid_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_asteroid_west
+    - state: gibtonite_inactive
+      visible: false
+      map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -656,14 +509,6 @@
   - type: OreVein
     oreChance: 0.33
     oreRarityPrototypeId: RandomOreDistributionStandard
-  # Nebula start
-  - type: Sprite
-    sprite: Structures/Walls/stone.rsi
-  # Nebula end
-  # Nebula start
-  - type: Icon
-    sprite: Structures/Walls/stone.rsi
-  # Nebula end
 
 - type: entity
   id: IronRock
@@ -674,29 +519,23 @@
   components:
   - type: IconSmooth
     key: walls
-    mode: Corners # Nebula edit
-    base: stone # Nebula edit
-    index: 0 # Nebula edit
+    mode: NoSprite
   - type: Icon
-    # sprite: Structures/Walls/rock.rsi # Nebula edit
-    # state: ironrock # Nebula edit
-    sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-  # - type: SmoothEdge # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: ironrock
+  - type: SmoothEdge
   - type: Sprite
-    # sprite: Structures/Walls/rock.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: ironrock
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: ironrock_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: ironrock_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: ironrock_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: ironrock_west
-    # Nebula end
-    sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: ironrock
+    - map: [ "enum.EdgeLayer.South" ]
+      state: ironrock_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: ironrock_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: ironrock_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: ironrock_west
 
 - type: entity
   id: IronRockMining
@@ -719,29 +558,19 @@
       oreChance: 1.0
       currentOre: OreCoal
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_coal
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_coal
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_coal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockGold
@@ -752,29 +581,19 @@
       oreChance: 1.0
       currentOre: OreGold
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_gold
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockPlasma
@@ -785,29 +604,19 @@
       oreChance: 1.0
       currentOre: OrePlasma
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_phoron
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockQuartz
@@ -818,29 +627,19 @@
       oreChance: 1.0
       currentOre: OreSpaceQuartz
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_quartz
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockSilver
@@ -851,29 +650,19 @@
       oreChance: 1.0
       currentOre: OreSilver
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_silver
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockIron
@@ -884,29 +673,19 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_tin
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockUranium
@@ -917,29 +696,19 @@
       oreChance: 1.0
       currentOre: OreUranium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_uranium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockBananium
@@ -950,26 +719,19 @@
       oreChance: 1.0
       currentOre: OreBananium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockSalt
@@ -980,29 +742,19 @@
       oreChance: 1.0
       currentOre: OreSalt
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_salt
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: IronRockArtifactFragment
@@ -1014,29 +766,19 @@
     oreChance: 1.0
     currentOre: OreArtifactFragment
   - type: Sprite
-    # Nebula start
-    # layers:
-    # - state: ironrock
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: ironrock_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: ironrock_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: ironrock_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: ironrock_west
-    # - state: rock_artifact_fragment
-    #   map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #   visible: false # Lavaland Change
-    # Nebula end
-    sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-    # Nebula start
     layers:
+    - state: ironrock
+    - map: [ "enum.EdgeLayer.South" ]
+      state: ironrock_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: ironrock_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: ironrock_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: ironrock_west
     - state: rock_artifact_fragment
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+      visible: false # Lavaland Change
 
 - type: entity
   parent: [ BaseRockGibtonite ] # Trauma, small refractor
@@ -1045,28 +787,24 @@
   components:
   #<Trauma>
   - type: Icon
-    # sprite: Structures/Walls/rock.rsi # Nebula edit
-    # state: rock_andesite # Nebula edit
-    sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock_andesite
   #</Trauma>
   - type: Sprite
-    # sprite: Structures/Walls/rock.rsi # Trauma # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: ironrock
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: ironrock_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: ironrock_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: ironrock_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: ironrock_west
-    # - state: gibtonite_inactive
-    #   visible: false
-    #   map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
-    # Nebula end
-    sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
+    sprite: Structures/Walls/rock.rsi # Trauma
+    layers:
+    - state: ironrock
+    - map: [ "enum.EdgeLayer.South" ]
+      state: ironrock_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: ironrock_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: ironrock_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: ironrock_west
+    - state: gibtonite_inactive
+      visible: false
+      map: [ "enum.MiningScannerVisualLayers.Overlay", "gib" ]
   # Nebula start
   - type: Damageable
     damageModifierSet: Rock
@@ -1081,29 +819,19 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: ironrock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: ironrock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: ironrock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: ironrock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: ironrock_west
-      #   - state: rock_diamond
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      sprite: Structures/Walls/stone-ironrock.rsi # Nebula edit
-      # Nebula start
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: ironrock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: ironrock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: ironrock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: ironrock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: ironrock_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 # Rocks and ore veins
 - type: entity
@@ -1132,28 +860,24 @@
         acts: ["Destruction"]
   - type: IconSmooth
     key: walls
-    mode: Corners # Nebula edit
-    base: stone # Nebula edit
-    index: 0 # Nebula edit
+    mode: NoSprite
   - type: Icon
-    sprite: Structures/Walls/stone-dirt.rsi # Nebula edit
-    state: full # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock
   - type: MiningScannerViewable
-  # - type: SmoothEdge # Nebula edit
+  - type: SmoothEdge
   - type: Sprite
-    sprite: Structures/Walls/stone-dirt.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: rock
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_west
-    # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_west
 
 # Ore veins
 - type: entity
@@ -1172,28 +896,19 @@
     oreChance: 1.0
     currentOre: OreCoal
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_coal
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_coal
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_coal
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 - type: entity
   id: WallRockGold
@@ -1211,28 +926,19 @@
     oreChance: 1.0
     currentOre: OreGold
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_gold
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_gold
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_gold
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 - type: entity
   id: WallRockDiamond
@@ -1243,28 +949,19 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_west
-      #   - state: rock_diamond
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockPlasma
@@ -1282,28 +979,19 @@
     oreChance: 1.0
     currentOre: OrePlasma
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_phoron
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_phoron
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_phoron
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 - type: entity
   id: WallRockQuartz
@@ -1321,28 +1009,19 @@
     oreChance: 1.0
     currentOre: OreSpaceQuartz
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_quartz
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_quartz
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_quartz
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSilver
@@ -1360,28 +1039,19 @@
     oreChance: 1.0
     currentOre: OreSilver
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_silver
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_silver
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_silver
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 # Yes I know it drops steel but we may get smelting at some point
 - type: entity
@@ -1400,28 +1070,19 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_west
-      #   - state: rock_tin
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockUranium
@@ -1439,28 +1100,19 @@
     oreChance: 1.0
     currentOre: OreUranium
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_uranium
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_uranium
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_uranium
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 
 - type: entity
@@ -1479,26 +1131,19 @@
     oreChance: 1.0
     currentOre: OreBananium
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_bananium
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
     layers:
-    - state: rock_bananium
-      sprite: Structures/Walls/rock.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_bananium
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 - type: entity
   id: WallRockArtifactFragment
@@ -1517,28 +1162,19 @@
     oreChance: 1.0
     currentOre: OreArtifactFragment
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_artifact_fragment
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_artifact_fragment
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_artifact_fragment
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSalt
@@ -1556,28 +1192,19 @@
     oreChance: 1.0
     currentOre: OreSalt
   - type: Sprite
-    # Nebula start
-    # layers:
-    #   - state: rock
-    #   - map: [ "enum.EdgeLayer.South" ]
-    #     state: rock_south
-    #   - map: [ "enum.EdgeLayer.East" ]
-    #     state: rock_east
-    #   - map: [ "enum.EdgeLayer.North" ]
-    #     state: rock_north
-    #   - map: [ "enum.EdgeLayer.West" ]
-    #     state: rock_west
-    #   - state: rock_salt
-    #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #     visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
-    - state: rock_salt
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      - state: rock
+      - map: [ "enum.EdgeLayer.South" ]
+        state: rock_south
+      - map: [ "enum.EdgeLayer.East" ]
+        state: rock_east
+      - map: [ "enum.EdgeLayer.North" ]
+        state: rock_north
+      - map: [ "enum.EdgeLayer.West" ]
+        state: rock_west
+      - state: rock_salt
+        map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+        visible: false # Lavaland Change
 
 # Basalt variants
 - type: entity
@@ -1585,15 +1212,21 @@
   name: basalt
   parent: WallRock
   components:
-  # Nebula start
   - type: Icon
-    sprite: _Arcane/Structures/Walls/basalt.rsi
-    state: full
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/rock.rsi
+    state: rock_wall
   - type: Sprite
-    sprite: _Arcane/Structures/Walls/basalt.rsi
-  # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_wall
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_wall_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_wall_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_wall_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_wall_west
 
 - type: entity
   id: WallRockBasaltCoal
@@ -1603,14 +1236,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreCoal
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_coal
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_coal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltGold
@@ -1620,14 +1259,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreGold
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltDiamond
@@ -1637,14 +1282,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreDiamond
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltPlasma
@@ -1654,14 +1305,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OrePlasma
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltQuartz
@@ -1671,14 +1328,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSpaceQuartz
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltSilver
@@ -1688,14 +1351,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSilver
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltTin
@@ -1705,14 +1374,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSteel
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltUranium
@@ -1722,14 +1397,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreUranium
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 
 - type: entity
@@ -1740,27 +1421,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreBananium
-    # Nebula start
     - type: Sprite
-      # layers:
-      #   - state: rock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltArtifactFragment
@@ -1771,14 +1445,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreArtifactFragment
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_artifact_fragment
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_artifact_fragment
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockBasaltSalt
@@ -1788,14 +1468,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSalt
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 # Snow variants
 - type: entity
@@ -1804,22 +1490,20 @@
   parent: WallRock
   components:
   - type: Icon
-    sprite: Structures/Walls/stone-snow.rsi # Nebula edit
-    state: full # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock_snow
   - type: Sprite
-    sprite: Structures/Walls/stone-snow.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: rock_snow
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_snow_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_snow_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_snow_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_snow_west
-    # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_snow
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_snow_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_snow_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_snow_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_snow_west
 
 - type: entity
   id: WallRockSnowCoal
@@ -1830,28 +1514,19 @@
       oreChance: 1.0
       currentOre: OreCoal
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_coal
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_coal
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_coal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowGold
@@ -1862,28 +1537,19 @@
       oreChance: 1.0
       currentOre: OreGold
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_gold
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowDiamond
@@ -1894,28 +1560,19 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_diamond
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowPlasma
@@ -1926,28 +1583,19 @@
       oreChance: 1.0
       currentOre: OrePlasma
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_phoron
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowQuartz
@@ -1958,28 +1606,19 @@
       oreChance: 1.0
       currentOre: OreSpaceQuartz
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_quartz
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowSilver
@@ -1990,28 +1629,19 @@
       oreChance: 1.0
       currentOre: OreSilver
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_silver
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowTin
@@ -2022,28 +1652,19 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_tin
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowUranium
@@ -2054,28 +1675,19 @@
       oreChance: 1.0
       currentOre: OreUranium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_uranium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 
 - type: entity
@@ -2087,26 +1699,19 @@
       oreChance: 1.0
       currentOre: OreBananium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowArtifactFragment
@@ -2118,28 +1723,19 @@
       oreChance: 1.0
       currentOre: OreArtifactFragment
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_artifact_fragment
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_artifact_fragment
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_artifact_fragment
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSnowSalt
@@ -2150,28 +1746,19 @@
       oreChance: 1.0
       currentOre: OreSalt
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_snow
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_snow_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_snow_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_snow_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_snow_west
-      #   - state: rock_salt
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 # Sand variants
 - type: entity
@@ -2180,22 +1767,20 @@
   parent: WallRock
   components:
   - type: Icon
-    sprite: Structures/Walls/stone-sand.rsi # Nebula edit
-    state: full # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock_sand
   - type: Sprite
-    sprite: Structures/Walls/stone-sand.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: rock_sand
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_sand_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_sand_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_sand_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_sand_west
-    # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_sand
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_sand_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_sand_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_sand_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_sand_west
 
 - type: entity
   id: WallRockSandCoal
@@ -2206,28 +1791,19 @@
       oreChance: 1.0
       currentOre: OreCoal
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_coal
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_coal
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_coal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandGold
@@ -2238,28 +1814,19 @@
       oreChance: 1.0
       currentOre: OreGold
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_gold
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandDiamond
@@ -2270,28 +1837,19 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_diamond
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandPlasma
@@ -2302,28 +1860,19 @@
       oreChance: 1.0
       currentOre: OrePlasma
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_phoron
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandQuartz
@@ -2334,28 +1883,19 @@
       oreChance: 1.0
       currentOre: OreSpaceQuartz
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_quartz
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandSilver
@@ -2366,28 +1906,19 @@
       oreChance: 1.0
       currentOre: OreSilver
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_silver
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandTin
@@ -2398,28 +1929,19 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_tin
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandUranium
@@ -2430,28 +1952,19 @@
       oreChance: 1.0
       currentOre: OreUranium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_uranium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandBananium
@@ -2462,26 +1975,19 @@
       oreChance: 1.0
       currentOre: OreBananium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandArtifactFragment
@@ -2493,28 +1999,19 @@
       oreChance: 1.0
       currentOre: OreArtifactFragment
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_artifact_fragment
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_artifact_fragment
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_artifact_fragment
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockSandSalt
@@ -2525,28 +2022,19 @@
       oreChance: 1.0
       currentOre: OreSalt
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_sand
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_sand_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_sand_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_sand_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_sand_west
-      #   - state: rock_salt
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 # Chromite variants
 - type: entity
@@ -2555,22 +2043,20 @@
   parent: WallRock
   components:
   - type: Icon
-    sprite: Structures/Walls/stone-chromite.rsi # Nebula edit
-    state: full # Nebula edit
+    sprite: Structures/Walls/rock.rsi
+    state: rock_chromite
   - type: Sprite
-    sprite: Structures/Walls/stone-chromite.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: rock_chromite
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_chromite_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_chromite_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_chromite_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_chromite_west
-    # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_chromite
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_chromite_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_chromite_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_chromite_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_chromite_west
 
 - type: entity
   id: WallRockChromiteCoal
@@ -2581,28 +2067,19 @@
     oreChance: 1.0
     currentOre: OreCoal
   - type: Sprite
-    # Nebula start
-    # layers:
-    # - state: rock_chromite
-    # - map: [ "enum.EdgeLayer.South" ]
-    #   state: rock_chromite_south
-    # - map: [ "enum.EdgeLayer.East" ]
-    #   state: rock_chromite_east
-    # - map: [ "enum.EdgeLayer.North" ]
-    #   state: rock_chromite_north
-    # - map: [ "enum.EdgeLayer.West" ]
-    #   state: rock_chromite_west
-    # - state: rock_coal
-    #   map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-    #   visible: false # Lavaland Change
-    # Nebula end
-    # Nebula start
     layers:
+    - state: rock_chromite
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_chromite_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_chromite_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_chromite_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_chromite_west
     - state: rock_coal
-      sprite: Structures/Walls/stone-ore.rsi
-      map:
-      - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+      visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteGold
@@ -2613,28 +2090,19 @@
       oreChance: 1.0
       currentOre: OreGold
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_gold
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteDiamond
@@ -2645,28 +2113,19 @@
       oreChance: 1.0
       currentOre: OreDiamond
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_diamond
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromitePlasma
@@ -2677,28 +2136,19 @@
       oreChance: 1.0
       currentOre: OrePlasma
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_phoron
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteQuartz
@@ -2709,28 +2159,19 @@
       oreChance: 1.0
       currentOre: OreSpaceQuartz
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_quartz
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteSilver
@@ -2741,28 +2182,19 @@
       oreChance: 1.0
       currentOre: OreSilver
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_silver
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteTin
@@ -2773,28 +2205,19 @@
       oreChance: 1.0
       currentOre: OreSteel
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_tin
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteUranium
@@ -2805,28 +2228,19 @@
       oreChance: 1.0
       currentOre: OreUranium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_uranium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 
 - type: entity
@@ -2838,26 +2252,19 @@
       oreChance: 1.0
       currentOre: OreBananium
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteArtifactFragment
@@ -2869,28 +2276,19 @@
       oreChance: 1.0
       currentOre: OreArtifactFragment
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_artifact_fragment
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_artifact_fragment
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_artifact_fragment
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteSalt
@@ -2901,28 +2299,19 @@
       oreChance: 1.0
       currentOre: OreSalt
     - type: Sprite
-      # Nebula start
-      # layers:
-      #   - state: rock_chromite
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_chromite_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_chromite_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_chromite_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_chromite_west
-      #   - state: rock_salt
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
-      # Nebula end
-      # Nebula start
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-      # Nebula end
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 # Andesite variants
 - type: entity
@@ -2930,15 +2319,21 @@
   name: andesite
   parent: WallRock
   components:
-  # Nebula start
   - type: Icon
-    sprite: _Arcane/Structures/Walls/andesite.rsi
-    state: full
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Walls/rock.rsi
+    state: rock_andesite
   - type: Sprite
-    sprite: _Arcane/Structures/Walls/andesite.rsi
-  # Nebula end
+    sprite: Structures/Walls/rock.rsi
+    layers:
+    - state: rock_andesite
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_andesite_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_andesite_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_andesite_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_andesite_west
 
 - type: entity
   id: WallRockAndesiteCoal
@@ -2948,14 +2343,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreCoal
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_coal
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_coal
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteGold
@@ -2965,14 +2366,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreGold
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_gold
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_gold
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteDiamond
@@ -2982,14 +2389,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreDiamond
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_diamond
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_diamond
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesitePlasma
@@ -2999,14 +2412,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OrePlasma
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_phoron
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_phoron
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteQuartz
@@ -3016,14 +2435,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSpaceQuartz
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_quartz
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_quartz
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteSilver
@@ -3033,14 +2458,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSilver
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_silver
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_silver
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteTin
@@ -3050,14 +2481,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSteel
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_tin
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_tin
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteUranium
@@ -3067,14 +2504,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreUranium
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_uranium
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_uranium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 
 - type: entity
@@ -3085,27 +2528,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreBananium
-    # Nebula start
     - type: Sprite
-      # layers:
-      #   - state: rock
-      #   - map: [ "enum.EdgeLayer.South" ]
-      #     state: rock_south
-      #   - map: [ "enum.EdgeLayer.East" ]
-      #     state: rock_east
-      #   - map: [ "enum.EdgeLayer.North" ]
-      #     state: rock_north
-      #   - map: [ "enum.EdgeLayer.West" ]
-      #     state: rock_west
-      #   - state: rock_bananium
-      #     map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-      #     visible: false # Lavaland Change
       layers:
-      - state: rock_bananium
-        sprite: Structures/Walls/rock.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_bananium
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteArtifactFragment
@@ -3116,14 +2552,20 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreArtifactFragment
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_artifact_fragment
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_artifact_fragment
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change
 
 - type: entity
   id: WallRockAndesiteSalt
@@ -3133,11 +2575,17 @@
     - type: OreVein
       oreChance: 1.0
       currentOre: OreSalt
-    # Nebula start
     - type: Sprite
       layers:
-      - state: rock_salt
-        sprite: Structures/Walls/stone-ore.rsi
-        map:
-        - enum.MiningScannerVisualLayers.Overlay
-    # Nebula end
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_salt
+          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+          visible: false # Lavaland Change

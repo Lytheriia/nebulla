@@ -4,9 +4,9 @@
   name: shuttle window
   components:
   - type: Sprite
-    sprite: Structures/Windows/window-shuttle.rsi # Nebula edit
+    sprite: Structures/Windows/shuttle_window.rsi
   - type: Icon
-    sprite: Structures/Windows/window-shuttle.rsi # Nebula edit
+    sprite: Structures/Windows/shuttle_window.rsi
     state: full
   - type: Repairable
     fuelCost: 15
@@ -34,10 +34,8 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
     base: swindow
-  # Nebula end
   - type: Construction
     graph: Window
     node: shuttleWindow
@@ -62,24 +60,20 @@
     snap:
     - Window
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window-diagonal-shuttle.rsi
+    sprite: Structures/Windows/shuttle_window_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
-  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+    key: windows
     base: state
-  # Nebula end
   - type: Icon
-    sprite: Structures/Windows/window-diagonal-shuttle.rsi # Nebula edit
+    sprite: Structures/Windows/shuttle_window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

@@ -820,37 +820,37 @@ entities:
   - uid: 245
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -4.5,10.5
       parent: 2
   - uid: 751
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -3.5,10.5
       parent: 2
   - uid: 752
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -6.5,-2.5
       parent: 2
   - uid: 753
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -5.5,-2.5
       parent: 2
   - uid: 754
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 2.5,-2.5
       parent: 2
   - uid: 755
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 3.5,-2.5
       parent: 2
 - proto: AirlockGlassShuttle
@@ -910,7 +910,6 @@ entities:
     - type: Transform
       pos: -1.5,7.5
       parent: 2
-      rot: 1.5707963267948966 rad
 - proto: AirlockSecurityLocked
   entities:
   - uid: 50
@@ -1030,7 +1029,6 @@ entities:
     - type: Transform
       pos: -6.5,20.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 706
     components:
     - type: Transform
@@ -1091,7 +1089,6 @@ entities:
     - type: Transform
       pos: 3.5,20.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 763
     components:
     - type: Transform
@@ -2642,7 +2639,6 @@ entities:
     - type: Transform
       pos: -1.5,7.5
       parent: 2
-      rot: 1.5707963267948966 rad
   - uid: 768
     components:
     - type: Transform

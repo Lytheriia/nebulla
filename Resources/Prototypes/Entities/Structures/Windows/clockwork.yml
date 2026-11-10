@@ -8,15 +8,11 @@
   - type: CosmicCorruptible
     convertTo: WindowCosmicCult
   # </Trauma>
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Windows/window-brass.rsi
-  # Nebula end
-  # Nebula start
+    sprite: Structures/Windows/clockwork_window.rsi
   - type: Icon
-    sprite: _Arcane/Structures/Windows/window-brass.rsi
+    sprite: Structures/Windows/clockwork_window.rsi
     state: full
-  # Nebula end
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -40,10 +36,8 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
-    base: bwindow
-  # Nebula end
+    base: cwindow
   - type: Construction
     graph: Window
     node: clockworkWindow
@@ -99,10 +93,10 @@
     snap:
     - Window
   components:
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Windows/window-diagonal-brass.rsi
-  # Nebula end
+    drawdepth: WallTops
+    sprite: Structures/Windows/clockwork_diagonal.rsi
+    state: state0
   - type: Tag
     tags:
     - Diagonal
@@ -111,11 +105,9 @@
     mode: Diagonal
     key: windows
     base: state
-  # Nebula start
   - type: Icon
-    sprite: _Arcane/Structures/Windows/window-diagonal-brass.rsi
+    sprite: Structures/Windows/clockwork_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Fixtures
     fixtures:
       fix1:

@@ -662,25 +662,21 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 11.5,5.5
   - uid: 11
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 11.5,1.5
   - uid: 12
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -0.5,5.5
   - uid: 13
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -0.5,1.5
 - proto: AirlockCommandLocked
   entities:
@@ -688,7 +684,6 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 4.5,-28.5
 - proto: AirlockEngineeringLocked
   entities:
@@ -926,25 +921,21 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 13.5,-6.5
   - uid: 72
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -2.5,-2.5
   - uid: 73
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 13.5,-2.5
   - uid: 74
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -2.5,-6.5
 - proto: ButtonFrameCaution
   entities:
@@ -5313,49 +5304,41 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 11.5,-2.5
   - uid: 800
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -0.5,-2.5
   - uid: 801
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 13.5,-6.5
   - uid: 802
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 13.5,-2.5
   - uid: 803
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: 11.5,-6.5
   - uid: 804
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -2.5,-6.5
   - uid: 805
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -0.5,-6.5
   - uid: 806
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
       pos: -2.5,-2.5
 - proto: PlastitaniumWindowIndestructible
   entities:

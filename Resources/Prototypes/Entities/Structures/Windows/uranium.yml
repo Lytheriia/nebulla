@@ -4,9 +4,9 @@
   name: uranium window
   components:
   - type: Sprite
-    sprite: Structures/Windows/window-uranium.rsi # Nebula edit
+    sprite: Structures/Windows/uranium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/window-uranium.rsi # Nebula edit
+    sprite: Structures/Windows/uranium_window.rsi
     state: full
   - type: Damageable
     damageModifierSet: Glass
@@ -28,10 +28,8 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # Nebula start
   - type: IconSmooth
     base: uwindow
-  # Nebula end
   - type: Construction
     graph: Window
     node: uraniumWindow
@@ -110,24 +108,20 @@
     snap:
     - Window
   components:
-  # Nebula start
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window-diagonal-uranium.rsi
+    sprite: Structures/Windows/uranium_window_diagonal.rsi
     state: state0
-  # Nebula end
   - type: Tag
     tags:
     - Diagonal
     - Window
-  # Nebula start
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+    key: windows
     base: state
-  # Nebula end
   - type: Icon
-    sprite: Structures/Windows/window-diagonal-uranium.rsi # Nebula edit
+    sprite: Structures/Windows/uranium_window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

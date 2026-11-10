@@ -269,7 +269,6 @@ entities:
     - type: Transform
       pos: -2.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockGlassShuttle
   entities:
   - uid: 5
@@ -367,13 +366,11 @@ entities:
     - type: Transform
       pos: 2.5,2.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 18
     components:
     - type: Transform
       pos: 2.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: CableApcExtension
   entities:
   - uid: 19
@@ -973,13 +970,11 @@ entities:
     - type: Transform
       pos: 2.5,2.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 119
     components:
     - type: Transform
       pos: 2.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: Poweredlight
   entities:
   - uid: 120

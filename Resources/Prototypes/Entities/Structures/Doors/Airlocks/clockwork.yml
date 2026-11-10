@@ -3,10 +3,8 @@
   id: PinionAirlock
   suffix: Pinion, Clockwork
   components:
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Doors/Airlocks/Standard/brass-base.rsi
-  # Nebula end
+    sprite: Structures/Doors/Airlocks/Standard/clockwork_pinion.rsi
   - type: Construction
     graph: PinionAirlock
     node: airlock

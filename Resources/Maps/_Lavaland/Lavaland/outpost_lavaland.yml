@@ -885,7 +885,7 @@ entities:
   - uid: 20
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 12.5,3.5
       parent: 1
 - proto: AirlockExternal
@@ -899,7 +899,7 @@ entities:
   - uid: 22
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 35.5,10.5
       parent: 1
   - uid: 23
@@ -911,13 +911,13 @@ entities:
   - uid: 24
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 34.5,10.5
       parent: 1
   - uid: 25
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 17.5,-5.5
       parent: 1
   - uid: 26
@@ -935,7 +935,7 @@ entities:
   - uid: 28
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 17.5,-9.5
       parent: 1
   - uid: 29
@@ -949,13 +949,13 @@ entities:
   - uid: 30
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 4.5,-0.5
       parent: 1
   - uid: 31
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 4.5,3.5
       parent: 1
   - uid: 32
@@ -997,11 +997,10 @@ entities:
     - type: Transform
       pos: 26.5,9.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 38
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 21.5,6.5
       parent: 1
   - uid: 39
@@ -1033,7 +1032,7 @@ entities:
   - uid: 43
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 21.5,-1.5
       parent: 1
   - uid: 44
@@ -1045,13 +1044,13 @@ entities:
   - uid: 45
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 20.5,-3.5
       parent: 1
   - uid: 46
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 24.5,-7.5
       parent: 1
   - uid: 47
@@ -1063,7 +1062,7 @@ entities:
   - uid: 48
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 23.5,-3.5
       parent: 1
 - proto: AirlockMining
@@ -1085,7 +1084,6 @@ entities:
     - type: Transform
       pos: 32.5,16.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 52
     components:
     - type: Transform
@@ -1096,19 +1094,16 @@ entities:
     - type: Transform
       pos: 31.5,11.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 54
     components:
     - type: Transform
       pos: 26.5,4.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 55
     components:
     - type: Transform
       pos: 26.5,5.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockQuartermasterGlassLocked
   entities:
   - uid: 56
@@ -1121,7 +1116,6 @@ entities:
     - type: Transform
       pos: 6.5,8.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirSensor
   entities:
   - uid: 58
@@ -4949,7 +4943,7 @@ entities:
   - uid: 748
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 6.5,1.5
       parent: 1
     - type: DeviceNetwork
@@ -4976,13 +4970,11 @@ entities:
     - type: Transform
       pos: 16.5,1.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 752
     components:
     - type: Transform
       pos: 16.5,2.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 753
     components:
     - type: Transform
@@ -4996,7 +4988,6 @@ entities:
     - type: Transform
       pos: 17.5,5.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 3
@@ -5018,19 +5009,16 @@ entities:
     - type: Transform
       pos: 26.5,4.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 758
     components:
     - type: Transform
       pos: 26.5,5.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 759
     components:
     - type: Transform
       pos: 26.5,9.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 6
@@ -5047,7 +5035,6 @@ entities:
     - type: Transform
       pos: 32.5,16.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 11
@@ -5074,7 +5061,6 @@ entities:
     - type: Transform
       pos: 29.5,2.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 9
@@ -5083,13 +5069,11 @@ entities:
     - type: Transform
       pos: 29.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 767
     components:
     - type: Transform
       pos: 26.5,-0.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceNetwork
       deviceLists:
       - 7
@@ -5098,7 +5082,6 @@ entities:
     - type: Transform
       pos: 26.5,-3.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 769
     components:
     - type: Transform
@@ -8894,7 +8877,6 @@ entities:
     - type: Transform
       pos: 13.5,15.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: KitchenMicrowave
   entities:
   - uid: 1338

@@ -481,7 +481,6 @@ entities:
     - type: Transform
       pos: 6.5,3.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 5
@@ -489,7 +488,6 @@ entities:
     - type: Transform
       pos: -1.5,3.5
       parent: 1
-      rot: 1.5707963267948966 rad
     - type: DeviceLinkSink
       invokeCounter: 1
 - proto: AirlockMaintLocked
@@ -499,7 +497,6 @@ entities:
     - type: Transform
       pos: -1.5,9.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 7

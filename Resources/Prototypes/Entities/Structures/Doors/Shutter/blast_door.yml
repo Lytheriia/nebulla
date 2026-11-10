@@ -7,22 +7,12 @@
   - type: AccessReader
     containerAccessProvider: board
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-blastdoor.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: closed
-    #   map: ["enum.DoorVisualLayers.Base"]
-    # - state: welded
-    #   map: ["enum.WeldableLayers.BaseWelded"]
+    sprite: Structures/Doors/Shutters/blastdoor.rsi
     layers:
     - state: closed
-      map:
-      - enum.DoorVisualLayers.Base
+      map: ["enum.DoorVisualLayers.Base"]
     - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
-      map:
-      - enum.WeldableLayers.BaseWelded
-    # Nebula end
+      map: ["enum.WeldableLayers.BaseWelded"]
   - type: Door
     closeTimeOne: 0.4
     closeTimeTwo: 0.4
@@ -66,11 +56,6 @@
     damagePenalty: 0.4
   - type: SoundBlocker # Trauma
     soundBlockPercent: 0.8
-  # Nebula start
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  # Nebula end
 
 - type: entity
   id: BlastDoorOpen
@@ -95,7 +80,7 @@
   description: This one says 'BLAST DONGER'.
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-blastdoor.rsi # Nebula edit
+    sprite: Structures/Doors/Shutters/blastdoor.rsi
     state: assembly
   - type: InteractionOutline
   - type: Damageable
@@ -139,21 +124,10 @@
   description: Don't lose a head!
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/airlock-blastdoor.rsi # Nebula edit
-    # Nebula start
-    # layers:
-    # - state: closed
-    #   map: ["enum.DoorVisualLayers.Base"]
+    sprite: Structures/Doors/Shutters/xenoborg_blastdoor.rsi
     layers:
     - state: closed
-      map:
-      - enum.DoorVisualLayers.Base
-    - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
-      map:
-      - enum.WeldableLayers.BaseWelded
-      visible: true
-    # Nebula end
+      map: ["enum.DoorVisualLayers.Base"]
   - type: Door
     closeTimeOne: 0.4
     closeTimeTwo: 0.7

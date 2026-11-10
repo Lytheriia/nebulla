@@ -52,18 +52,17 @@
   - type: Tag
     tags:
     - ForceNoFixRotations # Don't want the fixrotations command to target these
-  # Nebula start
   - type: Door
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
     bumpOpen: false
     clickOpen: false
     closeTimeOne: 0.2
-    closeTimeTwo: 0.8
-    openTimeOne: 0.2
-    openTimeTwo: 0.8
-    openingAnimationTime: 1
-    closingAnimationTime: 1
+    closeTimeTwo: 1.2
+    openTimeOne: 1.2
+    openTimeTwo: 0.2
+    openingAnimationTime: 1.4
+    closingAnimationTime: 1.4
     crushDamage:
       types:
         Blunt: 5 # getting shutters closed on you probably doesn't hurt that much
@@ -71,7 +70,6 @@
       path: /Audio/Machines/shutter.ogg
     closeSound:
       path: /Audio/Machines/shutter.ogg
-  # Nebula end
   - type: Weldable
     time: 3
   - type: Appearance
@@ -131,15 +129,6 @@
     interactSuccessSound:
       collection: FenceRattle
   - type: BlockWeather
-  # Nebula start
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  # Nebula end
-  # Nebula start
-  - type: StructureAligner
-  - type: StructureAlignerPylon
-  # Nebula end
 
 - type: entity
   id: ShuttersNormal
@@ -175,7 +164,7 @@
   description: Why did they make these shutters radioactive?
   components:
   - type: Sprite
-    sprite: Structures/Doors/Shutters/shutters-radiation.rsi # Nebula edit
+    sprite: Structures/Doors/Shutters/shutters_radiation.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -213,7 +202,7 @@
   description: The Best (TM) place to see your friends explode!
   components:
   - type: Sprite
-    sprite: Structures/Doors/Shutters/shutters-window.rsi # Nebula edit
+    sprite: Structures/Doors/Shutters/shutters_window.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -248,11 +237,9 @@
   name: shutter frame
   description: A frame for constructing a shutter.
   components:
-  # Nebula start
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters.rsi
-    state: assembly
-  # Nebula end
+    state: frame
   - type: Construction
     graph: Shutters
     node: frame1

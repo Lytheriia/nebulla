@@ -812,7 +812,7 @@ entities:
   - uid: 377
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: 2.5,-17.5
       parent: 1
   - uid: 394
@@ -820,13 +820,12 @@ entities:
     - type: Transform
       pos: 2.5,-23.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockCommandGlassLocked
   entities:
   - uid: 198
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 2.5,8.5
       parent: 1
 - proto: AirlockEngineeringLocked
@@ -836,25 +835,22 @@ entities:
     - type: Transform
       pos: 2.5,-20.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 406
     components:
     - type: Transform
       pos: -1.5,-21.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 407
     components:
     - type: Transform
       pos: -1.5,-20.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockExternalGlass
   entities:
   - uid: 388
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 0.5,-24.5
       parent: 1
 - proto: AirlockGlass
@@ -862,7 +858,7 @@ entities:
   - uid: 250
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -1.5,8.5
       parent: 1
 - proto: AirlockGlassShuttle
@@ -896,25 +892,25 @@ entities:
   - uid: 223
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
   - uid: 224
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 0.5,5.5
       parent: 1
   - uid: 225
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 0.5,-9.5
       parent: 1
   - uid: 226
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 0.5,-15.5
       parent: 1
 - proto: AirlockMedicalGlassLocked
@@ -924,13 +920,11 @@ entities:
     - type: Transform
       pos: 2.5,-2.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 288
     components:
     - type: Transform
       pos: 2.5,-1.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockSecurityGlassLocked
   entities:
   - uid: 278
@@ -938,13 +932,11 @@ entities:
     - type: Transform
       pos: 2.5,-7.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 285
     components:
     - type: Transform
       pos: 2.5,-6.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 286
     components:
     - type: Transform
@@ -2981,6 +2973,7 @@ entities:
   - uid: 961
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 2.5,8.5
       parent: 1
     - type: DeviceNetwork
@@ -2992,6 +2985,7 @@ entities:
   - uid: 962
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -1.5,8.5
       parent: 1
     - type: DeviceNetwork
@@ -3051,6 +3045,7 @@ entities:
   - uid: 967
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 4.5,-4.5
       parent: 1
     - type: DeviceNetwork

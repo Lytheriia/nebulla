@@ -319,7 +319,6 @@ entities:
     - type: Transform
       pos: -4.5,13.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockFreezer
   entities:
   - uid: 5
@@ -367,7 +366,6 @@ entities:
     - type: Transform
       pos: 2.5,13.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: AirlockMiningGlass
   entities:
   - uid: 13
@@ -375,13 +373,11 @@ entities:
     - type: Transform
       pos: -14.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
   - uid: 14
     components:
     - type: Transform
       pos: -11.5,0.5
       parent: 1
-      rot: 1.5707963267948966 rad
 - proto: APCBasic
   entities:
   - uid: 15

@@ -92,12 +92,10 @@
   name: clockwork windoor assembly
   description: It opens, it closes, and you can see through it! This one looks tough.
   components:
-  # Nebula start
   - type: Sprite
-    sprite: _Arcane/Structures/Doors/Windoors/clockwork_windoor.rsi
+    sprite: Structures/Doors/Windoors/clockwork_windoor.rsi
     layers:
     - state: open
-  # Nebula end
   - type: Destructible
     thresholds:
     - trigger: *DamageTrigger300

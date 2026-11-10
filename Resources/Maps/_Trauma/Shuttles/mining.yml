@@ -538,6 +538,7 @@ entities:
     components:
     - type: Transform
       parent: 181
+      rot: -1.5707963267948966 rad
       pos: -1.5,0.5
     - type: AccessReader
       accessListsOriginal: []
@@ -547,6 +548,7 @@ entities:
     components:
     - type: Transform
       parent: 181
+      rot: -1.5707963267948966 rad
       pos: -2.5,0.5
     - type: Door
       state: Opening
@@ -662,7 +664,6 @@ entities:
     components:
     - type: Transform
       parent: 181
-      rot: 1.5707963267948966 rad
       pos: -5.5,-2.5
     - type: AccessReader
       accessListsOriginal: []
@@ -672,7 +673,6 @@ entities:
     components:
     - type: Transform
       parent: 181
-      rot: 1.5707963267948966 rad
       pos: -5.5,-3.5
     - type: AccessReader
       accessListsOriginal: []
@@ -682,7 +682,6 @@ entities:
     components:
     - type: Transform
       parent: 181
-      rot: 1.5707963267948966 rad
       pos: -5.5,-1.5
     - type: AccessReader
       accessListsOriginal: []
